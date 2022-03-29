@@ -1,10 +1,14 @@
 <div class="py-12">
   <div
     class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200">
-    <i class="fas fa-user-circle fa-3x mr-1"></i>
-    <div class="">
-      {{ $article->user->name }}
-    </div>
+    <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
+      <i class="fas fa-user-circle fa-3x mr-1"></i>
+    </a>
+    <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
+      <div class="">
+        {{ $article->user->name }}
+      </div>
+    </a>
     <div>
       {{ $article->created_at->format('Y/m/d H:i') }}
     </div>

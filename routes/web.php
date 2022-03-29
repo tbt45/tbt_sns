@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,10 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
+Route::prefix('users')->name('users.')->group(function(){
+    Route::get('/{name}', [UserController::class, 'show'])->name('show');
+    Route::post('/{name}', [UserController::class, 'show'])->name('show');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,4 +43,3 @@ require __DIR__ . '/auth.php';
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
