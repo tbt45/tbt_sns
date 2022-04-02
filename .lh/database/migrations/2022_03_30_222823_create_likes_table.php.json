@@ -1,0 +1,38 @@
+{
+    "sourceFile": "database/migrations/2022_03_30_222823_create_likes_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1648679389778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648679396876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     public function up()\n     {\n         Schema::create('likes', function (Blueprint $table) {\n             $table->bigIncrements('id');\n+            $table-\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1648679417151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('likes', function (Blueprint $table) {\n             $table->bigIncrements('id');\n-            $table-\n+            $table->unsignedBigInteger('user_id');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1648679428117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     {\n         Schema::create('likes', function (Blueprint $table) {\n             $table->bigIncrements('id');\n             $table->unsignedBigInteger('user_id');\n+            $table->unsignedBigInteger('article_id');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1648679433216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('likes', function (Blueprint $table) {\n             $table->bigIncrements('id');\n             $table->unsignedBigInteger('user_id');\n-            $table->unsignedBigInteger('article_id');\n+            $table->unsignedBigInteger('article_id')->un;\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1648679440545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n     public function up()\n     {\n         Schema::create('likes', function (Blueprint $table) {\n             $table->bigIncrements('id');\n-            $table->unsignedBigInteger('user_id');\n-            $table->unsignedBigInteger('article_id')->un;\n+            $table->unsignedBigInteger('user_id')->unsigned();\n+            $table->unsignedBigInteger('article_id')->unsigned();\n             $table->timestamps();\n         });\n     }\n \n"
+                }
+            ],
+            "date": 1648679389778,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('likes', function (Blueprint $table) {\n            $table->bigIncrements('id');\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('likes');\n    }\n};\n"
+        }
+    ]
+}

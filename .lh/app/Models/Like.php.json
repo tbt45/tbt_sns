@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/Models/Like.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1648761717005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648761723784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,9 @@\n class Like extends Model\n {\n     use HasFactory;\n \n-    \n+    protected $fillable = [\n+        'title',\n+        'body',\n+    ];\n }\n"
+                },
+                {
+                    "date": 1648761737572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Like extends Model\n {\n-\n     protected $fillable = [\n         'title',\n         'body',\n     ];\n"
+                }
+            ],
+            "date": 1648761717005,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Like extends Model\n{\n    use HasFactory;\n\n    \n}\n"
+        }
+    ]
+}

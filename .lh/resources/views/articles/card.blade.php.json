@@ -1,0 +1,174 @@
+{
+    "sourceFile": "resources/views/articles/card.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 39,
+            "patches": [
+                {
+                    "date": 1648858276135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648858283738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,7 @@\n     </a>\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n-    \n+    d\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1648858288963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,9 @@\n     </a>\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n-    d\n+    <div>\n+      if\n+    </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1648858297378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,10 @@\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n     <div>\n-      if\n+      @if ($article)\n+          \n+      @endif\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1648858459713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n     <div>\n-      @if ($article)\n+      @if ($article->)\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858513435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n     <div>\n-      @if ($article->)\n+      @if ($article->is)\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858519953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n     <div>\n-      @if ($article->is)\n+      @if ($article->is_liked_by)\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858529393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n     <div>\n-      @if ($article->is_liked_by)\n+      @if ($article->is_liked_by_auth_user)\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858536258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n     <div>\n-      @if ($article->is_liked_by_auth_user)\n+      @if ($article->is_liked_by_auth_user())\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858542606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n+        \n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858548162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        \n+        <a href=\"\"></a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858572991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"\"></a>\n+        <a href=\"route\"></a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858578241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"route\"></a>\n+        <a href=\"{{  }}\"></a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858584387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{  }}\"></a>\n+        <a href=\"{{ route('') }}\"></a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858591245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('') }}\"></a>\n+        <a href=\"{{ route('article.') }}\"></a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858599082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('article.') }}\"></a>\n+        <a href=\"{{ route('article.unlike',) }}\"></a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858607485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('article.unlike',) }}\"></a>\n+        <a href=\"{{ route('article.unlike',['id'=>]) }}\"></a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648858613298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('article.unlike',['id'=>]) }}\"></a>\n+        <a href=\"{{ route('article.unlike',['id'=>$article]) }}\"></a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648860024718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('article.unlike',['id'=>$article]) }}\"></a>\n+        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648860033614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n+        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n           \n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648860039793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n+        el\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n-          \n       @endif\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1648860047099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,12 @@\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n-        el\n+            \n+        @else\n+            \n+        @endif\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648860052470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,12 +34,9 @@\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n-            \n-        @else\n-            \n-        @endif\n+      @else\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648860068045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n+         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n       @else\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n"
+                },
+                {
+                    "date": 1648860083200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n+        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n       @else\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n"
+                },
+                {
+                    "date": 1648860095008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     <div>\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n       @else\n-        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n+        <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1648860147441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね</a>\n+        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね<span></span></a>\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n"
+                },
+                {
+                    "date": 1648860152997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね<span></span></a>\n+        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね<span>{{  }}</span></a>\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n"
+                },
+                {
+                    "date": 1648860160423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,10 @@\n       {{ $article->body }}\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n-        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">いいね<span>{{  }}</span></a>\n+        <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">\n+          いいね<span>{{  }}</span></a>\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n"
+                },
+                {
+                    "date": 1648860167413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,12 @@\n     </div>\n     <div>\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">\n-          いいね<span>{{  }}</span></a>\n+          いいね\n+          <span>\n+            {{  }}\n+          </span></a>\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n"
+                },
+                {
+                    "date": 1648860178250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,10 +36,11 @@\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">\n           いいね\n           <span>\n-            {{  }}\n-          </span></a>\n+            {{ $article }}\n+          </span>\n+        </a>\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n       @endif\n     </div>\n"
+                },
+                {
+                    "date": 1648860187356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">\n           いいね\n           <span>\n-            {{ $article }}\n+            {{ $article->likes }}\n           </span>\n         </a>\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n"
+                },
+                {
+                    "date": 1648860192699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">\n           いいね\n           <span>\n-            {{ $article->likes }}\n+            {{ $article->likes->count }}\n           </span>\n         </a>\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n"
+                },
+                {
+                    "date": 1648860204992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,13 +36,14 @@\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('article.unlike',['id'=>$article->id]) }}\">\n           いいね\n           <span>\n-            {{ $article->likes->count }}\n+            {{ $article->likes->count() }}\n           </span>\n         </a>\n       @else\n-        <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">いいね</a>\n+        <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">\n+          いいね</a>\n       @endif\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1648860218413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,13 @@\n           </span>\n         </a>\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">\n-          いいね</a>\n+          いいね\n+          <span>\n+        \n+          {{ $article->likes->count() }}\n+        </span></a>\n       @endif\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1648860223736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,9 @@\n       @else\n         <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">\n           いいね\n           <span>\n-        \n-          {{ $article->likes->count() }}\n+            {{ $article->likes->count() }}\n         </span></a>\n       @endif\n     </div>\n   </div>\n"
+                },
+                {
+                    "date": 1648860449734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,13 +40,14 @@\n             {{ $article->likes->count() }}\n           </span>\n         </a>\n       @else\n-        <a href=\"{{ route('article.like',['id'=>$article->id]) }}\">\n+        <a href=\"{{ route('article.like',['id'=>$article->id]) }}　cl\">\n           いいね\n           <span>\n             {{ $article->likes->count() }}\n-        </span></a>\n+          </span>\n+        </a>\n       @endif\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1648860456653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n             {{ $article->likes->count() }}\n           </span>\n         </a>\n       @else\n-        <a href=\"{{ route('article.like',['id'=>$article->id]) }}　cl\">\n+        <a href=\"{{ route('article.like',['id'=>$article->id]) }} c\">\n           いいね\n           <span>\n             {{ $article->likes->count() }}\n           </span>\n"
+                },
+                {
+                    "date": 1648860461912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n             {{ $article->likes->count() }}\n           </span>\n         </a>\n       @else\n-        <a href=\"{{ route('article.like',['id'=>$article->id]) }}\" class=\"\">\n+        <a href=\"{{ route('article.like',['id'=>$article->id]) }}\" class=\"t\">\n           いいね\n           <span>\n             {{ $article->likes->count() }}\n           </span>\n"
+                },
+                {
+                    "date": 1648862257482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     </a>\n     <div class=\"\">\n       {{ $article->body }}\n     </div>\n-    おいい\n+    おい\n     <div>\n       @if ($article->is_liked_by_auth_user())\n         <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n           いいね\n"
+                }
+            ],
+            "date": 1648858276135,
+            "name": "Commit-0",
+            "content": "<div class=\"py-12\">\n  <div\n    class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n    <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n      <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n    </a>\n    <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n      <div class=\"\">\n        {{ $article->user->name }}\n      </div>\n    </a>\n    <div>\n      {{ $article->created_at->format('Y/m/d H:i') }}\n    </div>\n\n    @if (Auth::id() === $article->user_id)\n      <div>\n        <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n          編集\n        </a>\n        <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n          @method('DELETE')\n          @csrf\n          <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n        </form>\n      </div>\n    @endif\n\n    <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n      {{ $article->title }}\n    </a>\n    <div class=\"\">\n      {{ $article->body }}\n    </div>\n    \n  </div>\n</div>\n"
+        }
+    ]
+}

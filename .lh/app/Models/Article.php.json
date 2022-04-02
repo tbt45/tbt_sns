@@ -1,0 +1,210 @@
+{
+    "sourceFile": "app/Models/Article.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 48,
+            "patches": [
+                {
+                    "date": 1648762069422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648762075662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n     public function user(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n-    public function user(): BelongsTo\n+\n+    public function l(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n }\n"
+                },
+                {
+                    "date": 1648762081320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n \n-    public function l(): BelongsTo\n+    public function likes(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n }\n"
+                },
+                {
+                    "date": 1648762090835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n     }\n \n     public function likes(): BelongsTo\n     {\n-        return $this->belongsTo('App\\Models\\User');\n+        return $this->('App\\Models\\User');\n     }\n }\n"
+                },
+                {
+                    "date": 1648762098508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n     }\n \n     public function likes(): BelongsTo\n     {\n-        return $this->('App\\Models\\User');\n+        return $this->hasMany('App\\Models\\User');\n     }\n }\n"
+                },
+                {
+                    "date": 1648762110992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n \n-    public function likes(): BelongsTo\n+    public function likes(): B\n     {\n         return $this->hasMany('App\\Models\\User');\n     }\n }\n"
+                },
+                {
+                    "date": 1648762116232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n use Illuminate\\Database\\Eloquent\\Model;\n use Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\n use Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany;\n use App\\Models\\User;\n+use Illuminate\\Database\\Eloquent\\Relations\\HasMany;\n \n class Article extends Model\n {\n     protected $fillable = [\n@@ -20,9 +21,9 @@\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n \n-    public function likes(): B\n+    public function likes(): HasMany\n     {\n         return $this->hasMany('App\\Models\\User');\n     }\n }\n"
+                },
+                {
+                    "date": 1648762132345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n     }\n \n     public function likes(): HasMany\n     {\n-        return $this->hasMany('App\\Models\\User');\n+        return $this->hasMany();\n     }\n }\n"
+                },
+                {
+                    "date": 1648762139112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n     }\n \n     public function likes(): HasMany\n     {\n-        return $this->hasMany();\n+        return $this->hasMany(Like::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1648762144542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n     }\n \n     public function likes(): HasMany\n     {\n-        return $this->hasMany(Like::class);\n+        return $this->hasMany(Like::class,);\n     }\n }\n"
+                },
+                {
+                    "date": 1648762151596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n     }\n \n     public function likes(): HasMany\n     {\n-        return $this->hasMany(Like::class,);\n+        return $this->hasMany(Like::class,'article_id');\n     }\n }\n"
+                },
+                {
+                    "date": 1648860575591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,8 @@\n     }\n \n     public function likes(): HasMany\n     {\n-        return $this->hasMany(Like::class,'article_id');\n+        return $this->hasMany(Like::class, 'article_id');\n     }\n+    \n }\n"
+                },
+                {
+                    "date": 1648860582583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,7 @@\n     public function likes(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n+\n     \n }\n"
+                },
+                {
+                    "date": 1648860606688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,6 @@\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n \n-    \n+    public fun\n }\n"
+                },
+                {
+                    "date": 1648860611939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,6 @@\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n \n-    public fun\n+    public function is\n }\n"
+                },
+                {
+                    "date": 1648860618813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,6 @@\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n \n-    public function is\n+    public function is_liked\n }\n"
+                },
+                {
+                    "date": 1648860625499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,6 @@\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n \n-    public function is_liked\n+    public function is_liked_by_auth\n }\n"
+                },
+                {
+                    "date": 1648860631537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,8 @@\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n \n-    public function is_liked_by_auth\n+    public function is_liked_by_auth_user(){\n+        \n+    }\n }\n"
+                },
+                {
+                    "date": 1648860642325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n \n-    public function is_liked_by_auth_user(){\n-        \n+    public function is_liked_by_auth_user()\n+    {\n+\n     }\n }\n"
+                },
+                {
+                    "date": 1648860677602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,7 @@\n     }\n \n     public function is_liked_by_auth_user()\n     {\n-\n+      \n     }\n }\n"
+                },
+                {
+                    "date": 1648860686171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,7 @@\n     }\n \n     public function is_liked_by_auth_user()\n     {\n-      \n+        $id = \n     }\n }\n"
+                },
+                {
+                    "date": 1648860692119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,7 @@\n     }\n \n     public function is_liked_by_auth_user()\n     {\n-        $id = \n+        $id = Auth\n     }\n }\n"
+                },
+                {
+                    "date": 1648860699453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,7 @@\n     }\n \n     public function is_liked_by_auth_user()\n     {\n-        $id = Auth\n+        $id = Auth::id\n     }\n }\n"
+                },
+                {
+                    "date": 1648860705861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,9 @@\n     }\n \n     public function is_liked_by_auth_user()\n     {\n-        $id = Auth::id\n+        $id = Auth::id();\n+\n+        \n     }\n }\n"
+                },
+                {
+                    "date": 1648860712653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n     public function is_liked_by_auth_user()\n     {\n         $id = Auth::id();\n \n-        \n+        $liker\n     }\n }\n"
+                },
+                {
+                    "date": 1648860718332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n     public function is_liked_by_auth_user()\n     {\n         $id = Auth::id();\n \n-        $liker\n+        $likers=arr\n     }\n }\n"
+                },
+                {
+                    "date": 1648860724805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n     public function is_liked_by_auth_user()\n     {\n         $id = Auth::id();\n \n-        $likers=arr\n+        $likers=array\n     }\n }\n"
+                },
+                {
+                    "date": 1648860729876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n     public function is_liked_by_auth_user()\n     {\n         $id = Auth::id();\n \n-        $likers=array\n+        $likers = array()\n     }\n }\n"
+                },
+                {
+                    "date": 1648860757296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n use Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\n use Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany;\n use App\\Models\\User;\n use Illuminate\\Database\\Eloquent\\Relations\\HasMany;\n+use Illuminate\\Support\\Facades\\Auth;\n \n+\n class Article extends Model\n {\n     protected $fillable = [\n         'title',\n@@ -30,7 +32,7 @@\n     public function is_liked_by_auth_user()\n     {\n         $id = Auth::id();\n \n-        $likers = array()\n+        $likers = array();\n     }\n }\n"
+                },
+                {
+                    "date": 1648860770317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,6 +33,7 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n+        \n     }\n }\n"
+                },
+                {
+                    "date": 1648860777597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,7 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        \n+        foreach\n     }\n }\n"
+                },
+                {
+                    "date": 1648860784331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,7 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach\n+        foreach($this)\n     }\n }\n"
+                },
+                {
+                    "date": 1648860789948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,7 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach($this)\n+        foreach($this->likes)\n     }\n }\n"
+                },
+                {
+                    "date": 1648860796469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,7 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach($this->likes)\n+        foreach($this->likes as )\n     }\n }\n"
+                },
+                {
+                    "date": 1648860802672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,9 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach($this->likes as )\n+        foreach($this->likes as $like){\n+            \n+        }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860809483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,8 @@\n         $id = Auth::id();\n \n         $likers = array();\n         foreach($this->likes as $like){\n-            \n+            array_push()\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860817354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,8 @@\n         $id = Auth::id();\n \n         $likers = array();\n         foreach($this->likes as $like){\n-            array_push()\n+            array_push($likers)\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860822489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,8 @@\n         $id = Auth::id();\n \n         $likers = array();\n         foreach($this->likes as $like){\n-            array_push($likers)\n+            array_push($likers, )\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860828104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,8 @@\n         $id = Auth::id();\n \n         $likers = array();\n         foreach($this->likes as $like){\n-            array_push($likers, )\n+            array_push($likers, $like->user)\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860835717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,8 @@\n         $id = Auth::id();\n \n         $likers = array();\n         foreach($this->likes as $like){\n-            array_push($likers, $like->user)\n+            array_push($likers, $like->user_id);\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860841877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,6 +36,8 @@\n         $likers = array();\n         foreach($this->likes as $like){\n             array_push($likers, $like->user_id);\n         }\n+\n+        if\n     }\n }\n"
+                },
+                {
+                    "date": 1648860848734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,9 @@\n         foreach($this->likes as $like){\n             array_push($likers, $like->user_id);\n         }\n \n-        if\n+        if (in_a) {\n+            # code...\n+        }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860854782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         foreach($this->likes as $like){\n             array_push($likers, $like->user_id);\n         }\n \n-        if (in_a) {\n+        if (in_array()) {\n             # code...\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860861902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         foreach($this->likes as $like){\n             array_push($likers, $like->user_id);\n         }\n \n-        if (in_array()) {\n+        if (in_array($id,)) {\n             # code...\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860869502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         foreach($this->likes as $like){\n             array_push($likers, $like->user_id);\n         }\n \n-        if (in_array($id,)) {\n+        if (in_array($id,$likers)) {\n             # code...\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860880761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,8 @@\n             array_push($likers, $like->user_id);\n         }\n \n         if (in_array($id,$likers)) {\n-            # code...\n+            retu\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860886399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,8 @@\n             array_push($likers, $like->user_id);\n         }\n \n         if (in_array($id,$likers)) {\n-            retu\n+            return true;\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860892609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,7 +39,9 @@\n         }\n \n         if (in_array($id,$likers)) {\n             return true;\n+        }else {\n+            # code...\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1648860899815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,8 @@\n \n         if (in_array($id,$likers)) {\n             return true;\n         }else {\n-            # code...\n+            return false\n         }\n     }\n }\n"
+                }
+            ],
+            "date": 1648762069422,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\nuse Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\nuse Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany;\nuse App\\Models\\User;\n\nclass Article extends Model\n{\n    protected $fillable = [\n        'title',\n        'body',\n    ];\n\n\n    public function user(): BelongsTo\n    {\n        return $this->belongsTo('App\\Models\\User');\n    }\n    public function user(): BelongsTo\n    {\n        return $this->belongsTo('App\\Models\\User');\n    }\n}\n"
+        }
+    ]
+}

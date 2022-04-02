@@ -32,5 +32,24 @@
     <div class="">
       {{ $article->body }}
     </div>
+    
+    {{-- いいねボタン --}}
+    <div>
+      @if ($article->is_liked_by_auth_user())
+        <a href="{{ route('articles.unlike',['id'=>$article->id]) }}">
+          いいね
+          <span>
+            {{ $article->likes->count() }}
+          </span>
+        </a>
+      @else
+        <a href="{{ route('articles.like',['id'=>$article->id]) }}" class="text-red-800">
+          いいね
+          <span>
+            {{ $article->likes->count() }}
+          </span>
+        </a>
+      @endif
+    </div>
   </div>
 </div>

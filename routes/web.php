@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::put('article/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
     Route::patch('article/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
     Route::delete('article/delete/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+    // いいね機能
+    Route::get('article/like/{id}', [ArticleController::class, 'like'])->name('articles.like');
+    Route::get('article/unlike/{id}', [ArticleController::class, 'unlike'])->name('articles.unlike');
 });
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
