@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/Models/User.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1648762176424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1648762176424,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Contracts\\Auth\\MustVerifyEmail;\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Foundation\\Auth\\User as Authenticatable;\nuse Illuminate\\Notifications\\Notifiable;\nuse Laravel\\Sanctum\\HasApiTokens;\n\nclass User extends Authenticatable\n{\n    use HasApiTokens, HasFactory, Notifiable;\n\n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array<int, string>\n     */\n    protected $fillable = [\n        'name',\n        'email',\n        'password',\n    ];\n\n    /**\n  * The attributes that should be hidden for serialization.\n     *\n     * @var array<int, string>\n     */\n    protected $hidden = [\n        'password',\n        'remember_token',\n    ];\n\n    /**\n     * The attributes that should be cast.\n     *\n     * @var array<string, string>\n     */\n    protected $casts = [\n        'email_verified_at' => 'datetime',\n    ];\n}\n"
+        }
+    ]
+}

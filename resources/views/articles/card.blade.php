@@ -1,10 +1,14 @@
 <div class="py-12">
   <div
     class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200">
-    <i class="fas fa-user-circle fa-3x mr-1"></i>
-    <div class="">
-      {{ $article->user->name }}
-    </div>
+    <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
+      <i class="fas fa-user-circle fa-3x mr-1"></i>
+    </a>
+    <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
+      <div class="">
+        {{ $article->user->name }}
+      </div>
+    </a>
     <div>
       {{ $article->created_at->format('Y/m/d H:i') }}
     </div>
@@ -27,6 +31,25 @@
     </a>
     <div class="">
       {{ $article->body }}
+    </div>
+    
+    {{-- いいねボタン --}}
+    <div>
+      @if ($article->is_liked_by_auth_user())
+        <a href="{{ route('articles.unlike',['id'=>$article->id]) }}">
+          いいね
+          <span>
+            {{ $article->likes->count() }}
+          </span>
+        </a>
+      @else
+        <a href="{{ route('articles.like',['id'=>$article->id]) }}" class="text-red-800">
+          いいね
+          <span>
+            {{ $article->likes->count() }}
+          </span>
+        </a>
+      @endif
     </div>
   </div>
 </div>

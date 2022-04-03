@@ -1,0 +1,174 @@
+{
+    "sourceFile": "app/Http/Controllers/ArticleController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 39,
+            "patches": [
+                {
+                    "date": 1648679071758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648679079252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,8 +58,10 @@\n     public function show(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n     }\n+\n+    いいね機能\n     public function show(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n     }\n"
+                },
+                {
+                    "date": 1648679087908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,10 @@\n     {\n         return view('articles.show', ['article' => $article]);\n     }\n \n-    いいね機能\n-    public function show(Article $article)\n+    // いいね機能\n+    public function like(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n     }\n     public function show(Article $article)\n"
+                },
+                {
+                    "date": 1648679092975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n     public function like(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n     }\n-    public function show(Article $article)\n+    public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n     }\n }\n"
+                },
+                {
+                    "date": 1648763986305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n class ArticleController extends Controller\n {\n     public function __construct()\n     {\n-        $this->authorizeResource(Article::class, 'article');\n+        $this->authorizeResource(Article::class, 'article')\n+        -;\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648763991695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        -;\n+        ;\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648763999478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ;\n+        ->mi;\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764006377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->mi;\n+        ->middleware();\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764018012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware();\n+        ->middleware([]);\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764026937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware([]);\n+        ->middleware(['auth']);\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764034642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware(['auth']);\n+        ->middleware(['auth','']);\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764040667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware(['auth','']);\n+        ->middleware(['auth','veri']);\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764053124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware(['auth','veri']);\n+        ->middleware(['auth','verified'])-;\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764058921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware(['auth','verified'])-;\n+        ->middleware(['auth','verified'])->on;\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764067232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware(['auth','verified'])->on;\n+        ->middleware(['auth','verified'])->only();\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764073271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware(['auth','verified'])->only();\n+        ->middleware(['auth','verified'])->only([]);\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764079162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article')\n-        ->middleware(['auth','verified'])->only([]);\n+        ->middleware(['auth','verified'])->only(['like',]);\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764098277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n class ArticleController extends Controller\n {\n     public function __construct()\n     {\n-        $this->authorizeResource(Article::class, 'article')\n-        ->middleware(['auth','verified'])->only(['like',]);\n+        $this->authorizeResource(Article::class, 'article');\n+        ->middleware(['auth','verified'])->only(['like','unlike']);\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764108428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     public function __construct()\n     {\n         $this->authorizeResource(Article::class, 'article');\n-        ->middleware(['auth','verified'])->only(['like','unlike']);\n+        $this->middleware(['auth','verified'])->only(['like','unlike']);\n     }\n \n     public function index()\n     {\n"
+                },
+                {
+                    "date": 1648764526181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,8 @@\n \n     // いいね機能\n     public function like(Article $article)\n     {\n-        return view('articles.show', ['article' => $article]);\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764533816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,8 +63,9 @@\n \n     // いいね機能\n     public function like(Article $article)\n     {\n+        Like\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764539962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n \n     // いいね機能\n     public function like(Article $article)\n     {\n-        Like\n+        Like::create\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764545621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,11 @@\n \n     // いいね機能\n     public function like(Article $article)\n     {\n-        Like::create\n+        Like::create([\n+            ''\n+        ])\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764552761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n     // いいね機能\n     public function like(Article $article)\n     {\n         Like::create([\n-            ''\n+            'article_id'=>\n         ])\n     }\n     public function unlike(Article $article)\n     {\n"
+                },
+                {
+                    "date": 1648764564074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n     // いいね機能\n     public function like(Article $article)\n     {\n         Like::create([\n-            'article_id'=>\n+            'article_id'=>$\n         ])\n     }\n     public function unlike(Article $article)\n     {\n"
+                },
+                {
+                    "date": 1648764571356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,10 @@\n     // いいね機能\n     public function like(Article $article)\n     {\n         Like::create([\n-            'article_id'=>$\n+            'article_id'=>$id,\n+            \n         ])\n     }\n     public function unlike(Article $article)\n     {\n"
+                },
+                {
+                    "date": 1648764578498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n     public function like(Article $article)\n     {\n         Like::create([\n             'article_id'=>$id,\n-            \n+            'user_id'=>\n         ])\n     }\n     public function unlike(Article $article)\n     {\n"
+                },
+                {
+                    "date": 1648764586027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n     public function like(Article $article)\n     {\n         Like::create([\n             'article_id'=>$id,\n-            'user_id'=>\n+            'user_id'=>Auth::id\n         ])\n     }\n     public function unlike(Article $article)\n     {\n"
+                },
+                {
+                    "date": 1648764591757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n     public function like(Article $article)\n     {\n         Like::create([\n             'article_id'=>$id,\n-            'user_id'=>Auth::id\n+            'user_id'=>Auth::id(),\n         ])\n     }\n     public function unlike(Article $article)\n     {\n"
+                },
+                {
+                    "date": 1648764600984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,11 @@\n     {\n         Like::create([\n             'article_id'=>$id,\n             'user_id'=>Auth::id(),\n-        ])\n+        ]);\n+\n+        session()\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764606844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n             'article_id'=>$id,\n             'user_id'=>Auth::id(),\n         ]);\n \n-        session()\n+        session()->flash()\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764615773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n             'article_id'=>$id,\n             'user_id'=>Auth::id(),\n         ]);\n \n-        session()->flash()\n+        session()->flash('success')\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764620936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n             'article_id'=>$id,\n             'user_id'=>Auth::id(),\n         ]);\n \n-        session()->flash('success')\n+        session()->flash('success','')\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764628376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n             'article_id'=>$id,\n             'user_id'=>Auth::id(),\n         ]);\n \n-        session()->flash('success','')\n+        session()->flash('success','You liked')\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764635020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n             'article_id'=>$id,\n             'user_id'=>Auth::id(),\n         ]);\n \n-        session()->flash('success','You liked')\n+        session()->flash('success','You liked the Re')\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764640096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n             'article_id'=>$id,\n             'user_id'=>Auth::id(),\n         ]);\n \n-        session()->flash('success','You liked the Re')\n+        session()->flash('success','You liked the Replay');\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764658852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n use App\\Http\\Controllers\\Controller;\n use App\\Http\\Requests\\ArticleRequest as RequestsArticleRequest;\n use Illuminate\\Http\\Request;\n use App\\Models\\Article;\n+use App\\Models\\Article;\n \n class ArticleController extends Controller\n {\n     public function __construct()\n@@ -68,9 +69,9 @@\n             'article_id'=>$id,\n             'user_id'=>Auth::id(),\n         ]);\n \n-        session()->flash('success','You liked the Replay');\n+        session()->flash('success','You liked the Replay.');\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                },
+                {
+                    "date": 1648764668556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n use App\\Http\\Controllers\\Controller;\n use App\\Http\\Requests\\ArticleRequest as RequestsArticleRequest;\n use Illuminate\\Http\\Request;\n use App\\Models\\Article;\n-use App\\Models\\Article;\n+use App\\Models\\Like;\n \n class ArticleController extends Controller\n {\n     public function __construct()\n"
+                },
+                {
+                    "date": 1648764688438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n use App\\Http\\Requests\\ArticleRequest as RequestsArticleRequest;\n use Illuminate\\Http\\Request;\n use App\\Models\\Article;\n use App\\Models\\Like;\n-use App\\Models\\Au;\n+use App\\Models\\Aut;\n \n class ArticleController extends Controller\n {\n     public function __construct()\n"
+                },
+                {
+                    "date": 1648764861299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n         ]);\n \n         session()->flash('success','You liked the Replay.');\n \n-        \n+        r\n     }\n     public function unlike(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n"
+                }
+            ],
+            "date": 1648679071758,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Http\\Controllers\\Controller;\nuse App\\Http\\Requests\\ArticleRequest as RequestsArticleRequest;\nuse Illuminate\\Http\\Request;\nuse App\\Models\\Article;\n\nclass ArticleController extends Controller\n{\n    public function __construct()\n    {\n        $this->authorizeResource(Article::class, 'article');\n    }\n\n    public function index()\n    {\n        $articles = Article::all()->sortByDesc('created_at');\n\n        return view('articles.index', ['articles' => $articles]);\n    }\n\n    public function create()\n    {\n        return view('articles.create');\n    }\n\n    public function store(RequestsArticleRequest $request, Article $article)\n    {\n        $article->fill($request->all());\n        $article->user_id = $request->user()->id;\n        $article->save();\n\n        return redirect()->route('articles.index');\n    }\n\n    public function edit(Article $article)\n    {\n        return view('articles.edit', ['article' => $article]);\n    }\n\n    public function  update(RequestsArticleRequest $request, Article $article)\n    {\n        $article->fill($request->all())->save();\n\n        return redirect()->route('articles.index');\n    }\n\n    public function destroy(Article $article)\n    {\n        $article->delete();\n\n        return redirect()->route('articles.index');\n    }\n\n    // ログインしていない人に見えるようにする\n    public function show(Article $article)\n    {\n        return view('articles.show', ['article' => $article]);\n    }\n    public function show(Article $article)\n    {\n        return view('articles.show', ['article' => $article]);\n    }\n    public function show(Article $article)\n    {\n        return view('articles.show', ['article' => $article]);\n    }\n}\n"
+        }
+    ]
+}

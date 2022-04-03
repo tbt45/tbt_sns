@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest as RequestsArticleRequest;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Like;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
     public function __construct()
     {
         $this->authorizeResource(Article::class, 'article');
+        $this->middleware(['auth','verified'])->only(['like','unlike']);
     }
 
     public function index()
@@ -58,5 +61,25 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         return view('articles.show', ['article' => $article]);
+    }
+
+    // いいね機能
+    public function like($id)
+    {
+        Like::create([
+            'article_id'=>$id,
+            'user_id'=>Auth::id(),
+        ]);
+
+        return redirect()->back();
+    }
+
+    // いいね解除
+    public function unlike($id)
+    {
+        $like = Like::where('article_id',$id)->where('user_id',Auth::id())->first();
+        $like->delete();
+
+        return redirect()->back();
     }
 }
