@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +29,22 @@ Route::middleware('auth')->group(function () {
     Route::put('article/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
     Route::patch('article/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
     Route::delete('article/delete/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+    // いいね機能
+    Route::get('article/like/{id}', [ArticleController::class, 'like'])->name('articles.like');
+    Route::get('article/unlike/{id}', [ArticleController::class, 'unlike'])->name('articles.unlike');
 });
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
-Route::prefix('users')->name('users.')->group(function(){
+// ユーザー情報を表示する。
+Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{name}', [UserController::class, 'show'])->name('show');
     Route::post('/{name}', [UserController::class, 'show'])->name('show');
+});
+// ユーザー情報を編集する。
+Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
+    Route::get('/edit/{user}', [UserController::class, 'edit'])->name('edit');
+    Route::put('/update/{user}', [UserController::class, 'update'])->name('update');
+    Route::patch('/update/{user}', [UserController::class, 'update'])->name('update');
 });
 
 Route::get('/dashboard', function () {
@@ -42,4 +54,3 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 Auth::routes();
-

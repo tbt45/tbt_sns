@@ -1,0 +1,174 @@
+{
+    "sourceFile": "resources/views/users/show.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 39,
+            "patches": [
+                {
+                    "date": 1648868996790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648869002068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n       {{ __('ユーザー情報') }}\n     </h2>\n   </x-slot>\n \n-  \n+  <div\n+    class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n   <div class=\"py-12\">\n     <a href=\"{{ route('users.show',['name'=>$user->name]) }}\">\n       <i class=\"fas fa-user-circle fa-3x\"></i>\n     </a>\n@@ -17,5 +18,6 @@\n     </h2>\n     <a href=\"\">10フォロー</a>\n     <a href=\"\">10フォロワー</a>\n   </div>  \n+  \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648869058311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n       {{ __('ユーザー情報') }}\n     </h2>\n   </x-slot>\n \n+  <div class=\"py-12\">\n   <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-  <div class=\"py-12\">\n     <a href=\"{{ route('users.show',['name'=>$user->name]) }}\">\n       <i class=\"fas fa-user-circle fa-3x\"></i>\n     </a>\n     <h2>\n@@ -18,6 +18,6 @@\n     </h2>\n     <a href=\"\">10フォロー</a>\n     <a href=\"\">10フォロワー</a>\n   </div>  \n-  \n+  </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648869502984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,23 @@\n <x-app-layout>\n-  <x-slot name=\"header\">\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-      {{ __('ユーザー情報') }}\n-    </h2>\n-  </x-slot>\n+    <x-slot name=\"header\">\n+        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+            {{ __('ユーザー情報') }}\n+        </h2>\n+    </x-slot>\n \n-  <div class=\"py-12\">\n-  <div\n-    class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-    <a href=\"{{ route('users.show',['name'=>$user->name]) }}\">\n-      <i class=\"fas fa-user-circle fa-3x\"></i>\n-    </a>\n-    <h2>\n-      <a href=\"{{ route('users.show',['name'=>$user->name]) }}\">\n-        {{ $user->name }}\n-      </a>\n-    </h2>\n-    <a href=\"\">10フォロー</a>\n-    <a href=\"\">10フォロワー</a>\n-  </div>  \n-  </div>\n+    <div class=\"py-12\">\n+        <div\n+            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+            <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+                <i class=\"fas fa-user-circle fa-3x\"></i>\n+            </a>\n+            <h2>\n+                <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+                    {{ $user->name }}\n+                </a>\n+            </h2>\n+            <a href=\"\">10フォロー</a>\n+            <a href=\"\">10フォロワー</a>\n+        </div>\n+    </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648878177271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                <i class=\"fas fa-user-circle fa-3x\"></i>\n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n"
+                },
+                {
+                    "date": 1648878183802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+                \n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n"
+                },
+                {
+                    "date": 1648878214771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                \n+                {{ $user-> }}\n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n"
+                },
+                {
+                    "date": 1648878223015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                {{ $user-> }}\n+                {{ $user->profile_image }}\n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n"
+                },
+                {
+                    "date": 1648878230583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                {{ $user->profile_image }}\n+                <img src=\"\" alt=\"\">{{ $user->profile_image }}\n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n"
+                },
+                {
+                    "date": 1648878237367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                <img src=\"\" alt=\"\">{{ $user->profile_image }}\n+                <img src=\"\" alt=\"\">\n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n"
+                },
+                {
+                    "date": 1648878585391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,15 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                <img src=\"\" alt=\"\">\n+                <div class=\"p-2 w-1/2 mx-auto\">\n+                    <div class=\"relative\">\n+                        <div class=\"w-32\">\n+                        <x-thumbnail :filename=\"$user->profile_image\" />\n+                        </div>\n+                    </div>\n+                </div>\n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n"
+                },
+                {
+                    "date": 1648878609838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 <div class=\"p-2 w-1/2 mx-auto\">\n                     <div class=\"relative\">\n-                        <div class=\"w-32\">\n+                        <div class=\"w-10\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                         </div>\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1648878618038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n                 <div class=\"p-2 w-1/2 mx-auto\">\n                     <div class=\"relative\">\n                         <div class=\"w-10\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n-                        </div>\n                     </div>\n                 </div>\n             </a>\n             <h2>\n"
+                },
+                {
+                    "date": 1648884499147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,10 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                <div class=\"p-2 w-1/2 mx-auto\">\n+                <div class=\"p-2 w-1/2 mx-\">\n                     <div class=\"relative\">\n-                        <div class=\"w-10\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n                 </div>\n             </a>\n"
+                },
+                {
+                    "date": 1648884613555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                <div class=\"p-2 w-1/2 mx-\">\n+                <div class=\"p-2 w- mx-auto\">\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1648884688486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                <div class=\"p-2 w- mx-auto\">\n+                <div class=\"p-2 w-10\">\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1648884712407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                <div class=\"p-2 w-10\">\n+                <div class=\"p-2 w- mx-auto\">\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1648884719163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,13 +8,13 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                <div class=\"p-2 w- mx-auto\">\n+                {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n-                </div>\n+                {{-- </div> --}}\n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n"
+                },
+                {
+                    "date": 1648884733765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div class=\"py-12\">\n         <div\n-            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+            {{-- class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\"> --}}\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n"
+                },
+                {
+                    "date": 1648884746447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n         </h2>\n     </x-slot>\n \n     <div class=\"py-12\">\n-        <div\n-            {{-- class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\"> --}}\n+        {{-- <div --}}\n+            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n"
+                },
+                {
+                    "date": 1648884782142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n         </h2>\n     </x-slot>\n \n     <div class=\"py-12\">\n-        {{-- <div --}}\n-            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+        <div\n+            class=\"max-w-7xl sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n"
+                },
+                {
+                    "date": 1648884792411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div class=\"py-12\">\n         <div\n-            class=\"max-w-7xl sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n"
+                },
+                {
+                    "date": 1648884831855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div class=\"py-12\">\n         <div\n-            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-red overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n"
+                },
+                {
+                    "date": 1648884845664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div class=\"py-12\">\n         <div\n-            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-red overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-red-100 overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n"
+                },
+                {
+                    "date": 1648884860279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div class=\"py-12\">\n         <div\n-            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-red-100 overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n"
+                },
+                {
+                    "date": 1648888880186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,7 +21,8 @@\n                 </a>\n             </h2>\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n+            \n         </div>\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648888886263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,19 @@\n                 </a>\n             </h2>\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n-            \n+            @if (Auth::id() === $article->user_id)\n+            <div>\n+                <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n+                    編集\n+                </a>\n+                <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n+                    @method('DELETE')\n+                    @csrf\n+                    <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n+                </form>\n+            </div>\n+            @endif\n         </div>\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648888936908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                 </a>\n             </h2>\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n-            @if (Auth::id() === $article->user_id)\n+            @if (Auth::id() === $article->id)\n             <div>\n                 <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n                     編集\n                 </a>\n"
+                },
+                {
+                    "date": 1648888957741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,11 @@\n                 </a>\n             </h2>\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n-            @if (Auth::id() === $article->id)\n+            @if (Auth::id() === $user->id)\n             <div>\n-                <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n+                <a href=\"{{ route('user.edit', ['article' => $article]) }}\">\n                     編集\n                 </a>\n                 <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n                     @method('DELETE')\n"
+                },
+                {
+                    "date": 1648888967561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n             @if (Auth::id() === $user->id)\n             <div>\n-                <a href=\"{{ route('user.edit', ['article' => $article]) }}\">\n+                <a href=\"{{ route('user.edit', ['user' => $user]) }}\">\n                     編集\n                 </a>\n                 <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n                     @method('DELETE')\n"
+                },
+                {
+                    "date": 1648888980249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,8 @@\n             <div>\n                 <a href=\"{{ route('user.edit', ['user' => $user]) }}\">\n                     編集\n                 </a>\n-                <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n-                    @method('DELETE')\n-                    @csrf\n-                    <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n-                </form>\n             </div>\n             @endif\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1648889743483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n             @if (Auth::id() === $user->id)\n             <div>\n-                <a href=\"{{ route('user.edit', ['user' => $user]) }}\">\n+                <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n                 </a>\n             </div>\n             @endif\n"
+                },
+                {
+                    "date": 1648973263484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-                {{-- <div class=\"p-2 w-1/2 mx-auto\"> --}}\n+                <div class=\"p-2 w-1/2 mx-auto\">\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n                 {{-- </div> --}}\n"
+                },
+                {
+                    "date": 1648982740247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,16 @@\n                 <div class=\"p-2 w-1/2 mx-auto\">\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n-                {{-- </div> --}}\n+                </div>\n             </a>\n             <h2>\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n                 </a>\n             </h2>\n+            <div></div>\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n             @if (Auth::id() === $user->id)\n             <div>\n"
+                },
+                {
+                    "date": 1648982746172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n                 </a>\n             </h2>\n-            <div></div>\n+            <div>{{ $user }}</div>\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n             @if (Auth::id() === $user->id)\n             <div>\n"
+                },
+                {
+                    "date": 1648982752808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n                 <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                     {{ $user->name }}\n                 </a>\n             </h2>\n-            <div>{{ $user }}</div>\n+            <div>{{ $user->body }}</div>\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n             @if (Auth::id() === $user->id)\n             <div>\n"
+                },
+                {
+                    "date": 1649023558107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+            <a href=\"{{ route('users.show', ['user' => $user->name]) }}\">\n                 <div class=\"p-2 w-1/2 mx-auto\">\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n"
+                },
+                {
+                    "date": 1649024168816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            <a href=\"{{ route('users.show', ['user' => $user->name]) }}\">\n+            <a href=\"{{ route('users.show', ['name' => $user->id]) }}\">\n                 <div class=\"p-2 w-1/2 mx-auto\">\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n"
+                },
+                {
+                    "date": 1649189303281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n             class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            <a href=\"{{ route('users.show', ['name' => $user->id]) }}\">\n+            <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n                 <div class=\"p-2 w-1/2 mx-auto\">\n                     <div class=\"relative\">\n                         <x-thumbnail :filename=\"$user->profile_image\" />\n                     </div>\n@@ -24,9 +24,9 @@\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n             @if (Auth::id() === $user->id)\n             <div>\n-                <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n+                <a href=\"{{ route('users.edit', ['name' => $article->user->name]) }}\">\n                     編集\n                 </a>\n             </div>\n             @endif\n"
+                },
+                {
+                    "date": 1649189315320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n             @if (Auth::id() === $user->id)\n             <div>\n-                <a href=\"{{ route('users.edit', ['name' => $article->user->name]) }}\">\n+                <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n                 </a>\n             </div>\n             @endif\n"
+                }
+            ],
+            "date": 1648868996790,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n  <x-slot name=\"header\">\n    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n      {{ __('ユーザー情報') }}\n    </h2>\n  </x-slot>\n\n  \n  <div class=\"py-12\">\n    <a href=\"{{ route('users.show',['name'=>$user->name]) }}\">\n      <i class=\"fas fa-user-circle fa-3x\"></i>\n    </a>\n    <h2>\n      <a href=\"{{ route('users.show',['name'=>$user->name]) }}\">\n        {{ $user->name }}\n      </a>\n    </h2>\n    <a href=\"\">10フォロー</a>\n    <a href=\"\">10フォロワー</a>\n  </div>  \n</x-app-layout>\n"
+        }
+    ]
+}
