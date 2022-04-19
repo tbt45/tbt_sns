@@ -21,8 +21,29 @@
                 </a>
             </h2>
             <div>{{ $user->body }}</div>
-            <a href="">10フォロー</a>
-            <a href="">10フォロワー</a>
+            {{-- フォローされている場合に表示 --}}
+            @if ($user->isFollowed($user->id))
+                <div>フォローされています</div>
+            @endif
+            {{-- 他のユーザーの場合にフォローボタンを表示 --}}
+            @if (Auth::id()!==$user->id)    
+            {{-- フォロー解除ボタン --}}
+            @if (auth()->user()->isFollowing($user->id))
+            <form action="{{ route('users.unfollow', ['id' => $user->id]) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">フォロー解除</button>
+            </form>
+            @else
+            {{-- フォローボタン --}}
+            <form action="{{ route('users.follow', ['id' => $user->id]) }}" method="POST">
+                @csrf
+                
+                <button type="submit">フォローする</button>
+            </form>
+            @endif
+            @endif
+            
             @if (Auth::id() === $user->id)
             <div>
                 <a href="{{ route('users.edit', ['user' => $user]) }}">

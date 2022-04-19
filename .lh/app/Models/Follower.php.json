@@ -1,0 +1,38 @@
+{
+    "sourceFile": "app/Models/Follower.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1650120000988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650120006506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Follower extends Model\n {\n-    protected\n+    protected $prima\n }\n"
+                },
+                {
+                    "date": 1650120012285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Follower extends Model\n {\n-    protected $prima\n+    protected $primaryKey\n }\n"
+                },
+                {
+                    "date": 1650120059128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Follower extends Model\n {\n-    protected $primaryKey\n+    protected $primaryKey = \n }\n"
+                },
+                {
+                    "date": 1650120068355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Follower extends Model\n {\n-    protected $primaryKey = [];\n+    protected $primaryKey = [''];\n }\n"
+                },
+                {
+                    "date": 1650120074868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Follower extends Model\n {\n-    protected $primaryKey = ['followinf'];\n+    protected $primaryKey = ['followinf_id'];\n }\n"
+                }
+            ],
+            "date": 1650120000988,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Follower extends Model\n{\n    protected\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "sourceFile": "app/Http/Controllers/followController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1650102547055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650102567978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,13 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n-use Illuminate\\Http\\Request;\n use App\\models\\User;\n use Illuminate\\Http\\Request;\n use App\\Http\\Requests\\UserRequest as RequestsUserRequest;\n use Illuminate\\Support\\Facades\\Auth;\n \n class FollowController extends Controller\n {\n-    //\n+    public function\n }\n"
+                },
+                {
+                    "date": 1650102575513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,8 @@\n use Illuminate\\Support\\Facades\\Auth;\n \n class FollowController extends Controller\n {\n-    public function\n+    public function follow()\n+    {\n+    }\n }\n"
+                },
+                {
+                    "date": 1650102585230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,6 @@\n class FollowController extends Controller\n {\n     public function follow()\n     {\n-    }\n+    $}\n }\n"
+                },
+                {
+                    "date": 1650102594198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,6 @@\n class FollowController extends Controller\n {\n     public function follow()\n     {\n-    $}\n+    $follower = auth}\n }\n"
+                },
+                {
+                    "date": 1650102600754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,6 @@\n class FollowController extends Controller\n {\n     public function follow()\n     {\n-    $follower = auth()->}\n+    $follower = auth()->user()}\n }\n"
+                },
+                {
+                    "date": 1650102610783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n {\n     public function follow()\n     {\n         $follower = auth()->user();\n-    $}\n+    $fo}\n }\n"
+                }
+            ],
+            "date": 1650102547055,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\nuse App\\models\\User;\nuse Illuminate\\Http\\Request;\nuse App\\Http\\Requests\\UserRequest as RequestsUserRequest;\nuse Illuminate\\Support\\Facades\\Auth;\n\nclass FollowController extends Controller\n{\n    //\n}\n"
+        }
+    ]
+}

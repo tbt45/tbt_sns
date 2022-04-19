@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FollowController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -42,9 +43,18 @@ Route::prefix('users')->name('users.')->group(function () {
 });
 // ユーザー情報を編集する。
 Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
-    Route::get('/edit/{user}', [UserController::class, 'edit'])->name('edit');
-    Route::put('/update/{user}', [UserController::class, 'update'])->name('update');
-    Route::patch('/update/{user}', [UserController::class, 'update'])->name('update');
+    Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
+    Route::patch('/{user}/update', [UserController::class, 'update'])->name('update');
+});
+// ユーザー情報を表示する。
+Route::prefix('users')->name('users.')->group(function () {
+    Route::get('/{name}', [UserController::class, 'show'])->name('show');
+    Route::post('/{name}', [UserController::class, 'show'])->name('show');
+});
+// フォロー、フォロー解除。
+Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
+    Route::post('/{id}/follow', [FollowController::class, 'follow'])->name('follow');
+    Route::delete('/{id}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
 });
 
 Route::get('/dashboard', function () {

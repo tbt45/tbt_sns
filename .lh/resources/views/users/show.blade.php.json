@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 39,
+            "activePatchIndex": 81,
             "patches": [
                 {
                     "date": 1648868996790,
@@ -164,6 +164,174 @@
                 {
                     "date": 1649189315320,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             <a href=\"\">10フォロー</a>\n             <a href=\"\">10フォロワー</a>\n             @if (Auth::id() === $user->id)\n             <div>\n-                <a href=\"{{ route('users.edit', ['name' => $article->user->name]) }}\">\n+                <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n                 </a>\n             </div>\n             @endif\n"
+                },
+                {
+                    "date": 1650104191481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n                     {{ $user->name }}\n                 </a>\n             </h2>\n             <div>{{ $user->body }}</div>\n-            <a href=\"\">10フォロー</a>\n-            <a href=\"\">10フォロワー</a>\n+\n+            \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n"
+                },
+                {
+                    "date": 1650104197880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n                     {{ $user->name }}\n                 </a>\n             </h2>\n             <div>{{ $user->body }}</div>\n-\n+            //\n             \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n"
+                },
+                {
+                    "date": 1650104203507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n                     {{ $user->name }}\n                 </a>\n             </h2>\n             <div>{{ $user->body }}</div>\n-            //\n+            フォロー機能\n             \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n"
+                },
+                {
+                    "date": 1650104225679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n                     {{ $user->name }}\n                 </a>\n             </h2>\n             <div>{{ $user->body }}</div>\n-            フォロー機能\n+            {{-- フォロー機能 --}}\n+            <iframe src=\"\" frameborder=\"0\"></iframe>\n             \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n"
+                },
+                {
+                    "date": 1650104237228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,13 @@\n                 </a>\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n-            <iframe src=\"\" frameborder=\"0\"></iframe>\n+            @if ()\n+\n+            e\n+                \n+            @endif\n             \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n"
+                },
+                {
+                    "date": 1650104244644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,16 @@\n                 </a>\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n+\n             @if ()\n-\n-            e\n                 \n+            @else\n+                \n             @endif\n+                \n+            @endif\n             \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n"
+                },
+                {
+                    "date": 1650104256063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,16 +22,14 @@\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n-            @if ()\n+            @if (au)\n                 \n             @else\n                 \n             @endif\n-                \n-            @endif\n-            \n+                            \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n"
+                },
+                {
+                    "date": 1650104261922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n-            @if (au)\n+            @if (auth()->)\n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650104268365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n-            @if (auth()->)\n+            @if (auth()->user()->)\n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650104274228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n-            @if (auth()->user()->)\n+            @if (auth()->user()->isFollowed)\n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650104280796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n-            @if (auth()->user()->isFollowed)\n+            @if (auth()->user()->isFollowed($user))\n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650104286466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n-            @if (auth()->user()->isFollowed($user))\n+            @if (auth()->user()->isFollowed($user->id))\n+            \n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650104294881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n             @if (auth()->user()->isFollowed($user->id))\n-            \n+                <div></div>\n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650104307177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n             @if (auth()->user()->isFollowed($user->id))\n-                <div></div>\n+                <div>foro</div>\n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650104312342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n \n             @if (auth()->user()->isFollowed($user->id))\n-                <div>foro</div>\n+                <div>フォローされています</div>\n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650104321251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n             {{-- フォロー機能 --}}\n \n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n-                \n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650104331079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,8 @@\n \n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @else\n-                \n             @endif\n                             \n             @if (Auth::id() === $user->id)\n             <div>\n"
+                },
+                {
+                    "date": 1650104345683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n             {{-- フォロー機能 --}}\n \n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n-            @else\n             @endif\n+            if\n                             \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n"
+                },
+                {
+                    "date": 1650104352007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,13 @@\n \n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n-            if\n+            @if ()\n+                \n+            @else\n+                \n+            @endif\n                             \n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n"
+                },
+                {
+                    "date": 1650104358017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n                 </a>\n             </h2>\n             <div>{{ $user->body }}</div>\n             {{-- フォロー機能 --}}\n-\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if ()\n"
+                },
+                {
+                    "date": 1650104372946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             {{-- フォロー機能 --}}\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n-            @if ()\n+            @if (auth()->user()->isFollowed($user->id))\n                 \n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116281243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                \n+                form\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116287424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                form\n+                <form action=\"{{ route }}\"></form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116294223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                <form action=\"{{ route }}\"></form>\n+                <form action=\"{{ route('follow') }}\"></form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116301565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                <form action=\"{{ route('follow') }}\"></form>\n+                <form action=\"{{ route('unfollow') }}\"></form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116308903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                <form action=\"{{ route('unfollow') }}\"></form>\n+                <form action=\"{{ route('unfollow', ) }}\"></form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116315906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                <form action=\"{{ route('unfollow', ) }}\"></form>\n+                <form action=\"{{ route('unfollow', ['id' =>]) }}\"></form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116323113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                <form action=\"{{ route('unfollow', ['id' =>]) }}\"></form>\n+                <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\"></form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116331869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\"></form>\n+                <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"\"></form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116337490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"\"></form>\n+                <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\"></form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116345274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,11 @@\n             @if (auth()->user()->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n-                <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\"></form>\n+                <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n+                    \n+                </form>\n             @else\n                 \n             @endif\n                             \n"
+                },
+                {
+                    "date": 1650116459286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n                 <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n-                    \n+                    {{ cs }}\n                 </form>\n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116465160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n                 <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n-                    {{ cs }}\n+                    {{ csrf_field }}\n                 </form>\n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116473609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,10 @@\n                 <div>フォローされています</div>\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n                 <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n-                    {{ csrf_field }}\n+                    {{ csrf_field() }}\n+                    {{  }}\n                 </form>\n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116479504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n                 <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n                     {{ csrf_field() }}\n-                    {{  }}\n+                    {{ method_ }}\n                 </form>\n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116485583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n                 <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n                     {{ csrf_field() }}\n-                    {{ method_ }}\n+                    {{ method_field() }}\n                 </form>\n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116497465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,11 @@\n             @endif\n             @if (auth()->user()->isFollowed($user->id))\n                 <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n                     {{ csrf_field() }}\n-                    {{ method_field() }}\n+                    {{ method_field('DELETE') }}\n+\n+                    <button></button>\n                 </form>\n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116503131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n                     {{ csrf_field() }}\n                     {{ method_field('DELETE') }}\n \n-                    <button></button>\n+                    <button type=\"\"></button>\n                 </form>\n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116516119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 <form action=\"{{ route('unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n                     {{ csrf_field() }}\n                     {{ method_field('DELETE') }}\n \n-                    <button type=\"\"></button>\n+                    <button type=\"submit\">フォロー解除</button>\n                 </form>\n             @else\n                 \n             @endif\n"
+                },
+                {
+                    "date": 1650116529221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \n                     <button type=\"submit\">フォロー解除</button>\n                 </form>\n             @else\n-                \n+                <form action=\"\"></form>\n             @endif\n                             \n             @if (Auth::id() === $user->id)\n             <div>\n"
+                },
+                {
+                    "date": 1650116537346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \n                     <button type=\"submit\">フォロー解除</button>\n                 </form>\n             @else\n-                <form action=\"{{  }}\"></form>\n+                <form action=\"{{ r }}\"></form>\n             @endif\n                             \n             @if (Auth::id() === $user->id)\n             <div>\n"
+                },
+                {
+                    "date": 1650389729140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n                     {{ $user->name }}\n                 </a>\n             </h2>\n             <div>{{ $user->body }}</div>\n-            {{-- フォロー --}}\n+            {{-- フォローs --}}\n             @if ($user->isFollowed($user->id))\n                 <div>フォローされています</div>\n             @endif\n             @if (Auth::id()!==$user->id)    \n"
                 }
             ],
             "date": 1648868996790,
