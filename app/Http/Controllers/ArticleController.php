@@ -34,7 +34,7 @@ class ArticleController extends Controller
         $article->user_id = $request->user()->id;
         $article->save();
 
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.timeline');
     }
 
     public function edit(Article $article)
@@ -46,14 +46,14 @@ class ArticleController extends Controller
     {
         $article->fill($request->all())->save();
 
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.timeline');
     }
 
     public function destroy(Article $article)
     {
         $article->delete();
 
-        return redirect()->route('articles.index');
+        return redirect()->back();
     }
 
     // ログインしていない人に見えるようにする
@@ -80,5 +80,13 @@ class ArticleController extends Controller
         $like->delete();
 
         return redirect()->back();
+    }
+    //フォローしたユーザーと自分の投稿のみ表示する
+    public function timeline()
+    {
+        $articles = Article::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest()->get();
+        return view('articles.timeline')->with([
+            'articles' => $articles
+        ]);
     }
 }

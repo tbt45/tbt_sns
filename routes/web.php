@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
     // いいね機能
     Route::get('article/like/{id}', [ArticleController::class, 'like'])->name('articles.like');
     Route::get('article/unlike/{id}', [ArticleController::class, 'unlike'])->name('articles.unlike');
+    //フォローしたユーザーの投稿を表示
+    Route::get('article/timeline', [ArticleController::class, 'timeline'])->name('articles.timeline');
 });
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
