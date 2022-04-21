@@ -16,6 +16,8 @@ class UserController extends Controller
     public function show(string $name, Follower $follower)
     {
         $user = User::where('name', $name)->first();
+        //ユーザーの投稿を取得
+        $articles = $user->articles->sortByDesc('created_at');
         //フォロー数を取得
         $follow_count = $follower->getFollowCount($user->id);
         // フォロワー数を取得
@@ -23,6 +25,7 @@ class UserController extends Controller
 
         return view('users.show', [
             'user' => $user,
+            'articles' => $articles,
             'follow_count' => $follow_count,
             'follower_count' => $follower_count
         ]);

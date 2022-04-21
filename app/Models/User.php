@@ -44,12 +44,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //ユーザーがした投稿
+    public function articles()
+    {
+        return $this->hasMany('App\Models\Article');
+    }
 
-    public function followers(): BelongsToMany
+    public function followers()
     {
         return $this->belongsToMany(self::class, 'followers', 'followed_id', 'following_id');
     }
-    public function follows(): BelongsToMany
+    public function follows()
     {
         return $this->belongsToMany(self::class, 'followers', 'following_id', 'followed_id');
     }

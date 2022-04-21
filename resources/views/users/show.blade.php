@@ -60,5 +60,9 @@
             </div>
             @endif
         </div>
+        <div>投稿</div>
+        @foreach ($articles as $article)
+            @include('articles.card')
+        @endforeach
     </div>
 </x-app-layout>
