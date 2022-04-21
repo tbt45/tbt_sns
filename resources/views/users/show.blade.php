@@ -43,6 +43,14 @@
             </form>
             @endif
             @endif
+            {{-- フォロー数を表示 --}}
+            <a href="">
+                フォロー　{{ $follow_count }}
+            </a>
+            {{-- フォロワー数を表示 --}}
+            <a href="">
+                フォロワー　{{ $follower_count }}
+            </a>
             
             @if (Auth::id() === $user->id)
             <div>

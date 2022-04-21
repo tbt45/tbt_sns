@@ -9,9 +9,6 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use phpDocumentor\Reflection\Types\Boolean;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use App\Models\Follower;
-
-
 
 class User extends Authenticatable
 {

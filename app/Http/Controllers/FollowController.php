@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\models\User;
-use App\models\Followers;
-use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest as RequestsUserRequest;
-use Illuminate\Support\Facades\Auth;
 
 class FollowController extends Controller
 {

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\models\User;
+use App\models\Follower;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest as RequestsUserRequest;
-use Illuminate\Support\Facades\Auth;
-
 
 class UserController extends Controller
 {
@@ -15,11 +13,19 @@ class UserController extends Controller
         $this->user = $user;
     }
 
-    public function show(string $name)
+    public function show(string $name, Follower $follower)
     {
         $user = User::where('name', $name)->first();
+        //フォロー数を取得
+        $follow_count = $follower->getFollowCount($user->id);
+        // フォロワー数を取得
+        $follower_count = $follower->getFollowerCount($user->id);
 
-        return view('users.show', ['user' => $user]);
+        return view('users.show', [
+            'user' => $user,
+            'follow_count' => $follow_count,
+            'follower_count' => $follower_count
+        ]);
     }
 
     // ユーザー情報を編集する。
