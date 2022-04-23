@@ -1,0 +1,30 @@
+{
+    "sourceFile": "resources/views/articles/timeline.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1650556888096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650556949118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,13 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('記事一覧') }}\n+            {{ __('') }}\n         </h2>\n     </x-slot>\n \n-    {{-- @section('content') --}}\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n-    {{-- @endsection --}}\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650556956047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('') }}\n+            {{ __('チムライン') }}\n         </h2>\n     </x-slot>\n \n     <div class=\"py-12\">\n"
+                },
+                {
+                    "date": 1650556962126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('チムライン') }}\n+            {{ __('タイムライン') }}\n         </h2>\n     </x-slot>\n \n     <div class=\"py-12\">\n"
+                }
+            ],
+            "date": 1650556888095,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('記事一覧') }}\n        </h2>\n    </x-slot>\n\n    {{-- @section('content') --}}\n    <div class=\"py-12\">\n        @foreach ($articles as $article)\n            @include('articles.card')\n        @endforeach\n    </div>\n    {{-- @endsection --}}\n</x-app-layout>"
+        }
+    ]
+}

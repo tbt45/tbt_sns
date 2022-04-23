@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/Http/Requests/ArticleRequest.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1648890221908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1648890221908,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Requests;\n\nuse Illuminate\\Foundation\\Http\\FormRequest;\n\nclass ArticleRequest extends FormRequest\n{\n    /**\n     * Determine if the user is authorized to make this request.\n     *\n     * @return bool\n     */\n    public function authorize()\n    {\n        return true;\n    }\n\n    /**\n     * Get the validation rules that apply to the request.\n     *\n     * @return array\n     */\n    public function rules()\n    {\n        return [\n            'title' => 'required|max:50',\n            'body' => 'required|max:500',\n        ];\n    }\n\n    public function attributes()\n    {\n        return [\n            'title' => 'タイトル',\n            'body' => '本文',\n        ];\n    }\n}\n"
+        }
+    ]
+}

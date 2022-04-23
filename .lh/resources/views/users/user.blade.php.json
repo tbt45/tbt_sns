@@ -1,0 +1,46 @@
+{
+    "sourceFile": "resources/views/users/user.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1650684129560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650684136068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,5 +41,6 @@\n </a>\n {{-- フォロワー数を表示 --}}\n <a href=\"\">\n     フォロワー　{{ $follower_count }}\n-</a>\n\\ No newline at end of file\n+</a>\n+/div\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650684245942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-<div\n-class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$user->profile_image\" />\n@@ -42,5 +41,5 @@\n {{-- フォロワー数を表示 --}}\n <a href=\"\">\n     フォロワー　{{ $follower_count }}\n </a>\n-/div\n\\ No newline at end of file\n+</div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650684253262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$user->profile_image\" />\n@@ -40,6 +39,5 @@\n </a>\n {{-- フォロワー数を表示 --}}\n <a href=\"\">\n     フォロワー　{{ $follower_count }}\n-</a>\n-</div>\n\\ No newline at end of file\n+</a>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685585758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n </form>\n @endif\n @endif\n {{-- フォロー数を表示 --}}\n-<a href=\"\">\n+<a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     フォロー　{{ $follow_count }}\n </a>\n {{-- フォロワー数を表示 --}}\n <a href=\"\">\n"
+                },
+                {
+                    "date": 1650685592974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,11 +33,11 @@\n </form>\n @endif\n @endif\n {{-- フォロー数を表示 --}}\n-<a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+<a href=\"{{ route('users.foll', ['name' => $user->name]) }}\">\n     フォロー　{{ $follow_count }}\n </a>\n {{-- フォロワー数を表示 --}}\n-<a href=\"\">\n+<a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     フォロワー　{{ $follower_count }}\n </a>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685628101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,11 +33,11 @@\n </form>\n @endif\n @endif\n {{-- フォロー数を表示 --}}\n-<a href=\"{{ route('users.foll', ['name' => $user->name]) }}\">\n+<a href=\"{{ route('users.followings', ['name' => $user->name]) }}\">\n     フォロー　{{ $follow_count }}\n </a>\n {{-- フォロワー数を表示 --}}\n-<a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+<a href=\"{{ route('users.follower', ['name' => $user->name]) }}\">\n     フォロワー　{{ $follower_count }}\n </a>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685794327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,11 +33,11 @@\n </form>\n @endif\n @endif\n {{-- フォロー数を表示 --}}\n-<a href=\"{{ route('users.followings', ['name' => $user->name]) }}\">\n+<a href=\"{{ route('users.follows', ['name' => $user->name]) }}\">\n     フォロー　{{ $follow_count }}\n </a>\n {{-- フォロワー数を表示 --}}\n-<a href=\"{{ route('users.follower', ['name' => $user->name]) }}\">\n+<a href=\"{{ route('users.followers', ['name' => $user->name]) }}\">\n     フォロワー　{{ $follower_count }}\n </a>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1650684129560,
+            "name": "Commit-0",
+            "content": "<div\nclass=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n<a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n    <div class=\"p-2 w-1/2 mx-auto\">\n        <div class=\"relative\">\n            <x-thumbnail :filename=\"$user->profile_image\" />\n        </div>\n    </div>\n</a>\n<h2>\n    <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n        {{ $user->name }}\n    </a>\n</h2>\n<div>{{ $user->body }}</div>\n{{-- フォローされている場合に表示 --}}\n@if ($user->isFollowed($user->id))\n    <div>フォローされています</div>\n@endif\n{{-- 他のユーザーの場合にフォローボタンを表示 --}}\n@if (Auth::id()!==$user->id)    \n{{-- フォロー解除ボタン --}}\n@if (auth()->user()->isFollowing($user->id))\n<form action=\"{{ route('users.unfollow', ['id' => $user->id]) }}\" method=\"POST\">\n    @csrf\n    @method('DELETE')\n    <button type=\"submit\">フォロー解除</button>\n</form>\n@else\n{{-- フォローボタン --}}\n<form action=\"{{ route('users.follow', ['id' => $user->id]) }}\" method=\"POST\">\n    @csrf\n    \n    <button type=\"submit\">フォローする</button>\n</form>\n@endif\n@endif\n{{-- フォロー数を表示 --}}\n<a href=\"\">\n    フォロー　{{ $follow_count }}\n</a>\n{{-- フォロワー数を表示 --}}\n<a href=\"\">\n    フォロワー　{{ $follower_count }}\n</a>"
+        }
+    ]
+}

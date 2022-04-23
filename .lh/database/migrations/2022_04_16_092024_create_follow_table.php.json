@@ -1,0 +1,26 @@
+{
+    "sourceFile": "database/migrations/2022_04_16_092024_create_follow_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1650165892162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650165897980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,7 @@\n      * @return void\n      */\n     public function down()\n     {\n-        Schema::dropIfExists('follower_user');\n+        Schema::dropIfExists('follow');\n     }\n };\n"
+                },
+                {
+                    "date": 1650174223519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      * @return void\n      */\n     public function up()\n     {\n-        Schema::create('follow', function (Blueprint $table) {\n+        Schema::create('followers', function (Blueprint $table) {\n             $table->unsignedBigInteger('following_id')->index();\n             $table->unsignedBigInteger('followed_id')->index();\n \n             $table->unique([\n"
+                }
+            ],
+            "date": 1650165892162,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('follow', function (Blueprint $table) {\n            $table->unsignedBigInteger('following_id')->index();\n            $table->unsignedBigInteger('followed_id')->index();\n\n            $table->unique([\n                'following_id',\n                'followed_id'\n            ]);\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('follower_user');\n    }\n};\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/Models/Article.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1648960160270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648960178606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,27 @@\n     public function user(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n+\n+    public function likes(): HasMany\n+    {\n+        return $this->hasMany(Like::class, 'article_id');\n+    }\n+\n+    public function is_liked_by_auth_user()\n+    {\n+        $id = Auth::id();\n+\n+        $likers = array();\n+        foreach($this->likes as $like){\n+            array_push($likers, $like->user_id);\n+        }\n+\n+        if (in_array($id,$likers)) {\n+            return true;\n+        }else {\n+            return false;\n+        }\n+    }\n }\n+}\n"
+                },
+                {
+                    "date": 1648960185135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,16 +32,15 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach($this->likes as $like){\n+        foreach ($this->likes as $like) {\n             array_push($likers, $like->user_id);\n         }\n \n-        if (in_array($id,$likers)) {\n+        if (in_array($id, $likers)) {\n             return true;\n-        }else {\n+        } else {\n             return false;\n         }\n     }\n }\n-}\n"
+                }
+            ],
+            "date": 1648960160270,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\nuse Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\nuse Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany;\nuse App\\Models\\User;\nuse Illuminate\\Database\\Eloquent\\Relations\\HasMany;\nuse Illuminate\\Support\\Facades\\Auth;\n\nclass Article extends Model\n{\n    protected $fillable = [\n        'title',\n        'body',\n    ];\n\n\n    public function user(): BelongsTo\n    {\n        return $this->belongsTo('App\\Models\\User');\n    }\n}\n"
+        }
+    ]
+}

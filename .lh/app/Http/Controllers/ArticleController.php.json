@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/Http/Controllers/ArticleController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1648960228496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648960247526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,5 +60,25 @@\n     public function show(Article $article)\n     {\n         return view('articles.show', ['article' => $article]);\n     }\n+\n+        // いいね機能\n+        public function like($id)\n+        {\n+            Like::create([\n+                'article_id'=>$id,\n+                'user_id'=>Auth::id(),\n+            ]);\n+    \n+            return redirect()->back();\n+        }\n+    \n+        // いいね解除\n+        public function unlike($id)\n+        {\n+            $like = Like::where('article_id',$id)->where('user_id',Auth::id())->first();\n+            $like->delete();\n+    \n+            return redirect()->back();\n+        }\n }\n"
+                },
+                {
+                    "date": 1650556080986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,5 +80,6 @@\n         $like->delete();\n \n         return redirect()->back();\n     }\n+    //\n }\n"
+                },
+                {
+                    "date": 1650556089489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,6 +80,6 @@\n         $like->delete();\n \n         return redirect()->back();\n     }\n-    //タイムライン\n+    //タイムライン※\n }\n"
+                }
+            ],
+            "date": 1648960228496,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Http\\Controllers\\Controller;\nuse App\\Http\\Requests\\ArticleRequest as RequestsArticleRequest;\nuse Illuminate\\Http\\Request;\nuse App\\Models\\Article;\nuse App\\Models\\Like;\nuse Illuminate\\Support\\Facades\\Auth;\n\nclass ArticleController extends Controller\n{\n    public function __construct()\n    {\n        $this->authorizeResource(Article::class, 'article');\n    }\n\n    public function index()\n    {\n        $articles = Article::all()->sortByDesc('created_at');\n\n        return view('articles.index', ['articles' => $articles]);\n    }\n\n    public function create()\n    {\n        return view('articles.create');\n    }\n\n    public function store(RequestsArticleRequest $request, Article $article)\n    {\n        $article->fill($request->all());\n        $article->user_id = $request->user()->id;\n        $article->save();\n\n        return redirect()->route('articles.index');\n    }\n\n    public function edit(Article $article)\n    {\n        return view('articles.edit', ['article' => $article]);\n    }\n\n    public function  update(RequestsArticleRequest $request, Article $article)\n    {\n        $article->fill($request->all())->save();\n\n        return redirect()->route('articles.index');\n    }\n\n    public function destroy(Article $article)\n    {\n        $article->delete();\n\n        return redirect()->route('articles.index');\n    }\n\n    // ログインしていない人に見えるようにする\n    public function show(Article $article)\n    {\n        return view('articles.show', ['article' => $article]);\n    }\n}\n"
+        }
+    ]
+}

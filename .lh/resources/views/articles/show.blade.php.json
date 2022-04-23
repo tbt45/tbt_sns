@@ -1,0 +1,82 @@
+{
+    "sourceFile": "resources/views/articles/show.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1648862824708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648862831427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n   <div>\n     @include('articles.card')\n   </div>\n \n+  \n   @if (Auth::id() === $article->user_id)\n   <div>\n     <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n       編集\n@@ -19,7 +20,7 @@\n       @csrf\n       <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n     </form>\n   </div>\n-@endif\n+  @endif\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648862839452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   <div>\n     @include('articles.card')\n   </div>\n \n-  \n+  いいねしたユーザーを表示\n   @if (Auth::id() === $article->user_id)\n   <div>\n     <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n       編集\n"
+                },
+                {
+                    "date": 1648862903102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,19 +8,8 @@\n   <div>\n     @include('articles.card')\n   </div>\n \n-  いいねしたユーザーを表示\n-  @if (Auth::id() === $article->user_id)\n-  <div>\n-    <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n-      編集\n-    </a>\n-    <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n-      @method('DELETE')\n-      @csrf\n-      <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n-    </form>\n-  </div>\n-  @endif\n+  {{-- いいねしたユーザーを表示 --}}\n \n+\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648862933893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,11 @@\n     @include('articles.card')\n   </div>\n \n   {{-- いいねしたユーザーを表示 --}}\n+  <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+    <div class=\"\">\n+      {{ $article->user->name }}\n+    </div>\n+  </a>\n \n-\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648862990924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,10 @@\n   <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n     <div class=\"\">\n       {{ $article->user->name }}\n     </div>\n+    @foreach ($articles as $article)\n+    @include('articles.card')\n+  @endforeach\n   </a>\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648862996500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,8 @@\n     <div class=\"\">\n       {{ $article->user->name }}\n     </div>\n     @foreach ($articles as $article)\n-    @include('articles.card')\n-  @endforeach\n+    @endforeach\n   </a>\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648863002818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,13 +9,13 @@\n     @include('articles.card')\n   </div>\n \n   {{-- いいねしたユーザーを表示 --}}\n+  @foreach ($articles as $article)\n   <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n     <div class=\"\">\n       {{ $article->user->name }}\n     </div>\n-    @foreach ($articles as $article)\n     @endforeach\n   </a>\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648863008780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n   </div>\n \n   {{-- いいねしたユーザーを表示 --}}\n   @foreach ($articles as $article)\n-  <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+    <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n     <div class=\"\">\n       {{ $article->user->name }}\n     </div>\n-    @endforeach\n   </a>\n+  @endforeach\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648863050085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,19 +3,20 @@\n     <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n       {{ __('記事詳細') }}\n     </h2>\n   </x-slot>\n-\n+  <div class=\"py-12\">\n+  \n   <div>\n     @include('articles.card')\n   </div>\n \n   {{-- いいねしたユーザーを表示 --}}\n   @foreach ($articles as $article)\n     <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n-    <div class=\"\">\n-      {{ $article->user->name }}\n-    </div>\n-  </a>\n+      <div class=\"\">\n+        {{ $article->user->name }}\n+      </div>\n+    </a>\n   @endforeach\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648863059136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,14 @@\n     <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n       {{ __('記事詳細') }}\n     </h2>\n   </x-slot>\n+\n   <div class=\"py-12\">\n-  \n   <div>\n     @include('articles.card')\n   </div>\n-\n+  </div>\n   {{-- いいねしたユーザーを表示 --}}\n   @foreach ($articles as $article)\n     <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n       <div class=\"\">\n"
+                },
+                {
+                    "date": 1648863065850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,13 @@\n     </h2>\n   </x-slot>\n \n   <div class=\"py-12\">\n-  <div>\n-    @include('articles.card')\n+    <div>\n+      @include('articles.card')\n+    </div>\n   </div>\n-  </div>\n+  \n   {{-- いいねしたユーザーを表示 --}}\n   @foreach ($articles as $article)\n     <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n       <div class=\"\">\n"
+                },
+                {
+                    "date": 1648868654351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n     <div>\n       @include('articles.card')\n     </div>\n   </div>\n-  \n+\n   {{-- いいねしたユーザーを表示 --}}\n-  @foreach ($articles as $article)\n+  @foreach ($users as $article)\n     <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n       <div class=\"\">\n         {{ $article->user->name }}\n       </div>\n"
+                },
+                {
+                    "date": 1648868684814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </div>\n   </div>\n \n   {{-- いいねしたユーザーを表示 --}}\n-  @foreach ($users as $article)\n+  @foreach ($articles as $user)\n     <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n       <div class=\"\">\n         {{ $article->user->name }}\n       </div>\n"
+                },
+                {
+                    "date": 1648868690963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </div>\n   </div>\n \n   {{-- いいねしたユーザーを表示 --}}\n-  @foreach ($articles as $user)\n+  @foreach ($articles as $article)\n     <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n       <div class=\"\">\n         {{ $article->user->name }}\n       </div>\n"
+                },
+                {
+                    "date": 1648868871932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,14 +10,6 @@\n       @include('articles.card')\n     </div>\n   </div>\n \n-  {{-- いいねしたユーザーを表示 --}}\n-  @foreach ($articles as $article)\n-    <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n-      <div class=\"\">\n-        {{ $article->user->name }}\n-      </div>\n-    </a>\n-  @endforeach\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1648869549636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,12 @@\n <x-app-layout>\n-  <x-slot name=\"header\">\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-      {{ __('記事詳細') }}\n-    </h2>\n-  </x-slot>\n+    <x-slot name=\"header\">\n+        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+            {{ __('記事詳細') }}\n+        </h2>\n+    </x-slot>\n \n-  <div class=\"py-12\">\n     <div>\n-      @include('articles.card')\n+        @include('articles.card')\n     </div>\n-  </div>\n \n-\n </x-app-layout>\n"
+                }
+            ],
+            "date": 1648862824708,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n  <x-slot name=\"header\">\n    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n      {{ __('記事詳細') }}\n    </h2>\n  </x-slot>\n\n  <div>\n    @include('articles.card')\n  </div>\n\n  @if (Auth::id() === $article->user_id)\n  <div>\n    <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n      編集\n    </a>\n    <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n      @method('DELETE')\n      @csrf\n      <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n    </form>\n  </div>\n@endif\n\n</x-app-layout>\n"
+        }
+    ]
+}

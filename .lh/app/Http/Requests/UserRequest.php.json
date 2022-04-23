@@ -1,0 +1,46 @@
+{
+    "sourceFile": "app/Http/Requests/UserRequest.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1648890498314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648890549637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      * @return bool\n      */\n     public function authorize()\n     {\n-        return;\n+        return t;\n     }\n \n     /**\n      * Get the validation rules that apply to the request.\n"
+                },
+                {
+                    "date": 1648890574823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n      */\n     public function rules()\n     {\n         return [\n-            //\n+            'title' => 'required|max:50',\n+            'body' => 'required|max:500',\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1648890598483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n     public function rules()\n     {\n         return [\n             'title' => 'required|max:50',\n-            'body' => 'required|max:500',\n+            'email' => ['required', 'string', 'email'],\n+            'password' => ['required', 'string'],\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1648890605307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      * @return bool\n      */\n     public function authorize()\n     {\n-        return t;\n+        return true;\n     }\n \n     /**\n      * Get the validation rules that apply to the request.\n@@ -23,9 +23,9 @@\n      */\n     public function rules()\n     {\n         return [\n-            'title' => 'required|max:50',\n+            'title' => 'required|max:10',\n             'email' => ['required', 'string', 'email'],\n             'password' => ['required', 'string'],\n         ];\n     }\n"
+                },
+                {
+                    "date": 1648890611353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     public function rules()\n     {\n         return [\n             'title' => 'required|max:10',\n-            'email' => ['required', 'string', 'email'],\n+            'email' => 'required', 'string', 'email'],\n             'password' => ['required', 'string'],\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1648890616652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     public function rules()\n     {\n         return [\n             'title' => 'required|max:10',\n-            'email' => 'required', 'string', 'email'],\n+            'email' => 'required', 'string', 'email',\n             'password' => 'required', 'string'],\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1648981151113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n      */\n     public function rules()\n     {\n         return [\n-            'title' => 'required|max:10',\n+            'name' => 'required|max:10',\n             'email' => 'required', 'string', 'email',\n             'password' => 'required', 'string',\n         ];\n     }\n"
+                }
+            ],
+            "date": 1648890498314,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Requests;\n\nuse Illuminate\\Foundation\\Http\\FormRequest;\n\nclass UserRequest extends FormRequest\n{\n    /**\n     * Determine if the user is authorized to make this request.\n     *\n     * @return bool\n     */\n    public function authorize()\n    {\n        return;\n    }\n\n    /**\n     * Get the validation rules that apply to the request.\n     *\n     * @return array\n     */\n    public function rules()\n    {\n        return [\n            //\n        ];\n    }\n}\n"
+        }
+    ]
+}

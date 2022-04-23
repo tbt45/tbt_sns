@@ -1,0 +1,74 @@
+{
+    "sourceFile": "resources/views/articles/card.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1648869521170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648959891327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,6 +31,7 @@\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n         </div>\n+        \n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1648959904890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,25 @@\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n         </div>\n-        \n+\n+            {{-- いいねボタン --}}\n+    <div>\n+        @if ($article->is_liked_by_auth_user())\n+          <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n+            いいね\n+            <span>\n+              {{ $article->likes->count() }}\n+            </span>\n+            </a>\n+        @else\n+            <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n+            いいね\n+            <span>\n+                {{ $article->likes->count() }}\n+            </span>\n+            </a>\n+        @endif\n+        </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1648959915739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,13 +35,13 @@\n \n             {{-- いいねボタン --}}\n     <div>\n         @if ($article->is_liked_by_auth_user())\n-          <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n+            <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n             いいね\n-            <span>\n-              {{ $article->likes->count() }}\n-            </span>\n+                <span>\n+                    {{ $article->likes->count() }}\n+                </span>\n             </a>\n         @else\n             <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n             いいね\n"
+                },
+                {
+                    "date": 1648959923111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n             {{ $article->body }}\n         </div>\n \n             {{-- いいねボタン --}}\n-    <div>\n+        <div>\n         @if ($article->is_liked_by_auth_user())\n             <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n             いいね\n                 <span>\n"
+                },
+                {
+                    "date": 1648959928470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,12 +34,12 @@\n         </div>\n \n             {{-- いいねボタン --}}\n         <div>\n-        @if ($article->is_liked_by_auth_user())\n-            <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n-            いいね\n-                <span>\n+            @if ($article->is_liked_by_auth_user())\n+                <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n+                いいね\n+                    <span>\n                     {{ $article->likes->count() }}\n                 </span>\n             </a>\n         @else\n"
+                },
+                {
+                    "date": 1648959934419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,13 +38,13 @@\n             @if ($article->is_liked_by_auth_user())\n                 <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n                 いいね\n                     <span>\n-                    {{ $article->likes->count() }}\n-                </span>\n-            </a>\n-        @else\n-            <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n+                        {{ $article->likes->count() }}\n+                    </span>\n+                </a>\n+            @else\n+                <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n             いいね\n             <span>\n                 {{ $article->likes->count() }}\n             </span>\n"
+                },
+                {
+                    "date": 1648959939967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,11 @@\n                     </span>\n                 </a>\n             @else\n                 <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n-            いいね\n-            <span>\n+              \n+                  いいね\n+                <span>\n                 {{ $article->likes->count() }}\n             </span>\n             </a>\n         @endif\n"
+                },
+                {
+                    "date": 1648959947266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,14 +43,13 @@\n                     </span>\n                 </a>\n             @else\n                 <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n-              \n-                  いいね\n+                    いいね\n                 <span>\n-                {{ $article->likes->count() }}\n-            </span>\n-            </a>\n-        @endif\n+                    {{ $article->likes->count() }}\n+                </span>\n+                </a>\n+            @endif\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1648959954839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         <div class=\"\">\n             {{ $article->body }}\n         </div>\n \n-            {{-- いいねボタン --}}\n+        {{-- いいねボタン --}}\n         <div>\n             @if ($article->is_liked_by_auth_user())\n                 <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n                 いいね\n"
+                },
+                {
+                    "date": 1649189420750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"py-12\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+        <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1649189438077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"py-12\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1650686810260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,6 +50,6 @@\n                 </span>\n                 </a>\n             @endif\n         </div>\n-    </div>\n+      </div>\n </div>\n"
+                },
+                {
+                    "date": 1650686838004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,11 +45,11 @@\n             @else\n                 <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n                     いいね\n                 <span>\n-                    {{ $article->likes->count() }}\n+                     {{ $article->likes->count() }}\n                 </span>\n                 </a>\n             @endif\n         </div>\n-      </div>\n+    </div>\n </div>\n"
+                },
+                {
+                    "date": 1650686845985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n             @else\n                 <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n                     いいね\n                 <span>\n-                     {{ $article->likes->count() }}\n+                    {{ $article->likes->count() }}\n                 </span>\n                 </a>\n             @endif\n         </div>\n"
+                }
+            ],
+            "date": 1648869521170,
+            "name": "Commit-0",
+            "content": "<div class=\"py-12\">\n    <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n            <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n        </a>\n        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n            <div class=\"\">\n                {{ $article->user->name }}\n            </div>\n        </a>\n        <div>\n            {{ $article->created_at->format('Y/m/d H:i') }}\n        </div>\n\n        @if (Auth::id() === $article->user_id)\n            <div>\n                <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n                    編集\n                </a>\n                <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n                    @method('DELETE')\n                    @csrf\n                    <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                </form>\n            </div>\n        @endif\n\n        <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n            {{ $article->title }}\n        </a>\n        <div class=\"\">\n            {{ $article->body }}\n        </div>\n    </div>\n</div>\n"
+        }
+    ]
+}

@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\FollowController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +30,37 @@ Route::middleware('auth')->group(function () {
     Route::put('article/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
     Route::patch('article/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
     Route::delete('article/delete/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+    // いいね機能
+    Route::get('article/like/{id}', [ArticleController::class, 'like'])->name('articles.like');
+    Route::get('article/unlike/{id}', [ArticleController::class, 'unlike'])->name('articles.unlike');
+    //フォローしたユーザーの投稿を表示
+    Route::get('article/timeline', [ArticleController::class, 'timeline'])->name('articles.timeline');
 });
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
+Route::prefix('users')->name('users.')->group(function () {
+    // ユーザー情報を表示する。
+    Route::get('/{name}', [UserController::class, 'show'])->name('show');
+    Route::post('/{name}', [UserController::class, 'show'])->name('show');
+    //フォロー、フォロワーを表示
+    Route::get('/{name}/follows', [FollowController::class, 'follows'])->name('follows');
+    Route::get('/{name}/followers', [FollowController::class, 'followers'])->name('followers');
+});
+// ユーザー情報を編集する。
+Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
+    Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit');
+    Route::patch('/{user}/update', [UserController::class, 'update'])->name('update');
+});
+// ユーザー情報を表示する。
+Route::prefix('users')->name('users.')->group(function () {
+    Route::get('/{name}', [UserController::class, 'show'])->name('show');
+    Route::post('/{name}', [UserController::class, 'show'])->name('show');
+});
+// フォロー、フォロー解除。
+Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
+    Route::post('/{id}/follow', [FollowController::class, 'follow'])->name('follow');
+    Route::delete('/{id}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,5 +69,3 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
