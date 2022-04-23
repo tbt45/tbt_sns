@@ -14,6 +14,7 @@ class ArticleController extends Controller
     public function __construct()
     {
         $this->authorizeResource(Article::class, 'article');
+        $this->middleware(['auth', 'verified'])->only(['like', 'unlike']);
     }
 
     public function index()
