@@ -30,11 +30,11 @@ class UserController extends Controller
             'follower_count' => $follower_count
         ]);
     }
-
     // ユーザー情報を編集する。
     public function edit($id)
     {
         $user = User::findOrFail($id);
+
         return view('users.edit', ['user' => $user]);
     }
 

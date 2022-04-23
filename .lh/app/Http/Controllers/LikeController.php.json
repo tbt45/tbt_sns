@@ -1,0 +1,58 @@
+{
+    "sourceFile": "app/Http/Controllers/LikeController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1650722521714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650722536897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n+use App\\models\\User;\n \n+\n class LikeController extends Controller\n {\n     //いいねした記事を取得する\n     public function likes(string $name)\n"
+                },
+                {
+                    "date": 1650722558988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,25 @@\n \n \n class LikeController extends Controller\n {\n+    public function show(string $name, Follower $follower)\n+    {\n+        $user = User::where('name', $name)->first();\n+        //ユーザーの投稿を取得\n+        $articles = $user->articles->sortByDesc('created_at');\n+        //フォロー数を取得\n+        $follow_count = $follower->getFollowCount($user->id);\n+        // フォロワー数を取得\n+        $follower_count = $follower->getFollowerCount($user->id);\n+\n+        return view('users.show', [\n+            'user' => $user,\n+            'articles' => $articles,\n+            'follow_count' => $follow_count,\n+            'follower_count' => $follower_count\n+        ]);\n+    }\n     //いいねした記事を取得する\n     public function likes(string $name)\n     {\n         $user = User::where('name', $name)->first();\n"
+                },
+                {
+                    "date": 1650722592311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n \n-        return view('users.show', [\n+        return view('users.likes', [\n             'user' => $user,\n             'articles' => $articles,\n             'follow_count' => $follow_count,\n             'follower_count' => $follower_count\n"
+                },
+                {
+                    "date": 1650722612473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,12 @@\n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n use App\\models\\User;\n+use App\\Models\\Article;\n \n \n+\n class LikeController extends Controller\n {\n     public function show(string $name, Follower $follower)\n     {\n"
+                },
+                {
+                    "date": 1650722621505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,10 @@\n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n use App\\models\\User;\n-use App\\Models\\Article;\n+use App\\Models\\F;\n \n-\n-\n class LikeController extends Controller\n {\n     public function show(string $name, Follower $follower)\n     {\n"
+                },
+                {
+                    "date": 1650724648723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n use App\\models\\User;\n-use App\\Models\\F;\n+use App\\Models\\Follower;\n \n class LikeController extends Controller\n {\n     public function show(string $name, Follower $follower)\n@@ -30,8 +30,12 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n+        //フォロー数を取得\n+        $follow_count = $follower->getFollowCount($user->id);\n+        // フォロワー数を取得\n+        $follower_count = $follower->getFollowerCount($user->id);\n \n         return view('users.likes', [\n             'user' => $user,\n             'articles' => $articles\n"
+                },
+                {
+                    "date": 1650724660126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             'follower_count' => $follower_count\n         ]);\n     }\n     //いいねした記事を取得する\n-    public function likes(string $name)\n+    public function likes(string $name, Follower $follower\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n"
+                },
+                {
+                    "date": 1650724669218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,7 +38,9 @@\n \n         return view('users.likes', [\n             'user' => $user,\n             'articles' => $articles\n+            'follow_count' => $follow_count,\n+            'follower_count' => $follower_count\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1650724687380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,25 +7,8 @@\n use App\\Models\\Follower;\n \n class LikeController extends Controller\n {\n-    public function show(string $name, Follower $follower)\n-    {\n-        $user = User::where('name', $name)->first();\n-        //ユーザーの投稿を取得\n-        $articles = $user->articles->sortByDesc('created_at');\n-        //フォロー数を取得\n-        $follow_count = $follower->getFollowCount($user->id);\n-        // フォロワー数を取得\n-        $follower_count = $follower->getFollowerCount($user->id);\n-\n-        return view('users.likes', [\n-            'user' => $user,\n-            'articles' => $articles,\n-            'follow_count' => $follow_count,\n-            'follower_count' => $follower_count\n-        ]);\n-    }\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower\n     {\n         $user = User::where('name', $name)->first();\n@@ -37,9 +20,9 @@\n         $follower_count = $follower->getFollowerCount($user->id);\n \n         return view('users.likes', [\n             'user' => $user,\n-            'articles' => $articles\n+            'articles' => $articles,\n             'follow_count' => $follow_count,\n             'follower_count' => $follower_count\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1650724695912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n class LikeController extends Controller\n {\n     //いいねした記事を取得する\n-    public function likes(string $name, Follower $follower\n+    public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n"
+                }
+            ],
+            "date": 1650722521714,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass LikeController extends Controller\n{\n    //いいねした記事を取得する\n    public function likes(string $name)\n    {\n        $user = User::where('name', $name)->first();\n\n        $articles = $user->likes->sortByDesc('created_at');\n\n        return view('users.likes', [\n            'user' => $user,\n            'articles' => $articles\n        ]);\n    }\n}\n"
+        }
+    ]
+}

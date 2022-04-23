@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\LikeController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -46,6 +47,8 @@ Route::prefix('users')->name('users.')->group(function () {
     //フォロー、フォロワーを表示
     Route::get('/{name}/follows', [FollowController::class, 'follows'])->name('follows');
     Route::get('/{name}/followers', [FollowController::class, 'followers'])->name('followers');
+    //いいねした記事を表示
+    Route::get('/{name}/likes', [LikeController::class, 'likes'])->name('likes');
 });
 // ユーザー情報を編集する。
 Route::prefix('users')->name('users.')->middleware('auth')->group(function () {

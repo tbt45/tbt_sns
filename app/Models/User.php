@@ -49,6 +49,11 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Article');
     }
+    //いいねした記事
+    public function likes()
+    {
+        return $this->belongsToMany('App\Models\Article', 'likes')->withTimestamps();
+    }
 
     public function followers()
     {
