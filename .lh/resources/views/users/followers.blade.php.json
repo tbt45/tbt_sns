@@ -1,0 +1,70 @@
+{
+    "sourceFile": "resources/views/users/followers.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1650684325601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650684340037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n @foreach ($articles as $article)\n-@include('articles.card')\n+@include('users.user')\n @endforeach\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650684352164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n+<div>\n @foreach ($articles as $article)\n @include('users.user')\n @endforeach\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650684379977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n-<div>\n+<div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n @foreach ($articles as $article)\n @include('users.user')\n\\ No newline at end of file\n-@endforeach\n+@endforeach\n+</div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685346960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+\n+\n <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n @foreach ($articles as $article)\n @include('users.user')\n @endforeach\n"
+                },
+                {
+                    "date": 1650685357017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n-\n-\n-<div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-@foreach ($articles as $article)\n-@include('users.user')\n-@endforeach\n+<x-app-layout>\n+    <x-slot name=\"header\">\n+        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+            {{ __('ユーザー情報編集') }}\n+        </h2>\n+    </x-slot>\n+    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+    @foreach ($articles as $article)\n+    @include('users.user')\n+    @endforeach\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685364742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n             {{ __('ユーザー情報編集') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-    @foreach ($articles as $article)\n-    @include('users.user')\n-    @endforeach\n+        @foreach ($articles as $article)\n+        @include('users.user')\n+        @endforeach\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685374529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($articles as $article)\n-        @include('users.user')\n+            @include('users.user')\n         @endforeach\n\\ No newline at end of file\n-</div>\n+    </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685382069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,6 @@\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($articles as $article)\n             @include('users.user')\n         @endforeach\n-    </div>\n\\ No newline at end of file\n+    </div>\n+</x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685402619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             {{ __('ユーザー情報編集') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        @foreach ($articles as $article)\n+        @foreach ($articles as $user)\n             @include('users.user')\n         @endforeach\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685410319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             {{ __('ユーザー情報編集') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        @foreach ($articles as $user)\n+        @foreach ($followers as $user)\n             @include('users.user')\n         @endforeach\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685449442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('ユーザー情報編集') }}\n+            {{ __('ユーザー') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($followers as $user)\n"
+                },
+                {
+                    "date": 1650686852305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('ユーザー') }}\n+            {{ __('フォローされているユーザー') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($followers as $user)\n-            @include('users.user')\n+             @include('users.user')\n         @endforeach\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650686857759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($followers as $user)\n-             @include('users.user')\n+            @include('users.user')\n         @endforeach\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1650684325601,
+            "name": "Commit-0",
+            "content": "@foreach ($articles as $article)\n@include('articles.card')\n@endforeach"
+        }
+    ]
+}

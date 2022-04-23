@@ -38,10 +38,13 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
-// ユーザー情報を表示する。
 Route::prefix('users')->name('users.')->group(function () {
+    // ユーザー情報を表示する。
     Route::get('/{name}', [UserController::class, 'show'])->name('show');
     Route::post('/{name}', [UserController::class, 'show'])->name('show');
+    //フォロー、フォロワーを表示
+    Route::get('/{name}/follows', [FollowController::class, 'follows'])->name('follows');
+    Route::get('/{name}/followers', [FollowController::class, 'followers'])->name('followers');
 });
 // ユーザー情報を編集する。
 Route::prefix('users')->name('users.')->middleware('auth')->group(function () {

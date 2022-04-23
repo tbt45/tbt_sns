@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/users/follows.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1650685889678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1650685889678,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('フォローしているユーザー') }}\n        </h2>\n    </x-slot>\n    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        @foreach ($follows as $user)\n            @include('users.user')\n        @endforeach\n    </div>\n</x-app-layout>"
+        }
+    ]
+}

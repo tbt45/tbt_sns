@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1648869521170,
@@ -52,6 +52,18 @@
                 {
                     "date": 1649189438077,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"py-12\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1650686810260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,6 +50,6 @@\n                 </span>\n                 </a>\n             @endif\n         </div>\n-    </div>\n+      </div>\n </div>\n"
+                },
+                {
+                    "date": 1650686838004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,11 +45,11 @@\n             @else\n                 <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n                     いいね\n                 <span>\n-                    {{ $article->likes->count() }}\n+                     {{ $article->likes->count() }}\n                 </span>\n                 </a>\n             @endif\n         </div>\n-      </div>\n+    </div>\n </div>\n"
+                },
+                {
+                    "date": 1650686845985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n             @else\n                 <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n                     いいね\n                 <span>\n-                     {{ $article->likes->count() }}\n+                    {{ $article->likes->count() }}\n                 </span>\n                 </a>\n             @endif\n         </div>\n"
                 }
             ],
             "date": 1648869521170,

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "resources/views/users/followings.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1650685417615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650685425843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             {{ __('ユーザー情報編集') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        @foreach ($followers as $user)\n+        @foreach ($followings as $user)\n             @include('users.user')\n         @endforeach\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650685435586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('ユーザー情報編集') }}\n+            {{ __('フォロー中ユーザー') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($followings as $user)\n"
+                },
+                {
+                    "date": 1650685445173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('フォロー中ユーザー') }}\n+            {{ __('フォローしているユーザー') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($followings as $user)\n"
+                }
+            ],
+            "date": 1650685417615,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('ユーザー情報編集') }}\n        </h2>\n    </x-slot>\n    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        @foreach ($followers as $user)\n            @include('users.user')\n        @endforeach\n    </div>\n</x-app-layout>"
+        }
+    ]
+}
