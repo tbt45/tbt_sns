@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/articles/reply.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1650724879871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1650724879871,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('ユーザー情報') }}\n        </h2>\n    </x-slot>\n\n    <div class=\"py-12\">\n        <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n            @include('users.user')\n            @if (Auth::id() === $user->id)\n            <div>\n                <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                    編集\n                </a>\n            </div>\n            @endif\n        </div>\n        @include('users.articles')\n        @foreach ($articles as $article)\n            @include('articles.card')\n        @endforeach\n    </div>\n\n</x-app-layout>"
+        }
+    ]
+}

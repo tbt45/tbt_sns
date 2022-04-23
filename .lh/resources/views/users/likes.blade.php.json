@@ -1,0 +1,54 @@
+{
+    "sourceFile": "resources/views/users/likes.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1650694817288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650694827642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n                 </a>\n             </div>\n             @endif\n         </div>\n-        <div>投稿一覧</div>\n+        <div></div>\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1650694835127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n                 </a>\n             </div>\n             @endif\n         </div>\n-        <div></div>\n+        <div>いいねした記事</div>\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1650719524009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,16 @@\n \n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('users.user')\n+            {{-- @include('users.user')\n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n                 </a>\n             </div>\n-            @endif\n+            @endif --}}\n         </div>\n         <div>いいねした記事</div>\n         @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1650721201214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,19 +7,20 @@\n \n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            {{-- @include('users.user')\n+            @include('users.user')\n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n                 </a>\n             </div>\n-            @endif --}}\n+            @endif\n         </div>\n-        <div>いいねした記事</div>\n+        @include('users.articles')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n+\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1650722831844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('users.user')\n+            @include('users.')\n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n"
+                },
+                {
+                    "date": 1650722837919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('users.')\n+            @include('likess.')\n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n"
+                },
+                {
+                    "date": 1650722844396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('likess.')\n+            @include('likes.show')\n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n"
+                },
+                {
+                    "date": 1650722860126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('likes.show')\n+            @include('users.show')\n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n"
+                },
+                {
+                    "date": 1650722895431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('users.show')\n+            @include('users.user')\n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n"
+                }
+            ],
+            "date": 1650694817288,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('ユーザー情報') }}\n        </h2>\n    </x-slot>\n\n    <div class=\"py-12\">\n        <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n            @include('users.user')\n            @if (Auth::id() === $user->id)\n            <div>\n                <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                    編集\n                </a>\n            </div>\n            @endif\n        </div>\n        <div>投稿一覧</div>\n        @foreach ($articles as $article)\n            @include('articles.card')\n        @endforeach\n    </div>\n</x-app-layout>"
+        }
+    ]
+}
