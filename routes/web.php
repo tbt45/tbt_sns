@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\RetweetController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -34,6 +35,9 @@ Route::middleware('auth')->group(function () {
     // いいね機能
     Route::get('article/like/{id}', [ArticleController::class, 'like'])->name('articles.like');
     Route::get('article/unlike/{id}', [ArticleController::class, 'unlike'])->name('articles.unlike');
+    //リツイート機能
+    Route::get('article/retweet/{id}', [RetweetController::class, 'retweet'])->name('articles.retweet');
+    Route::get('article/unretweet/{id}', [RetweetController::class, 'unretweet'])->name('articles.unretweet');
 
     //フォローしたユーザーの投稿を表示
     Route::get('article/timeline', [ArticleController::class, 'timeline'])->name('articles.timeline');

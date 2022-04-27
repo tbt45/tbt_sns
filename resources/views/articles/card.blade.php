@@ -51,5 +51,23 @@
                 </a>
             @endif
         </div>
+        {{-- リツイートボタン --}}
+        <div>
+            @if ($article->is_retweeted_by_auth_user())
+                <a href="{{ route('articles.unretweet',['id'=>$article->id]) }}">
+                リツイート※
+                    <span>
+                        {{ $article->retweets->count() }}
+                    </span>
+                </a>
+            @else
+                <a href="{{ route('articles.retweet',['id'=>$article->id]) }}" class="text-red-800">
+                    リツイート
+                <span>
+                    {{ $article->retweets->count() }}
+                </span>
+                </a>
+            @endif
+        </div>
     </div>
 </div>

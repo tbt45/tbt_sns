@@ -1,0 +1,82 @@
+{
+    "sourceFile": "app/Http/Controllers/RetweetController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1650889207076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650889220706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n+use App\\models\\User;\n+use App\\Models\\Follower;\n \n class RetweetController extends Controller\n {\n     //いいねした記事を取得する\n"
+                },
+                {
+                    "date": 1650889226604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n class RetweetController extends Controller\n {\n     //いいねした記事を取得する\n-    public function likes(string $name, Follower $follower)\n+    public function rets(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n"
+                },
+                {
+                    "date": 1650889235517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n use App\\Models\\Follower;\n \n class RetweetController extends Controller\n {\n-    //いいねした記事を取得する\n-    public function rets(string $name, Follower $follower)\n+    //リツイした記事を取得する\n+    public function retweets(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n"
+                },
+                {
+                    "date": 1650889241413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n use App\\Models\\Follower;\n \n class RetweetController extends Controller\n {\n-    //リツイした記事を取得する\n+    //リツイートした記事を取得する\n     public function retweets(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n \n"
+                },
+                {
+                    "date": 1650889473633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,5 +25,24 @@\n             'follow_count' => $follow_count,\n             'follower_count' => $follower_count\n         ]);\n     }\n+    // いいね機能\n+    public function like($id)\n+    {\n+        Like::create([\n+            'article_id' => $id,\n+            'user_id' => Auth::id(),\n+        ]);\n+\n+        return redirect()->back();\n+    }\n+\n+    // いいね解除\n+    public function unlike($id)\n+    {\n+        $like = Like::where('article_id', $id)->where('user_id', Auth::id())->first();\n+        $like->delete();\n+\n+        return redirect()->back();\n+    }\n }\n"
+                },
+                {
+                    "date": 1650889488319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             'follow_count' => $follow_count,\n             'follower_count' => $follower_count\n         ]);\n     }\n-    // いいね機能\n+    // リツイート機能\n     public function like($id)\n     {\n         Like::create([\n             'article_id' => $id,\n"
+                },
+                {
+                    "date": 1650889493695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \n         return redirect()->back();\n     }\n \n-    // いいね解除\n+    // リツイート解除\n     public function unlike($id)\n     {\n         $like = Like::where('article_id', $id)->where('user_id', Auth::id())->first();\n         $like->delete();\n"
+                },
+                {
+                    "date": 1650889500005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     }\n     // リツイート機能\n     public function like($id)\n     {\n-        Like::create([\n+        Retweet::create([\n             'article_id' => $id,\n             'user_id' => Auth::id(),\n         ]);\n \n"
+                },
+                {
+                    "date": 1650889515915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use Illuminate\\Http\\Request;\n use App\\models\\User;\n use App\\Models\\Follower;\n+use App\\Models\\R;\n \n class RetweetController extends Controller\n {\n     //リツイートした記事を取得する\n"
+                },
+                {
+                    "date": 1650889522201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n use Illuminate\\Http\\Request;\n use App\\models\\User;\n use App\\Models\\Follower;\n-use App\\Models\\R;\n+use App\\Models\\Retweet;\n \n class RetweetController extends Controller\n {\n     //リツイートした記事を取得する\n"
+                },
+                {
+                    "date": 1650889533580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             'follower_count' => $follower_count\n         ]);\n     }\n     // リツイート機能\n-    public function like($id)\n+    public function ($id)\n     {\n         Retweet::create([\n             'article_id' => $id,\n             'user_id' => Auth::id(),\n"
+                },
+                {
+                    "date": 1650889539151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             'follower_count' => $follower_count\n         ]);\n     }\n     // リツイート機能\n-    public function ($id)\n+    public function retweet($id)\n     {\n         Retweet::create([\n             'article_id' => $id,\n             'user_id' => Auth::id(),\n"
+                },
+                {
+                    "date": 1650889545495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n         return redirect()->back();\n     }\n \n     // リツイート解除\n-    public function unlike($id)\n+    public function unretweet($id)\n     {\n         $like = Like::where('article_id', $id)->where('user_id', Auth::id())->first();\n         $like->delete();\n \n"
+                },
+                {
+                    "date": 1650889588671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \n     // リツイート解除\n     public function unretweet($id)\n     {\n-        $like = Like::where('article_id', $id)->where('user_id', Auth::id())->first();\n+        $like = Re::where('article_id', $id)->where('user_id', Auth::id())->first();\n         $like->delete();\n \n         return redirect()->back();\n     }\n"
+                },
+                {
+                    "date": 1650891718773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n use Illuminate\\Http\\Request;\n use App\\models\\User;\n use App\\Models\\Follower;\n use App\\Models\\Retweet;\n+use Illuminate\\Support\\Facades\\Auth;\n \n class RetweetController extends Controller\n {\n     //リツイートした記事を取得する\n@@ -40,9 +41,9 @@\n \n     // リツイート解除\n     public function unretweet($id)\n     {\n-        $like = Re::where('article_id', $id)->where('user_id', Auth::id())->first();\n+        $like = Retweet::where('article_id', $id)->where('user_id', Auth::id())->first();\n         $like->delete();\n \n         return redirect()->back();\n     }\n"
+                },
+                {
+                    "date": 1651063591501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,25 +10,25 @@\n \n class RetweetController extends Controller\n {\n     //リツイートした記事を取得する\n-    public function retweets(string $name, Follower $follower)\n-    {\n-        $user = User::where('name', $name)->first();\n+    // public function retweets(string $name, Follower $follower)\n+    // {\n+    //     $user = User::where('name', $name)->first();\n \n-        $articles = $user->likes->sortByDesc('created_at');\n-        //フォロー数を取得\n-        $follow_count = $follower->getFollowCount($user->id);\n-        // フォロワー数を取得\n-        $follower_count = $follower->getFollowerCount($user->id);\n+    //     $articles = $user->likes->sortByDesc('created_at');\n+    //     //フォロー数を取得\n+    //     $follow_count = $follower->getFollowCount($user->id);\n+    //     // フォロワー数を取得\n+    //     $follower_count = $follower->getFollowerCount($user->id);\n \n-        return view('users.likes', [\n-            'user' => $user,\n-            'articles' => $articles,\n-            'follow_count' => $follow_count,\n-            'follower_count' => $follower_count\n-        ]);\n-    }\n+    //     return view('users.likes', [\n+    //         'user' => $user,\n+    //         'articles' => $articles,\n+    //         'follow_count' => $follow_count,\n+    //         'follower_count' => $follower_count\n+    //     ]);\n+    // }\n     // リツイート機能\n     public function retweet($id)\n     {\n         Retweet::create([\n"
+                }
+            ],
+            "date": 1650889207076,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass RetweetController extends Controller\n{\n    //いいねした記事を取得する\n    public function likes(string $name, Follower $follower)\n    {\n        $user = User::where('name', $name)->first();\n\n        $articles = $user->likes->sortByDesc('created_at');\n        //フォロー数を取得\n        $follow_count = $follower->getFollowCount($user->id);\n        // フォロワー数を取得\n        $follower_count = $follower->getFollowerCount($user->id);\n\n        return view('users.likes', [\n            'user' => $user,\n            'articles' => $articles,\n            'follow_count' => $follow_count,\n            'follower_count' => $follower_count\n        ]);\n    }\n}\n"
+        }
+    ]
+}

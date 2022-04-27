@@ -2,11 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,7 +24,11 @@ class Article extends Model
     {
         return $this->hasMany(Like::class, 'article_id');
     }
-
+    public function retweets(): HasMany
+    {
+        return $this->hasMany(Retweet::class, 'article_id');
+    }
+    // いいね機能
     public function is_liked_by_auth_user()
     {
         $id = Auth::id();
@@ -38,6 +39,22 @@ class Article extends Model
         }
 
         if (in_array($id, $likers)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    // リツイート機能
+    public function is_retweeted_by_auth_user()
+    {
+        $id = Auth::id();
+
+        $retweets = array();
+        foreach ($this->retweets as $retweet) {
+            array_push($retweets, $retweet->user_id);
+        }
+
+        if (in_array($id, $retweets)) {
             return true;
         } else {
             return false;

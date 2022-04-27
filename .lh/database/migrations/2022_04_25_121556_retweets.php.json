@@ -1,0 +1,26 @@
+{
+    "sourceFile": "database/migrations/2022_04_25_121556_retweets.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1650889018965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1650889030123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      * @return void\n      */\n     public function up()\n     {\n-        Schema::create('likes', function (Blueprint $table) {\n+        Schema::create('retweets', function (Blueprint $table) {\n             $table->bigIncrements('id');\n             $table->unsignedBigInteger('user_id')->unsigned();\n             $table->unsignedBigInteger('article_id')->unsigned();\n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1650889043680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,7 @@\n      * @return void\n      */\n     public function down()\n     {\n-        Schema::dropIfExists('likes');\n+        Schema::dropIfExists('retweets');\n     }\n };\n"
+                }
+            ],
+            "date": 1650889018965,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('likes', function (Blueprint $table) {\n            $table->bigIncrements('id');\n            $table->unsignedBigInteger('user_id')->unsigned();\n            $table->unsignedBigInteger('article_id')->unsigned();\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('likes');\n    }\n};\n"
+        }
+    ]
+}

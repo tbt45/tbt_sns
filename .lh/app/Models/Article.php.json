@@ -1,23 +1,86 @@
 {
     "sourceFile": "app/Models/Article.php",
     "activeCommit": 0,
-    "commits": [{
-        "activePatchIndex": 2,
-        "patches": [{
-                "date": 1648960160270,
-                "content": "Index: \n===================================================================\n--- \n+++ \n"
-            },
-            {
-                "date": 1648960178606,
-                "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,27 @@\n     public function user(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n+\n+    public function likes(): HasMany\n+    {\n+        return $this->hasMany(Like::class, 'article_id');\n+    }\n+\n+    public function is_liked_by_auth_user()\n+    {\n+        $id = Auth::id();\n+\n+        $likers = array();\n+        foreach($this->likes as $like){\n+            array_push($likers, $like->user_id);\n+        }\n+\n+        if (in_array($id,$likers)) {\n+            return true;\n+        }else {\n+            return false;\n+        }\n+    }\n }\n+}\n"
-            },
-            {
-                "date": 1648960185135,
-                "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,16 +32,15 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach($this->likes as $like){\n+        foreach ($this->likes as $like) {\n             array_push($likers, $like->user_id);\n         }\n \n-        if (in_array($id,$likers)) {\n+        if (in_array($id, $likers)) {\n             return true;\n-        }else {\n+        } else {\n             return false;\n         }\n     }\n }\n-}\n"
-            }
-        ],
-        "date": 1648960160270,
-        "name": "Commit-0",
-        "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\nuse Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\nuse Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany;\nuse App\\Models\\User;\nuse Illuminate\\Database\\Eloquent\\Relations\\HasMany;\nuse Illuminate\\Support\\Facades\\Auth;\n\nclass Article extends Model\n{\n    protected $fillable = [\n        'title',\n        'body',\n    ];\n\n\n    public function user(): BelongsTo\n    {\n        return $this->belongsTo('App\\Models\\User');\n    }\n}\n"
-    }]
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1648960160270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1648960178606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,27 @@\n     public function user(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n+\n+    public function likes(): HasMany\n+    {\n+        return $this->hasMany(Like::class, 'article_id');\n+    }\n+\n+    public function is_liked_by_auth_user()\n+    {\n+        $id = Auth::id();\n+\n+        $likers = array();\n+        foreach($this->likes as $like){\n+            array_push($likers, $like->user_id);\n+        }\n+\n+        if (in_array($id,$likers)) {\n+            return true;\n+        }else {\n+            return false;\n+        }\n+    }\n }\n+}\n"
+                },
+                {
+                    "date": 1648960185135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,16 +32,15 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach($this->likes as $like){\n+        foreach ($this->likes as $like) {\n             array_push($likers, $like->user_id);\n         }\n \n-        if (in_array($id,$likers)) {\n+        if (in_array($id, $likers)) {\n             return true;\n-        }else {\n+        } else {\n             return false;\n         }\n     }\n }\n-}\n"
+                },
+                {
+                    "date": 1650889286929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,5 +42,20 @@\n         } else {\n             return false;\n         }\n     }\n+    public function is_liked_by_auth_user()\n+    {\n+        $id = Auth::id();\n+\n+        $likers = array();\n+        foreach ($this->likes as $like) {\n+            array_push($likers, $like->user_id);\n+        }\n+\n+        if (in_array($id, $likers)) {\n+            return true;\n+        } else {\n+            return false;\n+        }\n+    }\n }\n"
+                },
+                {
+                    "date": 1650889294672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         } else {\n             return false;\n         }\n     }\n-    public function is_liked_by_auth_user()\n+    public function is_ed_by_auth_user()\n     {\n         $id = Auth::id();\n \n         $likers = array();\n"
+                },
+                {
+                    "date": 1650889301538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         } else {\n             return false;\n         }\n     }\n-    public function is_ed_by_auth_user()\n+    public function is_retweeed_by_auth_user()\n     {\n         $id = Auth::id();\n \n         $likers = array();\n"
+                },
+                {
+                    "date": 1650889309677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,10 @@\n         } else {\n             return false;\n         }\n     }\n-    public function is_retweeed_by_auth_user()\n+リツイート機能\n+    public function is_retweeted_by_auth_user()\n     {\n         $id = Auth::id();\n \n         $likers = array();\n"
+                },
+                {
+                    "date": 1650889317342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     public function likes(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n-\n+いいね機能\n     public function is_liked_by_auth_user()\n     {\n         $id = Auth::id();\n \n@@ -42,9 +42,9 @@\n         } else {\n             return false;\n         }\n     }\n-リツイート機能\n+    // リツイート機能\n     public function is_retweeted_by_auth_user()\n     {\n         $id = Auth::id();\n \n"
+                },
+                {
+                    "date": 1650889328340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     public function likes(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n-いいね機能\n+    // いいね機能\n     public function is_liked_by_auth_user()\n     {\n         $id = Auth::id();\n \n@@ -48,9 +48,9 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach ($this->likes as $like) {\n+        foreach ($this->retweets as $like) {\n             array_push($likers, $like->user_id);\n         }\n \n         if (in_array($id, $likers)) {\n"
+                },
+                {
+                    "date": 1650889334835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n     {\n         $id = Auth::id();\n \n         $likers = array();\n-        foreach ($this->retweets as $like) {\n+        foreach ($this->retweets as $retweet) {\n             array_push($likers, $like->user_id);\n         }\n \n         if (in_array($id, $likers)) {\n"
+                },
+                {
+                    "date": 1650889343815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         $id = Auth::id();\n \n         $likers = array();\n         foreach ($this->retweets as $retweet) {\n-            array_push($likers, $like->user_id);\n+            array_push($retweets, $like->user_id);\n         }\n \n         if (in_array($id, $likers)) {\n             return true;\n"
+                },
+                {
+                    "date": 1650889349130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         $id = Auth::id();\n \n         $likers = array();\n         foreach ($this->retweets as $retweet) {\n-            array_push($retweets, $like->user_id);\n+            array_push($retweets, $retweet->user_id);\n         }\n \n         if (in_array($id, $likers)) {\n             return true;\n"
+                },
+                {
+                    "date": 1650889356375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         foreach ($this->retweets as $retweet) {\n             array_push($retweets, $retweet->user_id);\n         }\n \n-        if (in_array($id, $likers)) {\n+        if (in_array($id, $retweers)) {\n             return true;\n         } else {\n             return false;\n         }\n"
+                },
+                {
+                    "date": 1650891545290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n use Illuminate\\Database\\Eloquent\\Model;\n use Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\n use Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany;\n-use App\\Models\\User;\n use Illuminate\\Database\\Eloquent\\Relations\\HasMany;\n use Illuminate\\Support\\Facades\\Auth;\n \n class Article extends Model\n@@ -52,9 +51,9 @@\n         foreach ($this->retweets as $retweet) {\n             array_push($retweets, $retweet->user_id);\n         }\n \n-        if (in_array($id, $retweers)) {\n+        if (in_array($id, $retweets)) {\n             return true;\n         } else {\n             return false;\n         }\n"
+                },
+                {
+                    "date": 1650891563196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,10 @@\n <?php\n \n namespace App\\Models;\n \n-use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n use Illuminate\\Database\\Eloquent\\Model;\n use Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\n-use Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany;\n use Illuminate\\Database\\Eloquent\\Relations\\HasMany;\n use Illuminate\\Support\\Facades\\Auth;\n \n class Article extends Model\n@@ -25,8 +23,12 @@\n     public function likes(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n+    public function likes(): HasMany\n+    {\n+        return $this->hasMany(Like::class, 'article_id');\n+    }\n     // いいね機能\n     public function is_liked_by_auth_user()\n     {\n         $id = Auth::id();\n"
+                },
+                {
+                    "date": 1650891568896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     public function likes(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n-    public function likes(): HasMany\n+    public function rets(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n     // いいね機能\n"
+                },
+                {
+                    "date": 1650891578873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,11 @@\n     public function likes(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n-    public function rets(): HasMany\n+    public function retweets(): HasMany\n     {\n-        return $this->hasMany(Like::class, 'article_id');\n+        return $this->hasMany(Re::class, 'article_id');\n     }\n     // いいね機能\n     public function is_liked_by_auth_user()\n     {\n"
+                },
+                {
+                    "date": 1650891681287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         return $this->hasMany(Like::class, 'article_id');\n     }\n     public function retweets(): HasMany\n     {\n-        return $this->hasMany(Re::class, 'article_id');\n+        return $this->hasMany(Retweet::class, 'article_id');\n     }\n     // いいね機能\n     public function is_liked_by_auth_user()\n     {\n@@ -48,9 +48,9 @@\n     public function is_retweeted_by_auth_user()\n     {\n         $id = Auth::id();\n \n-        $likers = array();\n+        $re = array();\n         foreach ($this->retweets as $retweet) {\n             array_push($retweets, $retweet->user_id);\n         }\n \n"
+                }
+            ],
+            "date": 1648960160270,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\nuse Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\nuse Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany;\nuse App\\Models\\User;\nuse Illuminate\\Database\\Eloquent\\Relations\\HasMany;\nuse Illuminate\\Support\\Facades\\Auth;\n\nclass Article extends Model\n{\n    protected $fillable = [\n        'title',\n        'body',\n    ];\n\n\n    public function user(): BelongsTo\n    {\n        return $this->belongsTo('App\\Models\\User');\n    }\n}\n"
+        }
+    ]
 }
