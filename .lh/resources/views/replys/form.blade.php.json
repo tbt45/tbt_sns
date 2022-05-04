@@ -1,0 +1,22 @@
+{
+    "sourceFile": "resources/views/replys/form.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1651098548606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651098564318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,12 @@\n         <label>タイトル</label>\n     </div>\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <input type=\"text\" name=\"title\" value=\"{{ $repl->title ?? old('title') }}\">\n+        <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label></label>\n-        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $article->body ?? old('body') }}</textarea>\n+        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $reply->body ?? old('body') }}</textarea>\n     </div>\n </div>\n"
+                }
+            ],
+            "date": 1651098548606,
+            "name": "Commit-0",
+            "content": "@csrf\n<div class=\"py-12\">\n    <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <label>タイトル</label>\n    </div>\n    <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <input type=\"text\" name=\"title\" value=\"{{ $repl->title ?? old('title') }}\">\n    </div>\n    <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <label></label>\n        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $article->body ?? old('body') }}</textarea>\n    </div>\n</div>\n"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1648862824708,
@@ -72,6 +72,18 @@
                 {
                     "date": 1648869549636,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,12 @@\n <x-app-layout>\n-  <x-slot name=\"header\">\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-      {{ __('記事詳細') }}\n-    </h2>\n-  </x-slot>\n+    <x-slot name=\"header\">\n+        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+            {{ __('記事詳細') }}\n+        </h2>\n+    </x-slot>\n \n-  <div class=\"py-12\">\n     <div>\n-      @include('articles.card')\n+        @include('articles.card')\n     </div>\n-  </div>\n \n-\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651567789686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n \n     <div>\n         @include('articles.card')\n     </div>\n+    //\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651567795962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n     <div>\n         @include('articles.card')\n     </div>\n-    //\n+    この\n \n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651567808831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n     <div>\n         @include('articles.card')\n     </div>\n-    この\n+    この記事に対する返信を全て表示する。\n \n </x-app-layout>\n"
                 }
             ],
             "date": 1648862824708,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 32,
+            "activePatchIndex": 43,
             "patches": [
                 {
                     "date": 1650719883843,
@@ -136,6 +136,50 @@
                 {
                     "date": 1650725167459,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                         {{ __('投稿一覧') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n-                    返信機能をつけてから\n+                    返信機能をつけてから使用する\n                     <x-nav-link :href=\"route('users.show',  ['name' => $user->name])\" :active=\"request()->routeIs('users.show',  ['name' => $user->name])\">\n                     {{-- <x-nav-link :href=\"route('articles.reply')\" :active=\"request()->routeIs('articles.reply')\"> --}}\n                     {{ __('記事と返信(未実装)') }}\n                     </x-nav-link>\n"
+                },
+                {
+                    "date": 1651569311846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,12 @@\n                         {{ __('投稿一覧') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n-                    返信機能をつけてから使用する\n+                    {{-- 返信機能をつけてから使用する --}}\n                     <x-nav-link :href=\"route('users.show',  ['name' => $user->name])\" :active=\"request()->routeIs('users.show',  ['name' => $user->name])\">\n                     {{-- <x-nav-link :href=\"route('articles.reply')\" :active=\"request()->routeIs('articles.reply')\"> --}}\n-                    {{ __('記事と返信(未実装)') }}\n+                    {{ __(返信') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     <x-nav-link :href=\"route('users.likes',  ['name' => $user->name])\" :active=\"request()->routeIs('users.likes',  ['name' => $user->name])\">\n"
+                },
+                {
+                    "date": 1651569338443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('users.show',  ['name' => $user->name])\" :active=\"request()->routeIs('users.show',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('users.riplies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.show',  ['name' => $user->name])\">\n                     {{-- <x-nav-link :href=\"route('articles.reply')\" :active=\"request()->routeIs('articles.reply')\"> --}}\n-                    {{ __(返信') }}\n+                    {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     <x-nav-link :href=\"route('users.likes',  ['name' => $user->name])\" :active=\"request()->routeIs('users.likes',  ['name' => $user->name])\">\n"
+                },
+                {
+                    "date": 1651569345095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('users.riplies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.show',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('users.riplies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.',  ['name' => $user->name])\">\n                     {{-- <x-nav-link :href=\"route('articles.reply')\" :active=\"request()->routeIs('articles.reply')\"> --}}\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n"
+                },
+                {
+                    "date": 1651569353905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('users.riplies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('users.riplies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.riplies',  ['name' => $user->name])\">\n                     {{-- <x-nav-link :href=\"route('articles.reply')\" :active=\"request()->routeIs('articles.reply')\"> --}}\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n"
+                },
+                {
+                    "date": 1651569360597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('users.riplies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.riplies',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('users.replies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.replies',  ['name' => $user->name])\">\n                     {{-- <x-nav-link :href=\"route('articles.reply')\" :active=\"request()->routeIs('articles.reply')\"> --}}\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n"
+                },
+                {
+                    "date": 1651569375170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n                     <x-nav-link :href=\"route('users.replies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.replies',  ['name' => $user->name])\">\n-                    {{-- <x-nav-link :href=\"route('articles.reply')\" :active=\"request()->routeIs('articles.reply')\"> --}}\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n"
+                },
+                {
+                    "date": 1651592270348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('users.replies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.replies',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('rep.replies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.replies',  ['name' => $user->name])\">\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n"
+                },
+                {
+                    "date": 1651592277512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('rep.replies',  ['name' => $user->name])\" :active=\"request()->routeIs('users.replies',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('replies.show',  ['name' => $user->name])\" :active=\"request()->routeIs('users.replies',  ['name' => $user->name])\">\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n"
+                },
+                {
+                    "date": 1651592285339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('replies.show',  ['name' => $user->name])\" :active=\"request()->routeIs('users.replies',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('replies.show',  ['name' => $user->name])\" :active=\"request()->routeIs('show.replies',  ['name' => $user->name])\">\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n"
+                },
+                {
+                    "date": 1651592291649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('replies.show',  ['name' => $user->name])\" :active=\"request()->routeIs('show.replies',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('replies.show',  ['name' => $user->name])\" :active=\"request()->routeIs('replies.replies',  ['name' => $user->name])\">\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n"
+                },
+                {
+                    "date": 1651592296982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n                     {{-- 返信機能をつけてから使用する --}}\n-                    <x-nav-link :href=\"route('replies.show',  ['name' => $user->name])\" :active=\"request()->routeIs('replies.replies',  ['name' => $user->name])\">\n+                    <x-nav-link :href=\"route('replies.show',  ['name' => $user->name])\" :active=\"request()->routeIs('replies.show',  ['name' => $user->name])\">\n                     {{ __('返信') }}\n                     </x-nav-link>\n                 </div>\n                 <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n"
                 }
             ],
             "date": 1650719883843,

@@ -1,6 +1,6 @@
 <div class="py-12">
     <div
-        class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200">
+    class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200">
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
             <i class="fas fa-user-circle fa-3x mr-1"></i>
         </a>
@@ -26,9 +26,11 @@
             </div>
         @endif
 
-        <a href="{{ route('articles.show', ['article' => $article]) }}">
+        {{-- <a href="{{ route('articles.show', ['article' => $article]) }}"> --}}
+        <div>
             {{ $article->title }}
-        </a>
+        </div>
+        {{-- </a> --}}
         <div class="">
             {{ $article->body }}
         </div>
@@ -68,6 +70,9 @@
                 </span>
                 </a>
             @endif
+        </div>
+        <div>
+            <a href="{{ route('replies.create', ['article' => $article]) }}">返信する</a>
         </div>
     </div>
 </div>

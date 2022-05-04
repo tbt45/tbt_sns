@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 27,
             "patches": [
                 {
                     "date": 1648960160270,
@@ -76,6 +76,46 @@
                 {
                     "date": 1650891681287,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         return $this->hasMany(Like::class, 'article_id');\n     }\n     public function retweets(): HasMany\n     {\n-        return $this->hasMany(Re::class, 'article_id');\n+        return $this->hasMany(Retweet::class, 'article_id');\n     }\n     // いいね機能\n     public function is_liked_by_auth_user()\n     {\n@@ -48,9 +48,9 @@\n     public function is_retweeted_by_auth_user()\n     {\n         $id = Auth::id();\n \n-        $likers = array();\n+        $re = array();\n         foreach ($this->retweets as $retweet) {\n             array_push($retweets, $retweet->user_id);\n         }\n \n"
+                },
+                {
+                    "date": 1651196158906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,8 @@\n     public function user(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n-\n     public function likes(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n"
+                },
+                {
+                    "date": 1651196187676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,12 @@\n     public function likes(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n+    public function likes(): HasMany\n+    {\n+        return $this->hasMany(Like::class, 'article_id');\n+    }\n     public function retweets(): HasMany\n     {\n         return $this->hasMany(Retweet::class, 'article_id');\n     }\n"
+                },
+                {
+                    "date": 1651196193057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     public function user(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n-    public function likes(): HasMany\n+    public function replies(): HasMany\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n     public function likes(): HasMany\n"
+                },
+                {
+                    "date": 1651196236553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     public function user(): BelongsTo\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n-    public function replies(): HasMany\n+    public function replies()\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n     public function likes(): HasMany\n@@ -51,9 +51,9 @@\n     public function is_retweeted_by_auth_user()\n     {\n         $id = Auth::id();\n \n-        $re = array();\n+        $retweets = array();\n         foreach ($this->retweets as $retweet) {\n             array_push($retweets, $retweet->user_id);\n         }\n \n"
+                },
+                {
+                    "date": 1651196243288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     public function replies()\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n-    public function likes(): HasMany\n+    public function likes()\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n     public function retweets(): HasMany\n"
+                },
+                {
+                    "date": 1651196253149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,21 +14,21 @@\n         'body',\n     ];\n \n \n-    public function user(): BelongsTo\n+    public function user()\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n     public function replies()\n     {\n-        return $this->hasMany(Like::class, 'article_id');\n+        return $this->hasMany(::class, 'article_id');\n     }\n     public function likes()\n     {\n         return $this->hasMany(Like::class, 'article_id');\n     }\n-    public function retweets(): HasMany\n+    public function retweets()\n     {\n         return $this->hasMany(Retweet::class, 'article_id');\n     }\n     // いいね機能\n"
+                },
+                {
+                    "date": 1651196276437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         return $this->belongsTo('App\\Models\\User');\n     }\n     public function replies()\n     {\n-        return $this->hasMany(::class, 'article_id');\n+        return $this->hasMany(Reply::class, 'a');\n     }\n     public function likes()\n     {\n         return $this->hasMany(Like::class, 'article_id');\n"
+                },
+                {
+                    "date": 1651196283979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         return $this->belongsTo('App\\Models\\User');\n     }\n     public function replies()\n     {\n-        return $this->hasMany(Reply::class, 'a');\n+        return $this->hasMany(Reply::class, 'App\\Models');\n     }\n     public function likes()\n     {\n         return $this->hasMany(Like::class, 'article_id');\n"
+                },
+                {
+                    "date": 1651196290316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         return $this->belongsTo('App\\Models\\User');\n     }\n     public function replies()\n     {\n-        return $this->hasMany(Reply::class, 'App\\Models');\n+        return $this->hasMany(Reply::class, 'App\\Models\\Reply');\n     }\n     public function likes()\n     {\n         return $this->hasMany(Like::class, 'article_id');\n"
+                },
+                {
+                    "date": 1651196310195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n \n namespace App\\Models;\n \n use Illuminate\\Database\\Eloquent\\Model;\n-use Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\n-use Illuminate\\Database\\Eloquent\\Relations\\HasMany;\n+use Illuminate\\Database\\Eloquent\\Relations\\BelongsT\n use Illuminate\\Support\\Facades\\Auth;\n \n class Article extends Model\n {\n"
                 }
             ],
             "date": 1648960160270,

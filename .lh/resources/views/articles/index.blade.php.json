@@ -3,11 +3,55 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1648869511618,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651568733825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     {{-- @section('content') --}}\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n+            \n         @endforeach\n     </div>\n     {{-- @endsection --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651568787016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,15 @@\n     </x-slot>\n \n     {{-- @section('content') --}}\n     <div class=\"py-12\">\n+        <div\n+        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n-            \n+            <div>\n+                <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n+            </div>\n         @endforeach\n     </div>\n     {{-- @endsection --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651568805848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,8 @@\n                 <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n             </div>\n         @endforeach\n     </div>\n+\n+    </div>\n     {{-- @endsection --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651568818170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,8 @@\n             <div>\n                 <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n             </div>\n         @endforeach\n+        </div>\n     </div>\n-\n-    </div>\n     {{-- @endsection --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651568857931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n     </x-slot>\n \n     {{-- @section('content') --}}\n     <div class=\"py-12\">\n+        @foreach ($articles as $article)\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        @foreach ($articles as $article)\n             @include('articles.card')\n             <div>\n                 <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n             </div>\n"
+                },
+                {
+                    "date": 1651568863847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n             @include('articles.card')\n             <div>\n                 <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n             </div>\n+        </div>\n         @endforeach\n-        </div>\n     </div>\n     {{-- @endsection --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651568870789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,11 @@\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             @include('articles.card')\n             <div>\n-                <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n+                     <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n+                </div>\n             </div>\n-        </div>\n         @endforeach\n     </div>\n     {{-- @endsection --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651568875883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('articles.card')\n-            <div>\n-                     <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n+                @include('articles.card')\n+                <div>\n+                    <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n                 </div>\n             </div>\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1651581562512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,12 @@\n \n     {{-- @section('content') --}}\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n-        <div\n-        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+            <div\n+            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 @include('articles.card')\n-                <div>\n-                    <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n-                </div>\n+\n             </div>\n         @endforeach\n     </div>\n     {{-- @endsection --}}\n"
+                },
+                {
+                    "date": 1651581718529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,12 +7,9 @@\n \n     {{-- @section('content') --}}\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n-            <div\n-            class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 @include('articles.card')\n-\n             </div>\n         @endforeach\n     </div>\n     {{-- @endsection --}}\n"
+                },
+                {
+                    "date": 1651581733362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,9 @@\n \n     {{-- @section('content') --}}\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n-                @include('articles.card')\n-            </div>\n+            @include('articles.card')\n         @endforeach\n     </div>\n     {{-- @endsection --}}\n </x-app-layout>\n"
                 }
             ],
             "date": 1648869511618,

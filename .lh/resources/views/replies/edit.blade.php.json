@@ -1,0 +1,30 @@
+{
+    "sourceFile": "resources/views/replies/edit.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1651194760384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651194768921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <form method=\"POST\" action=\"{{ route('repls.update', ['article' => $article]) }}\">\n+        <form method=\"POST\" action=\"{{ route('replies.update', ['article' => $article]) }}\">\n             @method('PATCH')\n-            @include('articles.form')\n+            @include('replies.form')\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 <button type=\"submit\">更新する</button>\n             </div>\n"
+                },
+                {
+                    "date": 1651194778366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <form method=\"POST\" action=\"{{ route('replies.update', ['article' => $article]) }}\">\n+        <form method=\"POST\" action=\"{{ route('replies.update', ['reply' => $article]) }}\">\n             @method('PATCH')\n             @include('replies.form')\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n"
+                },
+                {
+                    "date": 1651194783601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <form method=\"POST\" action=\"{{ route('replies.update', ['reply' => $article]) }}\">\n+        <form method=\"POST\" action=\"{{ route('replies.update', ['reply' => $reply]) }}\">\n             @method('PATCH')\n             @include('replies.form')\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n"
+                }
+            ],
+            "date": 1651194760384,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('記事編集') }}\n        </h2>\n    </x-slot>\n\n    <div\n        class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <form method=\"POST\" action=\"{{ route('repls.update', ['article' => $article]) }}\">\n            @method('PATCH')\n            @include('articles.form')\n            <div\n                class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                <button type=\"submit\">更新する</button>\n            </div>\n        </form>\n    </div>\n</x-app-layout>\n"
+        }
+    ]
+}

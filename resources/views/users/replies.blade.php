@@ -18,9 +18,8 @@
             @endif
         </div>
         @include('users.articles')
-        @foreach ($articles as $article)
-            @include('articles.card')
+        @foreach ($replies as $reply)
+            @include('replies.card')
         @endforeach
     </div>
-    
 </x-app-layout>

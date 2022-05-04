@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1650694817288,
@@ -44,6 +44,38 @@
                 {
                     "date": 1650722895431,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('users.show')\n+            @include('users.user')\n             @if (Auth::id() === $user->id)\n             <div>\n                 <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n                     編集\n"
+                },
+                {
+                    "date": 1651569019954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n                 </a>\n             </div>\n             @endif\n         </div>\n+        \n         @include('users.articles')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n"
+                },
+                {
+                    "date": 1651569028214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n                 </a>\n             </div>\n             @endif\n         </div>\n-        \n         @include('users.articles')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n"
+                },
+                {
+                    "date": 1651569033706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n             </div>\n             @endif\n         </div>\n         @include('users.articles')\n+        <div\n+        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1651569055305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,13 @@\n             </div>\n             @endif\n         </div>\n         @include('users.articles')\n+        @foreach ($articles as $article)\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n+    </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651569060752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n         @include('users.articles')\n         @foreach ($articles as $article)\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-            @include('articles.card')\n-        @endforeach\n+        @include('articles.card')\n     </div>\n+    @endforeach\n     </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651569066571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         @foreach ($articles as $article)\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @include('articles.card')\n+        </div>\n+        @endforeach\n     </div>\n-    @endforeach\n-    </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651581808373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,9 @@\n             @endif\n         </div>\n         @include('users.articles')\n         @foreach ($articles as $article)\n-        <div\n-        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+\n         @include('articles.card')\n         </div>\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1651581814655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,9 @@\n             @endif\n         </div>\n         @include('users.articles')\n         @foreach ($articles as $article)\n-\n-        @include('articles.card')\n-        </div>\n+            @include('articles.card')\n         @endforeach\n     </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1650694817288,

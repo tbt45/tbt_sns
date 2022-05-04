@@ -8,5 +8,6 @@
     <div>
         @include('articles.card')
     </div>
+    {{-- この記事に対する返信を全て表示する。 --}}
 
 </x-app-layout>

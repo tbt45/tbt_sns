@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 71,
             "patches": [
                 {
                     "date": 1648869521170,
@@ -120,6 +120,178 @@
                 {
                     "date": 1650891814169,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n         {{-- リツイートボタン --}}\n         <div>\n             @if ($article->is_retweeted_by_auth_user())\n                 <a href=\"{{ route('articles.unretweet',['id'=>$article->id]) }}\">\n-                リツイート\n+                リツイート※\n                     <span>\n                         {{ $article->retweets->count() }}\n                     </span>\n                 </a>\n"
+                },
+                {
+                    "date": 1651098226355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,6 +68,9 @@\n                 </span>\n                 </a>\n             @endif\n         </div>\n+        <div>\n+            {{ $article->created_at->format('Y/m/d H:i') }}\n+        </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651098233935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            {{ $article->created_at->format('Y/m/d H:i') }}\n+            \n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651098275209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            \n+            <a href=\"{{ route('articles.edit', ['article' => $article]) }}\"></a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651098284125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('articles.edit', ['article' => $article]) }}\"></a>\n+            <a href=\"{{ route('replys.edit', ['article' => $article]) }}\"></a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651098405603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replys.edit', ['article' => $article]) }}\"></a>\n+            <a href=\"{{ route('replys.create', ['article' => $article]) }}\"></a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651098418916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replys.create', ['article' => $article]) }}\"></a>\n+            <a href=\"{{ route('replys.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651194817090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replys.create', ['article' => $article]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651195297319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['reply' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651195302895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['reply' => $article]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['reply' => $reply]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651195317591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['reply' => $reply]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['art' => $reply]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651195325329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['art' => $reply]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $arti]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651558188080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $arti]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651558193363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article->id]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651558910064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article->id]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651558918176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651558940528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article->id]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651566914419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article->id]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article->id]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651566921480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article->id]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651566941939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651566961831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article] )}}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651566981365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article] )}}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article->id]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651566991529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article->id]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article->id]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651567018840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article->id]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article->id,]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651567025270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article->id,]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article->id,'article']) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651567034584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article->id,'article']) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article->id,'article' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651567054212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article->id,'article' => $article]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article->id) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651567067437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article->id) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['id' => $article->id]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651567399178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['id' => $article->id]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article->id]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651567404987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,8 @@\n                 </a>\n             @endif\n         </div>\n         <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article->id]) }}\">返信する</a>\n+            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651568723127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,7 @@\n                 </span>\n                 </a>\n             @endif\n         </div>\n-        <div>\n-            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n-        </div>\n+\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651568780406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n <div class=\"py-12\">\n-    <div\n-        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n@@ -68,7 +67,6 @@\n                 </span>\n                 </a>\n             @endif\n         </div>\n-\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651568799301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n <div class=\"py-12\">\n-\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n@@ -67,6 +66,5 @@\n                 </span>\n                 </a>\n             @endif\n         </div>\n-    </div>\n </div>\n"
+                },
+                {
+                    "date": 1651581570535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,6 +65,7 @@\n                     {{ $article->retweets->count() }}\n                 </span>\n                 </a>\n             @endif\n+            \n         </div>\n </div>\n"
+                },
+                {
+                    "date": 1651581693859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n <div class=\"py-12\">\n+    <div\n+    class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n@@ -65,7 +67,9 @@\n                     {{ $article->retweets->count() }}\n                 </span>\n                 </a>\n             @endif\n-            \n         </div>\n+        <div>\n+            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n+        </div>\n </div>\n"
+                },
+                {
+                    "date": 1651581700048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,5 +71,6 @@\n         </div>\n         <div>\n             <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n+    </div>\n </div>\n"
+                },
+                {
+                    "date": 1651640064705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n+        <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $article->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n"
+                },
+                {
+                    "date": 1651640105517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n+        <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n             {{ $article->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n"
+                },
+                {
+                    "date": 1651640143323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n+        <a href=\"{{ route('replies.create', ['article' => $article] }}\">\n             {{ $article->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n"
+                },
+                {
+                    "date": 1651640172732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('replies.create', ['article' => $article] }}\">\n+        <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n             {{ $article->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n"
+                },
+                {
+                    "date": 1651640228316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n             </div>\n         @endif\n \n         <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n+            <div></div>\n             {{ $article->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n"
+                },
+                {
+                    "date": 1651640234053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n             </div>\n         @endif\n \n         <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n-            <div></div>\n+            <div>\n             {{ $article->title }}\n-        </a>\n+        </a>V\n         <div class=\"\">\n             {{ $article->body }}\n         </div>\n \n"
+                },
+                {
+                    "date": 1651640240293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,10 @@\n \n         <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n             <div>\n             {{ $article->title }}\n-        </a>V\n+        </div>\n+    </a>\n         <div class=\"\">\n             {{ $article->body }}\n         </div>\n \n"
+                },
+                {
+                    "date": 1651640246905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n             <div>\n             {{ $article->title }}\n         </div>\n-    </a>\n+        </a>\n         <div class=\"\">\n             {{ $article->body }}\n         </div>\n \n"
                 }
             ],
             "date": 1648869521170,

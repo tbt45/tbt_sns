@@ -1,0 +1,70 @@
+{
+    "sourceFile": "database/migrations/2022_04_27_130814_create_replies_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1651194919640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651194926360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,7 @@\n      * @return void\n      */\n     public function down()\n     {\n-        Schema::dropIfExists('replys');\n+        Schema::dropIfExists('replies');\n     }\n };\n"
+                },
+                {
+                    "date": 1651199501191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('replies', function (Blueprint $table) {\n             $table->bigIncrements('id');\n             $table->string('title');\n             $table->text('body');\n-            $table->unsignedBigInteger('user_id');\n+            $table->unsignedBigInteger('user_id')->unsigned();\n             $table->unsignedBigInteger('article_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             $table->foreign('article_id')->references('id')->on('articles');\n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1651199507942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,10 @@\n             $table->bigIncrements('id');\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n-            $table->unsignedBigInteger('article_id');\n+            $table->unsignedBigInteger('article_id')->unsigned();\n             $table->foreign('user_id')->references('id')->on('users');\n-            $table->foreign('article_id')->references('id')->on('articles');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556260655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,9 @@\n             $table->bigIncrements('id');\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n-            $table->unsignedBigInteger('article_id')->unsigned();\n-            $table->foreign('user_id')->references('id')->on('users');\n+            $table->unsignedBigInteger('article_id')->references('id')->on('users');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556266645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->bigIncrements('id');\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n-            $table->unsignedBigInteger('article_id')->references('id')->on('users');\n+            $table->unsignedBigInteger('article_id')->references('id')->on('articles');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556328192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n             $table->unsignedBigInteger('article_id')->references('id')->on('articles');\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556334766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n             $table->unsignedBigInteger('article_id')->references('id')->on('articles');\n-\n+$table->foreign()\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556342349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n             $table->unsignedBigInteger('article_id')->references('id')->on('articles');\n-$table->foreign()\n+$table->foreign('article_id')\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556348466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->bigIncrements('id');\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n-            $table->unsignedBigInteger('article_id')->references('id')->on('articles');\n+            $table->unsignedBigInteger('article_id');\n $table->foreign('article_id')\n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1651556388440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n             $table->bigIncrements('id');\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n-            $table->unsignedBigInteger('article_id');\n-$table->foreign('article_id')\n+            // $table->unsignedBigInteger('article_id');\n+            $table->foreign('article_id')->references('id')->on('articles');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556395567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n             // $table->unsignedBigInteger('article_id');\n-            $table->foreign('article_id')->references('id')->on('articles');\n+            $table->foreignId('article_id')->references('id')->on('articles');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556404614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n             // $table->unsignedBigInteger('article_id');\n-            $table->foreignId('article_id')->references('id')->on('articles');\n+            $table->foreignId('article_id')->->on('articles');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651556410619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')->unsigned();\n             // $table->unsignedBigInteger('article_id');\n-            $table->foreignId('article_id')->->on('articles');\n+            $table->foreignId('article_id')->constrained('articles');\n             $table->timestamps();\n         });\n     }\n \n"
+                }
+            ],
+            "date": 1651194919640,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('replies', function (Blueprint $table) {\n            $table->bigIncrements('id');\n            $table->string('title');\n            $table->text('body');\n            $table->unsignedBigInteger('user_id');\n            $table->unsignedBigInteger('article_id');\n            $table->foreign('user_id')->references('id')->on('users');\n            $table->foreign('article_id')->references('id')->on('articles');\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('replys');\n    }\n};\n"
+        }
+    ]
+}

@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 
 class Article extends Model
@@ -15,16 +13,19 @@ class Article extends Model
     ];
 
 
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo('App\Models\User');
     }
-
-    public function likes(): HasMany
+    public function replies()
+    {
+        return $this->hasMany(Reply::class, 'App\Models\Reply');
+    }
+    public function likes()
     {
         return $this->hasMany(Like::class, 'article_id');
     }
-    public function retweets(): HasMany
+    public function retweets()
     {
         return $this->hasMany(Retweet::class, 'article_id');
     }
