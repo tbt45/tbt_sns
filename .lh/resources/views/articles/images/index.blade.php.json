@@ -1,0 +1,134 @@
+{
+    "sourceFile": "resources/views/articles/images/index.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1651689469972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651689482566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+        \n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n@@ -20,7 +21,7 @@\n             {{-- <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 <button type=\"submit\">登録する</button>\n             </div> --}}\n-        </form>\n+        {{-- </form> --}}\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651689488872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        \n+        <div></div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689494764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <div></div>\n+        <div class=\"\"></div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689500172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <div class=\"\"></div>\n+        <div class=\"flex \"></div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689515040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <div class=\"flex \"></div>\n+        <div class=\"flex justify-end\"></div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689528847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <div class=\"flex justify-end\"></div>\n+        <div class=\"flex justify-end mb-4\">\n+            \n+        </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689569788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            \n+            <button onclick=\"\"></button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689576525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            <button onclick=\"\"></button>\n+            <button onclick=\"location\"></button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689582446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            <button onclick=\"location\"></button>\n+            <button onclick=\"location.href\"></button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689588304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            <button onclick=\"location.href\"></button>\n+            <button onclick=\"location.href=''\"></button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689595687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            <button onclick=\"location.href=''\"></button>\n+            <button onclick=\"location.href='{{ route }}'\"></button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689602003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            <button onclick=\"location.href='{{ route }}'\"></button>\n+            <button onclick=\"location.href='{{ route('images') }}'\"></button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689618065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            <button onclick=\"location.href='{{ route('images') }}'\"></button>\n+            <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"\"></button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689643349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"\"></button>\n+            <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"\"></button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689660179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n-            <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"\"></button>\n+            <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689675658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n+        <div></div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689683891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n-        <div></div>\n+        <div class=\"flex\"></div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689688954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n-        <div class=\"flex\"></div>\n+        <div class=\"flex flex-\"></div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689696408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-end mb-4\">\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n-        <div class=\"flex flex-\"></div>\n+        <div class=\"flex flex-wrap\">\n+            \n+        </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n"
+                },
+                {
+                    "date": 1651689703632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         <div class=\"flex justify-end mb-4\">\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n-            \n+            for\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689708848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,11 @@\n         <div class=\"flex justify-end mb-4\">\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n-            for\n+            @foreach ($collection as $item)\n+                \n+            @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n"
+                },
+                {
+                    "date": 1651689714781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         <div class=\"flex justify-end mb-4\">\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n-            @foreach ($collection as $item)\n+            @foreach ($images as $item)\n                 \n             @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n"
+                },
+                {
+                    "date": 1651689720102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         <div class=\"flex justify-end mb-4\">\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n-            @foreach ($images as $item)\n+            @foreach ($images as $image)\n                 \n             @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n"
+                },
+                {
+                    "date": 1651689731108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n             @foreach ($images as $image)\n-                \n+                <div></div>\n             @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n"
+                },
+                {
+                    "date": 1651689738686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n             @foreach ($images as $image)\n-                <div></div>\n+                <div class=\"w-\"></div>\n             @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n"
+                },
+                {
+                    "date": 1651689745713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n             @foreach ($images as $image)\n-                <div class=\"w-\"></div>\n+                <div class=\"w-1/4 p-2 \"></div>\n             @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n"
+                },
+                {
+                    "date": 1651689752222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n             @foreach ($images as $image)\n-                <div class=\"w-1/4 p-2 \"></div>\n+                <div class=\"w-1/4 p-2 md:\"></div>\n             @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n"
+                },
+                {
+                    "date": 1651689759903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n             <button onclick=\"location.href='{{ route('images.create') }}'\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">新規登録する</button>\n         </div>\n         <div class=\"flex flex-wrap\">\n             @foreach ($images as $image)\n-                <div class=\"w-1/4 p-2 md:\"></div>\n+                <div class=\"w-1/4 p-2 md:p-4\">\n+                </div>\n             @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n             {{-- @include('articles.form') --}}\n"
+                },
+                {
+                    "date": 1651689767405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         </div>\n         <div class=\"flex flex-wrap\">\n             @foreach ($images as $image)\n                 <div class=\"w-1/4 p-2 md:p-4\">\n-                    \n+                    a\n                 </div>\n             @endforeach\n         </div>\n         {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n"
+                }
+            ],
+            "date": 1651689469972,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('画像投稿') }}\n        </h2>\n    </x-slot>\n\n    <div\n        class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        {{-- <form method=\"POST\" action=\"{{ route('images.store') }}\"> --}}\n            {{-- @include('articles.form') --}}\n            <div class=\"p-2 w-1/2 mx-auto\">\n                <label for=\"image\" class=\"leading-7 text-sm text-gray-600\">画像</label>\n                <input type=\"file\" id=\"image\" name=\"file[][image]\" multiple accept=\"image/pmg,image/jpeg,image/jpg\" class=\"w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out\">\n            </div>\n            <div class=\"p-2 w-full mt-4 flex justify-around\">\n                <button type=\"button\" onclick=\"location.href='{{ route('images.index') }}'\" class=\"bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg\">戻る</button>\n                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">登録する</button>\n            </div>\n            {{-- <div\n                class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                <button type=\"submit\">登録する</button>\n            </div> --}}\n        </form>\n    </div>\n</x-app-layout>\n"
+        }
+    ]
+}

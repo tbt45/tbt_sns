@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('replies', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->text('body');
             $table->unsignedBigInteger('user_id')
-                ->unsigned();
-            // $table->unsignedBigInteger('article_id');
-            $table->foreignId('article_id')
-                ->constrained('articles');
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string('filename');
+            $table->string('title')
+                ->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('replies');
+        Schema::dropIfExists('images');
     }
 };

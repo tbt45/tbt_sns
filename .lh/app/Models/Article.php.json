@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 27,
+            "activePatchIndex": 31,
             "patches": [
                 {
                     "date": 1648960160270,
@@ -116,6 +116,22 @@
                 {
                     "date": 1651196310195,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n \n namespace App\\Models;\n \n use Illuminate\\Database\\Eloquent\\Model;\n-use Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\n-use Illuminate\\Database\\Eloquent\\Relations\\HasMany;\n+use Illuminate\\Database\\Eloquent\\Relations\\BelongsT\n use Illuminate\\Support\\Facades\\Auth;\n \n class Article extends Model\n {\n"
+                },
+                {
+                    "date": 1651681913441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,16 +2,16 @@\n \n namespace App\\Models;\n \n use Illuminate\\Database\\Eloquent\\Model;\n-use Illuminate\\Database\\Eloquent\\Relations\\BelongsT\n use Illuminate\\Support\\Facades\\Auth;\n \n class Article extends Model\n {\n     protected $fillable = [\n         'title',\n         'body',\n+        ''\n     ];\n \n \n     public function user()\n"
+                },
+                {
+                    "date": 1651681918609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n {\n     protected $fillable = [\n         'title',\n         'body',\n-        ''\n+        'image1',\n     ];\n \n \n     public function user()\n"
+                },
+                {
+                    "date": 1651681924760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,11 @@\n     protected $fillable = [\n         'title',\n         'body',\n         'image1',\n-        'image1',\n-        'image1',\n-        'image1',\n+        'image2',\n+        'image3',\n+        'image4',\n     ];\n \n \n     public function user()\n"
+                },
+                {
+                    "date": 1651681993769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,6 +67,6 @@\n     }\n     // 写真追加\n     public function imageFirst()\n     {\n-    return}\n+    return $this}\n }\n"
                 }
             ],
             "date": 1648960160270,

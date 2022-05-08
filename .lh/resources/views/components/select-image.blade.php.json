@@ -1,0 +1,30 @@
+{
+    "sourceFile": "resources/views/components/select-image.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1651762996362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651763003717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n                 <div class=\"w-1/4 p-2 md:p-4\">\n                 <div class=\"border rounded-md p-2 md:p-4\">\n                     <img class=\"image\" data-id=\"{{ $name }}_{{ $image->id }}\" \n                     data-file=\"{{ $image->filename }}\"\n-                    data-path=\"{{ asset('storage/products/') }}\"\n+                    data-path=\"{{ asset('storage/articles/') }}\"\n                     data-modal=\"{{ $modal }}\"\n                     src=\"{{ asset('storage/articles/' . $image->filename)}}\">\n                     <div class=\"text-gray-700\">{{ $image->title }}</div>\n                 </div>\n"
+                },
+                {
+                    "date": 1651763023832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,10 @@\n \n <div class=\"flex justify-around items-center mb-4\">\n     <a class=\"py-2 px-4 bg-gray-200\" data-micromodal-trigger=\"{{ $modal }}\" href='javascript:;'>ファイルを選択</a>\n     <div class=\"w-1/4\">\n-        <img id=\"{{ $name }}_thumbnail\" @if($cImage) src=\"{{ asset('storage/products/' . $cImage)}}\" @else src=\"\" @endif src=\"\">\n+        <img id=\"{{ $name }}_thumbnail\" @if($cImage) src=\"{{ asset('storage/product\n+        \n+        s/' . $cImage)}}\" @else src=\"\" @endif src=\"\">\n     </div>\n </div>\n <input id=\"{{ $name }}_hidden\" type=\"hidden\" name=\"{{ $name }}\" value=\"{{ $cId }}\">\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651763032101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,10 +44,8 @@\n \n <div class=\"flex justify-around items-center mb-4\">\n     <a class=\"py-2 px-4 bg-gray-200\" data-micromodal-trigger=\"{{ $modal }}\" href='javascript:;'>ファイルを選択</a>\n     <div class=\"w-1/4\">\n-        <img id=\"{{ $name }}_thumbnail\" @if($cImage) src=\"{{ asset('storage/product\n-        \n-        s/' . $cImage)}}\" @else src=\"\" @endif src=\"\">\n+        <img id=\"{{ $name }}_thumbnail\" @if($cImage) src=\"{{ asset('storage/articles/' . $cImage)}}\" @else src=\"\" @endif src=\"\">\n     </div>\n </div>\n <input id=\"{{ $name }}_hidden\" type=\"hidden\" name=\"{{ $name }}\" value=\"{{ $cId }}\">\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1651762996362,
+            "name": "Commit-0",
+            "content": "@php\n    if($name === 'image1'){ $modal = 'modal-1' ; }\n    if($name === 'image2'){ $modal = 'modal-2' ; }\n    if($name === 'image3'){ $modal = 'modal-3' ; }\n    if($name === 'image4'){ $modal = 'modal-4' ; }\n    if($name === 'image5'){ $modal = 'modal-5' ; }\n    $cImage = $currentImage ?? '' ;\n    $cId = $currentId ?? '' ;\n@endphp\n\n<div class=\"modal micromodal-slide\" id=\"{{ $modal }}\" aria-hidden=\"true\">\n    <div class=\"modal__overlay z-50\" tabindex=\"-1\" data-micromodal-close>\n        <div class=\"modal__container\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"{{ $modal }}-title\">\n        <header class=\"modal__header\">\n            <h2 class=\"text-xl text-gray-700\" id=\"{{ $modal }}-title\">\n            ファイルを選択してください\n            </h2>\n            <button type=\"button\" class=\"modal__close\" aria-label=\"Close modal\" data-micromodal-close></button>\n        </header>\n        <main class=\"modal__content\" id=\"{{ $modal }}-content\">\n            <div class=\"flex flex-wrap\">\n            @foreach ($images as $image )\n                <div class=\"w-1/4 p-2 md:p-4\">\n                <div class=\"border rounded-md p-2 md:p-4\">\n                    <img class=\"image\" data-id=\"{{ $name }}_{{ $image->id }}\" \n                    data-file=\"{{ $image->filename }}\"\n                    data-path=\"{{ asset('storage/products/') }}\"\n                    data-modal=\"{{ $modal }}\"\n                    src=\"{{ asset('storage/articles/' . $image->filename)}}\">\n                    <div class=\"text-gray-700\">{{ $image->title }}</div>\n                </div>\n                </div>\n            @endforeach\n            </div>\n        </main>\n        <footer class=\"modal__footer\">\n            <button type=\"button\" class=\"modal__btn\" data-micromodal-close aria-label=\"閉じる\">閉じる</button>\n        </footer>\n        </div>\n    </div>\n</div>\n\n\n\n<div class=\"flex justify-around items-center mb-4\">\n    <a class=\"py-2 px-4 bg-gray-200\" data-micromodal-trigger=\"{{ $modal }}\" href='javascript:;'>ファイルを選択</a>\n    <div class=\"w-1/4\">\n        <img id=\"{{ $name }}_thumbnail\" @if($cImage) src=\"{{ asset('storage/products/' . $cImage)}}\" @else src=\"\" @endif src=\"\">\n    </div>\n</div>\n<input id=\"{{ $name }}_hidden\" type=\"hidden\" name=\"{{ $name }}\" value=\"{{ $cId }}\">"
+        }
+    ]
+}

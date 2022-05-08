@@ -20,7 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'profile_image',
+        'filename',
         'body'
     ];
 
@@ -85,5 +85,9 @@ class User extends Authenticatable
     public function isFollowed($user_id)
     {
         return (bool) $this->followers()->where('following_id', $user_id)->first(['id']);
+    }
+    public function image()
+    {
+        return $this->hasMany(Image::class);
     }
 }

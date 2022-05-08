@@ -1,0 +1,174 @@
+{
+    "sourceFile": "app/Http/Controllers/ImageController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 39,
+            "patches": [
+                {
+                    "date": 1651641384041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651641393178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n+App\n \n class ImageController extends Controller\n {\n }\n"
+                },
+                {
+                    "date": 1651641400064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n-App\n+App\\Models\n \n class ImageController extends Controller\n {\n }\n"
+                },
+                {
+                    "date": 1651641408171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n-App\\Models\n+use App\\Models\\\n \n class ImageController extends Controller\n {\n }\n"
+                },
+                {
+                    "date": 1651641414840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Http\\Request;\n-use App\\Models\\\n+use App\\Models\\Image;\n \n class ImageController extends Controller\n {\n }\n"
+                },
+                {
+                    "date": 1651641450913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,7 @@\n use App\\Models\\Image;\n \n class ImageController extends Controller\n {\n+\n+    public function\n }\n"
+                },
+                {
+                    "date": 1651641456525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \n class ImageController extends Controller\n {\n \n-    public function\n+    public function index\n }\n"
+                },
+                {
+                    "date": 1651641465615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,8 @@\n \n class ImageController extends Controller\n {\n \n-    public function index\n+    public function index()\n+    {\n+    $ima}\n }\n"
+                },
+                {
+                    "date": 1651641471315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $ima}\n+    $images = Image}\n }\n"
+                },
+                {
+                    "date": 1651641476693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image}\n+    $images = Image::where()}\n }\n"
+                },
+                {
+                    "date": 1651641484987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where()}\n+    $images = Image::where(user)}\n }\n"
+                },
+                {
+                    "date": 1651641494237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where(user)}\n+    $images = Image::where('')}\n }\n"
+                },
+                {
+                    "date": 1651641499630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('')}\n+    $images = Image::where('user_id',)}\n }\n"
+                },
+                {
+                    "date": 1651641505547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('user_id',)}\n+    $images = Image::where('user_id', Auth::id)}\n }\n"
+                },
+                {
+                    "date": 1651641514704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('user_id', Auth::id)}\n+    $images = Image::where('user_id', Auth::id())->}\n }\n"
+                },
+                {
+                    "date": 1651641521051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('user_id', Auth::id())->}\n+    $images = Image::where('user_id', Auth::id())->order}\n }\n"
+                },
+                {
+                    "date": 1651641528223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('user_id', Auth::id())->order}\n+    $images = Image::where('user_id', Auth::id())->orderBy()}\n }\n"
+                },
+                {
+                    "date": 1651641536166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('user_id', Auth::id())->orderBy()}\n+    $images = Image::where('user_id', Auth::id())->orderBy('update_at')}\n }\n"
+                },
+                {
+                    "date": 1651641542436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('user_id', Auth::id())->orderBy('update_at')}\n+    $images = Image::where('user_id', Auth::id())->orderBy('update_at','desc')}\n }\n"
+                },
+                {
+                    "date": 1651641547969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,7 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('user_id', Auth::id())->orderBy('update_at','desc')}\n+    $images = Image::where('user_id', Auth::id())->orderBy('update_at','desc')\n+->}\n }\n"
+                },
+                {
+                    "date": 1651641555436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,6 @@\n \n     public function index()\n     {\n     $images = Image::where('user_id', Auth::id())->orderBy('update_at','desc')\n-->}\n+->paginate}\n }\n"
+                },
+                {
+                    "date": 1651641562387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,8 @@\n {\n \n     public function index()\n     {\n-    $images = Image::where('user_id', Auth::id())->orderBy('update_at','desc')\n-->paginate}\n+        $images = Image::where('user_id', Auth::id())->orderBy('update_at', 'desc')\n+            ->paginate(20);\n+    }\n }\n"
+                },
+                {
+                    "date": 1651641573278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,11 @@\n {\n \n     public function index()\n     {\n-        $images = Image::where('user_id', Auth::id())->orderBy('update_at', 'desc')\n+        $images = Image::where('user_id', Auth::id())\n+            ->orderBy('update_at', 'desc')\n             ->paginate(20);\n+\n+            return\n     }\n }\n"
+                },
+                {
+                    "date": 1651641578519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n         $images = Image::where('user_id', Auth::id())\n             ->orderBy('update_at', 'desc')\n             ->paginate(20);\n \n-            return\n+            return view \n     }\n }\n"
+                },
+                {
+                    "date": 1651641588212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n         $images = Image::where('user_id', Auth::id())\n             ->orderBy('update_at', 'desc')\n             ->paginate(20);\n \n-            return view \n+            return view(images)\n     }\n }\n"
+                },
+                {
+                    "date": 1651641598351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n         $images = Image::where('user_id', Auth::id())\n             ->orderBy('update_at', 'desc')\n             ->paginate(20);\n \n-            return view(images)\n+            return view(Aimages.index)\n     }\n }\n"
+                },
+                {
+                    "date": 1651641606253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n         $images = Image::where('user_id', Auth::id())\n             ->orderBy('update_at', 'desc')\n             ->paginate(20);\n \n-            return view(Aimages.index)\n+            return view('images.index')\n     }\n }\n"
+                },
+                {
+                    "date": 1651641619616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,7 @@\n         $images = Image::where('user_id', Auth::id())\n             ->orderBy('update_at', 'desc')\n             ->paginate(20);\n \n-            return view('images.index')\n+        return view('images.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1651641629713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,13 @@\n             ->paginate(20);\n \n         return view('images.index');\n     }\n+    public function index()\n+    {\n+        $images = Image::where('user_id', Auth::id())\n+            ->orderBy('update_at', 'desc')\n+            ->paginate(20);\n+\n+        return view('images.index');\n+    }\n }\n"
+                },
+                {
+                    "date": 1651641637789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n             ->paginate(20);\n \n         return view('images.index');\n     }\n-    public function index()\n+    public function store()\n     {\n         $images = Image::where('user_id', Auth::id())\n             ->orderBy('update_at', 'desc')\n             ->paginate(20);\n"
+                },
+                {
+                    "date": 1651641653788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,6 @@\n         return view('images.index');\n     }\n     public function store()\n     {\n-        $images = Image::where('user_id', Auth::id())\n-            ->orderBy('update_at', 'desc')\n-            ->paginate(20);\n-\n-        return view('images.index');\n     }\n }\n"
+                },
+                {
+                    "date": 1651641662002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,6 @@\n         return view('images.index');\n     }\n     public function store()\n     {\n-    }\n+$imageFils    }\n }\n"
+                },
+                {
+                    "date": 1651641668220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,6 @@\n         return view('images.index');\n     }\n     public function store()\n     {\n-$imageFils    }\n+$imageFiles =     }\n }\n"
+                },
+                {
+                    "date": 1651641675457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,6 @@\n         return view('images.index');\n     }\n     public function store()\n     {\n-$imageFiles =     }\n+$imageFiles = $request->    }\n }\n"
+                },
+                {
+                    "date": 1651641682367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,6 @@\n         return view('images.index');\n     }\n     public function store()\n     {\n-$imageFiles = $request->    }\n+$imageFiles = $request->file('fi')    }\n }\n"
+                },
+                {
+                    "date": 1651643516914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,7 @@\n         return view('images.index');\n     }\n     public function store()\n     {\n-$imageFiles = $request->file('fi')    }\n+        $imageFiles = $request->file('files');\n+    }\n }\n"
+                },
+                {
+                    "date": 1651643528389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,9 @@\n     }\n     public function store()\n     {\n         $imageFiles = $request->file('files');\n+        if (!is) {\n+            # code...\n+        }\n     }\n }\n"
+                },
+                {
+                    "date": 1651643536084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     }\n     public function store()\n     {\n         $imageFiles = $request->file('files');\n-        if (!is) {\n+        if (!is_null()) {\n             # code...\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1651643543697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     }\n     public function store()\n     {\n         $imageFiles = $request->file('files');\n-        if (!is_null($image)) {\n+        if (!is_null($imageFiles)) {\n             # code...\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1651643683346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     {\n         $imageFiles = $request->file('files');\n         if (!is_null($imageFiles)) {\n             foreach ($imageFiles as $imageFile) {\n-                $fileNameToStore = ImageService::upload($imageFile,'products')\n+                $fileNameToStore = ImageService::upload($imageFile, 'products');\n             }\n         }\n     }\n }\n"
+                }
+            ],
+            "date": 1651641384041,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass ImageController extends Controller\n{\n}\n"
+        }
+    ]
+}

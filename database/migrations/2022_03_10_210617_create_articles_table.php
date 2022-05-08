@@ -19,6 +19,19 @@ return new class extends Migration
             $table->text('body');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            // 画像追加
+            $table->unsignedBigInteger('image1')
+                ->nullable()
+                ->constrained('images');
+            $table->unsignedBigInteger('image2')
+                ->nullable()
+                ->constrained('images');
+            $table->unsignedBigInteger('image3')
+                ->nullable()
+                ->constrained('images');
+            $table->unsignedBigInteger('image4')
+                ->nullable()
+                ->constrained('images');
             $table->timestamps();
         });
     }

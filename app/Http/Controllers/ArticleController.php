@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest as RequestsArticleRequest;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Image;
 use App\Models\Like;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,13 +27,25 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('articles.create');
+        $images = Image::where('user_id', Auth::id())
+            ->select('id', 'title', 'filename')
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
+        return view(
+            'articles.create',
+            compact('images')
+        );
     }
 
     public function store(RequestsArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
         $article->user_id = $request->user()->id;
+        // 'image1' => $request->image1,
+        // 'image1' => $request->image2,
+        // 'image1' => $request->image3,
+        // 'image1' => $request->image4,
         $article->save();
 
         return redirect()->route('articles.timeline');

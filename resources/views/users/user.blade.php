@@ -1,7 +1,7 @@
 <a href="{{ route('users.show', ['name' => $user->name]) }}">
     <div class="p-2 w-1/2 mx-auto">
         <div class="relative">
-            <x-thumbnail :filename="$user->profile_image" />
+            <x-thumbnail :filename="$user->filename" type="users" />
         </div>
     </div>
 </a>

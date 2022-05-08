@@ -7,6 +7,7 @@ use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\RetweetController;
 use App\Http\Controllers\ReplyController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -83,6 +84,9 @@ Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
     Route::post('/{id}/follow', [FollowController::class, 'follow'])->name('follow');
     Route::delete('/{id}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
 });
+//画像を登録・表示する。
+Route::resource('images', ImageController::class)
+    ->middleware('auth')->except(['show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

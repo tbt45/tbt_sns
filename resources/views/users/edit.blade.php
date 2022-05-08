@@ -7,7 +7,8 @@
 
     <div class="py-12">
         <x-flash-message status="session('status')" />
-        <form method="POST" action="{{ route('users.update',['user' => $user->id]) }}">
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <form method="POST" action="{{ route('users.update',['user' => $user->id]) }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <div class="-m-2">
@@ -29,7 +30,15 @@
                 <div class="p-2 w-1/2 mx-auto">
                     <div class="relative">
                         <div class="w-32">
-                            <x-thumbnail :filename="$user->profile_image" />
+                            <x-thumbnail :filename="$user->filename" type="users" />
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 w-1/2 mx-auto">
+                    <div class="relative">
+                        <div class="w-32">
+                            <label for="image"></label>
+                            <input type="file" id="image" name="image" accept="image/png,image/jpeg,image/jpg">
                         </div>
                     </div>
                 </div>

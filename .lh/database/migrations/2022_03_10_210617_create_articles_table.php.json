@@ -1,0 +1,74 @@
+{
+    "sourceFile": "database/migrations/2022_03_10_210617_create_articles_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1651681780265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651681785419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+<?php\n+\n+use Illuminate\\Database\\Migrations\\Migration;\n+use Illuminate\\Database\\Schema\\Blueprint;\n+use Illuminate\\Support\\Facades\\Schema;\n+\n+return new class extends Migration\n+{\n+    /**\n+     * Run the migrations.\n+     *\n+     * @return void\n+     */\n+    public function up()\n+    {\n+        Schema::create('articles', function (Blueprint $table) {\n+            $table->bigIncrements('id');\n+            $table->string('title');\n+            $table->text('body');\n+            $table->unsignedBigInteger('user_id');\n+            $table->foreign('user_id')->references('id')->on('users');\n+            // 画像追加\n+            $table->timestamps();\n+        });\n+    }\n+\n+    /**\n+     * Reverse the migrations.\n+     *\n+     * @return void\n+     */\n+    public function down()\n+    {\n+        Schema::dropIfExists('articles');\n+    }\n+};\n"
+                },
+                {
+                    "date": 1651681795228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n             $table->text('body');\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n+            $table\n             $table->timestamps();\n         });\n     }\n \n@@ -33,40 +34,4 @@\n     {\n         Schema::dropIfExists('articles');\n     }\n };\n-<?php\n-\n-use Illuminate\\Database\\Migrations\\Migration;\n-use Illuminate\\Database\\Schema\\Blueprint;\n-use Illuminate\\Support\\Facades\\Schema;\n-\n-return new class extends Migration\n-{\n-    /**\n-     * Run the migrations.\n-     *\n-     * @return void\n-     */\n-    public function up()\n-    {\n-        Schema::create('articles', function (Blueprint $table) {\n-            $table->bigIncrements('id');\n-            $table->string('title');\n-            $table->text('body');\n-            $table->unsignedBigInteger('user_id');\n-            $table->foreign('user_id')->references('id')->on('users');\n-\n-            $table->timestamps();\n-        });\n-    }\n-\n-    /**\n-     * Reverse the migrations.\n-     *\n-     * @return void\n-     */\n-    public function down()\n-    {\n-        Schema::dropIfExists('articles');\n-    }\n-};\n"
+                },
+                {
+                    "date": 1651681803214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,9 @@\n             $table->text('body');\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n-            $table\n-            $table->timestamps();\n+            $table->fo$table->timestamps();\n         });\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1651681815929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             $table->text('body');\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n-            $table->fo$table->timestamps();\n+            $table->foreignId()$table->timestamps();\n         });\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1651681823876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n             $table->text('body');\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n-            $table->foreignId()$table->timestamps();\n+            $table->foreignId('ima');\n+            $table->timestamps();\n         });\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1651681837254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n             $table->text('body');\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n-            $table->foreignId('ima');\n+            $table->foreignId('image1')\n+            ->;\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651681846994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->foreignId('image1')\n-            ->;\n+                ->nullable()->;\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651681855951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->foreignId('image1')\n-                ->nullable()->;\n+                ->nullable()->constrained('images');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651681867522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,14 @@\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->foreignId('image1')\n                 ->nullable()->constrained('images');\n+            $table->foreignId('image1')\n+                ->nullable()->constrained('images');\n+            $table->foreignId('image1')\n+                ->nullable()->constrained('images');\n+            $table->foreignId('image1')\n+                ->nullable()->constrained('images');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651681873762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->foreignId('image1')\n                 ->nullable()->constrained('images');\n-            $table->foreignId('image1')\n+            $table->foreignId('image2')\n                 ->nullable()->constrained('images');\n             $table->foreignId('image1')\n                 ->nullable()->constrained('images');\n             $table->foreignId('image1')\n"
+                },
+                {
+                    "date": 1651770019935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,15 +19,15 @@\n             $table->text('body');\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n-            $table->foreignId('image1')\n+            $table->unsignedBigInteger('image1')\n                 ->nullable()->constrained('images');\n             $table->foreignId('image2')\n                 ->nullable()->constrained('images');\n-            $table->foreignId('image1')\n+            $table->foreignId('image3')\n                 ->nullable()->constrained('images');\n-            $table->foreignId('image1')\n+            $table->foreignId('image4')\n                 ->nullable()->constrained('images');\n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1651770027572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,11 @@\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->unsignedBigInteger('image1')\n                 ->nullable()->constrained('images');\n-            $table->foreignId('image2')\n+            $table->unsignedBigInteger('image2')\n                 ->nullable()->constrained('images');\n-            $table->foreignId('image3')\n+            $table->unsignedBigInteger('image3')\n                 ->nullable()->constrained('images');\n             $table->foreignId('image4')\n                 ->nullable()->constrained('images');\n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1651770035080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,11 @@\n             $table->unsignedBigInteger('image2')\n                 ->nullable()->constrained('images');\n             $table->unsignedBigInteger('image3')\n                 ->nullable()->constrained('images');\n-            $table->foreignId('image4')\n-                ->nullable()->constrained('images');\n+            $table->unsignedBigInteger('image4')\n+                ->nullable()\n+                ->constrained('images');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1651770041444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,13 @@\n             // 画像追加\n             $table->unsignedBigInteger('image1')\n                 ->nullable()->constrained('images');\n             $table->unsignedBigInteger('image2')\n-                ->nullable()->constrained('images');\n+                ->nullable()\n+                ->constrained('images');\n             $table->unsignedBigInteger('image3')\n-                ->nullable()->constrained('images');\n+                ->nullable()\n+                ->constrained('images');\n             $table->unsignedBigInteger('image4')\n                 ->nullable()\n                 ->constrained('images');\n             $table->timestamps();\n"
+                }
+            ],
+            "date": 1651681780265,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('articles', function (Blueprint $table) {\n            $table->bigIncrements('id');\n            $table->string('title');\n            $table->text('body');\n            $table->unsignedBigInteger('user_id');\n            $table->foreign('user_id')->references('id')->on('users');\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('articles');\n    }\n};\n"
+        }
+    ]
+}
