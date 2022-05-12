@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 26,
+            "activePatchIndex": 28,
             "patches": [
                 {
                     "date": 1651582360506,
@@ -112,6 +112,14 @@
                 {
                     "date": 1651592850730,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('replies.show') }}\">\n+        <a href=\"{{ route('replies.show', ['name' => $user->name]) }}\">\n             {{ $reply->title }}\n         </a>\n         <div class=\"\">\n             {{ $reply->body }}\n"
+                },
+                {
+                    "date": 1652278650754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <div class=\"py-12\">\n+    \n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n"
+                },
+                {
+                    "date": 1652278722784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n <div class=\"py-12\">\n-    \n+    <div class=\"p-2 w-1/2 mx-auto\">\n+        <div class=\"relative\">\n+            <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n+        </div>\n+    </div>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n"
                 }
             ],
             "date": 1651582360506,

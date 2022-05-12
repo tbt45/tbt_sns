@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1650684129560,
@@ -80,6 +80,38 @@
                 {
                     "date": 1651979699400,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n-            <x-thumbnail :filename=\"$user->filename\" />\n+            <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n         </div>\n     </div>\n </a>\n <h2>\n"
+                },
+                {
+                    "date": 1652280147954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n-    <div class=\"p-2 w-1/2 mx-auto\">\n+    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1652280873813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n-        <div class=\"relative\">\n             <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n-        </div>\n+                <img src=\"\" alt=\"\">\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
+                },
+                {
+                    "date": 1652280882619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n             <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n-                <img src=\"\" alt=\"\">\n+                <img src=\"{{ asset() }}\" alt=\"\">\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
+                },
+                {
+                    "date": 1652280891181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n             <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n-                <img src=\"{{ asset() }}\" alt=\"\">\n+                <img src=\"{{ asset('images') }}\" alt=\"\">\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
+                },
+                {
+                    "date": 1652280897575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n             <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n-                <img src=\"{{ asset('images') }}\" alt=\"\">\n+                <img src=\"{{ asset('images/no_image.') }}\" alt=\"\">\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
+                },
+                {
+                    "date": 1652371050052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n             <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n-                <img src=\"{{ asset('images/no_image.') }}\" alt=\"\">\n+                <img src=\"{{ asset('storageimages/no_image.jpg') }}\" alt=\"\">\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
+                },
+                {
+                    "date": 1652371068573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n-            <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n-                <img src=\"{{ asset('storageimages/no_image.jpg') }}\" alt=\"\">\n+            {{-- <x-thumbnail :filename=\"$user->filename\" type=\"users\" /> --}}\n+                <img src=\"{{ asset('storage/images/no_image.jpg') }}\" alt=\"\">\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
+                },
+                {
+                    "date": 1652371103463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n             {{-- <x-thumbnail :filename=\"$user->filename\" type=\"users\" /> --}}\n                 <img src=\"{{ asset('storage/images/no_image.jpg') }}\" alt=\"\">\n-    </div>\n+    {{-- </div> --}}\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n         {{ $user->name }}\n"
                 }
             ],
             "date": 1650684129560,

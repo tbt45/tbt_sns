@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/Services/ImageService.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1652371150189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1652371150189,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Services;\n\nuse Illuminate\\Support\\Facades\\Storage;\nuse InterventionImage;\n\nclass ImageService\n{\n    public static function upload($imageFile, $folderName)\n    {\n        if (is_array($imageFile)) {\n            $file = $imageFile['image'];\n        } else {\n            $file = $imageFile;\n        }\n\n        $fileName = uniqid(rand() . '_');\n        $extension = $file->extension();\n        $fileNameToStore = $fileName . '.' . $extension;\n        $resizedImage = InterventionImage::make($file)->resize(1, 1080)->encode();\n\n        Storage::put('public/' . $folderName . '/' . $fileNameToStore, $resizedImage);\n\n        return $fileNameToStore;\n    }\n}\n"
+        }
+    ]
+}
