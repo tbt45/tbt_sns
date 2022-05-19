@@ -1,0 +1,42 @@
+{
+    "sourceFile": "resources/views/layouts/app.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1652543478340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652543486275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n         <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n-        \n+          <!-- Font Awesome -->\n+         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n         <!-- Styles -->\n"
+                },
+                {
+                    "date": 1652545184824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,12 @@\n         <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n-          <!-- Font Awesome -->\n-         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n+        <!-- Font Awesome -->\n+        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n+        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n+        \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n         <!-- Styles -->\n"
+                },
+                {
+                    "date": 1652545200566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n-        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n+        {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n         <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n"
+                },
+                {
+                    "date": 1652545216975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n         {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n-        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n+        {{-- <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script> --}}\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n"
+                },
+                {
+                    "date": 1652545224363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n-        {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n-        {{-- <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script> --}}\n+        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n+        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n"
+                },
+                {
+                    "date": 1652545232765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n-        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n-        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n+        {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n+        {{-- <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script> --}}\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n"
+                }
+            ],
+            "date": 1652543478340,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"{{ str_replace('_', '-', app()->getLocale()) }}\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n\n        <title>{{ config('app.name', 'Laravel') }}</title>\n\n        \n        <!-- Fonts -->\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n\n        <!-- Styles -->\n        <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">\n\n        <!-- Scripts -->\n        <script src=\"{{ asset('js/app.js') }}\" defer></script>\n    </head>\n    <body class=\"font-sans antialiased\">\n        <div class=\"min-h-screen bg-gray-100\">\n            @include('layouts.navigation')\n\n            <!-- Page Heading -->\n            <header class=\"bg-white shadow\">\n                <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n                    {{ $header }}\n                </div>\n            </header>\n\n            <!-- Page Content -->\n            <main>\n                {{ $slot }}\n            </main>\n        </div>\n    </body>\n</html>\n"
+        }
+    ]
+}

@@ -1,11 +1,11 @@
 <div class="py-12">
     <div
     class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200">
-    <div class="p-2 w-1/2 mx-auto">
+    {{-- <div class="p-2 w-1/2 mx-auto">
         <div class="relative">
             <x-thumbnail :filename="$article->user->filename" type="users" />
         </div>
-    </div>
+    </div> --}}
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
             <i class="fas fa-user-circle fa-3x mr-1"></i>
         </a>

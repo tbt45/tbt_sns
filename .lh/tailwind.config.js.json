@@ -1,0 +1,22 @@
+{
+    "sourceFile": "tailwind.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1652803543795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652803551658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,12 @@\n             },\n         },\n     },\n \n+    variants: {\n+        extend: {\n+            opacity: ['disabled'],\n+        },\n+    },\n \n-\n     plugins: [require('@tailwindcss/forms')],\n };\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1652803543795,
+            "name": "Commit-0",
+            "content": "const defaultTheme = require('tailwindcss/defaultTheme');\n\nmodule.exports = {\n    content: [\n        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',\n        './storage/framework/views/*.php',\n        './resources/views/**/*.blade.php',\n    ],\n\n    theme: {\n        extend: {\n            fontFamily: {\n                sans: ['Nunito', ...defaultTheme.fontFamily.sans],\n            },\n        },\n    },\n\n\n\n    plugins: [require('@tailwindcss/forms')],\n};"
+        }
+    ]
+}

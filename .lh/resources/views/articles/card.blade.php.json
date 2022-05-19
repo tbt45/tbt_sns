@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 74,
+            "activePatchIndex": 75,
             "patches": [
                 {
                     "date": 1648869521170,
@@ -304,6 +304,10 @@
                 {
                     "date": 1652278705185,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <div class=\"py-12\">\n+    <div\n+    class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n     <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n-            <x-thumbnail :filename=\"$articleuser->filename\" type=\"users\" />\n+            <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n         </div>\n     </div>\n-    <div\n-    class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n"
+                },
+                {
+                    "date": 1652543802696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <div class=\"py-12\">\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-    <div class=\"p-2 w-1/2 mx-auto\">\n+    {{-- <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n         </div>\n-    </div>\n+    </div> --}}\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n"
                 }
             ],
             "date": 1648869521170,
