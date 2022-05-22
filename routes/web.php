@@ -5,6 +5,9 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\RetweetController;
+use App\Http\Controllers\ReplyController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -23,23 +26,37 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('article/index', [ArticleController::class, 'index'])->name('articles.index');
-    Route::get('article/create', [ArticleController::class, 'create'])->name('articles.create');
-    Route::post('article/store', [ArticleController::class, 'store'])->name('articles.store');
-    Route::get('article/edit/{article}', [ArticleController::class, 'edit'])->name('articles.edit');
-    Route::put('article/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
-    Route::patch('article/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
-    Route::delete('article/delete/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+Route::prefix('article')->name('articles.')->middleware('auth')->group(function () {
+    Route::get('/index', [ArticleController::class, 'index'])->name('index');
+    Route::get('/create', [ArticleController::class, 'create'])->name('create');
+    Route::post('/store', [ArticleController::class, 'store'])->name('store');
+    Route::get('/edit/{article}', [ArticleController::class, 'edit'])->name('edit');
+    Route::put('/update/{article}', [ArticleController::class, 'update'])->name('update');
+    Route::patch('/update/{article}', [ArticleController::class, 'update'])->name('update');
+    Route::delete('/delete/{article}', [ArticleController::class, 'destroy'])->name('destroy');
     // いいね機能
-    Route::get('article/like/{id}', [ArticleController::class, 'like'])->name('articles.like');
-    Route::get('article/unlike/{id}', [ArticleController::class, 'unlike'])->name('articles.unlike');
+    Route::get('/like/{id}', [ArticleController::class, 'like'])->name('like');
+    Route::get('/unlike/{id}', [ArticleController::class, 'unlike'])->name('unlike');
+    //リツイート機能
+    Route::get('/retweet/{id}', [RetweetController::class, 'retweet'])->name('retweet');
+    Route::get('/unretweet/{id}', [RetweetController::class, 'unretweet'])->name('unretweet');
 
     //フォローしたユーザーの投稿を表示
-    Route::get('article/timeline', [ArticleController::class, 'timeline'])->name('articles.timeline');
+    Route::get('timeline', [ArticleController::class, 'timeline'])->name('timeline');
 });
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
-
+// 返信機能
+Route::prefix('replies')->name('replies.')->middleware('auth')->group(function () {
+    // Route::get('/index', [ReplyController::class, 'index'])->name('index');
+    Route::get('/create/{article}', [ReplyController::class, 'create'])->name('create');
+    Route::post('/store', [ReplyController::class, 'store'])->name('store');
+    Route::get('/edit/{reply}', [ReplyController::class, 'edit'])->name('edit');
+    Route::put('/update/{reply}', [ReplyController::class, 'update'])->name('update');
+    Route::patch('/update/{reply}', [ReplyController::class, 'update'])->name('update');
+    Route::delete('/delete/{reply}', [ReplyController::class, 'destroy'])->name('destroy');
+});
+Route::get('/replies/{name}', [ReplyController::class, 'show'])->name('replies.show');
+// ユーザー情報
 Route::prefix('users')->name('users.')->group(function () {
     // ユーザー情報を表示する。
     Route::get('/{name}', [UserController::class, 'show'])->name('show');
@@ -49,6 +66,8 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{name}/followers', [FollowController::class, 'followers'])->name('followers');
     //いいねした記事を表示
     Route::get('/{name}/likes', [LikeController::class, 'likes'])->name('likes');
+    // 返信した記事を表示
+    Route::get('/{name}/replies', [ReplyController::class, 'replies'])->name('replies');
 });
 // ユーザー情報を編集する。
 Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
@@ -65,6 +84,9 @@ Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
     Route::post('/{id}/follow', [FollowController::class, 'follow'])->name('follow');
     Route::delete('/{id}/unfollow', [FollowController::class, 'unfollow'])->name('unfollow');
 });
+//画像を登録・表示する。
+Route::resource('images', ImageController::class)
+    ->middleware('auth')->except(['show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

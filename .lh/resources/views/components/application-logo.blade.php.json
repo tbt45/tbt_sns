@@ -1,0 +1,42 @@
+{
+    "sourceFile": "resources/views/components/application-logo.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1652540156282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652540163364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<img src=\"\" alt=\"\">\n+<img src=\"{{  }}\" alt=\"\">\n"
+                },
+                {
+                    "date": 1652540168543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<img src=\"{{  }}\" alt=\"\">\n+<img src=\"{{ asset() }}\" alt=\"\">\n"
+                },
+                {
+                    "date": 1652540185129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<img src=\"{{ asset() }}\" alt=\"\">\n+<img src=\"{{ asset(\"images\") }}\" alt=\"\">\n"
+                },
+                {
+                    "date": 1652540191010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<img src=\"{{ asset(\"images\") }}\" alt=\"\">\n+<img src=\"{{ asset(\"images/>logo.png\") }}\" alt=\"\">\n"
+                },
+                {
+                    "date": 1652540243771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<img src=\"{{ asset(\"images/>logo.png\") }}\" alt=\"\">\n+<img src=\"{{ asset(\"images/logo.png\") }}\" alt=\"\">\n"
+                },
+                {
+                    "date": 1652540263179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<img src=\"{{ asset(\"images/logo.png\") }}\" alt=\"\">\n+<img src=\"{{ asset(\"images/logo.png\") }}\">\n"
+                }
+            ],
+            "date": 1652540156282,
+            "name": "Commit-0",
+            "content": "<img src=\"\" alt=\"\">\n"
+        }
+    ]
+}

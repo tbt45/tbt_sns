@@ -4,7 +4,13 @@ namespace App\Http\Controllers;
 
 use App\models\User;
 use App\models\Follower;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
+use App\http\Requests\UploadImageRequest;
+use Illuminate\Support\Facades\Storage;
+use InterventionImage;
+
+
 
 class UserController extends Controller
 {
@@ -35,17 +41,32 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('users.edit', ['user' => $user]);
+        // return view('users.edit', ['user' => $user]);
+        return view('users.edit', compact('user'));
     }
 
     // ユーザー情報を更新する。
-    public function  update(Request $request, User $user)
+    public function  update(UploadImageRequest $request, $id)
     {
         $request->validate(['name' => ['required', 'string', 'max:255']]);
 
-        $user->fill($request->all())->save();
+        $imageFile = $request->image;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $fileNameToStore = ImageService::upload($imageFile, 'users');
+        }
+        // $user->fill($request->all())->save();
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->body = $request->body;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $user->filename = $fileNameToStore;
+            // $fileNameToStore = ImageService::upload($imageFile, 'users');
+        }
 
-        return redirect()->route('users.show', ['name' => $user->name])
+        $user->save();
+
+        return redirect()
+            ->route('users.show', ['name' => $user->name])
             ->with([
                 'message' => 'ユーザー情報を更新しました。',
                 'status' => 'info'

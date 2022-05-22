@@ -1,0 +1,130 @@
+{
+    "sourceFile": "resources/views/replies/card.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 28,
+            "patches": [
+                {
+                    "date": 1651582360506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651582369612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n-        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+        <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n                 {{ $reply->user->name }}\n             </div>\n         </a>\n"
+                },
+                {
+                    "date": 1651582389562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"py-12\">\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+        <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1651582402358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n                 {{ $reply->user->name }}\n             </div>\n         </a>\n         <div>\n-            {{ $article->created_at->format('Y/m/d H:i') }}\n+            {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n \n         @if (Auth::id() === $article->user_id)\n             <div>\n"
+                },
+                {
+                    "date": 1651582416521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         </div>\n \n         @if (Auth::id() === $article->user_id)\n             <div>\n-                <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n+                <a href=\"{{ route('replies.edit', ['article' => $article]) }}\">\n                     編集\n                 </a>\n                 <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n                     @method('DELETE')\n"
+                },
+                {
+                    "date": 1651582427436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         </div>\n \n         @if (Auth::id() === $article->user_id)\n             <div>\n-                <a href=\"{{ route('replies.edit', ['article' => $article]) }}\">\n+                <a href=\"{{ route('replies.edit', ['reply' => $article]) }}\">\n                     編集\n                 </a>\n                 <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n                     @method('DELETE')\n"
+                },
+                {
+                    "date": 1651582433251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         </div>\n \n         @if (Auth::id() === $article->user_id)\n             <div>\n-                <a href=\"{{ route('replies.edit', ['reply' => $article]) }}\">\n+                <a href=\"{{ route('replies.edit', ['reply' => $reply]) }}\">\n                     編集\n                 </a>\n                 <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n                     @method('DELETE')\n"
+                },
+                {
+                    "date": 1651582439973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             <div>\n                 <a href=\"{{ route('replies.edit', ['reply' => $reply]) }}\">\n                     編集\n                 </a>\n-                <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n+                <form method=\"post\" action=\"{{ route('replies.destroy', ['article' => $article]) }}\">\n                     @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n"
+                },
+                {
+                    "date": 1651582448797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             <div>\n                 <a href=\"{{ route('replies.edit', ['reply' => $reply]) }}\">\n                     編集\n                 </a>\n-                <form method=\"post\" action=\"{{ route('replies.destroy', ['article' => $article]) }}\">\n+                <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $article]) }}\">\n                     @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n"
+                },
+                {
+                    "date": 1651582455592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             <div>\n                 <a href=\"{{ route('replies.edit', ['reply' => $reply]) }}\">\n                     編集\n                 </a>\n-                <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $article]) }}\">\n+                <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                     @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n"
+                },
+                {
+                    "date": 1651582469511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n+        <a href=\"{{ route('replies.show', ['article' => $article]) }}\">\n             {{ $article->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n"
+                },
+                {
+                    "date": 1651582477555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('replies.show', ['article' => $article]) }}\">\n+        <a href=\"{{ route('replies.show', ['reply' => $article]) }}\">\n             {{ $article->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n"
+                },
+                {
+                    "date": 1651582484511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('replies.show', ['reply' => $article]) }}\">\n+        <a href=\"{{ route('replies.show', ['reply' => $reply]) }}\">\n             {{ $article->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n"
+                },
+                {
+                    "date": 1651582493857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n             </div>\n         @endif\n \n         <a href=\"{{ route('replies.show', ['reply' => $reply]) }}\">\n-            {{ $article->title }}\n+            {{ $reply->title }}\n         </a>\n         <div class=\"\">\n             {{ $article->body }}\n         </div>\n"
+                },
+                {
+                    "date": 1651582499556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         <a href=\"{{ route('replies.show', ['reply' => $reply]) }}\">\n             {{ $reply->title }}\n         </a>\n         <div class=\"\">\n-            {{ $article->body }}\n+            {{ $reply->body }}\n         </div>\n \n         {{-- いいねボタン --}}\n         <div>\n"
+                },
+                {
+                    "date": 1651582520602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n             {{ $reply->body }}\n         </div>\n \n         {{-- いいねボタン --}}\n-        <div>\n+        {{-- <div>\n             @if ($article->is_liked_by_auth_user())\n                 <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n                 いいね\n                     <span>\n@@ -49,9 +49,9 @@\n                     {{ $article->likes->count() }}\n                 </span>\n                 </a>\n             @endif\n-        </div>\n+        </div> --}}\n         {{-- リツイートボタン --}}\n         <div>\n             @if ($article->is_retweeted_by_auth_user())\n                 <a href=\"{{ route('articles.unretweet',['id'=>$article->id]) }}\">\n"
+                },
+                {
+                    "date": 1651582544554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n                 </a>\n             @endif\n         </div> --}}\n         {{-- リツイートボタン --}}\n-        <div>\n+        {{-- <div>\n             @if ($article->is_retweeted_by_auth_user())\n                 <a href=\"{{ route('articles.unretweet',['id'=>$article->id]) }}\">\n                 リツイート※\n                     <span>\n@@ -68,9 +68,9 @@\n                 </span>\n                 </a>\n             @endif\n         </div>\n-        <div>\n+        <div> --}}\n             <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651582552207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n                     {{ $article->retweets->count() }}\n                 </span>\n                 </a>\n             @endif\n-        </div>\n+        {{-- </div> --}}\n         <div> --}}\n             <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1651582561401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,10 +67,10 @@\n                     {{ $article->retweets->count() }}\n                 </span>\n                 </a>\n             @endif\n-        {{-- </div> --}}\n-        <div> --}}\n-            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n+        {{-- <div> --}} --}}\n+            {{-- <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n+        </div> --}}\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651582621532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,45 +32,6 @@\n         <div class=\"\">\n             {{ $reply->body }}\n         </div>\n \n-        {{-- いいねボタン --}}\n-        {{-- <div>\n-            @if ($article->is_liked_by_auth_user())\n-                <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n-                いいね\n-                    <span>\n-                        {{ $article->likes->count() }}\n-                    </span>\n-                </a>\n-            @else\n-                <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n-                    いいね\n-                <span>\n-                    {{ $article->likes->count() }}\n-                </span>\n-                </a>\n-            @endif\n-        </div> --}}\n-        {{-- リツイートボタン --}}\n-        {{-- <div>\n-            @if ($article->is_retweeted_by_auth_user())\n-                <a href=\"{{ route('articles.unretweet',['id'=>$article->id]) }}\">\n-                リツイート※\n-                    <span>\n-                        {{ $article->retweets->count() }}\n-                    </span>\n-                </a>\n-            @else\n-                <a href=\"{{ route('articles.retweet',['id'=>$article->id]) }}\" class=\"text-red-800\">\n-                    リツイート\n-                <span>\n-                    {{ $article->retweets->count() }}\n-                </span>\n-                </a>\n-            @endif\n-        </div>\n-        {{-- <div> --}} --}}\n-            {{-- <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n-        </div> --}}\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651591601440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"py-12\">\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n+        <a href=\"{{ route('users.replies', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n@@ -31,7 +31,6 @@\n         </a>\n         <div class=\"\">\n             {{ $reply->body }}\n         </div>\n-\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1651591666375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"py-12\">\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <a href=\"{{ route('users.replies', ['name' => $reply->user->name]) }}\">\n+        <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1651591671630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"py-12\">\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n+        <a href=\"{{ route('repliess.show', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1651591686610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <div class=\"py-12\">\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <a href=\"{{ route('repliess.show', ['name' => $reply->user->name]) }}\">\n+        <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n-        <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n+        <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n                 {{ $reply->user->name }}\n             </div>\n         </a>\n"
+                },
+                {
+                    "date": 1651592675340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n \n-        @if (Auth::id() === $article->user_id)\n+        @if (Auth::id() === $rep->user_id)\n             <div>\n                 <a href=\"{{ route('replies.edit', ['reply' => $reply]) }}\">\n                     編集\n                 </a>\n"
+                },
+                {
+                    "date": 1651592753788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n \n-        @if (Auth::id() === $rep->user_id)\n+        @if (Auth::id() === $reply->user_id)\n             <div>\n                 <a href=\"{{ route('replies.edit', ['reply' => $reply]) }}\">\n                     編集\n                 </a>\n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('replies.show', ['reply' => $reply]) }}\">\n+        <a href=\"{{ route('replies.show') }}\">\n             {{ $reply->title }}\n         </a>\n         <div class=\"\">\n             {{ $reply->body }}\n"
+                },
+                {
+                    "date": 1651592850730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('replies.show') }}\">\n+        <a href=\"{{ route('replies.show', ['name' => $user->name]) }}\">\n             {{ $reply->title }}\n         </a>\n         <div class=\"\">\n             {{ $reply->body }}\n"
+                },
+                {
+                    "date": 1652278650754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <div class=\"py-12\">\n+    \n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n"
+                },
+                {
+                    "date": 1652278722784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n <div class=\"py-12\">\n-    \n+    <div class=\"p-2 w-1/2 mx-auto\">\n+        <div class=\"relative\">\n+            <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n+        </div>\n+    </div>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n"
+                }
+            ],
+            "date": 1651582360506,
+            "name": "Commit-0",
+            "content": "<div class=\"py-12\">\n    <div\n    class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n            <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n        </a>\n        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n            <div class=\"\">\n                {{ $reply->user->name }}\n            </div>\n        </a>\n        <div>\n            {{ $article->created_at->format('Y/m/d H:i') }}\n        </div>\n\n        @if (Auth::id() === $article->user_id)\n            <div>\n                <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n                    編集\n                </a>\n                <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n                    @method('DELETE')\n                    @csrf\n                    <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                </form>\n            </div>\n        @endif\n\n        <a href=\"{{ route('articles.show', ['article' => $article]) }}\">\n            {{ $article->title }}\n        </a>\n        <div class=\"\">\n            {{ $article->body }}\n        </div>\n\n        {{-- いいねボタン --}}\n        <div>\n            @if ($article->is_liked_by_auth_user())\n                <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n                いいね\n                    <span>\n                        {{ $article->likes->count() }}\n                    </span>\n                </a>\n            @else\n                <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n                    いいね\n                <span>\n                    {{ $article->likes->count() }}\n                </span>\n                </a>\n            @endif\n        </div>\n        {{-- リツイートボタン --}}\n        <div>\n            @if ($article->is_retweeted_by_auth_user())\n                <a href=\"{{ route('articles.unretweet',['id'=>$article->id]) }}\">\n                リツイート※\n                    <span>\n                        {{ $article->retweets->count() }}\n                    </span>\n                </a>\n            @else\n                <a href=\"{{ route('articles.retweet',['id'=>$article->id]) }}\" class=\"text-red-800\">\n                    リツイート\n                <span>\n                    {{ $article->retweets->count() }}\n                </span>\n                </a>\n            @endif\n        </div>\n        <div>\n            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n        </div>\n    </div>\n</div>\n"
+        }
+    ]
+}

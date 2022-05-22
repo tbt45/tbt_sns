@@ -3,11 +3,131 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 30,
             "patches": [
                 {
                     "date": 1648878351150,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651692007206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,14 @@\n+@php\n+    if($type === 'shops'){\n+        $path = 'storage/shops/';\n+    }\n+    if($type === 'products'){\n+        $path = 'storage/products/';\n+    }\n \n+@endphp\n+\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n"
+                },
+                {
+                    "date": 1651759254835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @php\n-    if($type === 'shops'){\n+    if($type === 'users'){\n         $path = 'storage/shops/';\n     }\n     if($type === 'products'){\n         $path = 'storage/products/';\n"
+                },
+                {
+                    "date": 1651759265869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n @php\n     if($type === 'users'){\n-        $path = 'storage/shops/';\n+        $path = 'storage/users/';\n     }\n-    if($type === 'products'){\n+    if($type === 'articles'){\n         $path = 'storage/products/';\n     }\n \n @endphp\n"
+                },
+                {
+                    "date": 1651759273048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     if($type === 'users'){\n         $path = 'storage/users/';\n     }\n     if($type === 'articles'){\n-        $path = 'storage/products/';\n+        $path = 'storage/articles/';\n     }\n \n @endphp\n \n"
+                },
+                {
+                    "date": 1651934485474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n @endphp\n \n <div>\n-    @if (empty($filename))\n+    @if (empty($profi))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n"
+                },
+                {
+                    "date": 1651934491932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n @endphp\n \n <div>\n-    @if (empty($profi))\n+    @if (empty($profile_image))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n"
+                },
+                {
+                    "date": 1651934503017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n <div>\n     @if (empty($profile_image))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $filename) }}\">\n+        <img src=\"{{ asset($path . $profile_image) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651934544847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n @endphp\n \n <div>\n-    @if (empty($profile_image))\n+    @if (empty($))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $profile_image) }}\">\n     @endif\n"
+                },
+                {
+                    "date": 1651934552609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n @endphp\n \n <div>\n-    @if (empty($))\n+    @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $profile_image) }}\">\n     @endif\n"
+                },
+                {
+                    "date": 1651934558266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $profile_image) }}\">\n+        <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651979375912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,12 @@\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n+</div>\n+<div>\n+    @if (empty($filename))\n+        <img src=\"{{ asset('images/no_image.jpg') }}\">\n+    @else\n+        <img src=\"{{ asset($path . $filename) }}\">\n+    @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651979387813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,17 +7,17 @@\n     }\n \n @endphp\n \n-<div>\n+{{-- <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n-</div>\n+</div> --}}\n <div>\n-    @if (empty($filename))\n+    @if (empty($user->filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n"
+                },
+                {
+                    "date": 1651979396718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($user->filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $filename) }}\">\n+        <img src=\"{{ asset($path . filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651979480183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n </div> --}}\n <div>\n-    @if (empty($user->filename))\n+    @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . filename) }}\">\n+        <img src=\"{{ asset($path . $user->filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651979486509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $user->filename) }}\">\n+        <img src=\"{{ asset( . $user->filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651979494196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset( . $user->filename) }}\">\n+        <img src=\"{{ asset('' . $user->filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651979499637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset('' . $user->filename) }}\">\n+        <img src=\"{{ asset('storage' . $user->filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651979534112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset('storage' . $user->filename) }}\">\n+        <img src=\"{{ asset('storage/users/' . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1651979618133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n-@php\n+{{-- @php\n     if($type === 'users'){\n         $path = 'storage/users/';\n     }\n     if($type === 'articles'){\n         $path = 'storage/articles/';\n     }\n \n-@endphp\n+@endphp --}}\n \n {{-- <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n"
+                },
+                {
+                    "date": 1651979710544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n-{{-- @php\n+@php\n     if($type === 'users'){\n         $path = 'storage/users/';\n     }\n     if($type === 'articles'){\n         $path = 'storage/articles/';\n     }\n \n-@endphp --}}\n+@endphp\n \n {{-- <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n"
+                },
+                {
+                    "date": 1652012305311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset('storage/users/' . $filename) }}\">\n+        <img src=\"{{ asset('storage/publicusers/' . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652012409129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset('storage/publicusers/' . $filename) }}\">\n+        <img src=\"{{ asset('storage/app/public/users/' . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652012624950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset('storage/app/public/users/' . $filename) }}\">\n+        <img src=\"{{ asset('storage/app/public/users/' . $filename/) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652012638383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset('storage/app/public/users/' . $filename/) }}\">\n+        <img src=\"{{ asset('storage/app/public/users/' . $filename./) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652012658701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset('storage/app/public/users/' . $filename./) }}\">\n+        <img src=\"{{ asset('storage/app/public/users/' . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652015191062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset('storage/app/public/users/' . $filename) }}\">\n+        <img src=\"{{ asset('storage/users/' . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652276440507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n </div> --}}\n-<div>\n+{{-- <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset('storage/users/' . $filename) }}\">\n     @endif\n\\ No newline at end of file\n-</div>\n+</div> --}}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652278240833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,15 @@\n     }\n \n @endphp\n \n-{{-- <div>\n+<div>\n     @if (empty($filename))\n-        <img src=\"{{ asset('images/no_image.jpg') }}\">\n+        <img src=\"{{ asset('storageimages/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n-</div> --}}\n+</div>\n {{-- <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n"
+                },
+                {
+                    "date": 1652278750787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,16 +9,9 @@\n @endphp\n \n <div>\n     @if (empty($filename))\n-        <img src=\"{{ asset('storageimages/no_image.jpg') }}\">\n+        <img src=\"{{ asset('storage/images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n-</div>\n-{{-- <div>\n-    @if (empty($filename))\n-        <img src=\"{{ asset('images/no_image.jpg') }}\">\n-    @else\n-        <img src=\"{{ asset('storage/users/' . $filename) }}\">\n-    @endif\n\\ No newline at end of file\n-</div> --}}\n+</div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1652279546523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n @endphp\n \n <div>\n     @if (empty($filename))\n-        <img src=\"{{ asset('storage/images/no_image.jpg') }}\">\n+        <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1648878351150,

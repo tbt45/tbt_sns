@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/articles/create.blad.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1653194352600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1653194352600,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n        {{ __('投稿する') }}\n    </h2>\n    <div class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <form method=\"POST\" action=\"{{ route('articles.store') }}\">\n            @include('articles.form')\n            <x-select-image :images=\"$images\" name=\"image1\" />\n            <x-select-image :images=\"$images\" name=\"image2\" />\n            <x-select-image :images=\"$images\" name=\"image3\" />\n            <x-select-image :images=\"$images\" name=\"image4\" />\n            <x-select-image :images=\"$images\" name=\"image5\" />\n            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                <button type=\"submit\">投稿する</button>\n            </div>\n        </form>\n    </div>\n\n    <script>\n        'use strict'\n        const images = document.querySelectorAll('.image')\n\n        images.forEach(image => {\n            image.addEventListener('click', function(e) {\n                const imageName = e.target.dataset.id.substr(0, 6)\n                const imageId = e.target.dataset.id.replace(imageName + '_', '')\n                const imageFile = e.target.dataset.file\n                const imagePath = e.target.dataset.path\n                const modal = e.target.dataset.modal\n                document.getElementById(imageName + '_thumbnail').src = imagePath + '/' + imageFile\n                document.getElementById(imageName + '_hidden').value = imageId\n                MicroModal.close(modal);\n            }, )\n        })\n    </script>\n</x-app-layout>"
+        }
+    ]
+}

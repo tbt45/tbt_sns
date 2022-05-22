@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/Http/Controllers/Auth/RegisterController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1651940555518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1651940555518,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers\\Auth;\n\nuse App\\Http\\Controllers\\Controller;\nuse App\\Providers\\RouteServiceProvider;\nuse App\\Models\\User;\nuse Illuminate\\Foundation\\Auth\\RegistersUsers;\nuse Illuminate\\Support\\Facades\\Hash;\nuse Illuminate\\Support\\Facades\\Validator;\n\nclass RegisterController extends Controller\n{\n    /*\n    |--------------------------------------------------------------------------\n    | Register Controller\n    |--------------------------------------------------------------------------\n    |\n    | This controller handles the registration of new users as well as their\n    | validation and creation. By default this controller uses a trait to\n    | provide this functionality without requiring any additional code.\n    |\n    */\n\n    use RegistersUsers;\n\n    /**\n     * Where to redirect users after registration.\n     *\n     * @var string\n     */\n    protected $redirectTo = RouteServiceProvider::HOME;\n\n    /**\n     * Create a new controller instance.\n     *\n     * @return void\n     */\n    public function __construct()\n    {\n        $this->middleware('guest');\n    }\n\n    /**\n     * Get a validator for an incoming registration request.\n     *\n     * @param  array  $data\n     * @return \\Illuminate\\Contracts\\Validation\\Validator\n     */\n    protected function validator(array $data)\n    {\n        return Validator::make($data, [\n            'name' => ['required', 'string', 'max:255'],\n            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],\n            'password' => ['required', 'string', 'min:8', 'confirmed'],\n            'filename' => '',\n\n        ]);\n    }\n\n    /**\n     * Create a new user instance after a valid registration.\n     *\n     * @param  array  $data\n     * @return \\App\\Models\\User\n     */\n    protected function create(array $data)\n    {\n        return User::create([\n            'name' => $data['name'],\n            'email' => $data['email'],\n            'password' => Hash::make($data['password']),\n        ]);\n    }\n}\n"
+        }
+    ]
+}

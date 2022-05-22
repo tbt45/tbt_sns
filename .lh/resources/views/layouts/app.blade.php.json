@@ -1,0 +1,182 @@
+{
+    "sourceFile": "resources/views/layouts/app.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 41,
+            "patches": [
+                {
+                    "date": 1652543478340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652543486275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n         <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n-        \n+          <!-- Font Awesome -->\n+         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n         <!-- Styles -->\n"
+                },
+                {
+                    "date": 1652545184824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,12 @@\n         <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n-          <!-- Font Awesome -->\n-         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n+        <!-- Font Awesome -->\n+        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n+        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n+        \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n         <!-- Styles -->\n"
+                },
+                {
+                    "date": 1652545200566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n-        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n+        {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n         <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n"
+                },
+                {
+                    "date": 1652545216975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n         {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n-        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n+        {{-- <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script> --}}\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n"
+                },
+                {
+                    "date": 1652545224363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n-        {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n-        {{-- <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script> --}}\n+        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n+        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n"
+                },
+                {
+                    "date": 1652545232765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n-        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">\n-        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n+        {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n+        {{-- <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script> --}}\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n"
+                },
+                {
+                    "date": 1652995820145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,9 @@\n \n         <title>{{ config('app.name', 'Laravel') }}</title>\n \n         <!-- Font Awesome -->\n-        {{-- <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\"> --}}\n-        {{-- <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script> --}}\n+        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n         \n         <!-- Fonts -->\n         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n"
+                },
+                {
+                    "date": 1652995865577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n             @include('layouts.navigation')\n+            @include('layouts.navigation')\n \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n                 <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n"
+                },
+                {
+                    "date": 1652995875210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n             @include('layouts.navigation')\n-            @include('layouts.navigation')\n+            @include('layouts.navigation-left')\n \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n                 <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n"
+                },
+                {
+                    "date": 1652995916559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,19 +21,19 @@\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n             @include('layouts.navigation')\n-            @include('layouts.navigation-left')\n-\n+            \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n                 <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n                     {{ $header }}\n                 </div>\n             </header>\n-\n+            \n             <!-- Page Content -->\n             <main>\n+                @include('layouts.navigation-left')\n                 {{ $slot }}\n             </main>\n         </div>\n     </body>\n"
+                },
+                {
+                    "date": 1652995931415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,8 @@\n             </header>\n             \n             <!-- Page Content -->\n             <main>\n-                @include('layouts.navigation-left')\n                 {{ $slot }}\n             </main>\n         </div>\n     </body>\n"
+                },
+                {
+                    "date": 1653148252009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n         <script src=\"{{ asset('js/app.js') }}\" defer></script>\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n+            \n             @include('layouts.navigation')\n             \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n"
+                },
+                {
+                    "date": 1653148259354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         <script src=\"{{ asset('js/app.js') }}\" defer></script>\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n-            \n+    <x-slot name=\"header\">\n             @include('layouts.navigation')\n             \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n"
+                },
+                {
+                    "date": 1653148395535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         <script src=\"{{ asset('js/app.js') }}\" defer></script>\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n-    <x-slot name=\"header\">\n+            \n             @include('layouts.navigation')\n             \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n"
+                },
+                {
+                    "date": 1653148400701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n         <script src=\"{{ asset('js/app.js') }}\" defer></script>\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n-            \n+            <x-slot name=\"header\">\n+\n             @include('layouts.navigation')\n             \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n"
+                },
+                {
+                    "date": 1653148407763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,11 @@\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n             <x-slot name=\"header\">\n+            @include('layouts.navigation')\n+            </x-slot>\n \n-            @include('layouts.navigation')\n-            \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n                 <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n                     {{ $header }}\n"
+                },
+                {
+                    "date": 1653148452429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n         <script src=\"{{ asset('js/app.js') }}\" defer></script>\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n+            @include('layouts.navigation')\n             <x-slot name=\"header\">\n-            @include('layouts.navigation')\n             </x-slot>\n \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n"
+                },
+                {
+                    "date": 1653148483500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n             @include('layouts.navigation')\n-            <x-slot name=\"header\">\n+            {{-- <x-slot name=\"header\"> --}}\n             </x-slot>\n \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n"
+                },
+                {
+                    "date": 1653148496851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,14 +22,14 @@\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n             @include('layouts.navigation')\n             {{-- <x-slot name=\"header\"> --}}\n-            </x-slot>\n+            {{-- </x-slot> --}}\n \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n-                <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n-                    {{ $header }}\n+                {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n+                    {{-- {{ $header }} --}}\n                 </div>\n             </header>\n             \n             <!-- Page Content -->\n"
+                },
+                {
+                    "date": 1653148514063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,14 +20,14 @@\n         <script src=\"{{ asset('js/app.js') }}\" defer></script>\n     </head>\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n-            @include('layouts.navigation')\n             {{-- <x-slot name=\"header\"> --}}\n-            {{-- </x-slot> --}}\n-\n-            <!-- Page Heading -->\n-            <header class=\"bg-white shadow\">\n+                {{-- </x-slot> --}}\n+                \n+                <!-- Page Heading -->\n+                <header class=\"min-h-screen bg-gray-100\">\n+                @include('layouts.navigation')\n                 {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n                     {{-- {{ $header }} --}}\n                 </div>\n             </header>\n"
+                },
+                {
+                    "date": 1653148532167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             {{-- <x-slot name=\"header\"> --}}\n                 {{-- </x-slot> --}}\n                 \n                 <!-- Page Heading -->\n-                <header class=\"min-h-screen bg-gray-100\">\n+                <header class=\"bg-white shadow\">\n                 @include('layouts.navigation')\n                 {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n                     {{-- {{ $header }} --}}\n                 </div>\n"
+                },
+                {
+                    "date": 1653148549032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,11 @@\n             {{-- <x-slot name=\"header\"> --}}\n                 {{-- </x-slot> --}}\n                 \n                 <!-- Page Heading -->\n-                <header class=\"bg-white shadow\">\n+                <header class=\"bg-white shadow min-h-screen bg-gray-100\">\n                 @include('layouts.navigation')\n-                {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n+                <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n                     {{-- {{ $header }} --}}\n                 </div>\n             </header>\n             \n"
+                },
+                {
+                    "date": 1653148556346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,12 +23,12 @@\n         <div class=\"min-h-screen bg-gray-100\">\n             {{-- <x-slot name=\"header\"> --}}\n                 {{-- </x-slot> --}}\n                 \n-                <!-- Page Heading -->\n-                <header class=\"bg-white shadow min-h-screen bg-gray-100\">\n                 @include('layouts.navigation')\n-                <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n+            <!-- Page Heading -->\n+            <header class=\"bg-white shadow\">\n+                {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n                     {{-- {{ $header }} --}}\n                 </div>\n             </header>\n             \n"
+                },
+                {
+                    "date": 1653148562399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,13 +22,13 @@\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n             {{-- <x-slot name=\"header\"> --}}\n                 {{-- </x-slot> --}}\n-                \n                 @include('layouts.navigation')\n+\n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n-                {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n+                <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n                     {{-- {{ $header }} --}}\n                 </div>\n             </header>\n             \n"
+                },
+                {
+                    "date": 1653148573887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 @include('layouts.navigation')\n \n             <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n-                <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n+                {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n                     {{-- {{ $header }} --}}\n                 </div>\n             </header>\n             \n"
+                },
+                {
+                    "date": 1653148585833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,15 +22,15 @@\n     <body class=\"font-sans antialiased\">\n         <div class=\"min-h-screen bg-gray-100\">\n             {{-- <x-slot name=\"header\"> --}}\n                 {{-- </x-slot> --}}\n+                \n+                <!-- Page Heading -->\n+                <header class=\"bg-white shadow\">\n                 @include('layouts.navigation')\n-\n-            <!-- Page Heading -->\n-            <header class=\"bg-white shadow\">\n                 {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n                     {{-- {{ $header }} --}}\n-                </div>\n+                {{-- </div> --}}\n             </header>\n             \n             <!-- Page Content -->\n             <main>\n"
+                },
+                {
+                    "date": 1653148598536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <!-- Scripts -->\n         <script src=\"{{ asset('js/app.js') }}\" defer></script>\n     </head>\n     <body class=\"font-sans antialiased\">\n-        <div class=\"min-h-screen bg-gray-100\">\n+        {{-- <div class=\"min-h-screen bg-gray-100\"> --}}\n             {{-- <x-slot name=\"header\"> --}}\n                 {{-- </x-slot> --}}\n                 \n                 <!-- Page Heading -->\n"
+                },
+                {
+                    "date": 1653148674412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             {{-- <x-slot name=\"header\"> --}}\n                 {{-- </x-slot> --}}\n                 \n                 <!-- Page Heading -->\n-                <header class=\"bg-white shadow\">\n+            <header class=\"bg-white shadow\">\n                 @include('layouts.navigation')\n                 {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n                     {{-- {{ $header }} --}}\n                 {{-- </div> --}}\n"
+                },
+                {
+                    "date": 1653148680823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,8 @@\n                     {{-- {{ $header }} --}}\n                 {{-- </div> --}}\n             </header>\n             \n-            <!-- Page Content -->\n             <main>\n                 {{ $slot }}\n             </main>\n         </div>\n"
+                },
+                {
+                    "date": 1653148688692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,9 @@\n                 \n                 <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n                 @include('layouts.navigation')\n-                {{-- <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\"> --}}\n-                    {{-- {{ $header }} --}}\n-                {{-- </div> --}}\n+            \n             </header>\n             \n             <main>\n                 {{ $slot }}\n"
+                },
+                {
+                    "date": 1653148696418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,10 @@\n         <!-- Scripts -->\n         <script src=\"{{ asset('js/app.js') }}\" defer></script>\n     </head>\n     <body class=\"font-sans antialiased\">\n-        {{-- <div class=\"min-h-screen bg-gray-100\"> --}}\n-            {{-- <x-slot name=\"header\"> --}}\n-                {{-- </x-slot> --}}\n+\n                 \n-                <!-- Page Heading -->\n             <header class=\"bg-white shadow\">\n                 @include('layouts.navigation')\n             \n             </header>\n"
+                },
+                {
+                    "date": 1653148799804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,35 +1,36 @@\n <!DOCTYPE html>\n <html lang=\"{{ str_replace('_', '-', app()->getLocale()) }}\">\n-    <head>\n-        <meta charset=\"utf-8\">\n-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-        <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n \n-        <title>{{ config('app.name', 'Laravel') }}</title>\n+<head>\n+    <meta charset=\"utf-8\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n+    <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n \n-        <!-- Font Awesome -->\n-        <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n-        \n-        <!-- Fonts -->\n-        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n+    <title>{{ config('app.name', 'Laravel') }}</title>\n \n-        <!-- Styles -->\n-        <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">\n+    <!-- Font Awesome -->\n+    <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n \n-        <!-- Scripts -->\n-        <script src=\"{{ asset('js/app.js') }}\" defer></script>\n-    </head>\n-    <body class=\"font-sans antialiased\">\n+    <!-- Fonts -->\n+    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n \n-                \n-            <header class=\"bg-white shadow\">\n-                @include('layouts.navigation')\n-            \n-            </header>\n-            \n-            <main>\n-                {{ $slot }}\n-            </main>\n-        </div>\n-    </body>\n-</html>\n+    <!-- Styles -->\n+    <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">\n+\n+    <!-- Scripts -->\n+    <script src=\"{{ asset('js/app.js') }}\" defer></script>\n+</head>\n+\n+<body class=\"font-sans antialiased\">\n+\n+    <header class=\"bg-white shadow\">\n+        @include('layouts.navigation')\n+    </header>\n+\n+    <main>\n+        {{ $slot }}\n+    </main>\n+    </div>\n+</body>\n+\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653154222966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n </head>\n \n <body class=\"font-sans antialiased\">\n \n-    <header class=\"bg-white shadow\">\n+    <header class=\"bg-white shadow top-0 z-50 sticky\">\n         @include('layouts.navigation')\n     </header>\n \n     <main>\n"
+                },
+                {
+                    "date": 1653194202466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,13 @@\n         @include('layouts.navigation')\n     </header>\n \n     <main>\n+        <div class=\"container px-5 mx-auto\">\n+            <div class=\"flex flex-wrap -m-4\">\n+                @include('layouts.navigation-left')\n+                <div class=\"w-1/2\">\n+                    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n         {{ $slot }}\n     </main>\n     </div>\n </body>\n"
+                },
+                {
+                    "date": 1653194215993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,13 +27,13 @@\n         @include('layouts.navigation')\n     </header>\n \n     <main>\n-        <div class=\"container px-5 mx-auto\">\n+        {{-- <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n                 <div class=\"w-1/2\">\n-                    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+                    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\"> --}}\n         {{ $slot }}\n     </main>\n     </div>\n </body>\n"
+                },
+                {
+                    "date": 1653194233986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,8 @@\n         {{-- <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n                 <div class=\"w-1/2\">\n-                    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\"> --}}\n         {{ $slot }}\n     </main>\n     </div>\n </body>\n"
+                },
+                {
+                    "date": 1653194239054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         @include('layouts.navigation')\n     </header>\n \n     <main>\n-        {{-- <div class=\"container px-5 mx-auto\">\n+        <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n                 <div class=\"w-1/2\">\n         {{ $slot }}\n"
+                },
+                {
+                    "date": 1653194255038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,13 +27,16 @@\n         @include('layouts.navigation')\n     </header>\n \n     <main>\n-        <div class=\"container px-5 mx-auto\">\n+        {{-- <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"w-1/2\">\n+                <div class=\"w-1/2\"> --}}\n         {{ $slot }}\n+    </div>\n+</div>\n+</div>\n     </main>\n     </div>\n </body>\n \n"
+                },
+                {
+                    "date": 1653194261617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,11 @@\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n                 <div class=\"w-1/2\"> --}}\n         {{ $slot }}\n-    </div>\n+    {{-- </div>\n </div>\n-</div>\n+</div> --}}\n     </main>\n     </div>\n </body>\n \n"
+                },
+                {
+                    "date": 1653194306287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,11 @@\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n                 <div class=\"w-1/2\"> --}}\n         {{ $slot }}\n-    {{-- </div>\n+    </div>\n </div>\n-</div> --}}\n+</div>\n     </main>\n     </div>\n </body>\n \n"
+                },
+                {
+                    "date": 1653194314157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,12 +27,12 @@\n         @include('layouts.navigation')\n     </header>\n \n     <main>\n-        {{-- <div class=\"container px-5 mx-auto\">\n+        <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"w-1/2\"> --}}\n+                <div class=\"w-1/2\">\n         {{ $slot }}\n     </div>\n </div>\n </div>\n"
+                }
+            ],
+            "date": 1652543478340,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"{{ str_replace('_', '-', app()->getLocale()) }}\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n\n        <title>{{ config('app.name', 'Laravel') }}</title>\n\n        \n        <!-- Fonts -->\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n\n        <!-- Styles -->\n        <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">\n\n        <!-- Scripts -->\n        <script src=\"{{ asset('js/app.js') }}\" defer></script>\n    </head>\n    <body class=\"font-sans antialiased\">\n        <div class=\"min-h-screen bg-gray-100\">\n            @include('layouts.navigation')\n\n            <!-- Page Heading -->\n            <header class=\"bg-white shadow\">\n                <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\n                    {{ $header }}\n                </div>\n            </header>\n\n            <!-- Page Content -->\n            <main>\n                {{ $slot }}\n            </main>\n        </div>\n    </body>\n</html>\n"
+        }
+    ]
+}

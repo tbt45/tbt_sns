@@ -1,0 +1,110 @@
+{
+    "sourceFile": "app/Http/Controllers/ReplyController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1651066931569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651067350127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,59 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Http\\Controllers\\Controller;\n+use App\\Http\\Requests\\ArticleRequest as RequestsArticleRequest;\n use Illuminate\\Http\\Request;\n+use App\\Models\\Article;\n+use App\\Models\\Like;\n+use Illuminate\\Support\\Facades\\Auth;\n \n class ReplyController extends Controller\n {\n+    public function index()\n+    {\n+        $articles = Article::all()->sortByDesc('created_at');\n+\n+        return view('articles.index', ['articles' => $articles]);\n+    }\n+\n+    public function create()\n+    {\n+        return view('articles.create');\n+    }\n+\n+    public function store(RequestsArticleRequest $request, Article $article)\n+    {\n+        $article->fill($request->all());\n+        $article->user_id = $request->user()->id;\n+        $article->save();\n+\n+        return redirect()->route('articles.timeline');\n+    }\n+\n+    public function edit(Article $article)\n+    {\n+        return view('articles.edit', ['article' => $article]);\n+    }\n+\n+    public function  update(RequestsArticleRequest $request, Article $article)\n+    {\n+        $article->fill($request->all())->save();\n+\n+        return redirect()->route('articles.timeline');\n+    }\n+\n+    public function destroy(Article $article)\n+    {\n+        $article->delete();\n+\n+        return redirect()->back();\n+    }\n+\n+    // ログインしていない人に見えるようにする\n+    public function show(Article $article)\n+    {\n+        return view('articles.show', ['article' => $article]);\n+    }\n }\n"
+                },
+                {
+                    "date": 1651193870390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,14 +10,14 @@\n use Illuminate\\Support\\Facades\\Auth;\n \n class ReplyController extends Controller\n {\n-    public function index()\n-    {\n-        $articles = Article::all()->sortByDesc('created_at');\n+    // public function index()\n+    // {\n+    //     $articles = Article::all()->sortByDesc('created_at');\n \n-        return view('articles.index', ['articles' => $articles]);\n-    }\n+    //     return view('articles.index', ['articles' => $articles]);\n+    // }\n \n     public function create()\n     {\n         return view('articles.create');\n"
+                },
+                {
+                    "date": 1651193884775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     // }\n \n     public function create()\n     {\n-        return view('articles.create');\n+        return view('replys.create');\n     }\n \n     public function store(RequestsArticleRequest $request, Article $article)\n     {\n"
+                },
+                {
+                    "date": 1651193897218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     {\n         return view('replys.create');\n     }\n \n-    public function store(RequestsArticleRequest $request, Article $article)\n+    public function store(RequestsArticleRequest $request, Re $article)\n     {\n         $article->fill($request->all());\n         $article->user_id = $request->user()->id;\n         $article->save();\n"
+                },
+                {
+                    "date": 1651193906165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n use App\\Http\\Requests\\ArticleRequest as RequestsArticleRequest;\n use Illuminate\\Http\\Request;\n use App\\Models\\Article;\n use App\\Models\\Like;\n+use App\\Models\\Reply;\n use Illuminate\\Support\\Facades\\Auth;\n \n class ReplyController extends Controller\n {\n@@ -22,9 +23,9 @@\n     {\n         return view('replys.create');\n     }\n \n-    public function store(RequestsArticleRequest $request, Re $article)\n+    public function store(RequestsArticleRequest $request, Reply $reply)\n     {\n         $article->fill($request->all());\n         $article->user_id = $request->user()->id;\n         $article->save();\n"
+                },
+                {
+                    "date": 1651193917927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     }\n \n     public function store(RequestsArticleRequest $request, Reply $reply)\n     {\n-        $article->fill($request->all());\n+        $reply->fill($request->all());\n         $article->user_id = $request->user()->id;\n         $article->save();\n \n         return redirect()->route('articles.timeline');\n"
+                },
+                {
+                    "date": 1651193929875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \n     public function store(RequestsArticleRequest $request, Reply $reply)\n     {\n         $reply->fill($request->all());\n-        $article->user_id = $request->user()->id;\n+        $reply->user_id = $request->user()->id;\n         $article->save();\n \n         return redirect()->route('articles.timeline');\n     }\n"
+                },
+                {
+                    "date": 1651193937781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     public function store(RequestsArticleRequest $request, Reply $reply)\n     {\n         $reply->fill($request->all());\n         $reply->user_id = $request->user()->id;\n-        $article->save();\n+        $reply->save();\n \n         return redirect()->route('articles.timeline');\n     }\n \n"
+                },
+                {
+                    "date": 1651193994144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     }\n \n     public function edit(Article $article)\n     {\n-        return view('articles.edit', ['article' => $article]);\n+        return view('repls.edit', ['article' => $article]);\n     }\n \n     public function  update(RequestsArticleRequest $request, Article $article)\n     {\n"
+                },
+                {
+                    "date": 1651194001223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     }\n \n     public function edit(Article $article)\n     {\n-        return view('repls.edit', ['article' => $article]);\n+        return view('replys.edit', ['' => $article]);\n     }\n \n     public function  update(RequestsArticleRequest $request, Article $article)\n     {\n"
+                },
+                {
+                    "date": 1651194010431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     }\n \n     public function edit(Article $article)\n     {\n-        return view('replys.edit', ['' => $article]);\n+        return view('replys.edit', ['reply' => $rep]);\n     }\n \n     public function  update(RequestsArticleRequest $request, Article $article)\n     {\n"
+                },
+                {
+                    "date": 1651194029071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,11 @@\n \n         return redirect()->route('articles.timeline');\n     }\n \n-    public function edit(Article $article)\n+    public function edit(Reply $reply)\n     {\n-        return view('replys.edit', ['reply' => $rep]);\n+        return view('replys.edit', ['reply' => $reply]);\n     }\n \n     public function  update(RequestsArticleRequest $request, Article $article)\n     {\n"
+                },
+                {
+                    "date": 1651194034272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     {\n         return view('replys.edit', ['reply' => $reply]);\n     }\n \n-    public function  update(RequestsArticleRequest $request, Article $article)\n+    public function  update(RequestsArticleRequest $request, Reply $reply)\n     {\n         $article->fill($request->all())->save();\n \n         return redirect()->route('articles.timeline');\n"
+                },
+                {
+                    "date": 1651194040106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n \n         return redirect()->route('articles.timeline');\n     }\n \n-    public function destroy(Article $article)\n+    public function destroy(Reply $reply)\n     {\n         $article->delete();\n \n         return redirect()->back();\n"
+                },
+                {
+                    "date": 1651194057951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         return redirect()->back();\n     }\n \n     // ログインしていない人に見えるようにする\n-    public function show(Article $article)\n+    public function show(Reply $reply)\n     {\n-        return view('articles.show', ['article' => $article]);\n+        return view('articles.show', ['article' => $reply]);\n     }\n }\n"
+                },
+                {
+                    "date": 1651194066607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,16 +39,16 @@\n     }\n \n     public function  update(RequestsArticleRequest $request, Reply $reply)\n     {\n-        $article->fill($request->all())->save();\n+        $reply->fill($request->all())->save();\n \n         return redirect()->route('articles.timeline');\n     }\n \n     public function destroy(Reply $reply)\n     {\n-        $article->delete();\n+        $reply->delete();\n \n         return redirect()->back();\n     }\n \n"
+                },
+                {
+                    "date": 1651194082973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,7 +54,7 @@\n \n     // ログインしていない人に見えるようにする\n     public function show(Reply $reply)\n     {\n-        return view('articles.show', ['article' => $reply]);\n+        return view('replys.show', ['article' => $reply]);\n     }\n }\n"
+                },
+                {
+                    "date": 1651194858687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,7 +54,7 @@\n \n     // ログインしていない人に見えるようにする\n     public function show(Reply $reply)\n     {\n-        return view('replys.show', ['article' => $reply]);\n+        return view('replies.show', ['reply' => $reply]);\n     }\n }\n"
+                },
+                {
+                    "date": 1651194865697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     }\n \n     public function edit(Reply $reply)\n     {\n-        return view('replys.edit', ['reply' => $reply]);\n+        return view('replies.edit', ['reply' => $reply]);\n     }\n \n     public function  update(RequestsArticleRequest $request, Reply $reply)\n     {\n"
+                },
+                {
+                    "date": 1651194874861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     // }\n \n     public function create()\n     {\n-        return view('replys.create');\n+        return view('replies.create');\n     }\n \n     public function store(RequestsArticleRequest $request, Reply $reply)\n     {\n"
+                },
+                {
+                    "date": 1651195098425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n     public function store(RequestsArticleRequest $request, Reply $reply)\n     {\n         $reply->fill($request->all());\n         $reply->user_id = $request->user()->id;\n+        $reply->user_id = $request->user()->id;\n         $reply->save();\n \n         return redirect()->route('articles.timeline');\n     }\n"
+                },
+                {
+                    "date": 1651195134690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     public function store(RequestsArticleRequest $request, Reply $reply)\n     {\n         $reply->fill($request->all());\n         $reply->user_id = $request->user()->id;\n-        $reply->user_id = $request->article()->id;\n+        $reply->article_id = $request->article()->id;\n         $reply->save();\n \n         return redirect()->route('articles.timeline');\n     }\n"
+                },
+                {
+                    "date": 1651326382043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     public function store(RequestsArticleRequest $request, Reply $reply, Article $article)\n     {\n         $reply->fill($request->all());\n         // $reply->user_id = $request->user()->id;\n-        $reply->user_id = $request->user()->id;\n+        $reply->user_id = $request->user()-;\n         $reply->article_id = $request->article()->id;\n         $reply->save();\n \n         return redirect()->route('articles.timeline');\n"
+                }
+            ],
+            "date": 1651066931569,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass ReplyController extends Controller\n{\n}\n"
+        }
+    ]
+}

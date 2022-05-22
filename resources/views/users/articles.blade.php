@@ -10,9 +10,8 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     {{-- 返信機能をつけてから使用する --}}
-                    <x-nav-link :href="route('users.show',  ['name' => $user->name])" :active="request()->routeIs('users.show',  ['name' => $user->name])">
-                    {{-- <x-nav-link :href="route('articles.reply')" :active="request()->routeIs('articles.reply')"> --}}
-                    {{ __('記事と返信(未実装)') }}
+                    <x-nav-link :href="route('replies.show',  ['name' => $user->name])" :active="request()->routeIs('replies.show',  ['name' => $user->name])">
+                    {{ __('返信') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

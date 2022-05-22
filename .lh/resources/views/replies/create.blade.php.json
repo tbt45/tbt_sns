@@ -1,0 +1,66 @@
+{
+    "sourceFile": "resources/views/replies/create.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1651194792359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651558830322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,13 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <form method=\"POST\" action=\"{{ route('replys.store') }}\">\n+        <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                <button type=\"submit\">投稿する</button>\n+                <button type=\"submit\", ['id' => $article->id]>投稿する</button>\n             </div>\n         </form>\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651558836970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                <button type=\"submit\", ['id' => $article->id]>投稿する</button>\n+                <button type=\"submit\">投稿する</button>\n             </div>\n         </form>\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1651558843268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n+        <form method=\"POST\" action=\"{{ route('replies.store', ['id' => $article->id]) }}\">\n             @include('replies.form')\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 <button type=\"submit\">投稿する</button>\n"
+                },
+                {
+                    "date": 1651558971208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <form method=\"POST\" action=\"{{ route('replies.store', ['id' => $article->id]) }}\">\n+        <form method=\"POST\" action=\"{{ route('replies.store', ['article' => $article->id]) }}\">\n             @include('replies.form')\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 <button type=\"submit\">投稿する</button>\n"
+                },
+                {
+                    "date": 1651559027073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <form method=\"POST\" action=\"{{ route('replies.store', ['article' => $article->id]) }}\">\n+        <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 <button type=\"submit\">投稿する</button>\n"
+                },
+                {
+                    "date": 1651568533897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n         </h2>\n     </x-slot>\n \n     <div\n+    \n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n             <div\n"
+                },
+                {
+                    "date": 1651568551700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,12 @@\n         </h2>\n     </x-slot>\n \n     <div\n-    \n+    <div>\n+        @include('articles.card')\n+    </div>\n+    {{-- この記事に対する返信を全て表示する。 --}}\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n             <div\n"
+                },
+                {
+                    "date": 1651568575721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,9 @@\n         </h2>\n     </x-slot>\n \n     <div\n-    <div>\n-        @include('articles.card')\n-    </div>\n-    {{-- この記事に対する返信を全て表示する。 --}}\n+    \n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n             <div\n"
+                },
+                {
+                    "date": 1651568585846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,10 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事投稿') }}\n         </h2>\n     </x-slot>\n-\n+    \n     <div\n-    \n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n             <div\n"
+                },
+                {
+                    "date": 1651568599967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,12 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事投稿') }}\n         </h2>\n     </x-slot>\n-    \n+    <div>\n+        @include('articles.card')\n+    </div>\n+    {{-- この記事に対する返信を全て表示する。 --}}\n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n"
+                },
+                {
+                    "date": 1651568645509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('記事') }}\n+            {{ __('記事s') }}\n         </h2>\n     </x-slot>\n \n     <div>\n"
+                },
+                {
+                    "date": 1651582209065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </div>\n     {{-- この記事に対する返信を全て表示する。 --}}\n \n \n-    返信する\n+    {{-- 返信する --}}\n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n             @include('replies.form')\n"
+                }
+            ],
+            "date": 1651194792359,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('記事投稿') }}\n        </h2>\n    </x-slot>\n\n    <div\n        class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <form method=\"POST\" action=\"{{ route('replys.store') }}\">\n            @include('replies.form')\n            <div\n                class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                <button type=\"submit\">投稿する</button>\n            </div>\n        </form>\n    </div>\n</x-app-layout>\n"
+        }
+    ]
+}

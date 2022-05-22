@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1650557016985,
@@ -56,6 +56,54 @@
                 {
                     "date": 1650557113160,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     <div class=\"flex justify-between h-16\">\n       <div class=\"flex\">\n         <!-- Logo -->\n         <div class=\"shrink-0 flex items-center\">\n-          <a href=\"{{ route('dashboard') }}\">\n+            <a href=\"{{ route('dashboard') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n           </a>\n         </div>\n \n@@ -105,8 +105,8 @@\n                                         this.closest('form').submit();\">\n             {{ __('Log Out') }}\n             </x-responsive-nav-link>\n         </form>\n-      </div>\n+        </div>\n     </div>\n-  </div>\n+    </div>\n </nav>\n"
+                },
+                {
+                    "date": 1652539882014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n <nav x-data=\"{ open: false }\" class=\"bg-white border-b border-gray-100\">\n-  <!-- Primary Navigation Menu -->\n-  <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n+    <!-- Primary Navigation Menu -->\n+    <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n     <div class=\"flex justify-between h-16\">\n-      <div class=\"flex\">\n+        <div class=\"flex\">\n         <!-- Logo -->\n         <div class=\"shrink-0 flex items-center\">\n             <a href=\"{{ route('dashboard') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n-          </a>\n+            </a>\n         </div>\n \n         <!-- Navigation Links -->\n         <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n@@ -47,8 +47,9 @@\n             </x-slot>\n \n             <x-slot name=\"content\">\n             <!-- Authentication -->\n+            a\n             <form method=\"POST\" action=\"{{ route('users.show', ['name' => Auth::user()->name]) }}\">\n                 @csrf\n                 <x-dropdown-link :href=\"route('users.show', ['name' => Auth::user()->name])\" onclick=\"event.preventDefault();\n                                                 this.closest('form').submit();\">\n"
+                },
+                {
+                    "date": 1652539916189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,8 @@\n             </x-slot>\n \n             <x-slot name=\"content\">\n             <!-- Authentication -->\n-            a\n             <form method=\"POST\" action=\"{{ route('users.show', ['name' => Auth::user()->name]) }}\">\n                 @csrf\n                 <x-dropdown-link :href=\"route('users.show', ['name' => Auth::user()->name])\" onclick=\"event.preventDefault();\n                                                 this.closest('form').submit();\">\n"
+                },
+                {
+                    "date": 1652540333671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n         <div class=\"shrink-0 flex items-center\">\n-            <a href=\"{{ route('dashboard') }}\">\n+            <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n \n"
+                },
+                {
+                    "date": 1652540362157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n-        <div class=\"shrink-0 flex items-center\">\n+        <div class=\"shrink-0 flex items-center \">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n"
+                },
+                {
+                    "date": 1652540386153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n-        <div class=\"shrink-0 flex items-center \">\n+        <div class=\"w-28\">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n"
+                },
+                {
+                    "date": 1652540535573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n-        <div class=\"w-28\">\n+        <div class=\"shrink-0 flex items-center w-28\">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n"
+                },
+                {
+                    "date": 1652540545752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n         <div class=\"shrink-0 flex items-center w-28\">\n+        <div class=\" w-28\">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n"
+                },
+                {
+                    "date": 1652540551925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,14 @@\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n         <div class=\"shrink-0 flex items-center w-28\">\n-        <div class=\" w-28\">\n+        <div class=\"w-28\">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n+        </div>\n \n         <!-- Navigation Links -->\n         <div class=\"hidden space-x-8 sm:-my-px sm:ml-10 sm:flex\">\n             <x-nav-link :href=\"route('articles.timeline')\" :active=\"request()->routeIs('articles.timeline')\">\n"
+                },
+                {
+                    "date": 1652540570418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n         <div class=\"shrink-0 flex items-center w-28\">\n-        <div class=\"w-28\">\n+        <div class=\"w-12\">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n"
+                },
+                {
+                    "date": 1652540598844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n-        <div class=\"shrink-0 flex items-center w-28\">\n+        <div class=\"shrink-0 flex items-center\">\n         <div class=\"w-12\">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n"
+                },
+                {
+                    "date": 1652540840535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n         <div class=\"shrink-0 flex items-center\">\n-        <div class=\"w-12\">\n+        <div class=\"w-40\">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n"
+                },
+                {
+                    "date": 1652540854809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     <div class=\"flex justify-between h-16\">\n         <div class=\"flex\">\n         <!-- Logo -->\n         <div class=\"shrink-0 flex items-center\">\n-        <div class=\"w-\">\n+        <div class=\"w-8\">\n             <a href=\"{{ route('articles.timeline') }}\">\n             <x-application-logo class=\"block h-10 w-auto fill-current text-gray-600\" />\n             </a>\n         </div>\n"
                 }
             ],
             "date": 1650557016985,

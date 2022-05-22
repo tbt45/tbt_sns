@@ -1,0 +1,70 @@
+{
+    "sourceFile": "resources/views/replies/form.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1651566310342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651566315734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    いn\n+    <input type=\"text\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651566328858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    <input type=\"text\">\n+    <input type=\"text\" name=\"\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651566333935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    <input type=\"text\" name=\"\">\n+    <input type=\"text\" name=\"article_id\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651566340175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    <input type=\"text\" name=\"article_id\">\n+    <input type=\"text\" name=\"article_id\" value=\"{{  }}\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651566346977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    <input type=\"text\" name=\"article_id\" value=\"{{  }}\">\n+    <input type=\"text\" name=\"article_id\" value=\"{{ $article }}\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651566541464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    <input type=\"text\" name=\"article_id\" value=\"{{ $article }}\">\n+    <input type=\"hidd\" name=\"article_id\" value=\"{{ $article->id }}\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651567423444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n <div class=\"py-12\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n-    </div>\n-    <input type=\"hidd\" name=\"article_id\" value=\"{{ $article->id }}\">\n-    <div\n+    {{-- </div>\n+    <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n+    <div --}}\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n     <div\n"
+                },
+                {
+                    "date": 1651567432295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n <div class=\"py-12\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n-    {{-- </div>\n+    {{-- {{-- </div> --}}\n     <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n     <div --}}\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n"
+                },
+                {
+                    "date": 1651567441976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n <div class=\"py-12\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n-    {{-- {{-- </div> --}}\n+    {{-- {{-- </div>\n     <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n-    <div --}}\n+    <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n     <div\n"
+                },
+                {
+                    "date": 1651567453575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n <div class=\"py-12\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n-    {{-- {{-- </div>\n-    <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n+    </div>\n+    {{-- <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\"> --}}\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651567465338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    {{-- <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\"> --}}\n+    <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651567650026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n+    <input type=\"text\" name=\"article_id\" value=\"{{ $article->id }}\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                },
+                {
+                    "date": 1651567655705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label>タイトル</label>\n     </div>\n-    <input type=\"text\" name=\"article_id\" value=\"{{ $article->id }}\">\n+    <input type=\"\" name=\"article_id\" value=\"{{ $article->id }}\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n     </div>\n"
+                }
+            ],
+            "date": 1651566310342,
+            "name": "Commit-0",
+            "content": "@csrf\n<div class=\"py-12\">\n    <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <label>タイトル</label>\n    </div>\n    いn\n    <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n    </div>\n    <div\n        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <label></label>\n        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $reply->body ?? old('body') }}</textarea>\n    </div>\n</div>\n"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "sourceFile": "app/Models/Reply.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1651065133424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651065150751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n <?php\n \n namespace App\\Models;\n \n-use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n use Illuminate\\Database\\Eloquent\\Model;\n+use Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\n+use Illuminate\\Database\\Eloquent\\Relations\\HasMany;\n+use Illuminate\\Support\\Facades\\Auth;\n \n class Reply extends Model\n {\n     protected $fillable = [\n"
+                },
+                {
+                    "date": 1651065212891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,15 @@\n     protected $fillable = [\n         'title',\n         'body',\n     ];\n+\n+    public function user(): BelongsTo\n+    {\n+        return $this->belongsTo('App\\Models\\User');\n+    }\n+\n+    public function articles()\n+    {\n+        return $this->hasMany('App\\Models\\Article');\n+    }\n }\n"
+                },
+                {
+                    "date": 1651065229906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         'title',\n         'body',\n     ];\n \n-    public function user(): BelongsTo\n+    public function user()\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n \n"
+                },
+                {
+                    "date": 1651196343093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,8 @@\n \n namespace App\\Models;\n \n use Illuminate\\Database\\Eloquent\\Model;\n-use Illuminate\\Database\\Eloquent\\Relations\\BelongsTo;\n-use Illuminate\\Database\\Eloquent\\Relations\\HasMany;\n-use Illuminate\\Support\\Facades\\Auth;\n \n class Reply extends Model\n {\n     protected $fillable = [\n"
+                },
+                {
+                    "date": 1651199008535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n \n     public function articles()\n     {\n-        return $this->hasMany('App\\Models\\Article');\n+        return $this->べ('App\\Models\\Article');\n     }\n }\n"
+                },
+                {
+                    "date": 1651199013914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n \n     public function articles()\n     {\n-        return $this->べ('App\\Models\\Article');\n+        return $this->belongsTo('App\\Models\\Article');\n     }\n }\n"
+                },
+                {
+                    "date": 1651456972709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n {\n     protected $fillable = [\n         'title',\n         'body',\n+        ''\n     ];\n \n     public function user()\n     {\n"
+                },
+                {
+                    "date": 1651456980777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n {\n     protected $fillable = [\n         'title',\n         'body',\n-        ''\n+        'artiuc'\n     ];\n \n     public function user()\n     {\n"
+                },
+                {
+                    "date": 1651456987359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n {\n     protected $fillable = [\n         'title',\n         'body',\n-        'artiuc'\n+        'article_id'\n     ];\n \n     public function user()\n     {\n"
+                },
+                {
+                    "date": 1651555835317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n     protected $fillable = [\n         'title',\n         'body',\n         'article_id'\n+        'article_id'\n     ];\n \n     public function user()\n     {\n"
+                },
+                {
+                    "date": 1651555843010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n {\n     protected $fillable = [\n         'title',\n         'body',\n-        'article_id'\n-        'article_id'\n+        'article_id',\n+        'user_id'\n     ];\n \n     public function user()\n     {\n"
+                },
+                {
+                    "date": 1651580635160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n \n-    public function articles()\n+    public function article()\n     {\n         return $this->belongsTo('App\\Models\\Article');\n     }\n }\n"
+                }
+            ],
+            "date": 1651065133424,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Reply extends Model\n{\n    protected $fillable = [\n        'title',\n        'body',\n    ];\n}\n"
+        }
+    ]
+}

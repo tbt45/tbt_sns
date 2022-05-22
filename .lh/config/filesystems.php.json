@@ -1,0 +1,98 @@
+{
+    "sourceFile": "config/filesystems.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1652016333936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1652016372006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \n         'local' => [\n             'driver' => 'local',\n             'root' => storage_path('app'),\n-            'throw' => true,\n+            'throw' => false,\n         ],\n \n         'public' => [\n             'driver' => 'local',\n"
+                },
+                {
+                    "date": 1652016377220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n             'driver' => 'local',\n             'root' => storage_path('app/public'),\n             'url' => env('APP_URL') . '/storage',\n             'visibility' => 'public',\n-            'throw' => false,\n+            'throw' => true,\n         ],\n \n         's3' => [\n             'driver' => 's3',\n"
+                },
+                {
+                    "date": 1652016407682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n             'driver' => 'local',\n             'root' => storage_path('app/public'),\n             'url' => env('APP_URL') . '/storage',\n             'visibility' => 'public',\n-            'throw' => true,\n+            'throw' => false,\n         ],\n \n         's3' => [\n             'driver' => 's3',\n"
+                },
+                {
+                    "date": 1652016412939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \n         'local' => [\n             'driver' => 'local',\n             'root' => storage_path('app'),\n-            'throw' => false,\n+            'throw' => true,\n         ],\n \n         'public' => [\n             'driver' => 'local',\n"
+                },
+                {
+                    "date": 1652016421063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \n         'local' => [\n             'driver' => 'local',\n             'root' => storage_path('app'),\n-            'throw' => true,\n+            'throw' => false,\n         ],\n \n         'public' => [\n             'driver' => 'local',\n"
+                },
+                {
+                    "date": 1652016973996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n             'driver' => 'local',\n             'root' => storage_path('app/public'),\n             'url' => env('APP_URL') . '/storage',\n             'visibility' => 'public',\n-            'throw' => false,\n+            'throw' => ,\n         ],\n \n         's3' => [\n             'driver' => 's3',\n"
+                },
+                {
+                    "date": 1652017013513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,17 +32,17 @@\n \n         'local' => [\n             'driver' => 'local',\n             'root' => storage_path('app'),\n-            'throw' => false,\n+            'throw' => r,\n         ],\n \n         'public' => [\n             'driver' => 'local',\n             'root' => storage_path('app/public'),\n             'url' => env('APP_URL') . '/storage',\n             'visibility' => 'public',\n-            'throw' => ,\n+            'throw' => true,\n         ],\n \n         's3' => [\n             'driver' => 's3',\n"
+                },
+                {
+                    "date": 1652017053436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,8 @@\n \n         'local' => [\n             'driver' => 'local',\n             'root' => storage_path('app'),\n-            'throw' => r,\n         ],\n \n         'public' => [\n             'driver' => 'local',\n"
+                },
+                {
+                    "date": 1652017064570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,8 @@\n             'driver' => 'local',\n             'root' => storage_path('app/public'),\n             'url' => env('APP_URL') . '/storage',\n             'visibility' => 'public',\n-            'throw' => true,\n         ],\n \n         's3' => [\n             'driver' => 's3',\n"
+                },
+                {
+                    "date": 1652017107711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,15 +32,17 @@\n \n         'local' => [\n             'driver' => 'local',\n             'root' => storage_path('app'),\n+            'throw' => true,\n         ],\n \n         'public' => [\n             'driver' => 'local',\n             'root' => storage_path('app/public'),\n             'url' => env('APP_URL') . '/storage',\n             'visibility' => 'public',\n+            'throw' => true,\n         ],\n \n         's3' => [\n             'driver' => 's3',\n"
+                },
+                {
+                    "date": 1652278166194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,17 +32,16 @@\n \n         'local' => [\n             'driver' => 'local',\n             'root' => storage_path('app'),\n-            'throw' => true,\n         ],\n \n         'public' => [\n             'driver' => 'local',\n             'root' => storage_path('app/public'),\n             'url' => env('APP_URL') . '/storage',\n             'visibility' => 'public',\n-            'throw' => true,\n+            'throw' => false,\n         ],\n \n         's3' => [\n             'driver' => 's3',\n"
+                },
+                {
+                    "date": 1652281601890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n     |\n     */\n \n     'default' => env('FILESYSTEM_DISK', 'local'),\n+    'default' => env('FILESYSTEM_DISK', 'local'),\n \n     /*\n     |--------------------------------------------------------------------------\n     | Filesystem Disks\n@@ -39,9 +40,8 @@\n             'driver' => 'local',\n             'root' => storage_path('app/public'),\n             'url' => env('APP_URL') . '/storage',\n             'visibility' => 'public',\n-            'throw' => false,\n         ],\n \n         's3' => [\n             'driver' => 's3',\n@@ -51,9 +51,8 @@\n             'bucket' => env('AWS_BUCKET'),\n             'url' => env('AWS_URL'),\n             'endpoint' => env('AWS_ENDPOINT'),\n             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),\n-            'throw' => false,\n         ],\n \n     ],\n \n"
+                },
+                {
+                    "date": 1652281610533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     |\n     */\n \n     'default' => env('FILESYSTEM_DISK', 'local'),\n-    'default' => env('FILESYSTEM_DISK', 'local'),\n+    'cloud' => env('FILESYSTEM_DISK', 'local'),\n \n     /*\n     |--------------------------------------------------------------------------\n     | Filesystem Disks\n"
+                },
+                {
+                    "date": 1652281617074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     |\n     */\n \n     'default' => env('FILESYSTEM_DISK', 'local'),\n-    'cloud' => env('FILESYSTEM_DISK', 'local'),\n+    'cloud' => env('FILESYSTEM_', 'local'),\n \n     /*\n     |--------------------------------------------------------------------------\n     | Filesystem Disks\n"
+                },
+                {
+                    "date": 1652281625240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     |\n     */\n \n     'default' => env('FILESYSTEM_DISK', 'local'),\n-    'cloud' => env('FILESYSTEM_', 'local'),\n+    'cloud' => env('FILESYSTEM_CLOUD', 's3'),\n \n     /*\n     |--------------------------------------------------------------------------\n     | Filesystem Disks\n"
+                },
+                {
+                    "date": 1652282671409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n             'driver' => 's3',\n             'key' => env('AWS_ACCESS_KEY_ID'),\n             'secret' => env('AWS_SECRET_ACCESS_KEY'),\n             'region' => env('AWS_DEFAULT_REGION'),\n-            'bucket' => env('AWS_BUCKET'),\n+            'bucket' => env('aws-tbt-sns'),\n             'url' => env('AWS_URL'),\n             'endpoint' => env('AWS_ENDPOINT'),\n             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),\n         ],\n"
+                },
+                {
+                    "date": 1652283145693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n         ],\n \n         's3' => [\n             'driver' => 's3',\n-            'key' => env('AWS_ACCESS_KEY_ID'),\n+            'key' => env('AKIARWIHOOOV2GXIQIU7'),\n             'secret' => env('AWS_SECRET_ACCESS_KEY'),\n             'region' => env('AWS_DEFAULT_REGION'),\n             'bucket' => env('aws-tbt-sns'),\n             'url' => env('AWS_URL'),\n"
+                },
+                {
+                    "date": 1652283169847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n \n         's3' => [\n             'driver' => 's3',\n             'key' => env('AKIARWIHOOOV2GXIQIU7'),\n-            'secret' => env('AWS_SECRET_ACCESS_KEY'),\n+            'secret' => env('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'),\n             'region' => env('AWS_DEFAULT_REGION'),\n             'bucket' => env('aws-tbt-sns'),\n             'url' => env('AWS_URL'),\n             'endpoint' => env('AWS_ENDPOINT'),\n"
+                },
+                {
+                    "date": 1652283245956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         's3' => [\n             'driver' => 's3',\n             'key' => env('AKIARWIHOOOV2GXIQIU7'),\n             'secret' => env('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'),\n-            'region' => env('AWS_DEFAULT_REGION'),\n+            'region' => env('ap-northeast-1'),\n             'bucket' => env('aws-tbt-sns'),\n             'url' => env('AWS_URL'),\n             'endpoint' => env('AWS_ENDPOINT'),\n             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),\n"
+                },
+                {
+                    "date": 1652283315650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,12 +44,12 @@\n         ],\n \n         's3' => [\n             'driver' => 's3',\n-            'key' => env('AKIARWIHOOOV2GXIQIU7'),\n-            'secret' => env('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'),\n-            'region' => env('ap-northeast-1'),\n-            'bucket' => env('aws-tbt-sns'),\n+            'key' => env('AWS_ACCESS_KEY_ID'),\n+            'secret' => env('AWS_SECRET_ACCESS_KEY'),\n+            'region' => env('AWS_DEFAULT_REGION'),\n+            'bucket' => env('AWS_BUCKET'),\n             'url' => env('AWS_URL'),\n             'endpoint' => env('AWS_ENDPOINT'),\n             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),\n         ],\n"
+                }
+            ],
+            "date": 1652016333936,
+            "name": "Commit-0",
+            "content": "<?php\n\nreturn [\n\n    /*\n    |--------------------------------------------------------------------------\n    | Default Filesystem Disk\n    |--------------------------------------------------------------------------\n    |\n    | Here you may specify the default filesystem disk that should be used\n    | by the framework. The \"local\" disk, as well as a variety of cloud\n    | based disks are available to your application. Just store away!\n    |\n    */\n\n    'default' => env('FILESYSTEM_DISK', 'local'),\n\n    /*\n    |--------------------------------------------------------------------------\n    | Filesystem Disks\n    |--------------------------------------------------------------------------\n    |\n    | Here you may configure as many filesystem \"disks\" as you wish, and you\n    | may even configure multiple disks of the same driver. Defaults have\n    | been set up for each driver as an example of the required values.\n    |\n    | Supported Drivers: \"local\", \"ftp\", \"sftp\", \"s3\"\n    |\n    */\n\n    'disks' => [\n\n        'local' => [\n            'driver' => 'local',\n            'root' => storage_path('app'),\n            'throw' => true,\n        ],\n\n        'public' => [\n            'driver' => 'local',\n            'root' => storage_path('app/public'),\n            'url' => env('APP_URL') . '/storage',\n            'visibility' => 'public',\n            'throw' => false,\n        ],\n\n        's3' => [\n            'driver' => 's3',\n            'key' => env('AWS_ACCESS_KEY_ID'),\n            'secret' => env('AWS_SECRET_ACCESS_KEY'),\n            'region' => env('AWS_DEFAULT_REGION'),\n            'bucket' => env('AWS_BUCKET'),\n            'url' => env('AWS_URL'),\n            'endpoint' => env('AWS_ENDPOINT'),\n            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),\n            'throw' => false,\n        ],\n\n    ],\n\n    /*\n    |--------------------------------------------------------------------------\n    | Symbolic Links\n    |--------------------------------------------------------------------------\n    |\n    | Here you may configure the symbolic links that will be created when the\n    | `storage:link` Artisan command is executed. The array keys should be\n    | the locations of the links and the values should be their targets.\n    |\n    */\n\n    'links' => [\n        public_path('storage') => storage_path('app/public'),\n    ],\n\n];\n"
+        }
+    ]
+}

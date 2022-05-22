@@ -1,0 +1,22 @@
+{
+    "sourceFile": "resources/views/articles/timeline.blad.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1653159575286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653194566566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,14 @@\n <x-app-layout>\n-    <div class=\"container px-5 mx-auto\">\n-        <div class=\"flex flex-wrap -m-4\">\n-            @include('layouts.navigation-left')\n-            <div class=\"w-1/2\">\n-                <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-                    {{ __('タイムライン') }}\n-                </h2>\n-                <div class=\"py-12\">\n-                    @foreach ($articles as $article)\n-                    @include('articles.card')\n-                    @endforeach\n-                </div>\n-            </div>\n+    <div class=\"w-1/2\">\n+        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+            {{ __('タイムライン') }}\n+        </h2>\n+        <div class=\"py-12\">\n+            @foreach ($articles as $article)\n+            @include('articles.card')\n+            @endforeach\n         </div>\n     </div>\n+    </div>\n+    </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1653159575286,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <div class=\"container px-5 mx-auto\">\n        <div class=\"flex flex-wrap -m-4\">\n            @include('layouts.navigation-left')\n            <div class=\"w-1/2\">\n                <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n                    {{ __('タイムライン') }}\n                </h2>\n                <div class=\"py-12\">\n                    @foreach ($articles as $article)\n                    @include('articles.card')\n                    @endforeach\n                </div>\n            </div>\n        </div>\n    </div>\n</x-app-layout>"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "sourceFile": "app/Models/Image.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1651682793359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1651682799305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,5 @@\n \n class Images extends Model\n {\n     use HasFactory;\n-}\n+protected}\n"
+                },
+                {
+                    "date": 1651682805208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,5 @@\n \n class Images extends Model\n {\n     use HasFactory;\n-protected}\n+protected $fillable}\n"
+                },
+                {
+                    "date": 1651682810888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,7 @@\n \n class Images extends Model\n {\n     use HasFactory;\n-protected $fillable}\n+protected $fillable = [\n+    ''\n+]}\n"
+                },
+                {
+                    "date": 1651682816235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n class Images extends Model\n {\n     use HasFactory;\n protected $fillable = [\n-    ''\n+    'user_id,'\n ]}\n"
+                },
+                {
+                    "date": 1651682822856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,7 @@\n class Images extends Model\n {\n     use HasFactory;\n protected $fillable = [\n-    'user_id,'\n+    'user_id',\n+    'filename'\n ]}\n"
+                },
+                {
+                    "date": 1651682829935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,10 @@\n \n class Images extends Model\n {\n     use HasFactory;\n-protected $fillable = [\n-    'user_id',\n-    'filename'\n-]}\n+\n+    protected $fillable = [\n+        'user_id',\n+        'filename',\n+    ];\n+}\n"
+                },
+                {
+                    "date": 1651682844687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,7 @@\n     protected $fillable = [\n         'user_id',\n         'filename',\n     ];\n+\n+    public fun\n }\n"
+                },
+                {
+                    "date": 1651682849768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,6 @@\n         'user_id',\n         'filename',\n     ];\n \n-    public fun\n+    public function user()\n }\n"
+                },
+                {
+                    "date": 1651682855883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,7 @@\n         'filename',\n     ];\n \n     public function user()\n+    {\n+    retue}\n }\n"
+                },
+                {
+                    "date": 1651682862010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n     ];\n \n     public function user()\n     {\n-    retue}\n+    return $this-}\n }\n"
+                },
+                {
+                    "date": 1651682867810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n     ];\n \n     public function user()\n     {\n-    return $this-}\n+    return $this->be}\n }\n"
+                },
+                {
+                    "date": 1651682874046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n     ];\n \n     public function user()\n     {\n-    return $this->be}\n+    return $this->belongsTo(User::)}\n }\n"
+                },
+                {
+                    "date": 1651770788494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n use Illuminate\\Database\\Eloquent\\Model;\n \n-class Images extends Model\n+class Image extends Model\n {\n     use HasFactory;\n \n     protected $fillable = [\n@@ -15,6 +15,7 @@\n     ];\n \n     public function user()\n     {\n-    return $this->belongsTo(User::)}\n+        return $this->belongsTo(User::class);\n+    }\n }\n"
+                }
+            ],
+            "date": 1651682793359,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Images extends Model\n{\n    use HasFactory;\n}\n"
+        }
+    ]
+}
