@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 88,
             "patches": [
                 {
                     "date": 1648869511618,
@@ -52,6 +52,314 @@
                 {
                     "date": 1651581733362,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,9 @@\n \n     {{-- @section('content') --}}\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n-                @include('articles.card')\n-            </div>\n+            @include('articles.card')\n         @endforeach\n     </div>\n     {{-- @endsection --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1652995940384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n+    @include('layouts.navigation-left')\n \n     {{-- @section('content') --}}\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n"
+                },
+                {
+                    "date": 1652995947133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,13 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n+\n     @include('layouts.navigation-left')\n \n-    {{-- @section('content') --}}\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n-    {{-- @endsection --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1652995983991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-\n+<div></div>\n     @include('layouts.navigation-left')\n \n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n"
+                },
+                {
+                    "date": 1652995990161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-<div></div>\n+<div>\n     @include('layouts.navigation-left')\n \n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n"
+                },
+                {
+                    "date": 1652995995494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         </h2>\n     </x-slot>\n <div>\n     @include('layouts.navigation-left')\n-\n+</div>\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n"
+                },
+                {
+                    "date": 1652996018982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n <div>\n-    @include('layouts.navigation-left')\n </div>\n-    <div class=\"py-12\">\n+<div class=\"py-12\">\n+        @include('layouts.navigation-left')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1652996046376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n         </h2>\n     </x-slot>\n <div>\n </div>\n+@include('layouts.navigation-left')\n <div class=\"py-12\">\n-        @include('layouts.navigation-left')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1653119726381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n         </h2>\n     </x-slot>\n <div>\n </div>\n+\n @include('layouts.navigation-left')\n <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653119737818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,14 @@\n         </h2>\n     </x-slot>\n <div>\n </div>\n-\n-@include('layouts.navigation-left')\n+<div class=\"flex items-stretch ...\">\n+    <div class=\"py-4\">01\n+    @include('layouts.navigation-left')\n+    <div class=\"py-12\">02</div>\n+    <div class=\"py-8\">03</div>\n+  </div>\n <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n"
+                },
+                {
+                    "date": 1653119743800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n </div>\n <div class=\"flex items-stretch ...\">\n     <div class=\"py-4\">01\n     @include('layouts.navigation-left')\n+</div>\n     <div class=\"py-12\">02</div>\n     <div class=\"py-8\">03</div>\n   </div>\n <div class=\"py-12\">\n"
+                },
+                {
+                    "date": 1653119749250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n     </x-slot>\n <div>\n </div>\n <div class=\"flex items-stretch ...\">\n-    <div class=\"py-4\">01\n+    <div class=\"py-4\">\n     @include('layouts.navigation-left')\n-</div>\n+   </div>\n     <div class=\"py-12\">02</div>\n     <div class=\"py-8\">03</div>\n   </div>\n <div class=\"py-12\">\n"
+                },
+                {
+                    "date": 1653119989770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n <div>\n </div>\n <div class=\"flex items-stretch ...\">\n     <div class=\"py-4\">\n-    @include('layouts.navigation-left')\n+    {{-- @include('layouts.navigation-left') --}}\n    </div>\n     <div class=\"py-12\">02</div>\n     <div class=\"py-8\">03</div>\n   </div>\n"
+                },
+                {
+                    "date": 1653120023341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n <div>\n </div>\n <div class=\"flex items-stretch ...\">\n     <div class=\"py-4\">\n-    {{-- @include('layouts.navigation-left') --}}\n+    @include('layouts.navigation-left')1\n    </div>\n     <div class=\"py-12\">02</div>\n     <div class=\"py-8\">03</div>\n   </div>\n"
+                },
+                {
+                    "date": 1653120030014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,8 @@\n <div class=\"flex items-stretch ...\">\n     <div class=\"py-4\">\n     @include('layouts.navigation-left')1\n    </div>\n-    <div class=\"py-12\">02</div>\n-    <div class=\"py-8\">03</div>\n-  </div>\n <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n"
+                },
+                {
+                    "date": 1653120430048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,39 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-<div>\n-</div>\n-<div class=\"flex items-stretch ...\">\n+    <div class=\"container px-5 py-24 mx-auto\">\n+        <div class=\"flex flex-wrap -m-4\">\n+          <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n+            <div class=\"h-full text-center\">\n+              <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/302x302\">\n+              <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n+              <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n+              <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">HOLDEN CAULFIELD</h2>\n+              <p class=\"text-gray-500\">Senior Product Designer</p>\n+            </div>\n+          </div>\n+          <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n+            <div class=\"h-full text-center\">\n+              <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/300x300\">\n+              <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n+              <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n+              <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">ALPER KAMU</h2>\n+              <p class=\"text-gray-500\">UI Develeoper</p>\n+            </div>\n+          </div>\n+          <div class=\"lg:w-1/3 lg:mb-0 p-4\">\n+            <div class=\"h-full text-center\">\n+              <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/305x305\">\n+              <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n+              <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n+              <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">HENRY LETHAM</h2>\n+              <p class=\"text-gray-500\">CTO</p>\n+            </div>\n+          </div>\n+        </div>\n+      </div>\n     <div class=\"py-4\">\n     @include('layouts.navigation-left')1\n    </div>\n <div class=\"py-12\">\n"
+                },
+                {
+                    "date": 1653120783066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,15 +15,15 @@\n               <p class=\"text-gray-500\">Senior Product Designer</p>\n             </div>\n           </div>\n           <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n-            <div class=\"h-full text-center\">\n+            {{-- <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/300x300\">\n               <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n               <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n               <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">ALPER KAMU</h2>\n               <p class=\"text-gray-500\">UI Develeoper</p>\n-            </div>\n+            </div> --}}\n           </div>\n           <div class=\"lg:w-1/3 lg:mb-0 p-4\">\n             <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/305x305\">\n"
+                },
+                {
+                    "date": 1653120791603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n               <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n               <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">ALPER KAMU</h2>\n               <p class=\"text-gray-500\">UI Develeoper</p>\n             </div> --}}\n-          </div>\n+            @include('layouts.navigation-left')1\n+        </div>\n           <div class=\"lg:w-1/3 lg:mb-0 p-4\">\n             <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/305x305\">\n               <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n@@ -35,9 +36,8 @@\n           </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n-    @include('layouts.navigation-left')1\n    </div>\n <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653120805681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n           <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n             <div class=\"h-full text-center\">\n+                @include('layouts.navigation-left')1\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/302x302\">\n               <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n               <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n               <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">HOLDEN CAULFIELD</h2>\n@@ -22,9 +23,8 @@\n               <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n               <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">ALPER KAMU</h2>\n               <p class=\"text-gray-500\">UI Develeoper</p>\n             </div> --}}\n-            @include('layouts.navigation-left')1\n         </div>\n           <div class=\"lg:w-1/3 lg:mb-0 p-4\">\n             <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/305x305\">\n"
+                },
+                {
+                    "date": 1653120836967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n+        @include('layouts.navigation-left')1\n         <div class=\"flex flex-wrap -m-4\">\n           <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n             <div class=\"h-full text-center\">\n-                @include('layouts.navigation-left')1\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/302x302\">\n               <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n               <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n               <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">HOLDEN CAULFIELD</h2>\n"
+                },
+                {
+                    "date": 1653120842665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n               <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">HOLDEN CAULFIELD</h2>\n               <p class=\"text-gray-500\">Senior Product Designer</p>\n             </div>\n           </div>\n-          <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n+          <div class=\"lg:w-1/3 lg:mb-0 mb-6 p?-4\">\n             {{-- <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/300x300\">\n               <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n               <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n"
+                },
+                {
+                    "date": 1653120849453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,17 +15,8 @@\n               <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">HOLDEN CAULFIELD</h2>\n               <p class=\"text-gray-500\">Senior Product Designer</p>\n             </div>\n           </div>\n-          <div class=\"lg:w-1/3 lg:mb-0 mb-6 p?-4\">\n-            {{-- <div class=\"h-full text-center\">\n-              <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/300x300\">\n-              <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n-              <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n-              <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">ALPER KAMU</h2>\n-              <p class=\"text-gray-500\">UI Develeoper</p>\n-            </div> --}}\n-        </div>\n           <div class=\"lg:w-1/3 lg:mb-0 p-4\">\n             <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/305x305\">\n               <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n"
+                },
+                {
+                    "date": 1653120897031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n-        @include('layouts.navigation-left')1\n         <div class=\"flex flex-wrap -m-4\">\n+            @include('layouts.navigation-left')1\n           <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n             <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/302x302\">\n               <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n"
+                },
+                {
+                    "date": 1653120950282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         </h2>\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n-            @include('layouts.navigation-left')1\n+            @include('layouts.navigation-left')\n           <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n             <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/302x302\">\n               <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n"
+                },
+                {
+                    "date": 1653120981183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,11 @@\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n-            <div class=\"h-full text-center\">\n-              <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/302x302\">\n-              <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n-              <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n-              <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">HOLDEN CAULFIELD</h2>\n-              <p class=\"text-gray-500\">Senior Product Designer</p>\n-            </div>\n+            @foreach ($articles as $article)\n+            @include('articles.card')\n+        @endforeach\n           </div>\n           <div class=\"lg:w-1/3 lg:mb-0 p-4\">\n             <div class=\"h-full text-center\">\n               <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/305x305\">\n"
+                },
+                {
+                    "date": 1653121118456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,8 @@\n             @include('articles.card')\n         @endforeach\n           </div>\n           <div class=\"lg:w-1/3 lg:mb-0 p-4\">\n-            <div class=\"h-full text-center\">\n-              <img alt=\"testimonial\" class=\"w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100\" src=\"https://dummyimage.com/305x305\">\n-              <p class=\"leading-relaxed\">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>\n-              <span class=\"inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4\"></span>\n-              <h2 class=\"text-gray-900 font-medium title-font tracking-wider text-sm\">HENRY LETHAM</h2>\n-              <p class=\"text-gray-500\">CTO</p>\n-            </div>\n           </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n"
+                },
+                {
+                    "date": 1653121466080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n-          <div class=\"lg:w-1/3 lg:mb-0 mb-6 p-4\">\n+          <div class=\"lg:w-1/ lg:mb-0 mb-6 p-4\">\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n"
+                },
+                {
+                    "date": 1653121472157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n-          <div class=\"lg:w-1/ lg:mb-0 mb-6 p-4\">\n+          <div class=\"lg:w-1/2 lg:mb-0 mb-6 p-4\">\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n-          <div class=\"lg:w-1/3 lg:mb-0 p-4\">\n+          <div class=\"lg:w-1/ lg:mb-0 p-4\">\n           </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n"
+                },
+                {
+                    "date": 1653121886830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n-          <div class=\"lg:w-1/ lg:mb-0 p-4\">\n+          <div class=\"lg:w-1/4 lg:mb-0 p-4 md\">\n           </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n"
+                },
+                {
+                    "date": 1653121891913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n-          <div class=\"lg:w-1/4 lg:mb-0 p-4 md\">\n+          <div class=\"lg:w-1/4 lg:mb-0 p-4 md:\">\n           </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n"
+                },
+                {
+                    "date": 1653121988043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n-          <div class=\"lg:w-1/2 lg:mb-0 mb-6 p-4\">\n+          <div class=\"lg:w-1/2 lg:mb-0 p-4\">\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n-          <div class=\"lg:w-1/4 lg:mb-0 p-4 md:\">\n+          <div class=\"lg:w-1/4 lg:mb-0 p-4 md:hidden\">\n           </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n"
+                },
+                {
+                    "date": 1653121995492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n-          <div class=\"lg:w-1/4 lg:mb-0 p-4 md:hidden\">\n+          <div class=\"lg:w-1/4 lg:mb-0 md:hidden\">\n           </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n"
+                },
+                {
+                    "date": 1653122279126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <x-app-layout>\n-    <x-slot name=\"header\">\n+    {{-- <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n-    </x-slot>\n+    </x-slot> --}}\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"lg:w-1/2 lg:mb-0 p-4\">\n"
+                },
+                {
+                    "date": 1653122288755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <x-app-layout>\n-    {{-- <x-slot name=\"header\">\n+    <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n-    </x-slot> --}}\n+    </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"lg:w-1/2 lg:mb-0 p-4\">\n"
+                },
+                {
+                    "date": 1653123403928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n-          <div class=\"lg:w-1/4 lg:mb-0 md:hidden\">\n+          <div class=\"lg:w-1/4 lg:mb-0 md:hidden s\">\n           </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n"
+                },
+                {
+                    "date": 1653123463460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n-          <div class=\"lg:w-1/4 lg:mb-0 md:hidden s\">\n-          </div>\n+          {{-- <div class=\"lg:w-1/4 lg:mb-0 md:hidden sm:hidden\">\n+          </div> --}}\n         </div>\n       </div>\n     <div class=\"py-4\">\n    </div>\n"
+                },
+                {
+                    "date": 1653123487024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n-          {{-- <div class=\"lg:w-1/4 lg:mb-0 md:hidden sm:hidden\">\n-          </div> --}}\n+          <div class=\"lg:w-1/4 lg:mb-0 md:hidden sm:hidden\">\n+          </div>\n         </div>\n       </div>\n     <div class=\"py-4\">\n    </div>\n"
+                },
+                {
+                    "date": 1653123498739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n-          <div class=\"lg:w-1/2 lg:mb-0 p-4\">\n+          <div class=\"lg:w-1/2 lg:mb-0\">\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n"
+                },
+                {
+                    "date": 1653123539388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n-          <div class=\"lg:w-1/2 lg:mb-0\">\n+          <div class=\"lg:w-1/2 lg:mb-0 \">\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n"
+                },
+                {
+                    "date": 1653124207896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </x-slot>\n     <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n-          <div class=\"lg:w-1/2 lg:mb-0 \">\n+          <div class=\"w-1/2 lg:mb-0 \">\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n"
+                },
+                {
+                    "date": 1653124333004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,12 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-5 py-24 mx-auto\">\n+    <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n-          <div class=\"w-1/2 lg:mb-0 \">\n+          <div class=\"w-1/2\">\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n"
+                },
+                {
+                    "date": 1653124347706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-5 mx-auto\">\n+    <div class=\"container px-5 py-24 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             @foreach ($articles as $article)\n"
+                },
+                {
+                    "date": 1653124386454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-5 py-24 mx-auto\">\n+    <div class=\" px-5 py-10 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             @foreach ($articles as $article)\n"
+                },
+                {
+                    "date": 1653124407055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\" px-5 py-10 mx-auto\">\n+    <div class=\"container px-5 py-10 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             @foreach ($articles as $article)\n"
+                },
+                {
+                    "date": 1653147790086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-5 py-10 mx-auto\">\n+    <div class=\"container px-０ py-10 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             @foreach ($articles as $article)\n"
+                },
+                {
+                    "date": 1653147817863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-０ py-10 mx-auto\">\n+    <div class=\"container px-5 py-10 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             @foreach ($articles as $article)\n"
+                },
+                {
+                    "date": 1653147868550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-5 py-10 mx-auto\">\n+    <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             @foreach ($articles as $article)\n@@ -18,8 +18,11 @@\n       </div>\n     <div class=\"py-4\">\n    </div>\n <div class=\"py-12\">\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+        {{ __('記事一覧') }}\n+    </h2>\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1653147884218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n-        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+        {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n-        </h2>\n+        </h2> --}}\n     </x-slot>\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n"
+                },
+                {
+                    "date": 1653147892707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <x-app-layout>\n-    <x-slot name=\"header\">\n+    {{-- <x-slot name=\"header\"> --}}\n         {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2> --}}\n     </x-slot>\n"
+                },
+                {
+                    "date": 1653147973689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <x-app-layout>\n-    {{-- <x-slot name=\"header\"> --}}\n+    <x-slot name=\"header\"> --}}\n         {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2> --}}\n-    </x-slot>\n+    {{-- </x-slot>\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n"
+                },
+                {
+                    "date": 1653147980016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <x-app-layout>\n-    <x-slot name=\"header\"> --}}\n+    {{-- <x-slot name=\"header\"> --}}\n         {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2> --}}\n-    {{-- </x-slot>\n+    {{-- </x-slot> --}}\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n"
+                },
+                {
+                    "date": 1653147986187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <x-app-layout>\n-    {{-- <x-slot name=\"header\"> --}}\n+    <x-slot name=\"header\">\n         {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2> --}}\n-    {{-- </x-slot> --}}\n+    </x-slot>\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n"
+                },
+                {
+                    "date": 1653148044964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <x-app-layout>\n     <x-slot name=\"header\">\n-        {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n-        </h2> --}}\n+        </h2>\n     </x-slot>\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n@@ -18,11 +18,11 @@\n       </div>\n     <div class=\"py-4\">\n    </div>\n <div class=\"py-12\">\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+    {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n         {{ __('記事一覧') }}\n-    </h2>\n+    </h2> --}}\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1653148072317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,11 @@\n       </div>\n     <div class=\"py-4\">\n    </div>\n <div class=\"py-12\">\n-    {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n         {{ __('記事一覧') }}\n-    </h2> --}}\n+    </h2>\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1653148084481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       </div>\n     <div class=\"py-4\">\n    </div>\n <div class=\"py-12\">\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+    <h2 class=\"\">\n         {{ __('記事一覧') }}\n     </h2>\n         @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653148097184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       </div>\n     <div class=\"py-4\">\n    </div>\n <div class=\"py-12\">\n-    <h2 class=\"\">\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n         {{ __('記事一覧') }}\n     </h2>\n         @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653148144487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,8 @@\n       </div>\n     <div class=\"py-4\">\n    </div>\n <div class=\"py-12\">\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+    {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n         {{ __('記事一覧') }}\n-    </h2>\n-        @foreach ($articles as $article)\n-            @include('articles.card')\n-        @endforeach\n-    </div>\n+    </h2> --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1653148162799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,11 @@\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n+            {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+                {{ __('記事一覧') }}\n+            </h2> --}}\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n@@ -17,9 +20,5 @@\n         </div>\n       </div>\n     <div class=\"py-4\">\n    </div>\n-<div class=\"py-12\">\n-    {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-        {{ __('記事一覧') }}\n-    </h2> --}}\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1653148172837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,11 @@\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n-            {{-- <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-                {{ __('記事一覧') }}\n-            </h2> --}}\n+            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+                {{ __('') }}\n+            </h2>\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n           </div>\n"
+                },
+                {
+                    "date": 1653148178420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-                {{ __('') }}\n+                {{ __('全ての記事') }}\n             </h2>\n             @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n"
+                },
+                {
+                    "date": 1653148429785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <x-app-layout>\n-    <x-slot name=\"header\">\n+    {{-- <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n-    </x-slot>\n+    </x-slot> --}}\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n"
+                },
+                {
+                    "date": 1653148440684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <x-app-layout>\n-    {{-- <x-slot name=\"header\">\n+    <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n-    </x-slot> --}}\n+    </x-slot>\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n"
+                },
+                {
+                    "date": 1653148846742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-5 mx-auto\">\n+    <div class=\"container px-    mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n"
+                },
+                {
+                    "date": 1653148857889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-    mx-auto\">\n+    <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n"
+                },
+                {
+                    "date": 1653149034754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n-            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pd\">\n                 {{ __('全ての記事') }}\n             </h2>\n             @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653149039855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n-            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pd\">\n+            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt\">\n                 {{ __('全ての記事') }}\n             </h2>\n             @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653149061203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,13 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-5 mx-auto\">\n+    <div class=\"container px-4 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n-            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt\">\n+            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n                 {{ __('全ての記事') }}\n             </h2>\n             @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653149085038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n     </x-slot>\n-    <div class=\"container px-4 mx-auto\">\n+    <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n             <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n"
+                },
+                {
+                    "date": 1653149110146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n-            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-3\">\n                 {{ __('全ての記事') }}\n             </h2>\n             @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653149124789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n-            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-3\">\n+            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n                 {{ __('全ての記事') }}\n             </h2>\n             @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653152359825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <x-app-layout>\n-    <x-slot name=\"header\">\n+    {{-- <x-slot name=\"header\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n             {{ __('記事一覧') }}\n         </h2>\n-    </x-slot>\n+    </x-slot> --}}\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n"
+                },
+                {
+                    "date": 1653152379289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n <x-app-layout>\n-    {{-- <x-slot name=\"header\">\n-        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('記事一覧') }}\n-        </h2>\n-    </x-slot> --}}\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n           <div class=\"w-1/2\">\n"
+                },
+                {
+                    "date": 1653152410444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,17 @@\n <x-app-layout>\n     <div class=\"container px-5 mx-auto\">\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n-          <div class=\"w-1/2\">\n-            <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-                {{ __('全ての記事') }}\n-            </h2>\n-            @foreach ($articles as $article)\n-            @include('articles.card')\n-        @endforeach\n-          </div>\n-          <div class=\"lg:w-1/4 lg:mb-0 md:hidden sm:hidden\">\n-          </div>\n+            <div class=\"w-1/2\">\n+                <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+                    {{ __('全ての記事') }}\n+                </h2>\n+                @foreach ($articles as $article)\n+                @include('articles.card')\n+                @endforeach\n+            </div>\n+            <div class=\"lg:w-1/4 lg:mb-0 md:hidden sm:hidden\">\n+            </div>\n         </div>\n-      </div>\n-    <div class=\"py-4\">\n-   </div>\n-</x-app-layout>\n+    </div>\n+</x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653152419561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,7 @@\n                 @foreach ($articles as $article)\n                 @include('articles.card')\n                 @endforeach\n             </div>\n-            <div class=\"lg:w-1/4 lg:mb-0 md:hidden sm:hidden\">\n-            </div>\n         </div>\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653194484639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,5 @@\n <x-app-layout>\n-    <div class=\"container px-5 mx-auto\">\n-        <div class=\"flex flex-wrap -m-4\">\n-            @include('layouts.navigation-left')\n             <div class=\"w-1/2\">\n                 <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n                     {{ __('全ての記事') }}\n                 </h2>\n"
+                },
+                {
+                    "date": 1653194653898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,8 @@\n <x-app-layout>\n-            <div class=\"w-1/2\">\n-                <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-                    {{ __('全ての記事') }}\n-                </h2>\n-                @foreach ($articles as $article)\n-                @include('articles.card')\n-                @endforeach\n-            </div>\n-        </div>\n-    </div>\n+        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+            {{ __('全ての記事') }}\n+        </h2>\n+        @foreach ($articles as $article)\n+        @include('articles.card')\n+        @endforeach\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653194680267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <x-app-layout>\n-        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-            {{ __('全ての記事') }}\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+        {{ __('全ての記事') }}\n         </h2>\n         @foreach ($articles as $article)\n         @include('articles.card')\n         @endforeach\n"
+                },
+                {
+                    "date": 1653194685598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n         {{ __('全ての記事') }}\n-        </h2>\n-        @foreach ($articles as $article)\n-        @include('articles.card')\n-        @endforeach\n+    </h2>\n+    @foreach ($articles as $article)\n+    @include('articles.card')\n+    @endforeach\n </x-app-layout>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1648869511618,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 75,
+            "activePatchIndex": 80,
             "patches": [
                 {
                     "date": 1648869521170,
@@ -308,6 +308,26 @@
                 {
                     "date": 1652543802696,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <div class=\"py-12\">\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-    <div class=\"p-2 w-1/2 mx-auto\">\n+    {{-- <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n         </div>\n-    </div>\n+    </div> --}}\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n         </a>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n"
+                },
+                {
+                    "date": 1653123571909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <div class=\"py-12\">\n     <div\n-    class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+    class= bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n     {{-- <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n         </div>\n"
+                },
+                {
+                    "date": 1653123593581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <div class=\"py-12\">\n     <div\n-    class= bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+    class=\"bg-white overflow-hidden shadow-sm sm:roundp-6 border-b border-gray-200\">\n     {{-- <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n         </div>\n"
+                },
+                {
+                    "date": 1653123606777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n-<div class=\"py-12\">\n+{{-- <div class=\"py-12\"> --}}\n     <div\n-    class=\"bg-white overflow-hidden shadow-sm sm:roundp-6 border-b border-gray-200\">\n+    class=\"bg-white overflow-hidden shadow-sm p-6 border-b border-gray-200\">\n     {{-- <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n         </div>\n"
+                },
+                {
+                    "date": 1653123676598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n {{-- <div class=\"py-12\"> --}}\n     <div\n-    class=\"bg-white overflow-hidden shadow-sm p-6 border-b border-gray-200\">\n+    class=\"\">\n     {{-- <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n         </div>\n@@ -79,5 +79,5 @@\n         <div>\n             <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n         </div>\n     </div>\n-</div>\n+{{-- </div> --}}\n"
+                },
+                {
+                    "date": 1653123683162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n {{-- <div class=\"py-12\"> --}}\n     <div\n-    class=\"\">\n+    class=\"bg-white overflow-hidden shadow-sm p-6 border-b border-gray-200\">\n     {{-- <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n         </div>\n"
                 }
             ],
             "date": 1648869521170,

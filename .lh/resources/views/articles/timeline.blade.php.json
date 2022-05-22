@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1650556888096,
@@ -32,6 +32,38 @@
                 {
                     "date": 1651581774933,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,10 @@\n         </h2>\n     </x-slot>\n \n     <div class=\"py-12\">\n-        <div\n-        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n+        </div>\n     </div>\n-    </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653159551169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n <x-app-layout>\n-    <x-slot name=\"header\">\n-        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('タイムライン') }}\n-        </h2>\n-    </x-slot>\n-\n+    <div class=\"container px-5 mx-auto\">\n+        <div class=\"flex flex-wrap -m-4\">\n+            @include('layouts.navigation-left')\n+            <div class=\"w-1/2\">\n+                <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+                    {{ __('編集する') }}\n+                </h2>\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n-        </div>\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653159556612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n             <div class=\"w-1/2\">\n                 <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-                    {{ __('編集する') }}\n+                    {{ __('タイムライン') }}\n                 </h2>\n     <div class=\"py-12\">\n         @foreach ($articles as $article)\n             @include('articles.card')\n"
+                },
+                {
+                    "date": 1653159566061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,8 @@\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n     </div>\n+</div>\n+</div>\n+</div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653194633073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,11 @@\n <x-app-layout>\n-    <div class=\"container px-5 mx-auto\">\n-        <div class=\"flex flex-wrap -m-4\">\n-            @include('layouts.navigation-left')\n-            <div class=\"w-1/2\">\n-                <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-                    {{ __('タイムライン') }}\n-                </h2>\n-    <div class=\"py-12\">\n-        @foreach ($articles as $article)\n+    <div class=\"w-1/2\">\n+        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+            {{ __('タイムライン') }}\n+        </h2>\n+        {{-- <div class=\"py-12\"> --}}\n+            @foreach ($articles as $article)\n             @include('articles.card')\n-        @endforeach\n-    </div>\n-</div>\n-</div>\n-</div>\n+            @endforeach\n+        </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653194641327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,8 @@\n     <div class=\"w-1/2\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n             {{ __('タイムライン') }}\n         </h2>\n-        {{-- <div class=\"py-12\"> --}}\n-            @foreach ($articles as $article)\n+        @foreach ($articles as $article)\n             @include('articles.card')\n             @endforeach\n-        </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653194656631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <x-app-layout>\n-    <div class=\"w-1/2\">\n         <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n             {{ __('タイムライン') }}\n         </h2>\n         @foreach ($articles as $article)\n-            @include('articles.card')\n-            @endforeach\n+        @include('articles.card')\n+        @endforeach\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653194667313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <x-app-layout>\n-        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n             {{ __('タイムライン') }}\n         </h2>\n         @foreach ($articles as $article)\n         @include('articles.card')\n"
+                },
+                {
+                    "date": 1653194672433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-            {{ __('タイムライン') }}\n-        </h2>\n-        @foreach ($articles as $article)\n-        @include('articles.card')\n+        {{ __('タイムライン') }}\n+    </h2>\n+    @foreach ($articles as $article)\n+    @include('articles.card')\n         @endforeach\n </x-app-layout>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1650556888095,

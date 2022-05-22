@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <div class="relative bg-white">
+    <div class="bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
                 <div class="flex justify-start lg:w-0 lg:flex-1">
@@ -14,24 +14,20 @@
                     <div class="flex">
                         <div class="flex pr-4">
                             <x-nav-link :href="route('articles.timeline')" :active="request()->routeIs('articles.timeline')">
-                                {{-- {{ __('タイムライン') }} --}}
                                 <i class="fas fa-home fa-2x"></i>
                             </x-nav-link>
                         </div>
                         <div class="flex pr-4">
                             <x-nav-link :href="route('articles.index')" :active="request()->routeIs('articles.index')">
                                 <i class="fas fa-globe-americas fa-2x"></i>
-                                {{-- {{ __('記事一覧') }} --}}
                             </x-nav-link>
                         </div>
                         <div class="flex pr-4">
                             <x-nav-link :href="route('articles.create')" :active="request()->routeIs('articles.create')">
-                                {{-- {{ __('投稿する') }} --}}
                                 <i class="fas fa-pen fa-2x"></i>
                             </x-nav-link>
                         </div>
 
-                        <!-- Settings Dropdown -->
                         <div class="flex">
                             <x-dropdown align="right" width="48">
                                 <x-slot name="trigger">
@@ -46,7 +42,6 @@
                                 </x-slot>
 
                                 <x-slot name="content">
-                                    <!-- Authentication -->
                                     <form method="POST" action="{{ route('users.show', ['name' => Auth::user()->name]) }}">
                                         @csrf
                                         <x-dropdown-link :href="route('users.show', ['name' => Auth::user()->name])" onclick="event.preventDefault();

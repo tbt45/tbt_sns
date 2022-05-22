@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1648869518395,
@@ -20,6 +20,22 @@
                 {
                     "date": 1652374411068,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.update', ['article' => $article]) }}\">\n             @method('PATCH')\n             @include('articles.form')\n-            <x-select-image :images=\"$images\" currentId=\"{{$article->image1}}\" currentImage=\"{{$article->imageFirst->filename ?? ''}}\" name=\"image1\" />\n+            {{-- <x-select-image :images=\"$images\" currentId=\"{{$article->image1}}\" currentImage=\"{{$article->imageFirst->filename ?? ''}}\" name=\"image1\" />\n             <x-select-image :images=\"$images\" currentId=\"{{$article->image2}}\" currentImage=\"{{$article->imageSecond->filename ?? ''}}\" name=\"image2\" />\n             <x-select-image :images=\"$images\" currentId=\"{{$article->image3}}\" currentImage=\"{{$article->imageThird->filename ?? ''}}\" name=\"image3\" />\n-                <x-select-image :images=\"$images\" currentId=\"{{$article->image4}}\" currentImage=\"{{$article->imageFourth->filename ?? ''}}\" name=\"image4\" />\n+            <x-select-image :images=\"$images\" currentId=\"{{$article->image4}}\" currentImage=\"{{$article->imageFourth->filename ?? ''}}\" name=\"image4\" /> --}}\n             <div\n                 class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 <button type=\"submit\">更新する</button>\n             </div>\n"
+                },
+                {
+                    "date": 1653159361013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n <x-app-layout>\n-    <x-slot name=\"header\">\n-        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n-            {{ __('記事編集') }}\n-        </h2>\n-    </x-slot>\n \n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.update', ['article' => $article]) }}\">\n"
+                },
+                {
+                    "date": 1653159371651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,12 @@\n <x-app-layout>\n-\n+    <div class=\"container px-5 mx-auto\">\n+        <div class=\"flex flex-wrap -m-4\">\n+            @include('layouts.navigation-left')\n+            <div class=\"w-1/2\">\n+                <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+                    {{ __('全ての記事') }}\n+                </h2>\n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.update', ['article' => $article]) }}\">\n             @method('PATCH')\n"
+                },
+                {
+                    "date": 1653159379303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,5 +20,8 @@\n                 <button type=\"submit\">更新する</button>\n             </div>\n         </form>\n     </div>\n+</div>\n+</div>\n+</div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1653159397228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <div class=\"flex flex-wrap -m-4\">\n             @include('layouts.navigation-left')\n             <div class=\"w-1/2\">\n                 <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-                    {{ __('全ての記事') }}\n+                    {{ __('') }}\n                 </h2>\n     <div\n         class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.update', ['article' => $article]) }}\">\n"
                 }
             ],
             "date": 1648869518395,

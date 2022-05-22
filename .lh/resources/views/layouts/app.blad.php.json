@@ -1,0 +1,26 @@
+{
+    "sourceFile": "resources/views/layouts/app.blad.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1653148714115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653148727240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,7 +30,8 @@\n \n     <main>\n         {{ $slot }}\n     </main>\n+    </div>\n </body>\n \n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653194457683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,15 +22,21 @@\n </head>\n \n <body class=\"font-sans antialiased\">\n \n-    <header class=\"bg-white shadow\">\n+    <header class=\"bg-white shadow top-0 z-50 sticky\">\n         @include('layouts.navigation')\n-\n     </header>\n \n     <main>\n-        {{ $slot }}\n+        <div class=\"container px-5 mx-auto\">\n+            <div class=\"flex flex-wrap -m-4\">\n+                @include('layouts.navigation-left')\n+                <div class=\"w-1/2\">\n+                    {{ $slot }}\n+                </div>\n+            </div>\n+        </div>\n     </main>\n     </div>\n </body>\n \n"
+                }
+            ],
+            "date": 1653148714115,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"{{ str_replace('_', '-', app()->getLocale()) }}\">\n\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\n\n    <title>{{ config('app.name', 'Laravel') }}</title>\n\n    <!-- Font Awesome -->\n    <script src=\"https://kit.fontawesome.com/20a405268e.js\" crossorigin=\"anonymous\"></script>\n\n    <!-- Fonts -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\n\n    <!-- Styles -->\n    <link rel=\"stylesheet\" href=\"{{ asset('css/app.css') }}\">\n\n    <!-- Scripts -->\n    <script src=\"{{ asset('js/app.js') }}\" defer></script>\n</head>\n\n<body class=\"font-sans antialiased\">\n\n    <header class=\"bg-white shadow\">\n        @include('layouts.navigation')\n\n    </header>\n\n    <main>\n        {{ $slot }}\n    </main>\n</body>\n\n</html>"
+        }
+    ]
+}
