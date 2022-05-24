@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 26,
+            "activePatchIndex": 30,
             "patches": [
                 {
                     "date": 1650684129560,
@@ -112,6 +112,22 @@
                 {
                     "date": 1652371103463,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n             {{-- <x-thumbnail :filename=\"$user->filename\" type=\"users\" /> --}}\n                 <img src=\"{{ asset('storage/images/no_image.jpg') }}\" alt=\"\">\n-    </div>\n+    {{-- </div> --}}\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n         {{ $user->name }}\n"
+                },
+                {
+                    "date": 1653309828400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n-            {{-- <x-thumbnail :filename=\"$user->filename\" type=\"users\" /> --}}\n-                <img src=\"{{ asset('storage/images/no_image.jpg') }}\" alt=\"\">\n-    {{-- </div> --}}\n+            <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n+                \n+                {{-- <img src=\"{{ asset('storage/images/no_image.jpg') }}\" alt=\"\"> --}}\n+    </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n         {{ $user->name }}\n"
+                },
+                {
+                    "date": 1653309834394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n-            <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n-                \n-                {{-- <img src=\"{{ asset('storage/images/no_image.jpg') }}\" alt=\"\"> --}}\n+            {{-- <x-thumbnail :filename=\"$user->filename\" type=\"users\" /> --}}\n+                <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+                    <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n+                </a>\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
+                },
+                {
+                    "date": 1653309840845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n             {{-- <x-thumbnail :filename=\"$user->filename\" type=\"users\" /> --}}\n-                <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n-                    <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n-                </a>\n+        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+                <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n+            </a>\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
+                },
+                {
+                    "date": 1653309891159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n             {{-- <x-thumbnail :filename=\"$user->filename\" type=\"users\" /> --}}\n-        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n-                <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n-            </a>\n+        <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n+            <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n+        </a>\n     </div>\n </a>\n <h2>\n     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\">\n"
                 }
             ],
             "date": 1650684129560,

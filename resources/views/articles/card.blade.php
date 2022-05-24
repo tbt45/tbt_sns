@@ -1,83 +1,122 @@
-{{-- <div class="py-12"> --}}
-    <div
-    class="bg-white overflow-hidden shadow-sm p-6 border-b border-gray-200">
-    {{-- <div class="p-2 w-1/2 mx-auto">
+<div class='flex items-center justify-center bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>
+    <article class="max-w-lg mx-auto break-inside p-6 rounded-xl bg-white flex flex-col bg-clip-border">
+        <div class="flex items-center justify-between">
+            <div class="flex">
+                {{-- <div class="p-2 w-1/2 mx-auto">
         <div class="relative">
             <x-thumbnail :filename="$article->user->filename" type="users" />
         </div>
     </div> --}}
-        <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
-            <i class="fas fa-user-circle fa-3x mr-1"></i>
-        </a>
-        <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
-            <div class="">
-                {{ $article->user->name }}
-            </div>
-        </a>
-        <div>
-            {{ $article->created_at->format('Y/m/d H:i') }}
-        </div>
-
-        @if (Auth::id() === $article->user_id)
-            <div>
-                <a href="{{ route('articles.edit', ['article' => $article]) }}">
-                    編集
+                <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
+                    <i class="fas fa-user-circle fa-3x mr-1"></i>
                 </a>
-                <form method="post" action="{{ route('articles.destroy', ['article' => $article]) }}">
-                    @method('DELETE')
-                    @csrf
-                    <input type="submit" name="delete" value="削除" onClick="delete_alert(event);return false;">
-                </form>
+                <div>
+                    <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
+                        {{ $article->user->name }}
+                    </a>
+                    <div class="">
+                        {{ $article->created_at->format('Y/m/d H:i') }}
+                    </div>
+                </div>
             </div>
-        @endif
-
-        {{-- <a href="{{ route('articles.show', ['article' => $article]) }}"> --}}
-        <div>
-            {{ $article->title }}
+            <div class="">
+                @if (Auth::id() === $article->user_id)
+                <div class="mb-5">
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <button class="flex text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                <i class="fa-solid fa-ellipsis fa-2x"></i>
+                            </button>
+                        </x-slot>
+                        <x-slot name="content">
+                            <form method="GET" action="{{ route('articles.edit', ['article' => $article]) }}">
+                                @csrf
+                                <x-dropdown-link :href="route('articles.edit', ['article' => $article])" onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                                    {{ __('編集') }}
+                                </x-dropdown-link>
+                            </form>
+                            <form method="POST" action="{{ route('articles.destroy', ['article' => $article]) }}">
+                                @method('DELETE')
+                                @csrf
+                                <x-dropdown-link :href="route('articles.destroy', ['article' => $article])" onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                                    {{ __('削除') }}
+                                </x-dropdown-link>
+                            </form>
+                        </x-slot>
+                    </x-dropdown>
+                </div>
+                @endif
+            </div>
         </div>
-        {{-- </a> --}}
+
+        <h2>
+            {{ $article->title }}
+        </h2>
+        <div class="py-4">
+            <div class="flex justify-between gap-1 mb-1">
+                <a class="flex" href="#">
+                    <img class="max-w-full rounded-br-lg" src="{{ asset("images/no_image.jpg") }}">
+                </a>
+                <a class="flex" href="#">
+                    <img class="max-w-full rounded-br-lg" src="{{ asset("images/no_image.jpg") }}">
+                </a>
+            </div>
+            <div class="flex justify-between gap-1">
+                <a class="flex" href="#">
+                    <img class="max-w-full rounded-br-lg" src="{{ asset("images/no_image.jpg") }}">
+                </a>
+                <a class="flex" href="#">
+                    <img class="max-w-full rounded-br-lg" src="{{ asset("images/no_image.jpg") }}">
+                </a>
+            </div>
+        </div>
         <div class="">
             {{ $article->body }}
         </div>
 
         {{-- いいねボタン --}}
-        <div>
+        <div class="flex">
             @if ($article->is_liked_by_auth_user())
-                <a href="{{ route('articles.unlike',['id'=>$article->id]) }}">
-                いいね
-                    <span>
-                        {{ $article->likes->count() }}
-                    </span>
-                </a>
-            @else
-                <a href="{{ route('articles.like',['id'=>$article->id]) }}" class="text-red-800">
-                    いいね
-                <span>
+            <a href="{{ route('articles.unlike',['id'=>$article->id]) }}">
+                <i class="fa-solid fa-heart text-red-700"></i>
+                <span class="mr-2">
                     {{ $article->likes->count() }}
                 </span>
-                </a>
-            @endif
-        </div>
-        {{-- リツイートボタン --}}
-        <div>
-            @if ($article->is_retweeted_by_auth_user())
-                <a href="{{ route('articles.unretweet',['id'=>$article->id]) }}">
-                リツイート※
-                    <span>
-                        {{ $article->retweets->count() }}
-                    </span>
-                </a>
+            </a>
             @else
-                <a href="{{ route('articles.retweet',['id'=>$article->id]) }}" class="text-red-800">
-                    リツイート
+            <a href="{{ route('articles.like',['id'=>$article->id]) }}">
+                <i class="fa-solid fa-heart"></i>
+                <span class="mr-2">
+                    {{ $article->likes->count() }}
+                </span>
+            </a>
+            @endif
+            {{-- </div> --}}
+
+            {{-- リツイートボタン --}}
+            {{-- <div class="flex"> --}}
+            @if ($article->is_retweeted_by_auth_user())
+            <a href="{{ route('articles.unretweet',['id'=>$article->id]) }}">
+                <i class="fa-solid fa-retweet text-blue-700"></i>
                 <span>
                     {{ $article->retweets->count() }}
                 </span>
-                </a>
+            </a>
+            @else
+            <a href="{{ route('articles.retweet',['id'=>$article->id]) }}">
+                <i class="fa-solid fa-retweet"></i>
+                <span>
+                    {{ $article->retweets->count() }}
+                </span>
+            </a>
             @endif
         </div>
+
+        {{-- 返信する --}}
         <div>
             <a href="{{ route('replies.create', ['article' => $article]) }}">返信する</a>
         </div>
-    </div>
-{{-- </div> --}}
+    </article>
+</div>

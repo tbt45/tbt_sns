@@ -1,4 +1,4 @@
-    <div class="lg:w-1/4 bg-white pt-8">
+    <div class="lg:w-1/3 bg-white pt-8">
         <div class="mb-5">
             <x-nav-link :href="route('articles.timeline')" :active="request()->routeIs('articles.timeline')">
                 <i class="fas fa-home fa-2x hidden md:block"> タイムライン</i>

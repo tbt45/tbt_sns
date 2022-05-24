@@ -1,7 +1,9 @@
 <a href="{{ route('users.show', ['name' => $user->name]) }}">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <x-thumbnail :filename="$user->filename" type="users" />
-                {{-- <img src="{{ asset('storage/images/no_image.jpg') }}" alt=""> --}}
+            {{-- <x-thumbnail :filename="$user->filename" type="users" /> --}}
+        <a href="{{ route('users.show', ['name' => $user->name]) }}">
+            <i class="fas fa-user-circle fa-3x mr-1"></i>
+        </a>
     </div>
 </a>
 <h2>

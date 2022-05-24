@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/articles/card１.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1653198776309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1653198776309,
+            "name": "Commit-0",
+            "content": "    <div\n    class=\"bg-white overflow-hidden shadow-sm p-6 border-b border-gray-200\">\n    {{-- <div class=\"p-2 w-1/2 mx-auto\">\n        <div class=\"relative\">\n            <x-thumbnail :filename=\"$article->user->filename\" type=\"users\" />\n        </div>\n    </div> --}}\n        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n            <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n        </a>\n        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n            <div class=\"\">\n                {{ $article->user->name }}\n            </div>\n        </a>\n        <div>\n            {{ $article->created_at->format('Y/m/d H:i') }}\n        </div>\n\n        @if (Auth::id() === $article->user_id)\n            <div>\n                <a href=\"{{ route('articles.edit', ['article' => $article]) }}\">\n                    編集\n                </a>\n                <form method=\"post\" action=\"{{ route('articles.destroy', ['article' => $article]) }}\">\n                    @method('DELETE')\n                    @csrf\n                    <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                </form>\n            </div>\n        @endif\n\n        <div>\n            {{ $article->title }}\n        </div>\n        {{-- </a> --}}\n        <div class=\"\">\n            {{ $article->body }}\n        </div>\n\n        {{-- いいねボタン --}}\n        <div>\n            @if ($article->is_liked_by_auth_user())\n                <a href=\"{{ route('articles.unlike',['id'=>$article->id]) }}\">\n                いいね\n                    <span>\n                        {{ $article->likes->count() }}\n                    </span>\n                </a>\n            @else\n                <a href=\"{{ route('articles.like',['id'=>$article->id]) }}\" class=\"text-red-800\">\n                    いいね\n                <span>\n                    {{ $article->likes->count() }}\n                </span>\n                </a>\n            @endif\n        </div>\n        {{-- リツイートボタン --}}\n        <div>\n            @if ($article->is_retweeted_by_auth_user())\n                <a href=\"{{ route('articles.unretweet',['id'=>$article->id]) }}\">\n                リツイート※\n                    <span>\n                        {{ $article->retweets->count() }}\n                    </span>\n                </a>\n            @else\n                <a href=\"{{ route('articles.retweet',['id'=>$article->id]) }}\" class=\"text-red-800\">\n                    リツイート\n                <span>\n                    {{ $article->retweets->count() }}\n                </span>\n                </a>\n            @endif\n        </div>\n        <div>\n            <a href=\"{{ route('replies.create', ['article' => $article]) }}\">返信する</a>\n        </div>\n    </div>\n"
+        }
+    ]
+}

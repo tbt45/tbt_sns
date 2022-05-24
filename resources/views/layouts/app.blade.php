@@ -31,7 +31,7 @@
         <div class="container px-5 mx-auto">
             <div class="flex flex-wrap -m-4">
                 @include('layouts.navigation-left')
-                <div class="w-1/2">
+                <div class="md:w-1/3 w-1/2">
                     {{ $slot }}
                 </div>
             </div>
