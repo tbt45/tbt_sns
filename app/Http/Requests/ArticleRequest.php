@@ -24,7 +24,6 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:50',
             'body' => 'required|max:500',
         ];
     }
@@ -32,7 +31,6 @@ class ArticleRequest extends FormRequest
     public function attributes()
     {
         return [
-            'title' => 'タイトル',
             'body' => '本文',
         ];
     }

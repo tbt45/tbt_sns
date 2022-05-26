@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/articles/form.blad.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1653393149662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1653393149662,
+            "name": "Commit-0",
+            "content": "@csrf\n<form>\n    <div class=\"\">\n        <div class=\" bg-white rounded-md px-6 max-w-2xl mx-auto\">\n            <div class=\"space-y-4\">\n                <div>\n                    <label for=\"title\" class=\"text-lx font-serif\">タイトル:</label>\n                    <input type=\"text\" placeholder=\"タイトル\" id=\"title\" class=\"ml-2 outline-none py-1 px-2 text-md border-2 rounded-md\" />\n                </div>\n                <div>\n                    <label for=\"description\" class=\"block mb-2 text-lg font-serif\">本文:</label>\n                    <textarea id=\"description\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full font-serif text-gray-600 outline-none rounded-md\"></textarea>\n                </div>\n            </div>\n        </div>\n    </div>\n</form>"
+        }
+    ]
+}

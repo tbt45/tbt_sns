@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1651194919640,
@@ -64,6 +64,10 @@
                 {
                     "date": 1651769787150,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,10 @@\n         Schema::create('replies', function (Blueprint $table) {\n             $table->bigIncrements('id');\n             $table->string('title');\n             $table->text('body');\n-            $table->unsignedBigInteger('user_id')->unsigned();\n+            $table->unsignedBigInteger('user_id')\n+                ->unsigned();\n             // $table->unsignedBigInteger('article_id');\n             $table->foreignId('article_id')->constrained('articles');\n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1653588965853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,14 @@\n     public function up()\n     {\n         Schema::create('replies', function (Blueprint $table) {\n             $table->bigIncrements('id');\n-            $table->string('title');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id')\n                 ->unsigned();\n             // $table->unsignedBigInteger('article_id');\n-            $table->foreignId('article_id')->constrained('articles');\n+            $table->foreignId('article_id')\n+                ->constrained('articles');\n             $table->timestamps();\n         });\n     }\n \n"
                 }
             ],
             "date": 1651194919640,

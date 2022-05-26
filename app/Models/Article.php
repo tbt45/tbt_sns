@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 class Article extends Model
 {
     protected $fillable = [
-        'title',
         'body',
         'image1',
         'image2',

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "resources/views/articles/form.blade copy.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1653588712544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653588720419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+@csrf\n+<div class=\"py-12\">\n+    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+        <label>タイトル</label>\n+    </div>\n+    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+        <input type=\"text\" name=\"title\" value=\"{{ $article->title ?? old('title') }}\">\n+    </div>\n+    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+        <label></label>\n+        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $article->body ?? old('body') }}</textarea>\n+    </div>\n+</div>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1653588712544,
+            "name": "Commit-0",
+            "content": "@csrf\n<div class=\"py-12\">\n\n    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n        <label></label>\n        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $article->body ?? old('body') }}</textarea>\n    </div>\n</div>"
+        }
+    ]
+}

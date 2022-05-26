@@ -51,9 +51,6 @@
             </div>
         </div>
 
-        <h2>
-            {{ $article->title }}
-        </h2>
         <div class="py-4">
             <div class="flex justify-between gap-1 mb-1">
                 <a class="flex" href="#">
