@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1648869523870,
@@ -72,6 +72,30 @@
                 {
                     "date": 1653194342739,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,8 @@\n                             <button type=\"submit\">投稿する</button>\n                         </div>\n                     </form>\n                 </div>\n-            {{-- </div>\n-        </div>\n-    </div> --}}\n \n     <script>\n         'use strict'\n         const images = document.querySelectorAll('.image')\n"
+                },
+                {
+                    "date": 1653390823336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,21 @@\n <x-app-layout>\n-                <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n-                    {{ __('投稿する') }}\n-                </h2>\n-                <div class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                    <form method=\"POST\" action=\"{{ route('articles.store') }}\">\n-                        @include('articles.form')\n-                        <x-select-image :images=\"$images\" name=\"image1\" />\n-                        <x-select-image :images=\"$images\" name=\"image2\" />\n-                        <x-select-image :images=\"$images\" name=\"image3\" />\n-                        <x-select-image :images=\"$images\" name=\"image4\" />\n-                        <x-select-image :images=\"$images\" name=\"image5\" />\n-                        <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                            <button type=\"submit\">投稿する</button>\n-                        </div>\n-                    </form>\n-                </div>\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+        {{ __('投稿する') }}\n+    </h2>\n+    <div class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+        <form method=\"POST\" action=\"{{ route('articles.store') }}\">\n+            @include('articles.form')\n+            <x-select-image :images=\"$images\" name=\"image1\" />\n+            <x-select-image :images=\"$images\" name=\"image2\" />\n+            <x-select-image :images=\"$images\" name=\"image3\" />\n+            <x-select-image :images=\"$images\" name=\"image4\" />\n+            <x-select-image :images=\"$images\" name=\"image5\" />\n+            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+                <button type=\"submit\">投稿する</button>\n+            </div>\n+        </form>\n+    </div>\n \n     <script>\n         'use strict'\n         const images = document.querySelectorAll('.image')\n"
+                },
+                {
+                    "date": 1653390905133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <x-app-layout>\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n         {{ __('投稿する') }}\n     </h2>\n     <div class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.store') }}\">\n"
+                },
+                {
+                    "date": 1653391991691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <x-app-layout>\n     <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n         {{ __('投稿する') }}\n     </h2>\n-    <div class=\"py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+    <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.store') }}\">\n             @include('articles.form')\n             <x-select-image :images=\"$images\" name=\"image1\" />\n             <x-select-image :images=\"$images\" name=\"image2\" />\n"
+                },
+                {
+                    "date": 1653590679629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <x-app-layout>\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5 mx-auto\">\n         {{ __('投稿する') }}\n     </h2>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.store') }}\">\n"
+                },
+                {
+                    "date": 1653590718256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <x-app-layout>\n-    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5 mx-auto\">\n+    <h2 class=\"mx-auto\">\n         {{ __('投稿する') }}\n     </h2>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.store') }}\">\n"
+                },
+                {
+                    "date": 1653590724433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <x-app-layout>\n-    <h2 class=\"mx-auto\">\n+    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5 mx-auto\">\n         {{ __('投稿する') }}\n     </h2>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.store') }}\">\n"
                 }
             ],
             "date": 1648869523870,

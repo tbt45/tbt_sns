@@ -32,10 +32,7 @@
         @endif
 
         <a href="{{ route('replies.show', ['name' => $user->name]) }}">
-            {{ $reply->title }}
-        </a>
-        <div class="">
             {{ $reply->body }}
-        </div>
+        </a>
     </div>
 </div>

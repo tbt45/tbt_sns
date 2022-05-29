@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 41,
+            "activePatchIndex": 68,
             "patches": [
                 {
                     "date": 1652543478340,
@@ -172,6 +172,114 @@
                 {
                     "date": 1653194314157,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,12 +27,12 @@\n         @include('layouts.navigation')\n     </header>\n \n     <main>\n-        {{-- <div class=\"container px-5 mx-auto\">\n+        <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"w-1/2\"> --}}\n+                <div class=\"w-1/2\">\n         {{ $slot }}\n     </div>\n </div>\n </div>\n"
+                },
+                {
+                    "date": 1653310486982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,13 +30,13 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"w-1/2\">\n-        {{ $slot }}\n-    </div>\n-</div>\n-</div>\n+                <div class=\"w-1/3\">\n+                    {{ $slot }}\n+                </div>\n+            </div>\n+        </div>\n     </main>\n     </div>\n </body>\n \n"
+                },
+                {
+                    "date": 1653311096088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"w-1/3\">\n+                <div class=\"w-1/3 sm\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653311101540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"w-1/3 sm\">\n+                <div class=\"w-1/3 sm:1/2\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653311235067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"w-1/3 sm:1/2\">\n+                <div class=\"mdw-1/3 sm:w-1/2\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653311241929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"mdw-1/3 sm:w-1/2\">\n+                <div class=\"md:w-1/3 w-1/2\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653817368602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"md:w-1/3 w-1/2\">\n+                <div class=\"md:w-1/3 w-\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653817392503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"md:w-1/3 w-\">\n+                <div class=\"md:w-1/2 w-2/3\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653825919022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"md:w-1/2 w-2/3\">\n+                <div class=\"md:w-1/2 w-\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653825991320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"md:w-1/2 w-\">\n+                <div class=\"lg:w-1/2 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826020861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 w-5/6\">\n+                <div class=\"md:w-1/2 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826042730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"md:w-1/2 w-5/6\">\n+                <div class=\"lg:w-1/2 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826048418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 w-5/6\">\n+                <div class=\"lg:w-1/2 md: w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826053661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 md: w-5/6\">\n+                <div class=\"lg:w-1/2 md:3/4 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826079321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 md:3/4 w-5/6\">\n+                <div class=\"lg:w-1/2 md: w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826122292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 md: w-5/6\">\n+                <div class=\"lg:w-1/2 md:4/7 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826134847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 md:4/7 w-5/6\">\n+                <div class=\"lg:w-1/2 md: w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826144937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 md: w-5/6\">\n+                <div class=\"lg:w-1/2 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826155720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 w-5/6\">\n+                <div class=\":w-1/2 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826199970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\":w-1/2 w-5/6\">\n+                <div class=\"lg:w-1/2 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826223343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 w-5/6\">\n+                <div class=\"md:w-1/3 w-\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826237050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"md:w-1/3 w-\">\n+                <div class=\"md:w-1/3 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826254716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"md:w-1/3 w-5/6\">\n+                <div class=\"lg:w-1/3 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826294598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/3 w-5/6\">\n+                <div class=\"lg:w-1/2 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826313284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 w-5/6\">\n+                <div class=\"lg:w-1/2  w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826319013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2  w-5/6\">\n+                <div class=\"lg:w-1/2 md:1/43 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826498962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 md:1/43 w-5/6\">\n+                <div class=\"lg:w-1/2 md:w-1/4 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1653826511496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     <main>\n         <div class=\"container px-5 mx-auto\">\n             <div class=\"flex flex-wrap -m-4\">\n                 @include('layouts.navigation-left')\n-                <div class=\"lg:w-1/2 md:w-1/4 w-5/6\">\n+                <div class=\"lg:w-1/2 md:w-2/3 w-5/6\">\n                     {{ $slot }}\n                 </div>\n             </div>\n         </div>\n"
                 }
             ],
             "date": 1652543478340,

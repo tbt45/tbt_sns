@@ -28,7 +28,7 @@ class ArticleController extends Controller
     public function create()
     {
         $images = Image::where('user_id', Auth::id())
-            ->select('id', 'title', 'filename')
+            ->select('id', 'filename')
             ->orderBy('updated_at', 'desc')
             ->get();
 

@@ -15,11 +15,9 @@ return new class extends Migration
     {
         Schema::create('replies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
             $table->text('body');
             $table->unsignedBigInteger('user_id')
                 ->unsigned();
-            // $table->unsignedBigInteger('article_id');
             $table->foreignId('article_id')
                 ->constrained('articles');
             $table->timestamps();

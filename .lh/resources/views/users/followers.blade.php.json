@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1650684325601,
@@ -60,6 +60,22 @@
                 {
                     "date": 1650686857759,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         @foreach ($followers as $user)\n-             @include('users.user')\n+            @include('users.user')\n         @endforeach\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1653828610788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n             {{ __('フォローされているユーザー') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+    <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n+\n         @foreach ($followers as $user)\n             @include('users.user')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1653828622002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,9 @@\n             {{ __('フォローされているユーザー') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-    <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n-\n+    <input type=\"hidden\" name=\"user_id\" value=\"{{ $article->id }}\">\n         @foreach ($followers as $user)\n             @include('users.user')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1653828627298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             {{ __('フォローされているユーザー') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-    <input type=\"hidden\" name=\"user_id\" value=\"{{ $article->id }}\">\n+    <input type=\"hidden\" name=\"user_id\" value=\"{{ $user->id }}\">\n         @foreach ($followers as $user)\n             @include('users.user')\n         @endforeach\n     </div>\n"
+                },
+                {
+                    "date": 1653828778726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n             {{ __('フォローされているユーザー') }}\n         </h2>\n     </x-slot>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-    <input type=\"hidden\" name=\"user_id\" value=\"{{ $user->id }}\">\n+    <input type=\"hidden\" name=\"user_id\" value=\"{{ Auth::id() }}\">\n         @foreach ($followers as $user)\n             @include('users.user')\n         @endforeach\n     </div>\n"
                 }
             ],
             "date": 1650684325601,

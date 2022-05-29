@@ -46,7 +46,6 @@ class ReplyController extends Controller
         Reply::create([
             'user_id' => Auth::id(),
             'article_id' => $request->article_id,
-            'title' => $request->title,
             'body' => $request->body,
         ]);
 

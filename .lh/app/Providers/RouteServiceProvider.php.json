@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/Providers/RouteServiceProvider.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1653665829306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653665852765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,10 @@\n      * This is used by Laravel authentication to redirect users after login.\n      *\n      * @var string\n      */\n-    public const HOME = '/';\n+    public const HOME = '/dashboard\n+';\n \n     /**\n      * Define your route model bindings, pattern filters, etc.\n      *\n"
+                }
+            ],
+            "date": 1653665829306,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Providers;\n\nuse Illuminate\\Cache\\RateLimiting\\Limit;\nuse Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider as ServiceProvider;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\RateLimiter;\nuse Illuminate\\Support\\Facades\\Route;\n\nclass RouteServiceProvider extends ServiceProvider\n{\n    /**\n     * The path to the \"home\" route for your application.\n     *\n     * This is used by Laravel authentication to redirect users after login.\n     *\n     * @var string\n     */\n    public const HOME = '/';\n\n    /**\n     * Define your route model bindings, pattern filters, etc.\n     *\n     * @return void\n     */\n    public function boot()\n    {\n        $this->configureRateLimiting();\n\n        $this->routes(function () {\n            Route::prefix('api')\n                ->middleware('api')\n                ->group(base_path('routes/api.php'));\n\n            Route::middleware('web')\n                ->group(base_path('routes/web.php'));\n        });\n    }\n\n    /**\n     * Configure the rate limiters for the application.\n     *\n     * @return void\n     */\n    protected function configureRateLimiting()\n    {\n        RateLimiter::for('api', function (Request $request) {\n            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());\n        });\n    }\n}\n"
+        }
+    ]
+}

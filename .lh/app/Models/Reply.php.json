@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1651065133424,
@@ -56,6 +56,10 @@
                 {
                     "date": 1651580635160,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     {\n         return $this->belongsTo('App\\Models\\User');\n     }\n \n-    public function articles()\n+    public function article()\n     {\n         return $this->belongsTo('App\\Models\\Article');\n     }\n }\n"
+                },
+                {
+                    "date": 1653589050227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n \n class Reply extends Model\n {\n     protected $fillable = [\n-        'title',\n         'body',\n         'article_id',\n         'user_id'\n     ];\n"
                 }
             ],
             "date": 1651065133424,

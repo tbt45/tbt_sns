@@ -1,8 +1,8 @@
 <x-app-layout>
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight pt-5">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight pt-5 mx-auto">
         {{ __('投稿する') }}
     </h2>
-    <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200">
         <form method="POST" action="{{ route('articles.store') }}">
             @include('articles.form')
             <x-select-image :images="$images" name="image1" />
