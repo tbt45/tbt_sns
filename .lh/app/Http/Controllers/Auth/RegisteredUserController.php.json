@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/Http/Controllers/Auth/RegisteredUserController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1653663464661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1653663476109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,7 @@\n         event(new Registered($user));\n \n         Auth::login($user);\n \n-        return view('articles.timeline')->with([\n-            'articles' => $articles\n-        ]);\n+        return view('articles.timeline')->with([]);\n     }\n }\n"
+                },
+                {
+                    "date": 1653663484879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,7 @@\n         event(new Registered($user));\n \n         Auth::login($user);\n \n-        return view('articles.timeline')->with([]);\n+        return view('articles.timeline');\n     }\n }\n"
+                },
+                {
+                    "date": 1653663555135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,7 @@\n         event(new Registered($user));\n \n         Auth::login($user);\n \n-        return view('articles.timeline');\n+        return redirect(RouteServiceProvider::HOME);\n     }\n }\n"
+                }
+            ],
+            "date": 1653663464661,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers\\Auth;\n\nuse App\\Http\\Controllers\\Controller;\nuse App\\Models\\User;\nuse App\\Providers\\RouteServiceProvider;\nuse Illuminate\\Auth\\Events\\Registered;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Support\\Facades\\Hash;\nuse Illuminate\\Validation\\Rules;\n\nclass RegisteredUserController extends Controller\n{\n    /**\n     * Display the registration view.\n     *\n     * @return \\Illuminate\\View\\View\n     */\n    public function create()\n    {\n        return view('auth.register');\n    }\n\n    /**\n     * Handle an incoming registration request.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @return \\Illuminate\\Http\\RedirectResponse\n     *\n     * @throws \\Illuminate\\Validation\\ValidationException\n     */\n    public function store(Request $request)\n    {\n        $request->validate([\n            'name' => ['required', 'string', 'max:255'],\n            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],\n            'password' => ['required', 'confirmed', Rules\\Password::defaults()],\n        ]);\n\n        $user = User::create([\n            'name' => $request->name,\n            'email' => $request->email,\n            'password' => Hash::make($request->password),\n        ]);\n\n        event(new Registered($user));\n\n        Auth::login($user);\n\n        return view('articles.timeline')->with([\n            'articles' => $articles\n        ]);\n    }\n}\n"
+        }
+    ]
+}
