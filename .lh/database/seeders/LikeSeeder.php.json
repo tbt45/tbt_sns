@@ -1,0 +1,110 @@
+{
+    "sourceFile": "database/seeders/LikeSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1654140311515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654140326749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n namespace Database\\Seeders;\n \n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n+use Illuminate\\Support\\Facades\\DB;\n+use Illuminate\\Support\\Facades\\Hash;\n \n class LikeSeeder extends Seeder\n {\n     /**\n"
+                },
+                {
+                    "date": 1654140336274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n      * @return void\n      */\n     public function run()\n     {\n-        DB::table('owners')->insert([\n+        DB::table('users')->insert([\n             [\n                 'name' => 'test1',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password123'),\n"
+                },
+                {
+                    "date": 1654140373745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <?php\n \n namespace Database\\Seeders;\n \n-use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n use Illuminate\\Support\\Facades\\DB;\n use Illuminate\\Support\\Facades\\Hash;\n \n@@ -17,9 +16,9 @@\n     public function run()\n     {\n         DB::table('users')->insert([\n             [\n-                'name' => 'test1',\n+                'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n"
+                },
+                {
+                    "date": 1654140382453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n-                'name' => 'test2',\n+                'name' => '高橋',\n                 'email' => 'test2@test.com',\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n"
+                },
+                {
+                    "date": 1654140389274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n-                'name' => 'test3',\n+                'name' => '田中',\n                 'email' => 'test3@test.com',\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n"
+                },
+                {
+                    "date": 1654140395731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n-                'name' => 'test4',\n+                'name' => '鈴木',\n                 'email' => 'test4@test.com',\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n"
+                },
+                {
+                    "date": 1654140402364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n-                'name' => 'test5',\n+                'name' => '高野',\n                 'email' => 'test5@test.com',\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n"
+                },
+                {
+                    "date": 1654140409999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,15 +40,15 @@\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n-                'name' => '高野',\n+                'name' => '吉田',\n                 'email' => 'test5@test.com',\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n-                'name' => 'test6',\n+                'name' => '',\n                 'email' => 'test6@test.com',\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n"
+                },
+                {
+                    "date": 1654140436826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n-                'name' => '',\n+                'name' => '中村',\n                 'email' => 'test6@test.com',\n                 'password' => Hash::make('password123'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n"
+                },
+                {
+                    "date": 1654140442644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         DB::table('users')->insert([\n             [\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n-                'password' => Hash::make('password123'),\n+                'password' => Hash::make('password'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n                 'name' => '高橋',\n"
+                },
+                {
+                    "date": 1654140448256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,15 +24,15 @@\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n-                'password' => Hash::make('password123'),\n+                'password' => Hash::make('password'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n                 'name' => '田中',\n                 'email' => 'test3@test.com',\n-                'password' => Hash::make('password123'),\n+                'password' => Hash::make('password'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n                 'name' => '鈴木',\n"
+                },
+                {
+                    "date": 1654140453737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,15 +36,15 @@\n             ],\n             [\n                 'name' => '鈴木',\n                 'email' => 'test4@test.com',\n-                'password' => Hash::make('password123'),\n+                'password' => Hash::make('password'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n                 'name' => '吉田',\n                 'email' => 'test5@test.com',\n-                'password' => Hash::make('password123'),\n+                'password' => Hash::make('password'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n             [\n                 'name' => '中村',\n"
+                },
+                {
+                    "date": 1654140463006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             [\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n-                'created_at' => '2021/01/01 11:11:11'\n+                'created_at' => '2022/01/01 11:11:11'\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n"
+                },
+                {
+                    "date": 1654140468427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,21 +25,21 @@\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n                 'password' => Hash::make('password'),\n-                'created_at' => '2021/01/01 11:11:11'\n+                'created_at' => '2022/01/01 11:11:11'\n             ],\n             [\n                 'name' => '田中',\n                 'email' => 'test3@test.com',\n                 'password' => Hash::make('password'),\n-                'created_at' => '2021/01/01 11:11:11'\n+                'created_at' => '2022/01/01 11:11:11'\n             ],\n             [\n                 'name' => '鈴木',\n                 'email' => 'test4@test.com',\n                 'password' => Hash::make('password'),\n-                'created_at' => '2021/01/01 11:11:11'\n+                'created_at' => '2022/01/01 11:11:11'\n             ],\n             [\n                 'name' => '吉田',\n                 'email' => 'test5@test.com',\n@@ -48,9 +48,9 @@\n             ],\n             [\n                 'name' => '中村',\n                 'email' => 'test6@test.com',\n-                'password' => Hash::make('password123'),\n+                'password' => Hash::make('password'),\n                 'created_at' => '2021/01/01 11:11:11'\n             ],\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1654140504233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11'\n+\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n@@ -43,15 +44,15 @@\n             [\n                 'name' => '吉田',\n                 'email' => 'test5@test.com',\n                 'password' => Hash::make('password'),\n-                'created_at' => '2021/01/01 11:11:11'\n+                'created_at' => '2022/01/01 11:11:11'\n             ],\n             [\n                 'name' => '中村',\n                 'email' => 'test6@test.com',\n                 'password' => Hash::make('password'),\n-                'created_at' => '2021/01/01 11:11:11'\n+                'created_at' => '2022/01/01 11:11:11'\n             ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654140509801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11'\n-\n+'filename'\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n"
+                },
+                {
+                    "date": 1654140519888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,11 @@\n             [\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n-                'created_at' => '2022/01/01 11:11:11'\n-'filename'\n+                'created_at' => '2022/01/01 11:11:11',\n+'filename' =>,\n+\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n"
+                },
+                {
+                    "date": 1654140526999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n 'filename' =>,\n-\n+'body'\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n"
+                },
+                {
+                    "date": 1654140565226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-'filename' =>,\n-'body'\n+'filename' => sa,ple,\n+'body' => ,\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n"
+                },
+                {
+                    "date": 1654140573313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-'filename' => sa,ple,\n+'filename' => sample.jpeg,\n 'body' => ,\n             ],\n             [\n                 'name' => '高橋',\n"
+                },
+                {
+                    "date": 1654140581284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-'filename' => sample.jpeg,\n+'filename' => 'sample.jpeg,\n 'body' => ,\n             ],\n             [\n                 'name' => '高橋',\n"
+                },
+                {
+                    "date": 1654140595481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-'filename' => 'sample.jpeg',\n-'body' => ,\n+                'filename' => 'sample.jpeg',\n+                'body' => '',\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n"
+                },
+                {
+                    "date": 1654140616124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'sample.jpeg',\n+                'filename' => 'sample.jpeg',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '高橋',\n"
+                }
+            ],
+            "date": 1654140311515,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass LikeSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        DB::table('owners')->insert([\n            [\n                'name' => 'test1',\n                'email' => 'test1@test.com',\n                'password' => Hash::make('password123'),\n                'created_at' => '2021/01/01 11:11:11'\n            ],\n            [\n                'name' => 'test2',\n                'email' => 'test2@test.com',\n                'password' => Hash::make('password123'),\n                'created_at' => '2021/01/01 11:11:11'\n            ],\n            [\n                'name' => 'test3',\n                'email' => 'test3@test.com',\n                'password' => Hash::make('password123'),\n                'created_at' => '2021/01/01 11:11:11'\n            ],\n            [\n                'name' => 'test4',\n                'email' => 'test4@test.com',\n                'password' => Hash::make('password123'),\n                'created_at' => '2021/01/01 11:11:11'\n            ],\n            [\n                'name' => 'test5',\n                'email' => 'test5@test.com',\n                'password' => Hash::make('password123'),\n                'created_at' => '2021/01/01 11:11:11'\n            ],\n            [\n                'name' => 'test6',\n                'email' => 'test6@test.com',\n                'password' => Hash::make('password123'),\n                'created_at' => '2021/01/01 11:11:11'\n            ],\n        ]);\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "sourceFile": "database/seeders/FollowerSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1654142257475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654142276226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <?php\n \n namespace Database\\Seeders;\n \n-use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Support\\Facades\\DB;\n use Illuminate\\Database\\Seeder;\n \n class FollowerSeeder extends Seeder\n@@ -14,7 +13,12 @@\n      * @return void\n      */\n     public function run()\n     {\n-        //\n+        DB::table('likes')->insert([\n+            [\n+                'user_id' => '1',\n+                'article_id' => '2',\n+            ],\n+        ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654142285187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      * @return void\n      */\n     public function run()\n     {\n-        DB::table('likes')->insert([\n+        DB::table('followerss')->insert([\n             [\n                 'user_id' => '1',\n                 'article_id' => '2',\n             ],\n"
+                },
+                {
+                    "date": 1654142297060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,11 @@\n      * @return void\n      */\n     public function run()\n     {\n-        DB::table('followerss')->insert([\n+        DB::table('followers')->insert([\n             [\n-                'user_id' => '1',\n+                'following_id' => '1',\n                 'article_id' => '2',\n             ],\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1654142304402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     {\n         DB::table('followers')->insert([\n             [\n                 'following_id' => '1',\n-                'article_id' => '2',\n+                'followed_id' => '2',\n             ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654148932318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,31 @@\n             [\n                 'following_id' => '1',\n                 'followed_id' => '2',\n             ],\n+            [\n+                'following_id' => '1',\n+                'followed_id' => '2',\n+            ],\n+            [\n+                'following_id' => '1',\n+                'followed_id' => '2',\n+            ],\n+            [\n+                'following_id' => '1',\n+                'followed_id' => '2',\n+            ],\n+            [\n+                'following_id' => '1',\n+                'followed_id' => '2',\n+            ],\n+            [\n+                'following_id' => '1',\n+                'followed_id' => '2',\n+            ],\n+            [\n+                'following_id' => '1',\n+                'followed_id' => '2',\n+            ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654148940356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n                 'following_id' => '1',\n                 'followed_id' => '2',\n             ],\n             [\n-                'following_id' => '1',\n-                'followed_id' => '2',\n+                'following_id' => '2',\n+                'followed_id' => '1',\n             ],\n             [\n                 'following_id' => '1',\n                 'followed_id' => '2',\n"
+                },
+                {
+                    "date": 1654148947228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,14 +23,14 @@\n                 'following_id' => '2',\n                 'followed_id' => '1',\n             ],\n             [\n-                'following_id' => '1',\n-                'followed_id' => '2',\n+                'following_id' => '2',\n+                'followed_id' => '3',\n             ],\n             [\n-                'following_id' => '1',\n-                'followed_id' => '2',\n+                'following_id' => '3',\n+                'followed_id' => '',\n             ],\n             [\n                 'following_id' => '1',\n                 'followed_id' => '2',\n"
+                },
+                {
+                    "date": 1654148955426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,17 +28,17 @@\n                 'followed_id' => '3',\n             ],\n             [\n                 'following_id' => '3',\n-                'followed_id' => '',\n+                'followed_id' => '2',\n             ],\n             [\n                 'following_id' => '1',\n-                'followed_id' => '2',\n+                'followed_id' => '3',\n             ],\n             [\n                 'following_id' => '1',\n-                'followed_id' => '2',\n+                'followed_id' => '5',\n             ],\n             [\n                 'following_id' => '1',\n                 'followed_id' => '2',\n"
+                },
+                {
+                    "date": 1654148962075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,10 +39,10 @@\n                 'following_id' => '1',\n                 'followed_id' => '5',\n             ],\n             [\n-                'following_id' => '1',\n-                'followed_id' => '2',\n+                'following_id' => '6',\n+                'followed_id' => '1',\n             ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654148968165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,19 @@\n             [\n                 'following_id' => '6',\n                 'followed_id' => '1',\n             ],\n+            [\n+                'following_id' => '6',\n+                'followed_id' => '1',\n+            ],\n+            [\n+                'following_id' => '6',\n+                'followed_id' => '1',\n+            ],\n+            [\n+                'following_id' => '6',\n+                'followed_id' => '1',\n+            ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654148974427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,12 +48,12 @@\n                 'followed_id' => '1',\n             ],\n             [\n                 'following_id' => '6',\n-                'followed_id' => '1',\n+                'followed_id' => '5',\n             ],\n             [\n-                'following_id' => '6',\n+                'following_id' => '5',\n                 'followed_id' => '1',\n             ],\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1654266974468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,17 +44,13 @@\n                 'followed_id' => '1',\n             ],\n             [\n                 'following_id' => '6',\n-                'followed_id' => '1',\n-            ],\n-            [\n-                'following_id' => '6',\n                 'followed_id' => '5',\n             ],\n             [\n                 'following_id' => '5',\n-                'followed_id' => '1',\n+                'followed_id' => '6',\n             ],\n         ]);\n     }\n }\n"
+                }
+            ],
+            "date": 1654142257475,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Support\\Facades\\DB;\nuse Illuminate\\Database\\Seeder;\n\nclass FollowerSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        //\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "sourceFile": "database/factories/ReplyFactory.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1654237858390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654250653159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,15 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'name' => $this->faker->name,\n-            'information' => $this->faker->realText,\n-            'price' => $this->faker->numberBetween(10, 100000), 'is_selling' => $this->faker->numberBetween(0, 1),\n-            'sort_order' => $this->faker->randomNumber,\n-            'shop_id' => $this->faker->numberBetween(1, 2), 'secondary_category_id' => $this->faker->numberBetween(1, 6), 'image1' => $this->faker->numberBetween(1, 6),\n-            'image2' => $this->faker->numberBetween(1, 6),\n-            'image3' => $this->faker->numberBetween(1, 6),\n-            'image4' => $this->faker->numberBetween(1, 6),\n+            'body' => $this->faker->name,\n+            'user_id' => $this->faker->numberBetween(1, 6),\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1654250674073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,8 @@\n     {\n         return [\n             'body' => $this->faker->name,\n             'user_id' => $this->faker->numberBetween(1, 6),\n+            'user_id' => $this->faker->numberBetween(1, 6),\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1654250682608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n     {\n         return [\n             'body' => $this->faker->name,\n             'user_id' => $this->faker->numberBetween(1, 6),\n-            'user_id' => $this->faker->numberBetween(1, 6),\n+            'article' => $this->faker->numberBetween(1, 6),\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1654250693246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n     {\n         return [\n             'body' => $this->faker->name,\n             'user_id' => $this->faker->numberBetween(1, 6),\n-            'article' => $this->faker->numberBetween(1, 6),\n+            'article_id' => $this->faker->numberBetween(1, 100),\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1654250856615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->name,\n+            'body' => $this->faker->text,\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'article_id' => $this->faker->numberBetween(1, 100),\n         ];\n     }\n"
+                },
+                {
+                    "date": 1654269616070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->text,\n+            'body' => $this->faker->sentences,\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'article_id' => $this->faker->numberBetween(1, 100),\n         ];\n     }\n"
+                },
+                {
+                    "date": 1654269882666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->sentences,\n+            'body' => $this->faker->array,\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'article_id' => $this->faker->numberBetween(1, 100),\n         ];\n     }\n"
+                },
+                {
+                    "date": 1654269998504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->array,\n+            'body' => $this->faker->realText(),\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'article_id' => $this->faker->numberBetween(1, 100),\n         ];\n     }\n"
+                }
+            ],
+            "date": 1654237858390,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Factories;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\n\n/**\n * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Reply>\n */\nclass ReplyFactory extends Factory\n{\n    /**\n     * Define the model's default state.\n     *\n     * @return array<string, mixed>\n     */\n    public function definition()\n    {\n        return [\n            'name' => $this->faker->name,\n            'information' => $this->faker->realText,\n            'price' => $this->faker->numberBetween(10, 100000), 'is_selling' => $this->faker->numberBetween(0, 1),\n            'sort_order' => $this->faker->randomNumber,\n            'shop_id' => $this->faker->numberBetween(1, 2), 'secondary_category_id' => $this->faker->numberBetween(1, 6), 'image1' => $this->faker->numberBetween(1, 6),\n            'image2' => $this->faker->numberBetween(1, 6),\n            'image3' => $this->faker->numberBetween(1, 6),\n            'image4' => $this->faker->numberBetween(1, 6),\n        ];\n    }\n}\n"
+        }
+    ]
+}

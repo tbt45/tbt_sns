@@ -1,0 +1,42 @@
+{
+    "sourceFile": "database/factories/ArticleFactory.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1654250718853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654250838014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n /**\n  * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Artisan>\n  */\n-class ArtiFactory extends Factory\n+class ArticleFactory extends Factory\n {\n     /**\n      * Define the model's default state.\n      *\n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->name,\n+            'body' => $this->faker->text,\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'image1' => $this->faker->numberBetween(1, 6),\n             'image2' => $this->faker->numberBetween(1, 6),\n             'image3' => $this->faker->numberBetween(1, 6),\n"
+                },
+                {
+                    "date": 1654267297498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n use Illuminate\\Database\\Eloquent\\Factories\\Factory;\n \n /**\n- * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Artisan>\n+ * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Article>\n  */\n class ArticleFactory extends Factory\n {\n     /**\n@@ -15,14 +15,7 @@\n      * @return array<string, mixed>\n      */\n     public function definition()\n     {\n-        return [\n-            'body' => $this->faker->text,\n-            'user_id' => $this->faker->numberBetween(1, 6),\n-            'image1' => $this->faker->numberBetween(1, 6),\n-            'image2' => $this->faker->numberBetween(1, 6),\n-            'image3' => $this->faker->numberBetween(1, 6),\n-            'image4' => $this->faker->numberBetween(1, 6),\n-        ];\n+        return [];\n     }\n }\n"
+                },
+                {
+                    "date": 1654267305446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,14 @@\n      * @return array<string, mixed>\n      */\n     public function definition()\n     {\n-        return [];\n+        return [\n+            'body' => $this->faker->text,\n+            'user_id' => $this->faker->numberBetween(1, 6),\n+            'image1' => $this->faker->numberBetween(1, 6),\n+            'image2' => $this->faker->numberBetween(1, 6),\n+            'image3' => $this->faker->numberBetween(1, 6),\n+            'image4' => $this->faker->numberBetween(1, 6),\n+        ];\n     }\n }\n"
+                },
+                {
+                    "date": 1654269610800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->text,\n+            'body' => $this->faker->sentences,\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'image1' => $this->faker->numberBetween(1, 6),\n             'image2' => $this->faker->numberBetween(1, 6),\n             'image3' => $this->faker->numberBetween(1, 6),\n"
+                },
+                {
+                    "date": 1654269893152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->sentences,\n+            'body' => $this->faker->array,\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'image1' => $this->faker->numberBetween(1, 6),\n             'image2' => $this->faker->numberBetween(1, 6),\n             'image3' => $this->faker->numberBetween(1, 6),\n"
+                },
+                {
+                    "date": 1654269987078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->array,\n+            'body' => $this->faker->realText(),\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'image1' => $this->faker->numberBetween(1, 6),\n             'image2' => $this->faker->numberBetween(1, 6),\n             'image3' => $this->faker->numberBetween(1, 6),\n"
+                }
+            ],
+            "date": 1654250718853,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Factories;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\n\n/**\n * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Artisan>\n */\nclass ArtiFactory extends Factory\n{\n    /**\n     * Define the model's default state.\n     *\n     * @return array<string, mixed>\n     */\n    public function definition()\n    {\n        return [\n            'body' => $this->faker->name,\n            'user_id' => $this->faker->numberBetween(1, 6),\n            'image1' => $this->faker->numberBetween(1, 6),\n            'image2' => $this->faker->numberBetween(1, 6),\n            'image3' => $this->faker->numberBetween(1, 6),\n            'image4' => $this->faker->numberBetween(1, 6),\n        ];\n    }\n}\n"
+        }
+    ]
+}

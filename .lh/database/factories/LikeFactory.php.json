@@ -1,0 +1,34 @@
+{
+    "sourceFile": "database/factories/LikeFactory.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1654269261562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654269328624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->text,\n             'user_id' => $this->faker->numberBetween(1, 6),\n-            'image1' => $this->faker->numberBetween(1, 6),\n-            'image2' => $this->faker->numberBetween(1, 6),\n-            'image3' => $this->faker->numberBetween(1, 6),\n-            'image4' => $this->faker->numberBetween(1, 6),\n+            '' => $this->faker->text,\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1654269339899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'user_id' => $this->faker->numberBetween(1, 6),\n-            '' => $this->faker->text,\n+            'user_id' => $this->faker->numberBetween(1,),\n+            'article_id' => $this->faker->text,\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1654269349249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'user_id' => $this->faker->numberBetween(1,),\n+            'user_id' => $this->faker->numberBetween(1, 6),\n             'article_id' => $this->faker->text,\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1654269359693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,8 @@\n     public function definition()\n     {\n         return [\n             'user_id' => $this->faker->numberBetween(1, 6),\n-            'article_id' => $this->faker->text,\n+            'article_id' => $this->faker->numberBetween(1, 6),\n         ];\n     }\n }\n"
+                }
+            ],
+            "date": 1654269261562,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Factories;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\n\n/**\n * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Like>\n */\nclass LikeFactory extends Factory\n{\n    /**\n     * Define the model's default state.\n     *\n     * @return array<string, mixed>\n     */\n    public function definition()\n    {\n        return [\n            'body' => $this->faker->text,\n            'user_id' => $this->faker->numberBetween(1, 6),\n            'image1' => $this->faker->numberBetween(1, 6),\n            'image2' => $this->faker->numberBetween(1, 6),\n            'image3' => $this->faker->numberBetween(1, 6),\n            'image4' => $this->faker->numberBetween(1, 6),\n        ];\n    }\n}\n"
+        }
+    ]
+}

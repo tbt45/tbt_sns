@@ -1,0 +1,150 @@
+{
+    "sourceFile": "database/seeders/DatabaseSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1654140818674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654140899440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n      */\n     public function run()\n     {\n         $this->call([\n-            AdminSeeder::class,\n+            ArticlSeeder::class,\n             OwnerSeeder::class,\n             ShopSeeder::class,\n             ImageSeeder::class,\n             CategorySeeder::class,\n"
+                },
+                {
+                    "date": 1654140905844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n      */\n     public function run()\n     {\n         $this->call([\n-            ArticlSeeder::class,\n-            OwnerSeeder::class,\n-            ShopSeeder::class,\n+            ArticleSeeder::class,\n+            UserSeeder::class,\n+            Seeder::class,\n             ImageSeeder::class,\n             CategorySeeder::class,\n             // ProductSeeder::class,\n             // StockSeeder::class,\n"
+                },
+                {
+                    "date": 1654140912361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n     {\n         $this->call([\n             ArticleSeeder::class,\n             UserSeeder::class,\n-            Seeder::class,\n-            ImageSeeder::class,\n+            LikeSeeder::class,\n+            RSeeder::class,\n             CategorySeeder::class,\n             // ProductSeeder::class,\n             // StockSeeder::class,\n             UserSeeder::class,\n"
+                },
+                {
+                    "date": 1654140921111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n         $this->call([\n             ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n-            RSeeder::class,\n-            CategorySeeder::class,\n+            ReplySeeder::class,\n+            RetweetSeeder::class,\n             // ProductSeeder::class,\n             // StockSeeder::class,\n             UserSeeder::class,\n         ]);\n"
+                },
+                {
+                    "date": 1654140929821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n             ReplySeeder::class,\n-            RetweetSeeder::class,\n+            UserSeeder::class,\n             // ProductSeeder::class,\n             // StockSeeder::class,\n             UserSeeder::class,\n         ]);\n"
+                },
+                {
+                    "date": 1654140935949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n             ReplySeeder::class,\n-            UserSeeder::class,\n+            RetweerSeeder::class,\n             // ProductSeeder::class,\n             // StockSeeder::class,\n             UserSeeder::class,\n         ]);\n"
+                },
+                {
+                    "date": 1654140942063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,9 @@\n             ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n             ReplySeeder::class,\n-            RetweerSeeder::class,\n-            // ProductSeeder::class,\n-            // StockSeeder::class,\n+            RetweetSeeder::class,\n             UserSeeder::class,\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654140948598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,7 @@\n             UserSeeder::class,\n             LikeSeeder::class,\n             ReplySeeder::class,\n             RetweetSeeder::class,\n-            UserSeeder::class,\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654141228198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <?php\n \n namespace Database\\Seeders;\n \n-use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n \n class DatabaseSeeder extends Seeder\n {\n"
+                },
+                {
+                    "date": 1654142227292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,8 @@\n             UserSeeder::class,\n             LikeSeeder::class,\n             ReplySeeder::class,\n             RetweetSeeder::class,\n+            RetweetSeeder::class,\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654142233673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n             UserSeeder::class,\n             LikeSeeder::class,\n             ReplySeeder::class,\n             RetweetSeeder::class,\n-            RetweetSeeder::class,\n+            FollowerSeeder::class,\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654238831413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,8 @@\n             ReplySeeder::class,\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n+        Product::factory(100)->create();\n+        Stock::factory(100)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654238836879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n             ReplySeeder::class,\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n-        Product::factory(100)->create();\n+        Article::factory(100)->create();\n         Stock::factory(100)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654238842437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace Database\\Seeders;\n \n+use App\\Models\\Reply;\n use Illuminate\\Database\\Seeder;\n \n class DatabaseSeeder extends Seeder\n {\n@@ -21,7 +22,7 @@\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n-        Stock::factory(100)->create();\n+        Reply::factory(100)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654238854696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,7 @@\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n-        Reply::factory(100)->create();\n+        Reply::factory(50)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654238874870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n namespace Database\\Seeders;\n \n use App\\Models\\Reply;\n+use App\\Models\\Ar;\n use Illuminate\\Database\\Seeder;\n \n class DatabaseSeeder extends Seeder\n {\n"
+                },
+                {
+                    "date": 1654238937492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n namespace Database\\Seeders;\n \n use App\\Models\\Reply;\n-use App\\Models\\Ar;\n+use App\\Models\\Article;\n use Illuminate\\Database\\Seeder;\n \n class DatabaseSeeder extends Seeder\n {\n@@ -15,9 +15,9 @@\n      */\n     public function run()\n     {\n         $this->call([\n-            ArticleSeeder::class,\n+            // ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n             ReplySeeder::class,\n             RetweetSeeder::class,\n"
+                },
+                {
+                    "date": 1654251124234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,11 @@\n         $this->call([\n             // ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n-            ReplySeeder::class,\n+            ImageSeeder::class,\n+\n+            // ReplySeeder::class,\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n"
+                },
+                {
+                    "date": 1654266943894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,9 @@\n         $this->call([\n             // ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n-            ImageSeeder::class,\n-\n+            // ImageSeeder::class,\n             // ReplySeeder::class,\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n"
+                },
+                {
+                    "date": 1654267392406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n      */\n     public function run()\n     {\n         $this->call([\n-            // ArticleSeeder::class,\n+            ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n             // ImageSeeder::class,\n             // ReplySeeder::class,\n"
+                },
+                {
+                    "date": 1654267486165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,16 +15,16 @@\n      */\n     public function run()\n     {\n         $this->call([\n-            ArticleSeeder::class,\n+            // ArticleSeeder::class,\n             UserSeeder::class,\n             LikeSeeder::class,\n             // ImageSeeder::class,\n             // ReplySeeder::class,\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n-        Article::factory(100)->create();\n+        // Article::factory(100)->create();\n         Reply::factory(50)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654267499589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n         // Article::factory(100)->create();\n-        Reply::factory(50)->create();\n+        // Reply::factory(50)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654267991496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n             // ReplySeeder::class,\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n-        // Article::factory(100)->create();\n+        Article::factory(100)->create();\n         // Reply::factory(50)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654269136553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,8 @@\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n-        // Reply::factory(50)->create();\n+        Reply::factory(50)->create();\n+        Like\n     }\n }\n"
+                },
+                {
+                    "date": 1654269144865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,7 @@\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n         Reply::factory(50)->create();\n-        Like\n+        Like::fact\n     }\n }\n"
+                },
+                {
+                    "date": 1654269151021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,7 @@\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n         Reply::factory(50)->create();\n-        Like::fact\n+        Like::factory(50)->\n     }\n }\n"
+                },
+                {
+                    "date": 1654269157246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,7 +25,7 @@\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n         Reply::factory(50)->create();\n-        Like::factory(50)->\n+        Like::factory(50)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654269162326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n namespace Database\\Seeders;\n \n use App\\Models\\Reply;\n use App\\Models\\Article;\n+use App\\Models\\Article;\n use Illuminate\\Database\\Seeder;\n \n class DatabaseSeeder extends Seeder\n {\n"
+                },
+                {
+                    "date": 1654269171468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n namespace Database\\Seeders;\n \n use App\\Models\\Reply;\n use App\\Models\\Article;\n-use App\\Models\\Article;\n+use App\\Models\\Like;\n use Illuminate\\Database\\Seeder;\n \n class DatabaseSeeder extends Seeder\n {\n@@ -18,9 +18,9 @@\n     {\n         $this->call([\n             // ArticleSeeder::class,\n             UserSeeder::class,\n-            LikeSeeder::class,\n+            // LikeSeeder::class,\n             // ImageSeeder::class,\n             // ReplySeeder::class,\n             RetweetSeeder::class,\n             FollowerSeeder::class,\n"
+                },
+                {
+                    "date": 1654269179060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,7 @@\n         ]);\n         Article::factory(100)->create();\n         Reply::factory(50)->create();\n         Like::factory(50)->create();\n+        ::factory(50)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654269190275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use App\\Models\\Reply;\n use App\\Models\\Article;\n use App\\Models\\Like;\n+use App\\Models\\Retweet;\n use Illuminate\\Database\\Seeder;\n \n class DatabaseSeeder extends Seeder\n {\n@@ -21,13 +22,13 @@\n             UserSeeder::class,\n             // LikeSeeder::class,\n             // ImageSeeder::class,\n             // ReplySeeder::class,\n-            RetweetSeeder::class,\n+            // RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n         Reply::factory(50)->create();\n         Like::factory(50)->create();\n-        ::factory(50)->create();\n+        Retweet::factory(50)->create();\n     }\n }\n"
+                },
+                {
+                    "date": 1654269197205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,14 +17,11 @@\n      */\n     public function run()\n     {\n         $this->call([\n-            // ArticleSeeder::class,\n             UserSeeder::class,\n             // LikeSeeder::class,\n             // ImageSeeder::class,\n-            // ReplySeeder::class,\n-            // RetweetSeeder::class,\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n         Reply::factory(50)->create();\n"
+                },
+                {
+                    "date": 1654269229271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,8 @@\n     public function run()\n     {\n         $this->call([\n             UserSeeder::class,\n-            // LikeSeeder::class,\n             // ImageSeeder::class,\n             FollowerSeeder::class,\n         ]);\n         Article::factory(100)->create();\n"
+                }
+            ],
+            "date": 1654140818674,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass DatabaseSeeder extends Seeder\n{\n    /**\n     * Seed the application's database.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        $this->call([\n            AdminSeeder::class,\n            OwnerSeeder::class,\n            ShopSeeder::class,\n            ImageSeeder::class,\n            CategorySeeder::class,\n            // ProductSeeder::class,\n            // StockSeeder::class,\n            UserSeeder::class,\n        ]);\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "sourceFile": "database/seeders/UserSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1654140978750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654140991946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n namespace Database\\Seeders;\n \n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n+use Illuminate\\Support\\Facades\\DB;\n+use Illuminate\\Support\\Facades\\Hash;\n \n class UserSeeder extends Seeder\n {\n     /**\n"
+                },
+                {
+                    "date": 1654148197689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <?php\n \n namespace Database\\Seeders;\n \n-use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n use Illuminate\\Support\\Facades\\DB;\n use Illuminate\\Support\\Facades\\Hash;\n \n@@ -22,9 +21,9 @@\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 //画像は未設定\n-                'filename' => 'sample.jpeg',\n+                'filename' => 'image',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '高橋',\n"
+                },
+                {
+                    "date": 1654148204944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 //画像は未設定\n-                'filename' => 'image',\n+                'filename' => 'image1,',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '高橋',\n"
+                },
+                {
+                    "date": 1654148210384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 //画像は未設定\n-                'filename' => 'image1,',\n+                'filename' => 'image1.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '高橋',\n"
+                },
+                {
+                    "date": 1654148217337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n                 'email' => 'test2@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'sample.jpeg',\n+                'filename' => 'image1.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '田中',\n"
+                },
+                {
+                    "date": 1654148231548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,9 @@\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-                'filename' => 'sample.jpeg',\n-                'filename' => 'image1.png',\n+                'filename' => 'image2.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '田中',\n"
+                },
+                {
+                    "date": 1654148238158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,11 @@\n                 'email' => 'test2@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'image2.png',\n+                'filename' => 'image3.png',\n+                'filename' => 'image4.png',\n+                'filename' => 'image5.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '田中',\n"
+                },
+                {
+                    "date": 1654148243658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,19 +30,19 @@\n                 'email' => 'test2@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'image2.png',\n-                'filename' => 'image3.png',\n-                'filename' => 'image4.png',\n-                'filename' => 'image5.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '田中',\n                 'email' => 'test3@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'sample.jpeg',\n+                'filename' => 'image3.png',\n+                'filename' => 'image4.png',\n+                'filename' => 'image5.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '鈴木',\n"
+                },
+                {
+                    "date": 1654148253655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,20 +37,19 @@\n                 'name' => '田中',\n                 'email' => 'test3@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-                'filename' => 'sample.jpeg',\n                 'filename' => 'image3.png',\n-                'filename' => 'image4.png',\n-                'filename' => 'image5.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '鈴木',\n                 'email' => 'test4@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'sample.jpeg',\n+                'filename' => 'image4.png',\n+                'filename' => 'image5.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '吉田',\n"
+                },
+                {
+                    "date": 1654148259603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,19 +45,18 @@\n                 'name' => '鈴木',\n                 'email' => 'test4@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-                'filename' => 'sample.jpeg',\n                 'filename' => 'image4.png',\n-                'filename' => 'image5.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '吉田',\n                 'email' => 'test5@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'sample.jpeg',\n+                'filename' => 'image5.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '中村',\n"
+                },
+                {
+                    "date": 1654148266434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,18 +53,17 @@\n                 'name' => '吉田',\n                 'email' => 'test5@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-                'filename' => 'sample.jpeg',\n                 'filename' => 'image5.png',\n                 'body' => '宜しくお願いします。',\n             ],\n             [\n                 'name' => '中村',\n                 'email' => 'test6@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-                'filename' => 'sample.jpeg',\n+                // 'filename' => 'sample.jpeg',\n                 'body' => '宜しくお願いします。',\n             ],\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1654148279558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,10 @@\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n-                //画像は未設定\n                 'filename' => 'image1.png',\n-                'body' => '宜しくお願いします。',\n+                'body' => '佐藤と申します宜しくお願いします。',\n             ],\n             [\n                 'name' => '高橋',\n                 'email' => 'test2@test.com',\n"
+                },
+                {
+                    "date": 1654148285946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n                 'email' => 'test2@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'image2.png',\n-                'body' => '高橋と申します宜しくお願いします。',\n+                'body' => '高橋と申します。宜しくお願いします。',\n             ],\n             [\n                 'name' => '田中',\n                 'email' => 'test3@test.com',\n"
+                },
+                {
+                    "date": 1654148293215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n                 'email' => 'test3@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 'filename' => 'image3.png',\n-                'body' => '宜しくお願いします。',\n+                'body' => '田中と申します。宜しくお願いします。',\n             ],\n             [\n                 'name' => '鈴木',\n                 'email' => 'test4@test.com',\n"
+                }
+            ],
+            "date": 1654140978750,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass UserSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        DB::table('users')->insert([\n            [\n                'name' => '佐藤',\n                'email' => 'test1@test.com',\n                'password' => Hash::make('password'),\n                'created_at' => '2022/01/01 11:11:11',\n                //画像は未設定\n                'filename' => 'sample.jpeg',\n                'body' => '宜しくお願いします。',\n            ],\n            [\n                'name' => '高橋',\n                'email' => 'test2@test.com',\n                'password' => Hash::make('password'),\n                'created_at' => '2022/01/01 11:11:11',\n                'filename' => 'sample.jpeg',\n                'body' => '宜しくお願いします。',\n            ],\n            [\n                'name' => '田中',\n                'email' => 'test3@test.com',\n                'password' => Hash::make('password'),\n                'created_at' => '2022/01/01 11:11:11',\n                'filename' => 'sample.jpeg',\n                'body' => '宜しくお願いします。',\n            ],\n            [\n                'name' => '鈴木',\n                'email' => 'test4@test.com',\n                'password' => Hash::make('password'),\n                'created_at' => '2022/01/01 11:11:11',\n                'filename' => 'sample.jpeg',\n                'body' => '宜しくお願いします。',\n            ],\n            [\n                'name' => '吉田',\n                'email' => 'test5@test.com',\n                'password' => Hash::make('password'),\n                'created_at' => '2022/01/01 11:11:11',\n                'filename' => 'sample.jpeg',\n                'body' => '宜しくお願いします。',\n            ],\n            [\n                'name' => '中村',\n                'email' => 'test6@test.com',\n                'password' => Hash::make('password'),\n                'created_at' => '2022/01/01 11:11:11',\n                'filename' => 'sample.jpeg',\n                'body' => '宜しくお願いします。',\n            ],\n        ]);\n    }\n}\n"
+        }
+    ]
+}

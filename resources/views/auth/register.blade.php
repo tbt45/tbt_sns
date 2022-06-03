@@ -43,7 +43,7 @@
     <style>
         .login {
 
-            background: url('images/macbook-g1f23cd97f_1920.jpg');
+            background: url('images/bg-image.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
