@@ -20,7 +20,8 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::all()->sortByDesc('created_at');
+        $articles = Article::orderBy('created_at', 'desc')
+            ->paginate(10);
 
         return view('articles.index', ['articles' => $articles]);
     }
@@ -98,7 +99,11 @@ class ArticleController extends Controller
     //フォローしたユーザーと自分の投稿のみ表示する
     public function timeline()
     {
-        $articles = Article::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest()->get();
+        $articles = Article::query()
+            ->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))
+            ->orWhere('user_id', Auth::user()->id)->latest()->get();
+        // ->paginate(10);
+
         return view('articles.timeline')->with([
             'articles' => $articles
         ]);

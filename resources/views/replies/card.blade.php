@@ -1,9 +1,9 @@
 <div class="py-12">
-    <div class="p-2 w-1/2 mx-auto">
+    {{-- <div class="p-2 w-1/2 mx-auto">
         <div class="relative">
             <x-thumbnail :filename="$reply->user->filename" type="users" />
         </div>
-    </div>
+    </div> --}}
     <div
     class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200">
         <a href="{{ route('replies.show', ['name' => $reply->user->name]) }}">

@@ -75,10 +75,10 @@ Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
     Route::patch('/{user}/update', [UserController::class, 'update'])->name('update');
 });
 // ユーザー情報を表示する。
-Route::prefix('users')->name('users.')->group(function () {
-    Route::get('/{name}', [UserController::class, 'show'])->name('show');
-    Route::post('/{name}', [UserController::class, 'show'])->name('show');
-});
+// Route::prefix('users')->name('users.')->group(function () {
+//     Route::get('/{name}', [UserController::class, 'show'])->name('show');
+//     Route::post('/{name}', [UserController::class, 'show'])->name('show');
+// });
 // フォロー、フォロー解除。
 Route::prefix('users')->name('users.')->middleware('auth')->group(function () {
     Route::post('/{id}/follow', [FollowController::class, 'follow'])->name('follow');

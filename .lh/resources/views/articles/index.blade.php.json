@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 88,
+            "activePatchIndex": 95,
             "patches": [
                 {
                     "date": 1648869511618,
@@ -360,6 +360,34 @@
                 {
                     "date": 1653194685598,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <x-app-layout>\n     <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n         {{ __('全ての記事') }}\n-        </h2>\n-        @foreach ($articles as $article)\n-        @include('articles.card')\n-        @endforeach\n+    </h2>\n+    @foreach ($articles as $article)\n+    @include('articles.card')\n+    @endforeach\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655310914611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,6 @@\n     </h2>\n     @foreach ($articles as $article)\n     @include('articles.card')\n     @endforeach\n+    \n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655310921399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n     </h2>\n     @foreach ($articles as $article)\n     @include('articles.card')\n     @endforeach\n-    \n+    {{ 4 }}\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655310927031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n     </h2>\n     @foreach ($articles as $article)\n     @include('articles.card')\n     @endforeach\n-    {{ 4 }}\n+    {{ $ }}\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655310935911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n     </h2>\n     @foreach ($articles as $article)\n     @include('articles.card')\n     @endforeach\n-    {{ $ }}\n+    {{ $users->links }}\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655310991835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n     </h2>\n     @foreach ($articles as $article)\n     @include('articles.card')\n     @endforeach\n-    {{ $users->links }}\n+    {{ $->links() }}\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655310999170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n     </h2>\n     @foreach ($articles as $article)\n     @include('articles.card')\n     @endforeach\n-    {{ $->links() }}\n+    {{ $article->links() }}\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655311017832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n     </h2>\n     @foreach ($articles as $article)\n     @include('articles.card')\n     @endforeach\n-    {{ $article->links() }}\n+    {{ $articles->links() }}\n </x-app-layout>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1648869511618,

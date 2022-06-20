@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1651581870922,
@@ -24,6 +24,22 @@
                 {
                     "date": 1651592620245,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             </div>\n             @endif\n         </div>\n         @include('users.articles')\n-        @foreach ($replies as $article)\n+        @foreach ($replies as $reply)\n             @include('replies.card')\n         @endforeach\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1655359996879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,8 @@\n         @include('users.articles')\n         @foreach ($replies as $reply)\n             @include('replies.card')\n         @endforeach\n+    {{ $articles->links() }}\n+\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1655360003650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,7 @@\n         @include('users.articles')\n         @foreach ($replies as $reply)\n             @include('replies.card')\n         @endforeach\n-    {{ $articles->links() }}\n-\n+        {{ $articles->links() }}\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1655360016082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,7 @@\n         @include('users.articles')\n         @foreach ($replies as $reply)\n             @include('replies.card')\n         @endforeach\n-        {{ $articles->links() }}\n+        {{ $s->links() }}\n     </div>\n </x-app-layout>\n"
+                },
+                {
+                    "date": 1655721068851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,7 @@\n         @include('users.articles')\n         @foreach ($replies as $reply)\n             @include('replies.card')\n         @endforeach\n-        {{ $s->links() }}\n+        {{-- {{ $replies->links() }} --}}\n     </div>\n </x-app-layout>\n"
                 }
             ],
             "date": 1651581870922,
