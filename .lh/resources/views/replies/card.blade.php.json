@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 32,
+            "activePatchIndex": 41,
             "patches": [
                 {
                     "date": 1651582360506,
@@ -136,6 +136,42 @@
                 {
                     "date": 1653588838026,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,11 +31,8 @@\n             </div>\n         @endif\n \n         <a href=\"{{ route('replies.show', ['name' => $user->name]) }}\">\n-            {{ $reply->title }}\n             {{ $reply->body }}\n         </a>\n-        <div class=\"\">\n-        </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1655872819822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,16 @@\n <div class=\"py-12\">\n-    <div class=\"p-2 w-1/2 mx-auto\">\n+    {{-- <div class=\"p-2 w-1/2 mx-auto\">\n         <div class=\"relative\">\n             <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n         </div>\n-    </div>\n+    </div> --}}\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n-            <i class=\"fas fa-user-circle fa-3x mr-1\"></i>\n+            <div class=\"h-12 w-12 border-2 border-white rounded-full\">\n+                <x-thumbnail :filename=\"$user->filename\" type=\"users\" class=\"\"/>\n+            </div>    \n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n                 {{ $reply->user->name }}\n"
+                },
+                {
+                    "date": 1655872899505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-12 w-12 border-2 border-white rounded-full\">\n-                <x-thumbnail :filename=\"$user->filename\" type=\"users\" class=\"\"/>\n+                <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" class=\"\"/>\n             </div>    \n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1655873208897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </div> --}}\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n-            <div class=\"h-12 w-12 border-2 border-white rounded-full\">\n+            <div class=\"h-12 w-12 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" class=\"\"/>\n             </div>    \n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n"
+                },
+                {
+                    "date": 1655873227501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-12 w-12 border-2 border-white rounded-full pr-2\">\n-                <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" class=\"\"/>\n+                <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>    \n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1655873385521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n     </div> --}}\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n-            <div class=\"h-12 w-12 border-2 border-white rounded-full pr-2\">\n-                <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n-            </div>    \n+            <div class=\"h-15 w-20 border-2 border-white rounded-full pr-2\">\n+                <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n+            </div>   \n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n                 {{ $reply->user->name }}\n"
+                },
+                {
+                    "date": 1655873420458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-15 w-20 border-2 border-white rounded-full pr-2\">\n-                <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n+                <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n"
+                },
+                {
+                    "date": 1655873445684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </div> --}}\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n-            <div class=\"h-15 w-20 border-2 border-white rounded-full pr-2\">\n+            <div class=\"h-15 w-15 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n"
+                },
+                {
+                    "date": 1655873540035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     </div> --}}\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n-            <div class=\"h-15 w-15 border-2 border-white rounded-full pr-2\">\n+            <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n"
+                },
+                {
+                    "date": 1655874220807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n <div class=\"py-12\">\n-    {{-- <div class=\"p-2 w-1/2 mx-auto\">\n-        <div class=\"relative\">\n-            <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n-        </div>\n-    </div> --}}\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n"
                 }
             ],
             "date": 1651582360506,

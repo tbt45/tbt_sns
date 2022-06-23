@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 30,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1648878351150,
@@ -128,6 +128,26 @@
                 {
                     "date": 1652279546523,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n @endphp\n \n <div>\n     @if (empty($filename))\n-        <img src=\"{{ asset('storage/images/no_image.jpg') }}\">\n+        <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n         <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655913320158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $filename) }}\">\n+        <img src=\"{{ asset($path . $filename) }} class=\"text-base text-gray-400 font-normal\"\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655913329995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $filename) }} class=\"text-base text-gray-400 font-normal\"\">\n+        <img src=\"{{ asset($path . $filename) }}\"\" class=\"text-base text-gray-400 font-normal\"\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655913335730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $filename) }}\"\" class=\"text-base text-gray-400 font-normal\"\">\n+        <img src=\"{{ asset($path . $filename) }}\" class=\"text-base text-gray-400 font-normal\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655913364300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $filename) }}\" class=\"text-base text-gray-400 font-normal\">\n+        <img src=\"{{ asset($path . $filename) }}\" class=\"text-base text-gray-400 font-normal\" alt=\"photo\">\n     @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655913389401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n <div>\n     @if (empty($filename))\n         <img src=\"{{ asset('images/no_image.jpg') }}\">\n     @else\n-        <img src=\"{{ asset($path . $filename) }}\" class=\"text-base text-gray-400 font-normal\" alt=\"photo\">\n+        <img src=\"{{ asset($path . $filename) }}\">\n     @endif\n </div>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1648878351150,

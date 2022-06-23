@@ -53,7 +53,9 @@ class UserController extends Controller
     // ユーザー情報を更新する。
     public function  update(UploadImageRequest $request, $id)
     {
-        $request->validate(['name' => ['required', 'string', 'max:255']]);
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+        ]);
 
         $imageFile = $request->image;
         if (!is_null($imageFile) && $imageFile->isValid()) {

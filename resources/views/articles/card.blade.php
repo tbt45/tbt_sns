@@ -1,14 +1,13 @@
 <div class='flex items-center justify-center bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>
     <article class="max-w-lg mx-auto break-inside p-6 rounded-xl bg-white flex flex-col bg-clip-border">
         <div class="flex items-center justify-between">
-            <div class="flex">
-                {{-- <div class="p-2 w-1/2 mx-auto">
-        <div class="relative">
-            <x-thumbnail :filename="$article->user->filename" type="users" />
-        </div>
-    </div> --}}
+            <div class="flex h-25">
                 <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
-                    <i class="fas fa-user-circle fa-3x mr-1"></i>
+                    <div class="mb-8">
+                    <div class="h-15 w-16 border-2 border-white rounded-full pr-2">
+                        <x-thumbnail :filename="$article->user->filename" type="users" />
+                    </div>
+                    </div>
                 </a>
                 <div>
                     <a href="{{ route('users.show', ['name' => $article->user->name]) }}">
