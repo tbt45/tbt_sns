@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1654250718853,
@@ -32,6 +32,14 @@
                 {
                     "date": 1654269987078,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->array,\n+            'body' => $this->faker->realText(),\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'image1' => $this->faker->numberBetween(1, 6),\n             'image2' => $this->faker->numberBetween(1, 6),\n             'image3' => $this->faker->numberBetween(1, 6),\n"
+                },
+                {
+                    "date": 1657173332604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,7 @@\n         return [\n             'body' => $this->faker->realText(),\n             'user_id' => $this->faker->numberBetween(1, 6),\n             'image1' => $this->faker->numberBetween(1, 6),\n-            'image2' => $this->faker->numberBetween(1, 6),\n-            'image3' => $this->faker->numberBetween(1, 6),\n-            'image4' => $this->faker->numberBetween(1, 6),\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1657173338455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n     {\n         return [\n             'body' => $this->faker->realText(),\n             'user_id' => $this->faker->numberBetween(1, 6),\n-            'image1' => $this->faker->numberBetween(1, 6),\n+            'filename' => $this->faker->numberBetween(1, 6),\n         ];\n     }\n }\n"
                 }
             ],
             "date": 1654250718853,

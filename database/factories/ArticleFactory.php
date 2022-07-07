@@ -19,10 +19,7 @@ class ArticleFactory extends Factory
         return [
             'body' => $this->faker->realText(),
             'user_id' => $this->faker->numberBetween(1, 6),
-            'image1' => $this->faker->numberBetween(1, 6),
-            'image2' => $this->faker->numberBetween(1, 6),
-            'image3' => $this->faker->numberBetween(1, 6),
-            'image4' => $this->faker->numberBetween(1, 6),
+            'filename' => $this->faker->numberBetween(1, 6),
         ];
     }
 }

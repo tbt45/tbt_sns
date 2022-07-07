@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1651681780265,
@@ -76,6 +76,18 @@
                 {
                     "date": 1655808999957,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('articles', function (Blueprint $table) {\n             $table->bigIncrements('id');\n             $table->text('body');\n-            $table->fore('user_id');\n+            $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->unsignedBigInteger('image1')\n                 ->nullable()\n"
+                },
+                {
+                    "date": 1657173262876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n             $table->text('body');\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n+            $table->string('filename')->nullable();\n             $table->unsignedBigInteger('image1')\n                 ->nullable()\n                 ->constrained('images');\n             $table->unsignedBigInteger('image2')\n"
+                },
+                {
+                    "date": 1657173270775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,21 +19,8 @@\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->string('filename')->nullable();\n-            $table->unsignedBigInteger('image1')\n-                ->nullable()\n-                ->constrained('images');\n-            $table->unsignedBigInteger('image2')\n-                ->nullable()\n-                ->constrained('images');\n-            $table->unsignedBigInteger('image3')\n-                ->nullable()\n-                ->constrained('images');\n-            $table->unsignedBigInteger('image4')\n-                ->nullable()\n-                ->constrained('images');\n-            $table->timestamps();\n         });\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1657173602307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->string('filename')->nullable();\n+            $table->timestamps();\n         });\n     }\n \n     /**\n"
                 }
             ],
             "date": 1651681780265,

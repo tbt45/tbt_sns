@@ -49,25 +49,9 @@
                 @endif
             </div>
         </div>
-
-        <div class="py-4">
-            <div class="flex justify-between gap-1 mb-1">
-                <a class="flex" href="#">
-                    <img class="max-w-full rounded-br-lg" src="{{ asset("images/no_image.jpg") }}">
-                </a>
-                <a class="flex" href="#">
-                    <img class="max-w-full rounded-br-lg" src="{{ asset("images/no_image.jpg") }}">
-                </a>
-            </div>
-            <div class="flex justify-between gap-1">
-                <a class="flex" href="#">
-                    <img class="max-w-full rounded-br-lg" src="{{ asset("images/no_image.jpg") }}">
-                </a>
-                <a class="flex" href="#">
-                    <img class="max-w-full rounded-br-lg" src="{{ asset("images/no_image.jpg") }}">
-                </a>
-            </div>
-        </div>
+        <div class="max-w-full rounded-br-lg" >
+            <x-thumbnail :filename="$article->filename" type="articles" />
+        </div>    
         <div class="">
             {{ $article->body }}
         </div>

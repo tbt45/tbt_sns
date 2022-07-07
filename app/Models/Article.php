@@ -13,12 +13,8 @@ class Article extends Model
     protected $fillable = [
         'body',
         'user_id',
-        'image1',
-        'image2',
-        'image3',
-        'image4',
+        'filename',
     ];
-
 
     public function user()
     {

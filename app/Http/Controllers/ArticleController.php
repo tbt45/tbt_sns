@@ -9,6 +9,8 @@ use App\Models\Article;
 use App\Models\Image;
 use App\Models\Like;
 use Illuminate\Support\Facades\Auth;
+use App\http\Requests\UploadImageRequest;
+use App\Services\ImageService;
 
 class ArticleController extends Controller
 {
@@ -41,12 +43,20 @@ class ArticleController extends Controller
 
     public function store(RequestsArticleRequest $request, Article $article)
     {
-        $article->fill($request->all());
+        // $this->validate($request, Article::$rules);
+
+        $imageFile = $request->image;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $fileNameToStore = ImageService::upload($imageFile, 'articles');
+        }
+
+        // $article->fill($request->all());
+        $article = new Article();
         $article->user_id = $request->user()->id;
-        // 'image1' => $request->image1,
-        // 'image1' => $request->image2,
-        // 'image1' => $request->image3,
-        // 'image1' => $request->image4,
+        $article->body = $request->body;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $article->filename = $fileNameToStore;
+        }
         $article->save();
 
         return redirect()->route('articles.timeline');

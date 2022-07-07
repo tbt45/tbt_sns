@@ -67,7 +67,6 @@ class UserController extends Controller
         $user->body = $request->body;
         if (!is_null($imageFile) && $imageFile->isValid()) {
             $user->filename = $fileNameToStore;
-            // $fileNameToStore = ImageService::upload($imageFile, 'users');
         }
 
         $user->save();
