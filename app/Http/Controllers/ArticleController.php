@@ -9,6 +9,8 @@ use App\Models\Article;
 use App\Models\Image;
 use App\Models\Like;
 use Illuminate\Support\Facades\Auth;
+use App\http\Requests\UploadImageRequest;
+use App\Services\ImageService;
 
 class ArticleController extends Controller
 {
@@ -20,32 +22,30 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::all()->sortByDesc('created_at');
+        $articles = Article::orderBy('created_at', 'desc')
+            ->paginate(10);
 
         return view('articles.index', ['articles' => $articles]);
     }
 
     public function create()
     {
-        $images = Image::where('user_id', Auth::id())
-            ->select('id', 'filename')
-            ->orderBy('updated_at', 'desc')
-            ->get();
-
-        return view(
-            'articles.create',
-            compact('images')
-        );
+        return view('articles.create');
     }
 
     public function store(RequestsArticleRequest $request, Article $article)
     {
-        $article->fill($request->all());
+        $imageFile = $request->image;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $fileNameToStore = ImageService::upload($imageFile, 'articles');
+        }
+
+        $article = new Article();
         $article->user_id = $request->user()->id;
-        // 'image1' => $request->image1,
-        // 'image1' => $request->image2,
-        // 'image1' => $request->image3,
-        // 'image1' => $request->image4,
+        $article->body = $request->body;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $article->filename = $fileNameToStore;
+        }
         $article->save();
 
         return redirect()->route('articles.timeline');
@@ -58,8 +58,19 @@ class ArticleController extends Controller
 
     public function  update(RequestsArticleRequest $request, Article $article)
     {
-        $article->fill($request->all())->save();
+        $imageFile = $request->image;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $fileNameToStore = ImageService::upload($imageFile, 'articles');
+        }
 
+        $article->body = $request->body;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $article->filename = $fileNameToStore;
+        }
+
+        $article->save();
+
+        // $article->fill($request->all())->save();
         return redirect()->route('articles.timeline');
     }
 
@@ -98,7 +109,11 @@ class ArticleController extends Controller
     //フォローしたユーザーと自分の投稿のみ表示する
     public function timeline()
     {
-        $articles = Article::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest()->get();
+        $articles = Article::query()
+            ->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))
+            ->orWhere('user_id', Auth::user()->id)->latest()->get();
+        // ->paginate(10);
+
         return view('articles.timeline')->with([
             'articles' => $articles
         ]);

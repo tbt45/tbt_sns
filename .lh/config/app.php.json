@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1651976703301,
@@ -24,6 +24,14 @@
                 {
                     "date": 1651976798279,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -190,8 +190,8 @@\n     |\n     */\n \n     'aliases' => Facade::defaultAliases()->merge([\n-        'INImage' => Intervention\\Image\\Facades\\Image::class\n+        'InterventionImage' => Intervention\\Image\\Facades\\Image::class\n     ])->toArray(),\n \n ];\n"
+                },
+                {
+                    "date": 1654237615833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n     | localized telephone numbers, street address information and more.\n     |\n     */\n \n-    'faker_locale' => 'en_US',\n+    'faker_locale' => '',\n \n     /*\n     |--------------------------------------------------------------------------\n     | Encryption Key\n"
+                },
+                {
+                    "date": 1654237623375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n     | localized telephone numbers, street address information and more.\n     |\n     */\n \n-    'faker_locale' => '',\n+    'faker_locale' => 'ja_JP',\n \n     /*\n     |--------------------------------------------------------------------------\n     | Encryption Key\n"
                 }
             ],
             "date": 1651976703301,

@@ -3,9 +3,10 @@
         <div class="user-row flex flex-col items-center justify-between p-4 duration-300 sm:flex-row sm:py-4 sm:px-8">
             <div class="user flex items-center text-center flex-col sm:flex-row sm:text-left">
                 <div class="avatar-content mb-2.5 sm:mb-0 sm:mr-2.5">
-                    {{-- <x-thumbnail :filename="$user->filename" type="users" /> --}}
                     <a href="{{ route('users.show', ['name' => $user->name]) }}" class="cursor-pointer  hover:bg-[#f6f8f9]">
-                        <i class="fas fa-user-circle fa-3x mr-1"></i>
+                        <div class="h-15 w-16 border-2 border-white rounded-full pr-2">
+                            <x-thumbnail :filename="$user->filename" type="users" />
+                        </div>    
                     </a>
                 </div>
                 <div class="user-body flex flex-col mb-4 sm:mb-0 sm:mr-4">

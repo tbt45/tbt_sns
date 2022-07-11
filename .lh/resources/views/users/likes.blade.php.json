@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1650694817288,
@@ -76,6 +76,18 @@
                 {
                     "date": 1651581814655,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,9 @@\n             @endif\n         </div>\n         @include('users.articles')\n         @foreach ($articles as $article)\n-\n-        @include('articles.card')\n-        </div>\n+            @include('articles.card')\n         @endforeach\n     </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655360078271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,9 @@\n         @include('users.articles')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n+        {{ $replies->links() }}\n+\n     </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655360086525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n         @include('users.articles')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n-        {{ $replies->links() }}\n-\n+        {{ $rs->links() }}\n     </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1655721072486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n         @include('users.articles')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n-        {{ $rs->links() }}\n+        {{-- {{ $articles->links() }} --}}\n     </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1650694817288,

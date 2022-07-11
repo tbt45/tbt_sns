@@ -5,4 +5,5 @@
     @foreach ($articles as $article)
     @include('articles.card')
     @endforeach
+    {{ $articles->links() }}
 </x-app-layout>

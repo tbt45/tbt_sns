@@ -1,0 +1,46 @@
+{
+    "sourceFile": "database/seeders/ImageSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1654239025236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654239034630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,36 +15,36 @@\n     public function run()\n     {\n         DB::table('images')->insert([\n             [\n-              'owner_id' => 1,\n-              'filename' => 'sample1.jpg',\n-              'title' => null\n+                'owner_id' => 1,\n+                'filename' => 'sample1.jpg',\n+                'title' => null\n             ],\n             [\n-              'owner_id' => 1,\n-              'filename' => 'sample2.jpg',\n-              'title' => null\n+                'owner_id' => 1,\n+                'filename' => 'sample2.jpg',\n+                'title' => null\n             ],\n             [\n-              'owner_id' => 1,\n-              'filename' => 'sample3.jpg',\n-              'title' => null\n+                'owner_id' => 1,\n+                'filename' => 'sample3.jpg',\n+                'title' => null\n             ],\n             [\n-              'owner_id' => 1,\n-              'filename' => 'sample4.jpg',\n-              'title' => null\n+                'owner_id' => 1,\n+                'filename' => 'sample4.jpg',\n+                'title' => null\n             ],\n             [\n-              'owner_id' => 1,\n-              'filename' => 'sample5.jpg',\n-              'title' => null\n+                'owner_id' => 1,\n+                'filename' => 'sample5.jpg',\n+                'title' => null\n             ],\n             [\n-              'owner_id' => 1,\n-              'filename' => 'sample6.jpg',\n-              'title' => null\n-            ]]);\n-          }\n+                'owner_id' => 1,\n+                'filename' => 'sample6.jpg',\n+                'title' => null\n+            ]\n+        ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654239042017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n namespace Database\\Seeders;\n \n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n+use Illuminate\\Support\\Facades\\DB;\n \n+\n class ImageSeeder extends Seeder\n {\n     /**\n      * Run the database seeds.\n"
+                },
+                {
+                    "date": 1654239055897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     public function run()\n     {\n         DB::table('images')->insert([\n             [\n-                'owner_id' => 1,\n+                'user_id' => 1,\n                 'filename' => 'sample1.jpg',\n                 'title' => null\n             ],\n             [\n"
+                },
+                {
+                    "date": 1654239064067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <?php\n \n namespace Database\\Seeders;\n \n-use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n use Illuminate\\Support\\Facades\\DB;\n \n \n@@ -22,9 +21,9 @@\n                 'filename' => 'sample1.jpg',\n                 'title' => null\n             ],\n             [\n-                'owner_id' => 1,\n+                'article_id' => 1,\n                 'filename' => 'sample2.jpg',\n                 'title' => null\n             ],\n             [\n"
+                },
+                {
+                    "date": 1654239073827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     public function run()\n     {\n         DB::table('images')->insert([\n             [\n-                'user_id' => 1,\n+                'article_id' => 1,\n                 'filename' => 'sample1.jpg',\n                 'title' => null\n             ],\n             [\n@@ -26,9 +26,9 @@\n                 'filename' => 'sample2.jpg',\n                 'title' => null\n             ],\n             [\n-                'owner_id' => 1,\n+                'article_id' => 1,\n                 'filename' => 'sample3.jpg',\n                 'title' => null\n             ],\n             [\n"
+                },
+                {
+                    "date": 1654239083115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,14 +31,14 @@\n                 'filename' => 'sample3.jpg',\n                 'title' => null\n             ],\n             [\n-                'owner_id' => 1,\n+                'article_id' => 1,\n                 'filename' => 'sample4.jpg',\n                 'title' => null\n             ],\n             [\n-                'owner_id' => 1,\n+                'article_id' => 1,\n                 'filename' => 'sample5.jpg',\n                 'title' => null\n             ],\n             [\n"
+                },
+                {
+                    "date": 1654239089469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n                 'filename' => 'sample5.jpg',\n                 'title' => null\n             ],\n             [\n-                'owner_id' => 1,\n+                'article_id' => 1,\n                 'filename' => 'sample6.jpg',\n                 'title' => null\n             ]\n         ]);\n"
+                }
+            ],
+            "date": 1654239025236,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass ImageSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        DB::table('images')->insert([\n            [\n              'owner_id' => 1,\n              'filename' => 'sample1.jpg',\n              'title' => null\n            ],\n            [\n              'owner_id' => 1,\n              'filename' => 'sample2.jpg',\n              'title' => null\n            ],\n            [\n              'owner_id' => 1,\n              'filename' => 'sample3.jpg',\n              'title' => null\n            ],\n            [\n              'owner_id' => 1,\n              'filename' => 'sample4.jpg',\n              'title' => null\n            ],\n            [\n              'owner_id' => 1,\n              'filename' => 'sample5.jpg',\n              'title' => null\n            ],\n            [\n              'owner_id' => 1,\n              'filename' => 'sample6.jpg',\n              'title' => null\n            ]]);\n          }\n    }\n}\n"
+        }
+    ]
+}

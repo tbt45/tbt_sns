@@ -1,0 +1,46 @@
+{
+    "sourceFile": "database/seeders/ReplySeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1654141126683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654141189146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n namespace Database\\Seeders;\n \n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n+use Illuminate\\Support\\Facades\\DB;\n \n+\n class ReplySeeder extends Seeder\n {\n     /**\n      * Run the database seeds.\n"
+                },
+                {
+                    "date": 1654141214839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,5 @@\n                 'body' => '宜しくお願いします。',\n             ],\n         ]);\n     }\n-    }\n }\n"
+                },
+                {
+                    "date": 1654141226431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <?php\n \n namespace Database\\Seeders;\n \n-use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n use Illuminate\\Support\\Facades\\DB;\n \n \n"
+                },
+                {
+                    "date": 1654142388728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n      * @return void\n      */\n     public function run()\n     {\n-        DB::table('users')->insert([\n+        DB::table('repls')->insert([\n             [\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n"
+                },
+                {
+                    "date": 1654142412208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,17 +14,12 @@\n      * @return void\n      */\n     public function run()\n     {\n-        DB::table('repls')->insert([\n+        DB::table('replies')->insert([\n             [\n-                'name' => '佐藤',\n-                'email' => 'test1@test.com',\n-                'password' => Hash::make('password'),\n-                'created_at' => '2022/01/01 11:11:11',\n-                //画像は未設定\n-                'filename' => 'sample.jpeg',\n-                'body' => '宜しくお願いします。',\n+                'body' => '記事投稿',\n+                'user_id' => '1',\n             ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654142418896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n         DB::table('replies')->insert([\n             [\n                 'body' => '記事投稿',\n                 'user_id' => '1',\n+                'user_id' => '1',\n             ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654142425031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         DB::table('replies')->insert([\n             [\n                 'body' => '記事投稿',\n                 'user_id' => '1',\n-                'user_id' => '1',\n+                'article_id' => '1',\n             ],\n         ]);\n     }\n }\n"
+                }
+            ],
+            "date": 1654141126683,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass ReplySeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        DB::table('users')->insert([\n            [\n                'name' => '佐藤',\n                'email' => 'test1@test.com',\n                'password' => Hash::make('password'),\n                'created_at' => '2022/01/01 11:11:11',\n                //画像は未設定\n                'filename' => 'sample.jpeg',\n                'body' => '宜しくお願いします。',\n            ],\n        ]);\n    }\n    }\n}\n"
+        }
+    ]
+}

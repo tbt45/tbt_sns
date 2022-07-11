@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Like extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'article_id',
         'user_id',

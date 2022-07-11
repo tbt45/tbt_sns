@@ -4,17 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Article extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'body',
-        'image1',
-        'image2',
-        'image3',
-        'image4',
+        'user_id',
+        'filename',
     ];
-
 
     public function user()
     {
@@ -65,20 +65,8 @@ class Article extends Model
         }
     }
     // 写真追加
-    public function imageFirst()
+    public function image()
     {
-        return $this->belongsTo(Image::class, 'image1', 'id');
-    }
-    public function imageSecond()
-    {
-        return $this->belongsTo(Image::class, 'image2', 'id');
-    }
-    public function imageThird()
-    {
-        return $this->belongsTo(Image::class, 'image3', 'id');
-    }
-    public function imageFourth()
-    {
-        return $this->belongsTo(Image::class, 'image4', 'id');
+        return $this->hasMany(Image::class);
     }
 }

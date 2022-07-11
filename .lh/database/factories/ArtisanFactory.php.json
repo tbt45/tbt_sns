@@ -1,0 +1,26 @@
+{
+    "sourceFile": "database/factories/ArtisanFactory.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1654237854133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654238668336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n             'name' => $this->faker->name,\n             'information' => $this->faker->realText,\n             'price' => $this->faker->numberBetween(10, 100000), 'is_selling' => $this->faker->numberBetween(0, 1),\n             'sort_order' => $this->faker->randomNumber,\n-            'shop_id' => $this->faker->numberBetween(1, 2), 'secondary_category_id' => $this->faker->numberBetween(1, 6), 'image1' => $this->faker->numberBetween(1, 6),\n+            'shop_id' => $this->faker->numberBetween(1, 2),\n+            'secondary_category_id' => $this->faker->numberBetween(1, 6), 'image1' => $this->faker->numberBetween(1, 6),\n             'image2' => $this->faker->numberBetween(1, 6),\n             'image3' => $this->faker->numberBetween(1, 6),\n             'image4' => $this->faker->numberBetween(1, 6),\n         ];\n"
+                },
+                {
+                    "date": 1654239197740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n             'price' => $this->faker->numberBetween(10, 100000),\n             'is_selling' => $this->faker->numberBetween(0, 1),\n             'sort_order' => $this->faker->randomNumber,\n             'shop_id' => $this->faker->numberBetween(1, 2),\n-            'secondary_category_id' => $this->faker->numberBetween(1, 6), 'image1' => $this->faker->numberBetween(1, 6),\n+            'secondary_category_id' => $this->faker->numberBetween(1, 6), \n+            'image1' => $this->faker->numberBetween(1, 6),\n             'image2' => $this->faker->numberBetween(1, 6),\n             'image3' => $this->faker->numberBetween(1, 6),\n             'image4' => $this->faker->numberBetween(1, 6),\n         ];\n"
+                }
+            ],
+            "date": 1654237854133,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Factories;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\n\n/**\n * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Artisan>\n */\nclass ArtisanFactory extends Factory\n{\n    /**\n     * Define the model's default state.\n     *\n     * @return array<string, mixed>\n     */\n    public function definition()\n    {\n        return [\n            'name' => $this->faker->name,\n            'information' => $this->faker->realText,\n            'price' => $this->faker->numberBetween(10, 100000), 'is_selling' => $this->faker->numberBetween(0, 1),\n            'sort_order' => $this->faker->randomNumber,\n            'shop_id' => $this->faker->numberBetween(1, 2), 'secondary_category_id' => $this->faker->numberBetween(1, 6), 'image1' => $this->faker->numberBetween(1, 6),\n            'image2' => $this->faker->numberBetween(1, 6),\n            'image3' => $this->faker->numberBetween(1, 6),\n            'image4' => $this->faker->numberBetween(1, 6),\n        ];\n    }\n}\n"
+        }
+    ]
+}

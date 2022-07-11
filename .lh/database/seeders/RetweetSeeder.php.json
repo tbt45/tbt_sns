@@ -1,0 +1,74 @@
+{
+    "sourceFile": "database/seeders/RetweetSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1654141130469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654141164165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n namespace Database\\Seeders;\n \n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n+use Illuminate\\Support\\Facades\\DB;\n \n+\n class RetweetSeeder extends Seeder\n {\n     /**\n      * Run the database seeds.\n"
+                },
+                {
+                    "date": 1654141219264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,6 +27,5 @@\n                 'body' => '宜しくお願いします。',\n             ],\n         ]);\n     }\n-    }\n }\n"
+                },
+                {
+                    "date": 1654142331744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <?php\n \n namespace Database\\Seeders;\n \n-use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n use Illuminate\\Support\\Facades\\DB;\n \n \n@@ -15,9 +14,9 @@\n      * @return void\n      */\n     public function run()\n     {\n-        DB::table('users')->insert([\n+        DB::table('retweets')->insert([\n             [\n                 'name' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n"
+                },
+                {
+                    "date": 1654142341561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     public function run()\n     {\n         DB::table('retweets')->insert([\n             [\n-                'name' => '佐藤',\n+                'user_id' => '佐藤',\n                 'email' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 //画像は未設定\n"
+                },
+                {
+                    "date": 1654142348546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     {\n         DB::table('retweets')->insert([\n             [\n                 'user_id' => '佐藤',\n-                'email' => 'test1@test.com',\n+                'article_id' => 'test1@test.com',\n                 'password' => Hash::make('password'),\n                 'created_at' => '2022/01/01 11:11:11',\n                 //画像は未設定\n                 'filename' => 'sample.jpeg',\n"
+                },
+                {
+                    "date": 1654142355844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,15 +16,10 @@\n     public function run()\n     {\n         DB::table('retweets')->insert([\n             [\n-                'user_id' => '佐藤',\n+                'user_id' => '2',\n                 'article_id' => 'test1@test.com',\n-                'password' => Hash::make('password'),\n-                'created_at' => '2022/01/01 11:11:11',\n-                //画像は未設定\n-                'filename' => 'sample.jpeg',\n-                'body' => '宜しくお願いします。',\n             ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654142361058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     {\n         DB::table('retweets')->insert([\n             [\n                 'user_id' => '2',\n-                'article_id' => 'test1@test.com',\n+                'article_id' => '3',\n             ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654237220036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,35 @@\n             [\n                 'user_id' => '2',\n                 'article_id' => '3',\n             ],\n+            [\n+                'user_id' => '2',\n+                'article_id' => '3',\n+            ],\n+            [\n+                'user_id' => '2',\n+                'article_id' => '3',\n+            ],\n+            [\n+                'user_id' => '2',\n+                'article_id' => '3',\n+            ],\n+            [\n+                'user_id' => '2',\n+                'article_id' => '3',\n+            ],\n+            [\n+                'user_id' => '2',\n+                'article_id' => '3',\n+            ],\n+            [\n+                'user_id' => '2',\n+                'article_id' => '3',\n+            ],\n+            [\n+                'user_id' => '2',\n+                'article_id' => '3',\n+            ],\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1654237226095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n                 'user_id' => '2',\n                 'article_id' => '3',\n             ],\n             [\n-                'user_id' => '2',\n-                'article_id' => '3',\n+                'user_id' => '3',\n+                'article_id' => '1',\n             ],\n             [\n                 'user_id' => '2',\n                 'article_id' => '3',\n"
+                },
+                {
+                    "date": 1654237234553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,14 +24,14 @@\n                 'user_id' => '3',\n                 'article_id' => '1',\n             ],\n             [\n-                'user_id' => '2',\n+                'user_id' => '5',\n                 'article_id' => '3',\n             ],\n             [\n-                'user_id' => '2',\n-                'article_id' => '3',\n+                'user_id' => '4',\n+                'article_id' => '6',\n             ],\n             [\n                 'user_id' => '2',\n                 'article_id' => '3',\n"
+                },
+                {
+                    "date": 1654237242305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,13 +32,13 @@\n                 'user_id' => '4',\n                 'article_id' => '6',\n             ],\n             [\n-                'user_id' => '2',\n-                'article_id' => '3',\n+                'user_id' => '3',\n+                'article_id' => '9',\n             ],\n             [\n-                'user_id' => '2',\n+                'user_id' => '3',\n                 'article_id' => '3',\n             ],\n             [\n                 'user_id' => '2',\n"
+                },
+                {
+                    "date": 1654237247538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,10 +36,10 @@\n                 'user_id' => '3',\n                 'article_id' => '9',\n             ],\n             [\n-                'user_id' => '3',\n-                'article_id' => '3',\n+                'user_id' => '1',\n+                'article_id' => '34',\n             ],\n             [\n                 'user_id' => '2',\n                 'article_id' => '3',\n"
+                },
+                {
+                    "date": 1654237255271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,13 +40,13 @@\n                 'user_id' => '1',\n                 'article_id' => '34',\n             ],\n             [\n-                'user_id' => '2',\n-                'article_id' => '3',\n+                'user_id' => '4',\n+                'article_id' => '55',\n             ],\n             [\n-                'user_id' => '2',\n+                'user_id' => '7',\n                 'article_id' => '3',\n             ],\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1654237262033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,10 +44,10 @@\n                 'user_id' => '4',\n                 'article_id' => '55',\n             ],\n             [\n-                'user_id' => '7',\n-                'article_id' => '3',\n+                'user_id' => '4',\n+                'article_id' => '23',\n             ],\n         ]);\n     }\n }\n"
+                }
+            ],
+            "date": 1654141130469,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass RetweetSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        DB::table('users')->insert([\n            [\n                'name' => '佐藤',\n                'email' => 'test1@test.com',\n                'password' => Hash::make('password'),\n                'created_at' => '2022/01/01 11:11:11',\n                //画像は未設定\n                'filename' => 'sample.jpeg',\n                'body' => '宜しくお願いします。',\n            ],\n        ]);\n    }\n    }\n}\n"
+        }
+    ]
+}

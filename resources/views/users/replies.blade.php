@@ -21,5 +21,6 @@
         @foreach ($replies as $reply)
             @include('replies.card')
         @endforeach
+        {{-- {{ $replies->links() }} --}}
     </div>
 </x-app-layout>

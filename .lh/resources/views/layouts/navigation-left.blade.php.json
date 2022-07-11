@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 110,
+            "activePatchIndex": 112,
             "patches": [
                 {
                     "date": 1652995616624,
@@ -448,6 +448,14 @@
                 {
                     "date": 1653310513782,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-    <div class=\"lg:w-1/4 bg-white pt-8\">\n+    <div class=\"lg:w-1/ bg-white pt-8\">\n         <div class=\"mb-5\">\n             <x-nav-link :href=\"route('articles.timeline')\" :active=\"request()->routeIs('articles.timeline')\">\n                 <i class=\"fas fa-home fa-2x hidden md:block\"> タイムライン</i>\n                 <i class=\"fas fa-home fa-2x md:hidden\"> </i>\n"
+                },
+                {
+                    "date": 1653831918320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-    <div class=\"lg:w-1/ bg-white pt-8\">\n+    <div class=\"lg:w-1/3 bg-purple-200 pt-8\">\n         <div class=\"mb-5\">\n             <x-nav-link :href=\"route('articles.timeline')\" :active=\"request()->routeIs('articles.timeline')\">\n                 <i class=\"fas fa-home fa-2x hidden md:block\"> タイムライン</i>\n                 <i class=\"fas fa-home fa-2x md:hidden\"> </i>\n"
+                },
+                {
+                    "date": 1653831944251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-    <div class=\"lg:w-1/3 bg-purple-200 pt-8\">\n+    <div class=\"lg:w-1/3 bg-white pt-8\">\n         <div class=\"mb-5\">\n             <x-nav-link :href=\"route('articles.timeline')\" :active=\"request()->routeIs('articles.timeline')\">\n                 <i class=\"fas fa-home fa-2x hidden md:block\"> タイムライン</i>\n                 <i class=\"fas fa-home fa-2x md:hidden\"> </i>\n"
                 }
             ],
             "date": 1652995616624,

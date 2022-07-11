@@ -1,0 +1,22 @@
+{
+    "sourceFile": "database/factories/RetweetFactory.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1654269306535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654269371198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function definition()\n     {\n         return [\n-            'body' => $this->faker->text,\n             'user_id' => $this->faker->numberBetween(1, 6),\n+            'article_id' => $this->faker->numberBetween(1, 100),\n         ];\n     }\n }\n"
+                }
+            ],
+            "date": 1654269306535,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Factories;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\n\n/**\n * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Retweet>\n */\nclass RetweetFactory extends Factory\n{\n    /**\n     * Define the model's default state.\n     *\n     * @return array<string, mixed>\n     */\n    public function definition()\n    {\n        return [\n            'body' => $this->faker->text,\n            'user_id' => $this->faker->numberBetween(1, 6),\n        ];\n    }\n}\n"
+        }
+    ]
+}
