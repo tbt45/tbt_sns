@@ -30,27 +30,16 @@ class ArticleController extends Controller
 
     public function create()
     {
-        $images = Image::where('user_id', Auth::id())
-            ->select('id', 'filename')
-            ->orderBy('updated_at', 'desc')
-            ->get();
-
-        return view(
-            'articles.create',
-            compact('images')
-        );
+        return view('articles.create');
     }
 
     public function store(RequestsArticleRequest $request, Article $article)
     {
-        // $this->validate($request, Article::$rules);
-
         $imageFile = $request->image;
         if (!is_null($imageFile) && $imageFile->isValid()) {
             $fileNameToStore = ImageService::upload($imageFile, 'articles');
         }
 
-        // $article->fill($request->all());
         $article = new Article();
         $article->user_id = $request->user()->id;
         $article->body = $request->body;
@@ -69,8 +58,19 @@ class ArticleController extends Controller
 
     public function  update(RequestsArticleRequest $request, Article $article)
     {
-        $article->fill($request->all())->save();
+        $imageFile = $request->image;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $fileNameToStore = ImageService::upload($imageFile, 'articles');
+        }
 
+        $article->body = $request->body;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $article->filename = $fileNameToStore;
+        }
+
+        $article->save();
+
+        // $article->fill($request->all())->save();
         return redirect()->route('articles.timeline');
     }
 

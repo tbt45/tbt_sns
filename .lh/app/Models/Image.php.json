@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1651682793359,
@@ -60,6 +60,18 @@
                 {
                     "date": 1651770788494,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n use Illuminate\\Database\\Eloquent\\Model;\n \n-class Images extends Model\n+class Image extends Model\n {\n     use HasFactory;\n \n     protected $fillable = [\n@@ -15,6 +15,7 @@\n     ];\n \n     public function user()\n     {\n-    return $this->belongsTo(User::)}\n+        return $this->belongsTo(User::class);\n+    }\n }\n"
+                },
+                {
+                    "date": 1657435451196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,9 @@\n     public function user()\n     {\n         return $this->belongsTo(User::class);\n     }\n+    public function user()\n+    {\n+        return $this->belongsTo(User::class);\n+    }\n }\n"
+                },
+                {
+                    "date": 1657435461762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n     public function user()\n     {\n         return $this->belongsTo(User::class);\n     }\n-    public function user()\n+\n+    public function <article></article>()\n     {\n         return $this->belongsTo(User::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1657435474477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         return $this->belongsTo(User::class);\n     }\n \n-    public function <article></article>()\n+    public function article()\n     {\n-        return $this->belongsTo(User::class);\n+        return $this->belongsTo(Article::class);\n     }\n }\n"
                 }
             ],
             "date": 1651682793359,

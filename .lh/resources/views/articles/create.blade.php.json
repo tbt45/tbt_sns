@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 41,
+            "activePatchIndex": 42,
             "patches": [
                 {
                     "date": 1648869523870,
@@ -172,6 +172,10 @@
                 {
                     "date": 1657172063756,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,16 @@\n                         <x-thumbnail :filename=\"$article->filename\" type=\"articles\" />\n                     </div>\n                 </div>\n             </div> --}}\n+            <div class=\"p-2 w-1/2 mx-auto\">\n+                <div class=\"relative\">\n+                    <div class=\"w-32\">\n+                        <label for=\"image\"></label>\n+                        <input type=\"file\" id=\"image\" name=\"image\" accept=\"image/png,image/jpeg,image/jpg\">\n+                    </div>\n+                </div>\n+            </div>\n             <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n                 <button type=\"submit\">投稿する</button>\n             </div>\n         </form>\n"
+                },
+                {
+                    "date": 1657388833388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,15 +4,8 @@\n     </h2>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.store') }}\" enctype=\"multipart/form-data\">\n             @include('articles.form')\n-            {{-- <div class=\"p-2 w-1/2 mx-auto\">\n-                <div class=\"relative\">\n-                    <div class=\"w-32\">\n-                        <x-thumbnail :filename=\"$article->filename\" type=\"articles\" />\n-                    </div>\n-                </div>\n-            </div> --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <div class=\"relative\">\n                     <div class=\"w-32\">\n                         <label for=\"image\"></label>\n"
                 }
             ],
             "date": 1648869523870,
