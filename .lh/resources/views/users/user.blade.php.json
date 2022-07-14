@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 145,
+            "activePatchIndex": 154,
             "patches": [
                 {
                     "date": 1650684129560,
@@ -588,6 +588,42 @@
                 {
                     "date": 1655873529771,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <div class=\"user-row flex flex-col items-center justify-between p-4 duration-300 sm:flex-row sm:py-4 sm:px-8\">\n             <div class=\"user flex items-center text-center flex-col sm:flex-row sm:text-left\">\n                 <div class=\"avatar-content mb-2.5 sm:mb-0 sm:mr-2.5\">\n                     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\" class=\"cursor-pointer  hover:bg-[#f6f8f9]\">\n-                        <div class=\"h-15 w-1 border-2 border-white rounded-full pr-2\">\n+                        <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                             <x-thumbnail :filename=\"$user->filename\" type=\"users\" />\n                         </div>    \n                     </a>\n                 </div>\n"
+                },
+                {
+                    "date": 1657629303335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,5 +56,12 @@\n             @endif\n         </div>\n         <div class=\"show-more block w-10/12 mx-auto py-2.5 px-4 text-center no-underline rounded font-medium duration-300\">{{ $user->body }}</div>\n     </div>\n+    @if (Auth::id() === $user->id)\n+    <div>\n+        <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n+            編集\n+        </a>\n+    </div>\n+    @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657629329952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,13 +55,13 @@\n             @endif\n             @endif\n         </div>\n         <div class=\"show-more block w-10/12 mx-auto py-2.5 px-4 text-center no-underline rounded font-medium duration-300\">{{ $user->body }}</div>\n+        @if (Auth::id() === $user->id)\n+        <div>\n+            <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n+                編集\n+            </a>\n+        </div>\n+        @endif\n     </div>\n-    @if (Auth::id() === $user->id)\n-    <div>\n-        <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n-            編集\n-        </a>\n-    </div>\n-    @endif\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657629365540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,13 +55,7 @@\n             @endif\n             @endif\n         </div>\n         <div class=\"show-more block w-10/12 mx-auto py-2.5 px-4 text-center no-underline rounded font-medium duration-300\">{{ $user->body }}</div>\n-        @if (Auth::id() === $user->id)\n-        <div>\n-            <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n-                編集\n-            </a>\n-        </div>\n-        @endif\n+\n     </div>\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657629383304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,15 @@\n                 <div class=\"user-body flex flex-col mb-4 sm:mb-0 sm:mr-4\">\n                     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\" class=\"title font-medium no-underline cursor-pointer  hover:bg-[#f6f8f9]\">\n                         {{ $user->name }}\n                     </a>\n+                    @if (Auth::id() === $user->id)\n+                    <div>\n+                        <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n+                            編集\n+                        </a>\n+                    </div>\n+                    @endif\n                     {{-- フォローされている場合に表示 --}}\n                     @if ($user->isFollowed($user->id))\n                     <div>フォローされています</div>\n                     @endif\n@@ -55,7 +62,6 @@\n             @endif\n             @endif\n         </div>\n         <div class=\"show-more block w-10/12 mx-auto py-2.5 px-4 text-center no-underline rounded font-medium duration-300\">{{ $user->body }}</div>\n-\n     </div>\n </div>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657629528051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <div class='flex flex-col items-center justify-center border-solid border-2 border-gray-400 rounded-lg'>\n-    <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl shadow-xl flex flex-col'>\n+    {{-- <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl shadow-xl flex flex-col'> --}}\n         <div class=\"user-row flex flex-col items-center justify-between p-4 duration-300 sm:flex-row sm:py-4 sm:px-8\">\n             <div class=\"user flex items-center text-center flex-col sm:flex-row sm:text-left\">\n                 <div class=\"avatar-content mb-2.5 sm:mb-0 sm:mr-2.5\">\n                     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\" class=\"cursor-pointer  hover:bg-[#f6f8f9]\">\n"
+                },
+                {
+                    "date": 1657629534916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <div class='flex flex-col items-center justify-center border-solid border-2 border-gray-400 rounded-lg'>\n-    {{-- <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl shadow-xl flex flex-col'> --}}\n+    <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl shadow-xl flex flex-col'>\n         <div class=\"user-row flex flex-col items-center justify-between p-4 duration-300 sm:flex-row sm:py-4 sm:px-8\">\n             <div class=\"user flex items-center text-center flex-col sm:flex-row sm:text-left\">\n                 <div class=\"avatar-content mb-2.5 sm:mb-0 sm:mr-2.5\">\n                     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\" class=\"cursor-pointer  hover:bg-[#f6f8f9]\">\n"
+                },
+                {
+                    "date": 1657629542224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <div class='flex flex-col items-center justify-center border-solid border-2 border-gray-400 rounded-lg'>\n-    <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl shadow-xl flex flex-col'>\n+    <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl flex flex-col'>\n         <div class=\"user-row flex flex-col items-center justify-between p-4 duration-300 sm:flex-row sm:py-4 sm:px-8\">\n             <div class=\"user flex items-center text-center flex-col sm:flex-row sm:text-left\">\n                 <div class=\"avatar-content mb-2.5 sm:mb-0 sm:mr-2.5\">\n                     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\" class=\"cursor-pointer  hover:bg-[#f6f8f9]\">\n"
+                },
+                {
+                    "date": 1657629650136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,8 @@\n                 <div class=\"user-body flex flex-col mb-4 sm:mb-0 sm:mr-4\">\n                     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\" class=\"title font-medium no-underline cursor-pointer  hover:bg-[#f6f8f9]\">\n                         {{ $user->name }}\n                     </a>\n-                    @if (Auth::id() === $user->id)\n-                    <div>\n-                        <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n-                            編集\n-                        </a>\n-                    </div>\n-                    @endif\n                     {{-- フォローされている場合に表示 --}}\n                     @if ($user->isFollowed($user->id))\n                     <div>フォローされています</div>\n                     @endif\n"
+                },
+                {
+                    "date": 1657629688298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n                 <div class=\"user-body flex flex-col mb-4 sm:mb-0 sm:mr-4\">\n                     <a href=\"{{ route('users.show', ['name' => $user->name]) }}\" class=\"title font-medium no-underline cursor-pointer  hover:bg-[#f6f8f9]\">\n                         {{ $user->name }}\n                     </a>\n+\n                     {{-- フォローされている場合に表示 --}}\n                     @if ($user->isFollowed($user->id))\n                     <div>フォローされています</div>\n                     @endif\n"
                 }
             ],
             "date": 1650684129560,

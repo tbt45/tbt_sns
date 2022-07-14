@@ -22,7 +22,7 @@ class Article extends Model
     }
     public function replies()
     {
-        return $this->hasMany(Reply::class, 'App\Models\Reply');
+        return $this->hasMany(Reply::class);
     }
     public function likes()
     {

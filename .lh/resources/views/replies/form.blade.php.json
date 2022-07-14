@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1651566310342,
@@ -68,6 +68,26 @@
                 {
                     "date": 1653588867961,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,8 @@\n <div class=\"py-12\">\n     <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n     <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <input type=\"text\" name=\"title\" value=\"{{ $reply->title ?? old('title') }}\">\n-    </div>\n-    <div\n-        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <label></label>\n         <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $reply->body ?? old('body') }}</textarea>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657561365607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n @csrf\n <div class=\"py-12\">\n     <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n-    <div\n-        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <label></label>\n-        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $reply->body ?? old('body') }}</textarea>\n+    <div class=\" bg-white rounded-md max-w-2xl mx-auto\">\n+        <div class=\"space-y-4\">\n+            <textarea required name=\"body\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full text-gray-600 outline-none rounded-md\">{{ $article->body ?? old('body') }}</textarea>\n+        </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657561396297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n @csrf\n <div class=\"py-12\">\n     <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n-    <div class=\" bg-white rounded-md max-w-2xl mx-auto\">\n-        <div class=\"space-y-4\">\n-            <textarea required name=\"body\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full text-gray-600 outline-none rounded-md\">{{ $article->body ?? old('body') }}</textarea>\n-        </div>\n+    <div\n+        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n+        <label></label>\n+        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $reply->body ?? old('body') }}</textarea>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657561405194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n @csrf\n <div class=\"py-12\">\n     <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n-    <div\n-        class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-        <label></label>\n-        <textarea name=\"body\" required placeholder=\"本文\" rows=\"16\">{{ $reply->body ?? old('body') }}</textarea>\n+    <div class=\" bg-white rounded-md max-w-2xl mx-auto\">\n+        <div class=\"space-y-4\">\n+            <textarea required name=\"body\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full text-gray-600 outline-none rounded-md\">{{ $article->body ?? old('body') }}</textarea>\n+        </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657561413384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n <div class=\"py-12\">\n     <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n     <div class=\" bg-white rounded-md max-w-2xl mx-auto\">\n         <div class=\"space-y-4\">\n-            <textarea required name=\"body\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full text-gray-600 outline-none rounded-md\">{{ $article->body ?? old('body') }}</textarea>\n+            <textarea required name=\"body\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full text-gray-600 outline-none rounded-md\">{{ $れply->body ?? old('body') }}</textarea>\n         </div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657829743596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n <div class=\"py-12\">\n     <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n     <div class=\" bg-white rounded-md max-w-2xl mx-auto\">\n         <div class=\"space-y-4\">\n-            <textarea required name=\"body\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full text-gray-600 outline-none rounded-md\">{{ $れply->body ?? old('body') }}</textarea>\n+            <textarea required name=\"body\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full text-gray-600 outline-none rounded-md\"></textarea>\n         </div>\n     </div>\n </div>\n"
                 }
             ],
             "date": 1651566310342,

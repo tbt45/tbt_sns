@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1650694817288,
@@ -88,6 +88,10 @@
                 {
                     "date": 1655721072486,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n         @include('users.articles')\n         @foreach ($articles as $article)\n             @include('articles.card')\n         @endforeach\n-        {{ $rs->links() }}\n+        {{-- {{ $articles->links() }} --}}\n     </div>\n \n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657629626826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,8 @@\n     <div class=\"py-12\">\n         <div\n         class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n             @include('users.user')\n-            @if (Auth::id() === $user->id)\n-            <div>\n-                <a href=\"{{ route('users.edit', ['user' => $user]) }}\">\n-                    編集\n-                </a>\n-            </div>\n-            @endif\n         </div>\n         @include('users.articles')\n         @foreach ($articles as $article)\n             @include('articles.card')\n"
                 }
             ],
             "date": 1650694817288,

@@ -1,5 +1,5 @@
 <div class='flex flex-col items-center justify-center border-solid border-2 border-gray-400 rounded-lg'>
-    <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl shadow-xl flex flex-col'>
+    <div class='user-list w-full max-w-lg mx-auto bg-white rounded-xl flex flex-col'>
         <div class="user-row flex flex-col items-center justify-between p-4 duration-300 sm:flex-row sm:py-4 sm:px-8">
             <div class="user flex items-center text-center flex-col sm:flex-row sm:text-left">
                 <div class="avatar-content mb-2.5 sm:mb-0 sm:mr-2.5">
@@ -13,6 +13,13 @@
                     <a href="{{ route('users.show', ['name' => $user->name]) }}" class="title font-medium no-underline cursor-pointer  hover:bg-[#f6f8f9]">
                         {{ $user->name }}
                     </a>
+                    @if (Auth::id() === $user->id)
+                    <div>
+                        <a href="{{ route('users.edit', ['user' => $user]) }}">
+                            編集
+                        </a>
+                    </div>
+                    @endif
                     {{-- フォローされている場合に表示 --}}
                     @if ($user->isFollowed($user->id))
                     <div>フォローされています</div>

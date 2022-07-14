@@ -13,35 +13,18 @@ use Illuminate\Support\Facades\Auth;
 
 class ReplyController extends Controller
 {
-    // public function index()
-    // {
-    //     $articles = Article::all()->sortByDesc('created_at');
-
-    //     return view('articles.index', ['articles' => $articles]);
-    // }
-
     public function create(Article $article, Reply $replies)
     {
-        // $user = User::where('name', $name)->first();
-        // $article = Article::where('id', $reply->article_id)->first();
-        // $replies = Reply::where('id', $id)->sortByDesc('created_at');
-
-        // $replies = $article->replies->sortByDesc('created_at');
-        //フォロー数を取得
-        // $follow_count = $follower->getFollowCount($user->id);
-        // フォロワー数を取得
-        // $follower_count = $follower->getFollowerCount($user->id);
+        $articles = Article::all();
 
         return view('replies.create', [
-            // 'user' => $user,
             'replies' => $replies,
-            // 'follow_count' => $follow_count,
-            // 'follower_count' => $follower_count,
             'article' => $article,
+            compact('articles')
         ]);
     }
 
-    public function store(RequestsArticleRequest $request)
+    public function store(Article $article, RequestsArticleRequest $request)
     {
         Reply::create([
             'user_id' => Auth::id(),
@@ -49,7 +32,7 @@ class ReplyController extends Controller
             'body' => $request->body,
         ]);
 
-        return redirect()->route('articles.timeline');
+        return redirect()->back();
     }
 
     public function edit(Reply $reply)
@@ -61,7 +44,7 @@ class ReplyController extends Controller
     {
         $reply->fill($request->all())->save();
 
-        return redirect()->route('articles.timeline');
+        return redirect();
     }
 
     public function destroy(Reply $reply)
@@ -85,6 +68,7 @@ class ReplyController extends Controller
         return view('users.replies', [
             'user' => $user,
             'replies' => $replies,
+            'article' => $article,
             'follow_count' => $follow_count,
             'follower_count' => $follower_count
         ]);

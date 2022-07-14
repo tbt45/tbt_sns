@@ -76,7 +76,6 @@
             {{-- </div> --}}
 
             {{-- リツイートボタン --}}
-            {{-- <div class="flex"> --}}
             @if ($article->is_retweeted_by_auth_user())
             <a href="{{ route('articles.unretweet',['id'=>$article->id]) }}">
                 <i class="fa-solid fa-retweet text-blue-700"></i>
