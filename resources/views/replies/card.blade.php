@@ -25,8 +25,10 @@
                     </form>
             @endif
         </div>
-        <a href="{{ route('replies.create', ['article' => $reply->article]) }}">
-            {{ $reply->body }}
-        </a>
+        <div class="mt-2">
+            <a href="{{ route('replies.create', ['article' => $reply->article]) }}">
+                {{ $reply->body }}
+            </a>
+        </div>
     </div>
 </div>

@@ -28,10 +28,6 @@ class Article extends Model
     {
         return $this->hasMany(Like::class, 'article_id');
     }
-    public function retweets()
-    {
-        return $this->hasMany(Retweet::class, 'article_id');
-    }
     // いいね機能
     public function is_liked_by_auth_user()
     {
@@ -43,22 +39,6 @@ class Article extends Model
         }
 
         if (in_array($id, $likers)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    // リツイート機能
-    public function is_retweeted_by_auth_user()
-    {
-        $id = Auth::id();
-
-        $retweets = array();
-        foreach ($this->retweets as $retweet) {
-            array_push($retweets, $retweet->user_id);
-        }
-
-        if (in_array($id, $retweets)) {
             return true;
         } else {
             return false;

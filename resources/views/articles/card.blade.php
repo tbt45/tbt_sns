@@ -52,7 +52,7 @@
         <div class="max-w-full rounded-br-lg" >
             <x-thumbnail :filename="$article->filename" type="articles" />
         </div>    
-        <div class="">
+        <div class="mt-2">
             {{ $article->body }}
         </div>
 
@@ -70,24 +70,6 @@
                 <i class="fa-solid fa-heart"></i>
                 <span class="mr-2">
                     {{ $article->likes->count() }}
-                </span>
-            </a>
-            @endif
-            {{-- </div> --}}
-
-            {{-- リツイートボタン --}}
-            @if ($article->is_retweeted_by_auth_user())
-            <a href="{{ route('articles.unretweet',['id'=>$article->id]) }}">
-                <i class="fa-solid fa-retweet text-blue-700"></i>
-                <span>
-                    {{ $article->retweets->count() }}
-                </span>
-            </a>
-            @else
-            <a href="{{ route('articles.retweet',['id'=>$article->id]) }}">
-                <i class="fa-solid fa-retweet"></i>
-                <span>
-                    {{ $article->retweets->count() }}
                 </span>
             </a>
             @endif

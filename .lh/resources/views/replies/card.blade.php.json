@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 116,
+            "activePatchIndex": 124,
             "patches": [
                 {
                     "date": 1651582360506,
@@ -472,6 +472,38 @@
                 {
                     "date": 1657901839378,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <a href=\"{{ route('replies.create', ['article' => $reply]) }}\">\n+        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657902122316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\">\n+        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\" class=\"mt\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657902155593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\" class=\"mt\">\n+        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\" class=\"mt-5\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657902177524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n+        <div></div>\n         <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\" class=\"mt-5\">\n             {{ $reply->body }}\n         </a>\n     </div>\n"
+                },
+                {
+                    "date": 1657902182980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <div></div>\n+        <div>\n         <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\" class=\"mt-5\">\n             {{ $reply->body }}\n-        </a>\n+        </a></div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657902189093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                     </form>\n             @endif\n         </div>\n         <div>\n-        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\" class=\"mt-5\">\n+        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\">\n             {{ $reply->body }}\n         </a></div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657902198775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <div>\n+        <div class=\"mt-2\">\n         <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\">\n             {{ $reply->body }}\n         </a></div>\n     </div>\n"
+                },
+                {
+                    "date": 1657902214218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                     </form>\n             @endif\n         </div>\n         <div class=\"mt-2\">\n-        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\">\n+            <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\">\n             {{ $reply->body }}\n         </a></div>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657902219478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n             @endif\n         </div>\n         <div class=\"mt-2\">\n             <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\">\n-            {{ $reply->body }}\n-        </a></div>\n+                {{ $reply->body }}\n+            </a>\n+        </div>\n     </div>\n </div>\n"
                 }
             ],
             "date": 1651582360506,

@@ -5,7 +5,6 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
-use App\Http\Controllers\RetweetController;
 use App\Http\Controllers\ReplyController;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,17 +35,12 @@ Route::prefix('article')->name('articles.')->middleware('auth')->group(function 
     // いいね機能
     Route::get('/like/{id}', [ArticleController::class, 'like'])->name('like');
     Route::get('/unlike/{id}', [ArticleController::class, 'unlike'])->name('unlike');
-    //リツイート機能
-    Route::get('/retweet/{id}', [RetweetController::class, 'retweet'])->name('retweet');
-    Route::get('/unretweet/{id}', [RetweetController::class, 'unretweet'])->name('unretweet');
-
     //フォローしたユーザーの投稿を表示
     Route::get('timeline', [ArticleController::class, 'timeline'])->name('timeline');
 });
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
 // 返信機能
 Route::prefix('replies')->name('replies.')->middleware('auth')->group(function () {
-    // Route::get('/index', [ReplyController::class, 'index'])->name('index');
     Route::get('/create/{article}', [ReplyController::class, 'create'])->name('create');
     Route::post('/store', [ReplyController::class, 'store'])->name('store');
     Route::delete('/delete/{reply}', [ReplyController::class, 'destroy'])->name('destroy');
