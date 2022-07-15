@@ -19,7 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')
                 ->unsigned();
             $table->foreignId('article_id')
-                ->constrained('articles');
+                ->constrained('articles')
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }
