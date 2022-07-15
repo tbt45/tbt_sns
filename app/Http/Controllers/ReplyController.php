@@ -35,18 +35,6 @@ class ReplyController extends Controller
         return redirect()->back();
     }
 
-    public function edit(Reply $reply)
-    {
-        return view('replies.edit', ['reply' => $reply]);
-    }
-
-    public function  update(RequestsArticleRequest $request, Reply $reply)
-    {
-        $reply->fill($request->all())->save();
-
-        return redirect();
-    }
-
     public function destroy(Reply $reply)
     {
         $reply->delete();

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 67,
+            "activePatchIndex": 68,
             "patches": [
                 {
                     "date": 1651582360506,
@@ -276,6 +276,10 @@
                 {
                     "date": 1657829138355,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n                 </form>\n             </div>\n         @endif\n \n-        <a href=\"{{ route('replies.create', ['name' => $user->name]) }}\">\n+        <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657847728022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,8 @@\n         </div>\n \n         @if (Auth::id() === $reply->user_id)\n             <div>\n-                <a href=\"{{ route('replies.edit', ['reply' => $reply]) }}\">\n-                    編集\n-                </a>\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                     @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n"
                 }
             ],
             "date": 1651582360506,

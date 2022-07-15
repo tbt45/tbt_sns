@@ -49,9 +49,6 @@ Route::prefix('replies')->name('replies.')->middleware('auth')->group(function (
     // Route::get('/index', [ReplyController::class, 'index'])->name('index');
     Route::get('/create/{article}', [ReplyController::class, 'create'])->name('create');
     Route::post('/store', [ReplyController::class, 'store'])->name('store');
-    Route::get('/edit/{reply}', [ReplyController::class, 'edit'])->name('edit');
-    Route::put('/update/{reply}', [ReplyController::class, 'update'])->name('update');
-    Route::patch('/update/{reply}', [ReplyController::class, 'update'])->name('update');
     Route::delete('/delete/{reply}', [ReplyController::class, 'destroy'])->name('destroy');
 });
 Route::get('/replies/{name}', [ReplyController::class, 'show'])->name('replies.show');

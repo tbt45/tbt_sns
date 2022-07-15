@@ -17,9 +17,6 @@
 
         @if (Auth::id() === $reply->user_id)
             <div>
-                <a href="{{ route('replies.edit', ['reply' => $reply]) }}">
-                    編集
-                </a>
                 <form method="post" action="{{ route('replies.destroy', ['reply' => $reply]) }}">
                     @method('DELETE')
                     @csrf
