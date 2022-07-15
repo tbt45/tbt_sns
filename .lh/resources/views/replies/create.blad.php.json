@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/replies/create.blad.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1657873898999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1657873898999,
+            "name": "Commit-0",
+            "content": "<x-app-layout>\n    <x-slot name=\"header\">\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('記事詳細') }}\n        </h2>\n    </x-slot>\n\n    <h2 class=\"font-semibold text-xl text-gray-800 leading-tight pt-5\">\n        {{ __('記事詳細') }}\n    </h2>\n    <div>\n        @include('articles.card')\n    </div>\n    {{-- この記事に対する返信を全て表示する。 --}}\n    <div class=\"py-12\">\n        <div>返信一覧</div>\n        @foreach ($article->replies as $reply)\n        @include('replies.card')\n        @endforeach\n\n        {{-- 返信する --}}\n        <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg border-b border-gray-200\">\n            <form method=\"POST\" action=\"{{ route('replies.store') }}\">\n                <div class=\"py-12\">\n                    <input type=\"hidden\" name=\"article_id\" value=\"{{ $article->id }}\">\n                    <div class=\" bg-white rounded-md max-w-2xl mx-auto\">\n                        <div class=\"space-y-4\">\n                            <textarea required name=\"body\" cols=\"30\" rows=\"10\" placeholder=\"本文\" class=\"w-full text-gray-600 outline-none rounded-md\"></textarea>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">\n                    <button type=\"submit\">返信する</button>\n                </div>\n            </form>\n        </div>\n    </div>\n</x-app-layout>"
+        }
+    ]
+}

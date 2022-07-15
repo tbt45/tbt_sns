@@ -43,7 +43,7 @@ class ReplyController extends Controller
     }
 
     //返信した記事を取得する
-    public function show(string $name, Follower $follower)
+    public function show(string $name, Follower $follower, Article $article)
     {
         $user = User::where('name', $name)->first();
 
@@ -60,9 +60,5 @@ class ReplyController extends Controller
             'follow_count' => $follow_count,
             'follower_count' => $follower_count
         ]);
-    }
-    public function sho(Reply $reply)
-    {
-        return view('articles.show', ['reply' => $reply]);
     }
 }

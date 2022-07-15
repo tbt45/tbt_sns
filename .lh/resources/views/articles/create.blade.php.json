@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 42,
+            "activePatchIndex": 52,
             "patches": [
                 {
                     "date": 1648869523870,
@@ -176,6 +176,46 @@
                 {
                     "date": 1657388833388,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,15 +4,8 @@\n     </h2>\n     <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n         <form method=\"POST\" action=\"{{ route('articles.store') }}\" enctype=\"multipart/form-data\">\n             @include('articles.form')\n-            {{-- <div class=\"p-2 w-1/2 mx-auto\">\n-                <div class=\"relative\">\n-                    <div class=\"w-32\">\n-                        <x-thumbnail :filename=\"$article->filename\" type=\"articles\" />\n-                    </div>\n-                </div>\n-            </div> --}}\n             <div class=\"p-2 w-1/2 mx-auto\">\n                 <div class=\"relative\">\n                     <div class=\"w-32\">\n                         <label for=\"image\"></label>\n"
+                },
+                {
+                    "date": 1657895461564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n                     </div>\n                 </div>\n             </div>\n             <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                <button type=\"submit\">投稿する</button>\n+                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">返信する</button>\n+\n             </div>\n         </form>\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657895481167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,9 @@\n                     </div>\n                 </div>\n             </div>\n             <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">返信する</button>\n-\n+                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"する</button>\n             </div>\n         </form>\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657895487478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n                     </div>\n                 </div>\n             </div>\n             <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"する</button>\n+                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"\b\n+                する</button>\n             </div>\n         </form>\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657895494121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,9 @@\n                     </div>\n                 </div>\n             </div>\n             <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"\b\n-                する</button>\n+                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"></button>する</button>\n             </div>\n         </form>\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657895501992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n                     </div>\n                 </div>\n             </div>\n             <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"></button>する</button>\n+                <buttoする type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"></buttoする</button>\n             </div>\n         </form>\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657895763433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n                         <input type=\"file\" id=\"image\" name=\"image\" accept=\"image/png,image/jpeg,image/jpg\">\n                     </div>\n                 </div>\n             </div>\n-            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 border-b border-gray-200\">\n-                <buttoする type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\"></buttoする</button>\n+            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n+                <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">投稿する</button>\n             </div>\n         </form>\n     </div>\n </x-app-layout>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1657895891929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n                         <input type=\"file\" id=\"image\" name=\"image\" accept=\"image/png,image/jpeg,image/jpg\">\n                     </div>\n                 </div>\n             </div>\n-            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n+            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n                 <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">投稿する</button>\n             </div>\n         </form>\n     </div>\n"
+                },
+                {
+                    "date": 1657895934276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n                         <input type=\"file\" id=\"image\" name=\"image\" accept=\"image/png,image/jpeg,image/jpg\">\n                     </div>\n                 </div>\n             </div>\n-            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n+            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-hidden sm:rounded-lg p-6 border-b border-gray-200 flex justify-center\">\n                 <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">投稿する</button>\n             </div>\n         </form>\n     </div>\n"
+                },
+                {
+                    "date": 1657895956730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n                         <input type=\"file\" id=\"image\" name=\"image\" accept=\"image/png,image/jpeg,image/jpg\">\n                     </div>\n                 </div>\n             </div>\n-            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-hidden sm:rounded-lg p-6 border-b border-gray-200 flex justify-center\">\n+            <div class=\"flex justify-center\">\n                 <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">投稿する</button>\n             </div>\n         </form>\n     </div>\n"
+                },
+                {
+                    "date": 1657895989259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n                         <input type=\"file\" id=\"image\" name=\"image\" accept=\"image/png,image/jpeg,image/jpg\">\n                     </div>\n                 </div>\n             </div>\n-            <div class=\"flex justify-center\">\n+            <div class=\"mt-4 flex justify-center\">\n                 <button type=\"submit\" class=\"text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg\">投稿する</button>\n             </div>\n         </form>\n     </div>\n"
                 }
             ],
             "date": 1648869523870,

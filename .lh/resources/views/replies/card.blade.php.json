@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 68,
+            "activePatchIndex": 116,
             "patches": [
                 {
                     "date": 1651582360506,
@@ -280,6 +280,198 @@
                 {
                     "date": 1657847728022,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,8 @@\n         </div>\n \n         @if (Auth::id() === $reply->user_id)\n             <div>\n-                <a href=\"{{ route('replies.edit', ['reply' => $reply]) }}\">\n-                    編集\n-                </a>\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                     @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n"
+                },
+                {
+                    "date": 1657899493085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<div class='flex items-center justify-center bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n+<div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n"
+                },
+                {
+                    "date": 1657899559159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n+    \n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n"
+                },
+                {
+                    "date": 1657899567758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n-    \n+    <div></div>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n"
+                },
+                {
+                    "date": 1657899575694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n-    <div></div>\n+    <div class=\"flex\"></div>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n"
+                },
+                {
+                    "date": 1657899583230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n-    <div class=\"flex\"></div>\n+    <div class=\"flex\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n@@ -11,8 +11,9 @@\n             <div class=\"\">\n                 {{ $reply->user->name }}\n             </div>\n         </a>\n+        \n         <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n \n"
+                },
+                {
+                    "date": 1657899619721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,12 @@\n             <div class=\"\">\n                 {{ $reply->user->name }}\n             </div>\n         </a>\n-        \n         <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n+    </div>\n \n         @if (Auth::id() === $reply->user_id)\n             <div>\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n"
+                },
+                {
+                    "date": 1657899634694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n                 {{ $reply->user->name }}\n+                {{ $reply->created_at->format('Y/m/d H:i') }}\n             </div>\n         </a>\n         <div>\n-            {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n     </div>\n \n         @if (Auth::id() === $reply->user_id)\n"
+                },
+                {
+                    "date": 1657899648735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n         </a>\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n             <div class=\"\">\n                 {{ $reply->user->name }}\n-                {{ $reply->created_at->format('Y/m/d H:i') }}\n             </div>\n+            {{ $reply->created_at->format('Y/m/d H:i') }}\n         </a>\n         <div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1657899669747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n             <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n         </a>\n+        <div class=\"\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n-            <div class=\"\">\n                 {{ $reply->user->name }}\n             </div>\n-            {{ $reply->created_at->format('Y/m/d H:i') }}\n         </a>\n+        {{ $reply->created_at->format('Y/m/d H:i') }}\n         <div>\n         </div>\n     </div>\n \n"
+                },
+                {
+                    "date": 1657899680507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,13 +9,12 @@\n         </a>\n         <div class=\"\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n                 {{ $reply->user->name }}\n-            </div>\n-        </a>\n-        {{ $reply->created_at->format('Y/m/d H:i') }}\n-        <div>\n+            </a>\n+            {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n+\n     </div>\n \n         @if (Auth::id() === $reply->user_id)\n             <div>\n"
+                },
+                {
+                    "date": 1657899695444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,11 @@\n         <div class=\"\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n                 {{ $reply->user->name }}\n             </a>\n+            <div></div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n-\n     </div>\n \n         @if (Auth::id() === $reply->user_id)\n             <div>\n"
+                },
+                {
+                    "date": 1657899701653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,11 @@\n         <div class=\"\">\n         <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n                 {{ $reply->user->name }}\n             </a>\n-            <div></div>\n+            <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n-        </div>\n+        </div></div>\n     </div>\n \n         @if (Auth::id() === $reply->user_id)\n             <div>\n"
+                },
+                {
+                    "date": 1657899757641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,8 @@\n             </a>\n             <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div></div>\n-    </div>\n-\n         @if (Auth::id() === $reply->user_id)\n             <div>\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                     @method('DELETE')\n@@ -24,9 +22,11 @@\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n             </div>\n         @endif\n+    </div>\n \n+\n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n"
+                },
+                {
+                    "date": 1657899836794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n         </a>\n         <div class=\"\">\n-        <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n+        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                 {{ $reply->user->name }}\n             </a>\n             <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n"
+                },
+                {
+                    "date": 1657899846403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n     <div class=\"flex\">\n-        <a href=\"{{ route('replies.show', ['name' => $reply->user->name]) }}\">\n+        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n             <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                 <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n         </a>\n"
+                },
+                {
+                    "date": 1657899998162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,21 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n-    <div class=\"flex\">\n-        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n-            <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n-                <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n+        <div class=\"flex\">\n+            <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+                <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n+                    <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n             </div>   \n         </a>\n         <div class=\"\">\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                 {{ $reply->user->name }}\n             </a>\n             <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n-        </div></div>\n+        </div>\n+    </div>\n         @if (Auth::id() === $reply->user_id)\n             <div>\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                     @method('DELETE')\n@@ -24,9 +25,8 @@\n             </div>\n         @endif\n     </div>\n \n-\n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n"
+                },
+                {
+                    "date": 1657900005789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n         <div class=\"flex\">\n             <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                 <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                     <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n-            </div>   \n-        </a>\n-        <div class=\"\">\n+                </div>   \n+            </a>\n+            <div class=\"\">\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                 {{ $reply->user->name }}\n             </a>\n             <div>\n"
+                },
+                {
+                    "date": 1657900011867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n                 <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                     <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                 </div>   \n             </a>\n-            <div class=\"\">\n+            <div>\n         <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                 {{ $reply->user->name }}\n             </a>\n             <div>\n"
+                },
+                {
+                    "date": 1657900018044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,11 @@\n                     <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                 </div>   \n             </a>\n             <div>\n-        <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n-                {{ $reply->user->name }}\n-            </a>\n+                <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+                    {{ $reply->user->name }}\n+                </a>\n             <div>\n             {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1657900024694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n             <div>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     {{ $reply->user->name }}\n                 </a>\n-            <div>\n-            {{ $reply->created_at->format('Y/m/d H:i') }}\n+                <div>\n+                    {{ $reply->created_at->format('Y/m/d H:i') }}\n         </div>\n     </div>\n         @if (Auth::id() === $reply->user_id)\n             <div>\n"
+                },
+                {
+                    "date": 1657900029754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n                     {{ $reply->user->name }}\n                 </a>\n                 <div>\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n+                </div>\n         </div>\n-    </div>\n         @if (Auth::id() === $reply->user_id)\n             <div>\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                     @method('DELETE')\n"
+                },
+                {
+                    "date": 1657900036117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n                 </a>\n                 <div>\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n-        </div>\n+            </div>\n         @if (Auth::id() === $reply->user_id)\n             <div>\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                     @method('DELETE')\n"
+                },
+                {
+                    "date": 1657900041650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n                 <div>\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n             </div>\n-        @if (Auth::id() === $reply->user_id)\n-            <div>\n-                <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n-                    @method('DELETE')\n+            @if (Auth::id() === $reply->user_id)\n+                <div>\n+                    <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n+                        @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n             </div>\n"
+                },
+                {
+                    "date": 1657900053312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n             </div>\n             @if (Auth::id() === $reply->user_id)\n-                <div>\n                     <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                         @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n"
+                },
+                {
+                    "date": 1657900059972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,14 +15,13 @@\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n             </div>\n             @if (Auth::id() === $reply->user_id)\n-                    <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n+                <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                         @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n-            </div>\n         @endif\n     </div>\n \n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n"
+                },
+                {
+                    "date": 1657900068072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,13 @@\n                 </div>\n             </div>\n             @if (Auth::id() === $reply->user_id)\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n-                        @method('DELETE')\n+                    @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n-        @endif\n+            @endif\n     </div>\n \n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $reply->body }}\n"
+                },
+                {
+                    "date": 1657900073481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,9 @@\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n             @endif\n-    </div>\n-\n+        </div>\n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n"
+                },
+                {
+                    "date": 1657900133542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n             </div>\n             @if (Auth::id() === $reply->user_id)\n+            <div></div>\n                 <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                     @method('DELETE')\n                     @csrf\n                     <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n"
+                },
+                {
+                    "date": 1657900147124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,13 @@\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n             </div>\n             @if (Auth::id() === $reply->user_id)\n-            <div></div>\n-                <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n-                    @method('DELETE')\n-                    @csrf\n-                    <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n+                <div class=\"text-right\"></div>\n+                    <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n+                        @method('DELETE')\n+                        @csrf\n+                        <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                 </form>\n             @endif\n         </div>\n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n"
+                },
+                {
+                    "date": 1657900156826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,14 +15,14 @@\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n             </div>\n             @if (Auth::id() === $reply->user_id)\n-                <div class=\"text-right\"></div>\n+                <div class=\"text-right\">\n                     <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                         @method('DELETE')\n                         @csrf\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n-                </form>\n+                    </form>\n             @endif\n         </div>\n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $reply->body }}\n"
+                },
+                {
+                    "date": 1657900162895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n                         @method('DELETE')\n                         @csrf\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n+                </div>\n             @endif\n         </div>\n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $reply->body }}\n"
+                },
+                {
+                    "date": 1657900896749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n-        <div class=\"flex\">\n+        <div class=\"flex justify-between\">\n             <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                 <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                     <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                 </div>   \n"
+                },
+                {
+                    "date": 1657900929334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-between\">\n+            <div>\n             <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                 <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                     <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                 </div>   \n             </a>\n-            <div>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     {{ $reply->user->name }}\n                 </a>\n                 <div>\n"
+                },
+                {
+                    "date": 1657900937634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,13 @@\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-between\">\n             <div>\n-            <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+                <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                 <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n-                    <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n-                </div>   \n-            </a>\n+                        <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n+                    </div>   \n+                </a>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     {{ $reply->user->name }}\n                 </a>\n                 <div>\n"
+                },
+                {
+                    "date": 1657900943101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-between\">\n             <div>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n-                <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n+                    <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                         <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                     </div>   \n                 </a>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n@@ -15,9 +15,8 @@\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n             </div>\n             @if (Auth::id() === $reply->user_id)\n-                <div class=\"text-right\">\n                     <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                         @method('DELETE')\n                         @csrf\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n"
+                },
+                {
+                    "date": 1657900965189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-between\">\n-            <div>\n+            <div class=\"\">\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                         <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                     </div>   \n@@ -20,9 +20,8 @@\n                         @method('DELETE')\n                         @csrf\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n-                </div>\n             @endif\n         </div>\n         <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n             {{ $reply->body }}\n"
+                },
+                {
+                    "date": 1657900976296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,15 @@\n <div class='bg-gradient-to-br border-solid border-2 border-gray-400 rounded-lg'>\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-between\">\n-            <div class=\"\">\n+            <div class=\"flex\">\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                         <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                     </div>   \n                 </a>\n+                <div></div>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     {{ $reply->user->name }}\n                 </a>\n                 <div>\n"
+                },
+                {
+                    "date": 1657900982918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,16 @@\n                     <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                         <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                     </div>   \n                 </a>\n-                <div></div>\n+                <div>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     {{ $reply->user->name }}\n                 </a>\n                 <div>\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n+                \n             </div>\n             @if (Auth::id() === $reply->user_id)\n                     <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                         @method('DELETE')\n"
+                },
+                {
+                    "date": 1657900993514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,12 @@\n                 <div>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     {{ $reply->user->name }}\n                 </a>\n-                <div>\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n-                \n             </div>\n+            </div>\n             @if (Auth::id() === $reply->user_id)\n                     <form method=\"post\" action=\"{{ route('replies.destroy', ['reply' => $reply]) }}\">\n                         @method('DELETE')\n                         @csrf\n"
+                },
+                {
+                    "date": 1657901002331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n                 <div>\n                 <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n                     {{ $reply->user->name }}\n                 </a>\n+                <div>\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n                 </div>\n             </div>\n             </div>\n"
+                },
+                {
+                    "date": 1657901690062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     <div\n     class=\"max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white overflow-hidden sm:rounded-lg p-6 border-b border-gray-200\">\n         <div class=\"flex justify-between\">\n             <div class=\"flex\">\n-                <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+                <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n                     <div class=\"h-15 w-16 border-2 border-white rounded-full pr-2\">\n                         <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                     </div>   \n                 </a>\n"
+                },
+                {
+                    "date": 1657901704095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                         <x-thumbnail :filename=\"$reply->user->filename\" type=\"users\" />\n                     </div>   \n                 </a>\n                 <div>\n-                <a href=\"{{ route('users.show', ['name' => $article->user->name]) }}\">\n+                <a href=\"{{ route('users.show', ['name' => $reply->user->name]) }}\">\n                     {{ $reply->user->name }}\n                 </a>\n                 <div>\n                     {{ $reply->created_at->format('Y/m/d H:i') }}\n"
+                },
+                {
+                    "date": 1657901724166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <a href=\"{{ route('replies.create', ['article' => $article]) }}\">\n+        <a href=\"{{ route('replies.create', ['reply' => $article]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657901729467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <a href=\"{{ route('replies.create', ['reply' => $article]) }}\">\n+        <a href=\"{{ route('replies.create', ['reply' => $reply]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657901737250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <a href=\"{{ route('replies.create', ['reply' => $reply]) }}\">\n+        {{-- <a href=\"{{ route('replies.create', ['reply' => $reply]) }}\"> --}}\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657901773563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        {{-- <a href=\"{{ route('replies.create', ['reply' => $reply]) }}\"> --}}\n+        <a href=\"{{ route('replies.create', ['reply' => $reply]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657901781891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <a href=\"{{ route('replies.create', ['reply' => $reply]) }}\">\n+        <a href=\"{{ route('replies.create', ['article' => $reply]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1657901839378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n                         <input type=\"submit\" name=\"delete\" value=\"削除\" onClick=\"delete_alert(event);return false;\">\n                     </form>\n             @endif\n         </div>\n-        <a href=\"{{ route('replies.create', ['article' => $reply]) }}\">\n+        <a href=\"{{ route('replies.create', ['article' => $reply->article]) }}\">\n             {{ $reply->body }}\n         </a>\n     </div>\n </div>\n"
                 }
             ],
             "date": 1651582360506,
