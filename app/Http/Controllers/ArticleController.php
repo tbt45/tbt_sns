@@ -6,10 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest as RequestsArticleRequest;
 use Illuminate\Http\Request;
 use App\Models\Article;
-use App\Models\Image;
 use App\Models\Like;
 use Illuminate\Support\Facades\Auth;
-use App\http\Requests\UploadImageRequest;
 use App\Services\ImageService;
 
 class ArticleController extends Controller
@@ -70,7 +68,6 @@ class ArticleController extends Controller
 
         $article->save();
 
-        // $article->fill($request->all())->save();
         return redirect()->route('articles.timeline');
     }
 
@@ -78,7 +75,7 @@ class ArticleController extends Controller
     {
         $article->delete();
 
-        return redirect()->back();
+        return redirect()->route('articles.timeline');
     }
 
     // ログインしていない人に見えるようにする
