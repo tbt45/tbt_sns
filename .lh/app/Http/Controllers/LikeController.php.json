@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 80,
             "patches": [
                 {
                     "date": 1650722521714,
@@ -48,6 +48,286 @@
                 {
                     "date": 1650724695912,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n class LikeController extends Controller\n {\n     //いいねした記事を取得する\n-    public function likes(string $name, Follower $follower\n+    public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n"
+                },
+                {
+                    "date": 1657999603996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,11 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n+        $replies = Reply::where('user_id',$user->id)\n+        ->orderBy('created_at','DESC')->paginate(10);\n+        \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1657999611109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,11 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n-        $replies = Reply::where('user_id',$user->id)\n+        $article = Reply::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n-        \n+\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1657999616903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n-        $article = Reply::where('user_id',$user->id)\n+        $article = Arti::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1657999634785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,18 +4,20 @@\n \n use Illuminate\\Http\\Request;\n use App\\models\\User;\n use App\\Models\\Follower;\n+use App\\Models\\Article;\n \n+\n class LikeController extends Controller\n {\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n-        $article = Arti::where('user_id',$user->id)\n+        $article = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1657999652377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,18 +6,17 @@\n use App\\models\\User;\n use App\\Models\\Follower;\n use App\\Models\\Article;\n \n-\n class LikeController extends Controller\n {\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n \n         $articles = $user->likes->sortByDesc('created_at');\n-        $article = Article::where('user_id',$user->id)\n+        $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1657999688283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n \n-        $articles = $user->likes->sortByDesc('created_at');\n+        // $articles = $user->likes->sortByDesc('created_at');\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n"
+                },
+                {
+                    "date": 1657999708190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n use Illuminate\\Http\\Request;\n use App\\models\\User;\n use App\\Models\\Follower;\n use App\\Models\\Article;\n+use App\\Models\\Like;\n \n class LikeController extends Controller\n {\n     //いいねした記事を取得する\n@@ -14,9 +15,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        $articles = Article::where('user_id',$user->id)\n+        $articles = Like::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1657999720853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n use Illuminate\\Http\\Request;\n use App\\models\\User;\n use App\\Models\\Follower;\n use App\\Models\\Article;\n-use App\\Models\\Like;\n \n class LikeController extends Controller\n {\n     //いいねした記事を取得する\n@@ -15,9 +14,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        $articles = Like::where('user_id',$user->id)\n+        $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658000511276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        $articles = Article::where('user_id',$user->id)\n+        $articles = Article::where('',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658000534632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        $articles = Article::where('',$user->id)\n+        $articles = Like::where('like',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658000557636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,11 @@\n use Illuminate\\Http\\Request;\n use App\\models\\User;\n use App\\Models\\Follower;\n use App\\Models\\Article;\n+use App\\Models\\Like;\n \n+\n class LikeController extends Controller\n {\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n"
+                },
+                {
+                    "date": 1658000565323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        $articles = Like::where('like',$user->id)\n+        $articles = Like::where('user',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658001011275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        $articles = Like::where('user',$user->id)\n+        $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658001207595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n+        // $articles = $user->likes->sortByDesc('created_at');\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n"
+                },
+                {
+                    "date": 1658001216357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        // $articles = $user->likes->sortByDesc('created_at');\n+        // $articles = $user->likes;\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n"
+                },
+                {
+                    "date": 1658001222208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        // $articles = $user->likes;\n+        // $ぃけs = $user->likes;\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n"
+                },
+                {
+                    "date": 1658001227421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        // $ぃけs = $user->likes;\n+        $likes = $user->likes;\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n"
+                },
+                {
+                    "date": 1658001238679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n         $likes = $user->likes;\n-        $articles = Article::where('user_id',$user->id)\n+        $articles = Article::where('user_id',$likes->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658001586287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n         $likes = $user->likes;\n-        $articles = Article::where('user_id',$likes->id)\n+        $articles = Article::where('user_id',$likes)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658001597888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n         $likes = $user->likes;\n-        $articles = Article::where('user_id',$likes)\n+        $articles = Article::where($likes)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658001609995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n         $likes = $user->likes;\n-        $articles = Article::where($likes)\n+        $articles = Article::where($likes);\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658001647787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n         $likes = $user->likes;\n-        $articles = Article::where($likes);\n+        // $articles = Article::where($likes)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658001728321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        $likes = $user->likes;\n-        // $articles = Article::where($likes)\n+        $likes = $user->likes\n+        $articles = Article::where($likes)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658001741559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n     {\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n-        $likes = $user->likes\n-        $articles = Article::where($likes)\n+        // $likes = $user->likes\n+        $articles = Article::where($user->likes)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002068301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n \n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where($user->likes)\n+        $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002101581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-\n+$likes = \n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002108257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-$likes = \n+$likes = User::where\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002119550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-$likes = User::where\n+\n+        $likes = User::where();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002142021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-\n-        $likes = User::where();\n+        $likes = Likes::where();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002147265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Likes::where();\n+        $likes = Like::where($user);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002152541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where($user);\n+        $likes = Like::where(,$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('user_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002193540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where(,$user->id);\n+        $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('user_id',$user->id)\n+        $articles = Article::where('article_id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002199051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('article_id',$user->id)\n+        $articles = Article::where('article_id',$likes->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002247353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('article_id',$likes->id)\n+        $articles = Article::where('id',$likes->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002255438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$likes->id)\n+        $articles = Article::where('id',$likes->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002447713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where('user_id',$user->id);\n+        $likes = Like::where('user_id',$user->id)->;\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('id',$likes->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002453535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where('user_id',$user->id)->;\n+        $likes = Like::where('user_id',$user->id)->first;\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('id',$likes->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002486130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where('user_id',$user->id)->first;\n+        $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('id',$likes->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002596122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$likes->article_id)\n+        $articles = Article::where('id',$user->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002605200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where('user_id',$user->id);\n+        // $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('id',$user->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002616529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         // $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$user->article_id)\n+        $articles = Article::where('id',$user->->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002636983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         // $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$user->->article_id)\n+        $articles = Article::where('id',$likes->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002645815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         // $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$likes->article_id)\n+        $articles = Article::where('id',$likes->user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658002654641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        // $likes = Like::where('user_id',$user->id);\n+        $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('id',$likes->user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658002664089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$likes->user->id)\n+        $articles = Article::where('user_id',$likes->user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658011417899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('user_id',$likes->user->id)\n+        $articles = Article::where('user_id',$likes->user_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658011462703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('user_id',$likes->user_id)\n+        $articles = Article::where('user_id',Like::)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658011467759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('user_id',Like::)\n+        $articles = Article::where('user_id',Like::user_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055414697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where('user_id',$user->id);\n+        $likes = Like::where('user_id',$user->id)->get;\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('user_id',Like::user_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658055424506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where('user_id',$user->id)->get;\n+        $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('user_id',Like::user_id)\n+        $articles = Article::where('user_id',)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055432997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('user_id',)\n+        // $articles = Article::where('user_id',$likes)\n         ->orderBy('created_at','DESC')->paginate(10);\n \n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055441066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n-        ->orderBy('created_at','DESC')->paginate(10);\n-\n+        // ->orderBy('created_at','DESC')->paginate(10);\n+dd()\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1658055449473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n-dd()\n+\n+        dd();\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1658055455384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,11 @@\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n-\n-        dd();\n+        dd(\n+            \n+        );\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1658055461576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,9 @@\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n-        dd(\n-            \n-        );\n+        dd($);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1658055466953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n-        dd($);\n+        dd($user,$);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1658055558304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,14 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where('user_id',$user->id)->get();\n+        $likes = Like::where('user_id',$user->id);\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n-        dd($user,$);\n+        dd($user,$likes);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1658055580604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     //いいねした記事を取得する\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n-        $likes = Like::where('user_id',$user->id);\n+        $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n"
+                },
+                {
+                    "date": 1658055605937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n-        // $articles = $user->likes->sortByDesc('created_at');\n+        $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes);\n"
+                },
+                {
+                    "date": 1658055615848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     public function likes(string $name, Follower $follower)\n     {\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n-        $articles = $user->likes->sortByDesc('created_at');\n+        // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         // $articles = Article::where('user_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes);\n"
+                },
+                {
+                    "date": 1658055631036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        // $articles = Article::where('user_id',$likes)\n+        $articles = Article::where('article_id',$likes)\n         // ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055639168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('article_id',$likes)\n+        $articles = Article::where('article_id',$likes->id)\n         // ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055644898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('article_id',$likes->id)\n+        $articles = Article::where('article_id',$likes->article_id)\n         // ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055650577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('article_id',$likes->article_id)\n+        $articles = Article::where('id',$likes->article_id)\n         // ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055692020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$likes->article_id)\n+        $articles = Article::where('id',$likes->article_id);\n         // ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055699129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$likes->article_id);\n+        $articles = Article::where('id',$likes->article_id)\n         // ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658055706627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n         $articles = Article::where('id',$likes->article_id)\n-        // ->orderBy('created_at','DESC')->paginate(10);\n-        dd($user,$likes);\n+        ->orderBy('created_at','DESC')->paginate(10);\n+        dd($user,$likes,$articles);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n         // フォロワー数を取得\n         $follower_count = $follower->getFollowerCount($user->id);\n"
+                },
+                {
+                    "date": 1658056250540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$likes->article_id)\n+        $articles = Article::where('id',$user->article_id)\n         ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes,$articles);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658056257993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('id',$user->article_id)\n+        $articles = Article::where('id',$user->id)\n         ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes,$articles);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
+                },
+                {
+                    "date": 1658056347822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         $user = User::where('name', $name)->first();\n         $likes = Like::where('user_id',$user->id)->get();\n         // $articles = $user->likes->sortByDesc('created_at');\n         // $likes = $user->likes\n-        $articles = Article::where('user_id',$user->id)->\n+        $articles = Article::where('user_id',$user->id)->w\n         ->orderBy('created_at','DESC')->paginate(10);\n         dd($user,$likes,$articles);\n         //フォロー数を取得\n         $follow_count = $follower->getFollowCount($user->id);\n"
                 }
             ],
             "date": 1650722521714,

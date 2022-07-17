@@ -7,11 +7,10 @@ use App\models\Follower;
 use App\Services\ImageService;
 use Illuminate\Http\Request;
 use App\http\Requests\UploadImageRequest;
+use App\Models\Article;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use InterventionImage;
-
-
 
 class UserController extends Controller
 {
@@ -23,11 +22,10 @@ class UserController extends Controller
     public function show(string $name, Follower $follower)
     {
         $user = User::where('name', $name)->first();
-        //ユーザーの投稿を取得
-        $articles = $user->articles
-            ->sortByDesc('created_at');
-        // ->orderBy('created_at', 'desc')
-        // ->paginate(10);
+
+        // ユーザーの投稿を取得
+        $articles = Article::where('user_id',$user->id)
+        ->orderBy('created_at','DESC')->paginate(10);
 
         //フォロー数を取得
         $follow_count = $follower->getFollowCount($user->id);

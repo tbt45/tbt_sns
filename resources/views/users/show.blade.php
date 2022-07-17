@@ -15,7 +15,7 @@
         @foreach ($articles as $article)
             @include('articles.card')
         @endforeach
-        {{-- {{ $articles->links() }} --}}
+        {{ $articles->links() }}
     </div>
     
 </x-app-layout>

@@ -47,7 +47,9 @@ class ReplyController extends Controller
     {
         $user = User::where('name', $name)->first();
 
-        $replies = $user->replies->sortByDesc('created_at');
+        $replies = Reply::where('user_id',$user->id)
+        ->orderBy('created_at','DESC')->paginate(10);
+
         //フォロー数を取得
         $follow_count = $follower->getFollowCount($user->id);
         // フォロワー数を取得

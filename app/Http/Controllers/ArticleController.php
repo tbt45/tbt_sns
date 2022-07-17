@@ -98,7 +98,8 @@ class ArticleController extends Controller
     // いいね解除
     public function unlike($id)
     {
-        $like = Like::where('article_id', $id)->where('user_id', Auth::id())->first();
+        $like = Like::where('article_id', $id)
+        ->where('user_id', Auth::id())->first();
         $like->delete();
 
         return redirect()->back();

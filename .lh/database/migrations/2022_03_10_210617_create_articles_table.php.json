@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1651681780265,
@@ -88,6 +88,10 @@
                 {
                     "date": 1657173602307,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n             $table->unsignedBigInteger('user_id');\n             $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->string('filename')->nullable();\n+            $table->timestamps();\n         });\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1658056943489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('articles', function (Blueprint $table) {\n             $table->bigIncrements('id');\n             $table->text('body');\n             $table->unsignedBigInteger('user_id');\n-            $table->foreign('user_id')->references('id')->on('users');\n+            // $table->foreign('user_id')->references('id')->on('users');\n             // 画像追加\n             $table->string('filename')->nullable();\n             $table->timestamps();\n         });\n"
                 }
             ],
             "date": 1651681780265,
