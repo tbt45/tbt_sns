@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/welcome.blad.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1658246972518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1658246972518,
+            "name": "Commit-0",
+            "content": "<x-guest-layout>\n<div class=\"flex items-center justify-center h-screen bg-purple-200\">\n    <div class=\"bg-white rounded-2xl border shadow-x1 p-10 max-w-lg w-2/3\">\n        <div class=\"flex flex-col items-center space-y-4\">\n        <div class=\"w-20 mx-auto\">\n            <a href=\"/\">\n                <x-application-logo />\n            </a>\n        </div>\n        <h1 class=\"font-bold text-2xl text-gray-700 text-center\">\n            tbt_snsへようこそ\n        </h1>\n        <div class=\"text-center\">\n            <a href=\"{{ route('login') }}\" class=\"inline-block right-0 align-baseline font-light text-sm text-500 hover:text-red-400\">\n                ログインはこちら\n            </a>\n        </div>\n        <div class=\"text-center\">\n            <a href=\"{{ route('register') }}\" class=\"inline-block right-0 align-baseline font-light text-sm text-500 hover:text-red-400\">\n                アカウントを作成する\n            </a>\n        </div>\n        </div>\n    </div>\n    </div>\n</x-guest-layout>"
+        }
+    ]
+}

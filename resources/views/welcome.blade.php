@@ -1,36 +1,26 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body class="antialiased">
-    <div
-        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                @auth
-                    <a href="{{ url('/dashboard') }}"
-                        class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                    @endif
-                @endauth
+<x-guest-layout>
+    <div class="flex items-center justify-center h-screen bg-purple-200">
+        <div class="bg-white rounded-2xl border shadow-x1 p-10 max-w-lg w-2/3">
+            <div class="flex flex-col items-center space-y-4">
+                <div class="w-20 mx-auto">
+                    <a href="/">
+                        <x-application-logo />
+                    </a>
+                </div>
+                <h1 class="font-bold text-2xl text-gray-700 text-center">
+                    tbt_snsへようこそ
+                </h1>
+                <div class="text-center">
+                    <a href="{{ route('login') }}" class="inline-block right-0 align-baseline font-light text-sm text-500 hover:text-red-400">
+                        ログインはこちら
+                    </a>
+                </div>
+                <div class="text-center">
+                    <a href="{{ route('register') }}" class="inline-block right-0 align-baseline font-light text-sm text-500 hover:text-red-400">
+                        アカウントを作成する
+                    </a>
+                </div>
             </div>
-        @endif
-
-</body>
-
-</html>
-    
+        </div>
+    </div>
+</x-guest-layout>
